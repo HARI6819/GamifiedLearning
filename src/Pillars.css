@@ -1,0 +1,126 @@
+.pillars-section {
+  padding: 80px 20px;
+   background-color: hsl(40, 9%, 93%);
+
+}
+
+.pillars-container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: visible;
+}
+
+.pillars-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.pillars-heading h2 {
+  font-size: 2.4rem;
+  font-family: serif;
+  margin-bottom: 10px;
+}
+
+.pillars-heading p {
+  font-size: 1.1rem;
+  color: #777777;
+  max-width: 700px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  background-color: transparent;
+  padding: 10px 10px;
+  overflow: visible;
+}
+
+@media (max-width:770px){
+    .pillars-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* CARD */
+.pillar-card {
+  background: white;
+  border-radius: 16px;
+  border-left: 5px solid;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.229);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pillar-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.pillar-header {
+  padding: 24px;
+}
+
+.pillar-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.pillar-header h3 {
+  font-size: 1.4rem;
+  font-family: serif;
+}
+
+.pillar-body {
+  padding: 0 24px 24px;
+}
+
+.pillar-body p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 18px;
+}
+
+/* FOOTER */
+.pillar-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pillar-footer span {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.explore-btn {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.explore-btn:hover {
+  background: green;
+  color: white;
+}
+
+/* COLOR VARIANTS */
+.secondary {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.primary {
+  border-color: #1e3a8a;
+  background: rgba(30, 58, 138, 0.05);
+}
+
+.accent {
+  border-color: #16a34a;
+  background: rgba(22, 163, 74, 0.05);
+}

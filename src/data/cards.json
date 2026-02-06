@@ -1,0 +1,50 @@
+[
+    {
+        "id": "card-1",
+        "question": "What is the minimum age to become the President of India?",
+        "answer": "35 years",
+        "category": "Executive"
+    },
+    {
+        "id": "card-2",
+        "question": "Who is the Ex-officio Chairman of the Rajya Sabha?",
+        "answer": "The Vice-President of India",
+        "category": "Legislature"
+    },
+    {
+        "id": "card-3",
+        "question": "Which Article relates to the abolition of Untouchability?",
+        "answer": "Article 17",
+        "category": "Fundamental Rights"
+    },
+    {
+        "id": "card-4",
+        "question": "Who appoints the Prime Minister of India?",
+        "answer": "The President of India",
+        "category": "Executive"
+    },
+    {
+        "id": "card-5",
+        "question": "What is the maximum gap allowed between two sessions of Parliament?",
+        "answer": "6 months",
+        "category": "Legislature"
+    },
+    {
+        "id": "card-6",
+        "question": "Who is known as the Father of the Indian Constitution?",
+        "answer": "Dr. B.R. Ambedkar",
+        "category": "History"
+    },
+    {
+        "id": "card-7",
+        "question": "Which is the highest judicial court in a State?",
+        "answer": "High Court",
+        "category": "Judiciary"
+    },
+    {
+        "id": "card-8",
+        "question": "How many Fundamental Duties are there in the Indian Constitution?",
+        "answer": "11 Fundamental Duties",
+        "category": "Duties"
+    }
+]

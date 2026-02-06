@@ -1,0 +1,250 @@
+/* Page */
+.chakra-page {
+  background: #fffaf4;
+  height: 89.7vh;
+  font-family: "Inter", sans-serif;
+  margin-top: 10.3vh;
+  padding: 1% 8%;
+}
+
+/* Header */
+.chakra-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.back-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: none;
+  background: #f3f4f6;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.chakra-header h1 {
+  font-family: serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.chakra-header p {
+  color: #6b7280;
+  font-family: sans-serif;
+}
+
+/* Layout */
+.chakra-content {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  overflow: visible;
+}
+
+
+.wheel-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+
+.spin-wheel-container {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  transition: transform 2.5s cubic-bezier(0.33, 1, 0.68, 1);
+  transform-origin: 50% 50%;
+  overflow: visible;
+}
+
+.spin-wheel-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pointer {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 24px solid #e28f09;
+  z-index: 10;
+}
+
+.wheel-text {
+  font-size: 6px;
+  fill: white;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.center-circle-outer {
+  fill: white;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.center-circle-inner {
+  fill: #1e3a5f;
+}
+
+.center-icon {
+  font-size: 8px;
+  fill: white;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.spin-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.spin-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* Button */
+.spin-btn {
+  margin-top: 30px;
+  padding: 14px 36px;
+  border-radius: 14px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg,#1e3a8a,#f97316);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.spin-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(249,115,22,0.5);
+}
+
+/* Info Card */
+.info-section{
+  overflow: visible;
+}
+
+.info-card {
+  background: white;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.info-card.center {
+  text-align: center;
+}
+
+.big-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+.h3info{
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 5px;
+}
+
+.info-card h2 {
+  font-size: 28px;
+  font-family:serif;
+  margin-bottom: 10px;
+}
+
+.info-card p{
+  font-family: sans-serif;
+  color: rgb(156, 155, 155);
+}
+
+.article-title {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  font-weight: 300;
+}
+ 
+
+.desc-box {
+  background: #f3f4f6;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #d2d3d4;
+  font-family: sans-serif;
+  line-height: 25px;
+}
+
+.fact-box {
+  background: #fff3e8;
+  border: 1px solid #fdba74;
+  padding: 16px;
+  border-radius: 12px;
+  color: orange;
+}
+
+.fact-box p{
+  padding-left: 25px;
+}
+
+.badge-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.badge-row.bottom {
+  margin-top: 20px;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  background: #f3f4f6;
+}
+
+.badge.primary {
+  background: #e0e7ff;
+  color: #1e3a8a;
+}
+.badge.Legislature{
+  border: 1px solid orange;
+  color: orange;
+  background: rgb(251, 245, 233);
+}
+
+.badge.Judiciary{
+   border: 1px solid green;
+  color: green;
+  background: rgb(231, 250, 231);
+}
+
+.badge.Executive{
+  border: 1px solid #102166;
+  color: #102166;
+  background: #eef2ff;
+}
+/* Responsive */
+@media (max-width: 900px) {
+  .chakra-content {
+    grid-template-columns: 1fr;
+  }
+}

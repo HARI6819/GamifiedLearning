@@ -1,0 +1,69 @@
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { LanguageProvider } from './context/LanguageContext'
+import './index.css'
+import App from './App.jsx'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Login from './Login.jsx'
+import Home from './Home.jsx'
+import Learn from './Learn.jsx'
+import Games from './Games.jsx'
+import ProgressPage from './ProgressPage.jsx'
+import ChakraOfKnowledge from './ChakraOfKnowledge.jsx'
+import RightsDutiesClimb from './RightsDutiesClimb.jsx'
+import ConstitutionCards from './ConstitutionCards.jsx'
+import ArticleMatch from './ArticleMatch.jsx'
+import ProfilePage from './ProfilePage.jsx'
+
+import ProtectedRoute from './ProtectedRoute.jsx'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Login />
+  },
+  {
+    path: '/home',
+    element: <ProtectedRoute><Home /></ProtectedRoute>
+  },
+  {
+    path: '/learn',
+    element: <ProtectedRoute><Learn /></ProtectedRoute>
+  },
+  {
+    path: '/games',
+    element: <ProtectedRoute><Games /></ProtectedRoute>
+  },
+  {
+    path: '/progress',
+    element: <ProtectedRoute><ProgressPage /></ProtectedRoute>
+  },
+  {
+    path: '/games/spin-wheel',
+    element: <ProtectedRoute><ChakraOfKnowledge /></ProtectedRoute>
+  },
+  {
+    path: 'games/snake-ladder',
+    element: <ProtectedRoute><RightsDutiesClimb /></ProtectedRoute>
+  },
+  {
+    path: '/games/quiz-cards',
+    element: <ProtectedRoute><ConstitutionCards /></ProtectedRoute>
+  },
+  {
+    path: '/games/match-pairs',
+    element: <ProtectedRoute><ArticleMatch /></ProtectedRoute>
+  },
+  {
+    path: '/profile',
+    element: <ProtectedRoute><ProfilePage /></ProtectedRoute>
+  }
+])
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <LanguageProvider>
+      <RouterProvider router={router} />
+    </LanguageProvider>
+  </StrictMode>,
+)

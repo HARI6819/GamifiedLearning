@@ -1,0 +1,20 @@
+
+.footer{
+    height: 10.3vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 10px;
+    padding-left: 4.3%;
+    padding-right: 4.3%;
+    align-items: center;
+    color: rgb(99, 95, 95);
+    border-top: 1px solid rgba(128, 128, 128, 0.322);
+}
+
+@media (max-width:550px) {
+    .footer{
+        font-size: 10px;
+    }
+}

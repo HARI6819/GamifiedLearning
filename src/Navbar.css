@@ -1,0 +1,198 @@
+.nav {
+  height: 10.3vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-left: 4.3%;
+  padding-right: 4.3%;
+
+  /* Glassmorphism effect */
+  background: rgba(248, 249, 221, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(128, 128, 128, 0.162);
+
+  z-index: 1000;
+  overflow: visible;
+}
+
+
+.logo {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Logoname {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 17.5px;
+  color: rgb(73, 64, 94);
+}
+
+.Logoicon {
+  height: 42px;
+  width: 47px;
+  background-image: linear-gradient(140deg, rgb(18, 18, 138), rgb(62, 62, 165), orange);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Logoicon span {
+  font-size: 22px;
+}
+
+.LName {
+  height: 50%;
+  width: 100%;
+  overflow: visible;
+}
+
+.LName p {
+  font-size: 11px;
+  color: rgb(126, 124, 124);
+}
+
+.navigation {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.navigation ul li {
+  list-style: none;
+  padding: 8px 12px;
+  border-radius: 7px;
+  font-size: 15px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  transition: 0.4s all ease;
+}
+
+.nav-profile-img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(30, 58, 138, 0.2);
+}
+
+.navigation ul li:hover {
+  background-color: #f2a136;
+}
+
+.MobileView {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.navigation ul {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1035px) {
+  .navigation {
+    width: 85%;
+  }
+}
+
+
+@media (max-width: 825px) {
+  .navigation {
+    width: 50%;
+  }
+
+  .navigation ul {
+    display: none;
+    position: absolute;
+    top: 10.3vh;
+    right: 0;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 20px;
+    border-radius: 0 0 0 20px;
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+    flex-direction: column;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .navigation ul.show {
+    display: flex;
+    animation: slideIn 0.3s ease forwards;
+  }
+
+  .MobileView {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #1e3a8a;
+  }
+
+  /* Remove menu on hover */
+  .mobile-wrapper:hover ul {
+    display: none;
+  }
+
+  .mobile-wrapper:hover ul.show {
+    display: flex;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width:600px) {
+  .LName {
+    display: none;
+  }
+
+  .Logoicon {
+    height: 42px;
+    width: 42px;
+  }
+}

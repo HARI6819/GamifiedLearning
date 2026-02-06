@@ -1,0 +1,432 @@
+.LearnSection {
+  background-color: hsl(40, 30%, 97%);
+}
+
+.learn-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  font-family: "Georgia", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 17px;
+  font-weight: 100;
+  margin: auto;
+  max-width: 600px;
+  margin-bottom: 35px;
+}
+
+.search-box {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.filters.secondary {
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+
+.filters.secondary button {
+  border: 1px solid rgba(128, 128, 128, 0.322);
+}
+
+.filters.secondary button:hover {
+  background-color: green;
+}
+
+.filters button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 2px solid #102166;
+  background: #fff;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  color: white;
+  background-color: #102166;
+}
+
+.filters button.active {
+  background: #ff8c2a;
+  color: white;
+  border-color: #ff8c2a;
+}
+
+.filters.secondary button.active {
+  background: #ff8c2a;
+  color: white;
+  border-color: #ff8c2a;
+}
+
+.count {
+  color: #6b6b6b;
+  font-family: sans-serif;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.article-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.192);
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+.article-card.Executive {
+  border-left: 5px solid #102166;
+}
+
+.article-card.Legislature {
+  border-left: 5px solid orange;
+}
+
+.article-card.Judiciary {
+  border-left: 5px solid green;
+}
+
+
+.article-card.Executive .badge.outl {
+  border: 1px solid #102166;
+  color: #102166;
+  background: #eef2ff;
+}
+
+.article-card.Legislature .badge.outl {
+  border: 1px solid orange;
+  color: orange;
+  background: rgb(251, 245, 233);
+}
+
+.article-card.Judiciary .badge.outl {
+  border: 1px solid green;
+  color: green;
+  background: rgb(231, 250, 231);
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.badge {
+
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+.badge.outline {
+  background: transparent;
+  border: 1px solid #ddd;
+
+}
+
+.ArticleLine {
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 5px;
+}
+
+/* Loading Screen */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fffaf3;
+  color: #1e3a8a;
+  gap: 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e7e1d9;
+  border-top-color: #f97316;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.article-number {
+  font-family: 'Times New Roman', Times, serif;
+  color: #172e8a;
+}
+
+.description {
+  font-family: sans-serif;
+  color: rgb(75, 74, 74);
+}
+
+.fun-fact {
+  margin-top: 15px;
+  padding: 12px;
+  background: #fff3e6;
+  border-radius: 10px;
+  font-size: 14px;
+  display: flex;
+  border: 1px solid #fadbbb;
+  align-items: center;
+  gap: 5px;
+  color: rgb(114, 114, 114);
+}
+
+.fun-fact p {
+  font-family: sans-serif;
+  font-weight: 300;
+  color: rgb(141, 127, 127);
+}
+
+.badge1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 16px;
+  margin-bottom: 16px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: #111827;
+
+  cursor: default;
+  transition: all 0.2s ease-in-out;
+}
+
+.badge:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+}
+
+.badge1-icon {
+  width: 12px;
+  height: 12px;
+  margin-top: 2px;
+}
+
+/* Article Card Interactivity */
+.article-card.clickable {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.article-card.clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Article Popup */
+.article-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.article-popup-content {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.popup-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #f3f4f6;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.popup-close-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+  transform: rotate(90deg);
+}
+
+.popup-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.popup-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.popup-badge.Executive {
+  background: #eef2ff;
+  color: #102166;
+  border: 1px solid #102166;
+}
+
+.popup-badge.Legislature {
+  background: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #ea580c;
+}
+
+.popup-badge.Judiciary {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #15803d;
+}
+
+.popup-badge.outline {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
+}
+
+.popup-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: #111827;
+}
+
+.popup-article-num {
+  font-size: 18px;
+  color: #1e3a8a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.popup-body {
+  margin-bottom: 30px;
+}
+
+.popup-description {
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 24px;
+}
+
+.popup-fun-fact {
+  background: #fffaf3;
+  border: 1px solid #fbd38d;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.popup-fun-fact h4 {
+  margin: 0 0 10px 0;
+  color: #92400e;
+  font-size: 16px;
+}
+
+.popup-fun-fact p {
+  margin: 0;
+  color: #b45309;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.popup-footer {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #9ca3af;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@keyframes modalSlideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .article-popup-content {
+    padding: 30px 20px;
+    border-radius: 0;
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  .popup-title {
+    font-size: 24px;
+  }
+}
