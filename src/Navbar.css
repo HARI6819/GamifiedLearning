@@ -183,6 +183,11 @@
     /* Hide subtitle on tablets to save space */
   }
 
+  .LName{
+    display: flex;
+    justify-content: center;
+  }
+
   .navigation {
     width: auto;
   }
