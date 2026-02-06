@@ -5,7 +5,7 @@ export const translations = {
             title: "Sansthaein Aur Samvidhan",
             subtitle: "Institutions & Constitution",
             home: "Home",
-            games: "Play Games",
+            games: "Games",
             learn: "Learn",
             progress: "Progress",
             profile: "Profile"

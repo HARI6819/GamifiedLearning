@@ -56,7 +56,7 @@ function Navbar() {
                 <Chat />
             </section>}
             <div className="nav">
-                <div className="logo">
+                <div className="logo" onClick={handleNavigateH}>
                     <div className="Logoicon">
                         <span>⚖️</span>
                     </div>
@@ -71,21 +71,24 @@ function Navbar() {
                             {isMenuOpen ? "✕" : "☰"}
                         </div>
 
+                        {/* Mobile Menu Overlay */}
+                        {isMenuOpen && <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>}
+
                         <ul className={isMenuOpen ? "show" : ""}>
-                            <li onClick={() => handleMenuClick(handleNavigateH)}><Home size={18} />{t.navbar.home}</li>
-                            <li onClick={() => handleMenuClick(handleNavigateGames)}><Gamepad2 size={18} />{t.navbar.games}</li>
-                            <li onClick={() => handleMenuClick(handleNavigateLe)}><BookOpen size={18} />{t.navbar.learn}</li>
-                            <li onClick={() => handleMenuClick(handleNavigateP)}><Trophy size={18} />{t.navbar.progress}</li>
+                            <li onClick={() => handleMenuClick(handleNavigateH)}><Home size={20} />{t.navbar.home}</li>
+                            <li onClick={() => handleMenuClick(handleNavigateGames)}><Gamepad2 size={20} />{t.navbar.games}</li>
+                            <li onClick={() => handleMenuClick(handleNavigateLe)}><BookOpen size={20} />{t.navbar.learn}</li>
+                            <li onClick={() => handleMenuClick(handleNavigateP)}><Trophy size={20} />{t.navbar.progress}</li>
                             <li onClick={() => handleMenuClick(handleNavigateProfile)}>
                                 {profileImage ? (
                                     <img src={profileImage} alt="Profile" className="nav-profile-img" />
                                 ) : (
-                                    <User size={18} />
+                                    <User size={20} />
                                 )}
                                 {t.navbar.profile}
                             </li>
                             <li onClick={() => { toggleLanguage(); setIsMenuOpen(false); }} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-                                <Languages size={18} />
+                                <Languages size={20} />
                                 {language === 'en' ? 'HI' : 'EN'}
                             </li>
                         </ul>

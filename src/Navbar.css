@@ -67,7 +67,7 @@
 
 .navigation {
   height: 100%;
-  width: 50%;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -85,27 +85,68 @@
   border-radius: 7px;
   font-size: 15px;
   display: flex;
-  gap: 5px;
+  gap: 8px;
+  /* Slightly increased gap for better legibility */
   align-items: center;
   transition: 0.4s all ease;
 }
 
+.navigation ul li svg {
+  flex-shrink: 0;
+  /* Prevent icons from shrinking */
+}
+
 .nav-profile-img {
-  width: 22px;
-  height: 22px;
+  display: flex;
+  width: clamp(20px, 4.5vw,  24px);
+  height: clamp(20px, 4.5vw, 24px);
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid rgba(30, 58, 138, 0.2);
 }
 
+.nav-profile-img {
+  flex-shrink: 0;
+}
+
 .navigation ul li:hover {
   background-color: #f2a136;
+  color: white;
 }
 
 .MobileView {
   display: none;
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
+  color: #1e3a8a;
+  z-index: 1002;
+  transition: transform 0.3s ease;
+}
+
+.MobileView:active {
+  transform: scale(0.9);
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  animation: fadeInOverlay 0.3s ease;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .navigation ul {
@@ -124,75 +165,107 @@
   }
 }
 
-@media (max-width: 1035px) {
-  .navigation {
-    width: 85%;
-  }
-}
+/* Responsiveness Improvements */
 
-
-@media (max-width: 825px) {
-  .navigation {
-    width: 50%;
+@media (max-width: 1200px) {
+  .Logoname {
+    font-size: clamp(14px, 1.5vw, 17.5px);
   }
 
   .navigation ul {
+    gap: clamp(10px, 1.5vw, 20px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .LName p {
     display: none;
-    position: absolute;
-    top: 10.3vh;
+    /* Hide subtitle on tablets to save space */
+  }
+
+  .navigation {
+    width: auto;
+  }
+}
+
+@media (max-width: 850px) {
+  .navigation ul {
+    display: none;
+    position: fixed;
+    top: 0;
     right: 0;
-    width: 250px;
+    width: 280px;
+    height: 100vh;
     background: rgba(255, 255, 255, 0.98);
-    padding: 20px;
-    border-radius: 0 0 0 20px;
-    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.1);
-    gap: 15px;
+    padding: 80px 30px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
     flex-direction: column;
-    border-left: 1px solid rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 1001;
+    gap: 20px;
   }
 
   .navigation ul.show {
     display: flex;
-    animation: slideIn 0.3s ease forwards;
+    animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .MobileView {
     display: block;
-    font-size: 28px;
-    cursor: pointer;
-    color: #1e3a8a;
   }
 
-  /* Remove menu on hover */
-  .mobile-wrapper:hover ul {
-    display: none;
+  .navigation ul li {
+    font-size: clamp(16px, 4vw, 18px);
+    /* Responsive font size */
+    padding: 12px 15px;
+    width: 100%;
+    gap: 12px;
+    /* Even larger gap on mobile */
   }
 
-  .mobile-wrapper:hover ul.show {
-    display: flex;
+  .navigation ul li svg {
+    width: clamp(22px, 5vw, 24px);
+    /* Larger icons on mobile for touch targets */
+    height: clamp(22px, 5vw, 24px);
   }
 }
 
 @keyframes slideIn {
   from {
-    opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(100%);
   }
 
   to {
-    opacity: 1;
     transform: translateX(0);
   }
 }
 
-@media (max-width:600px) {
-  .LName {
-    display: none;
+@media (max-width: 480px) {
+  .nav {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .Logoname {
+    font-size: 15px;
+  }
+
+  .navigation ul {
+    width: 100%;
+    /* Full screen menu on very small devices */
   }
 
   .Logoicon {
-    height: 42px;
-    width: 42px;
+    height: 38px;
+    width: 38px;
+  }
+
+  .Logoicon span {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 350px) {
+  .LName {
+    display: none;
   }
 }
