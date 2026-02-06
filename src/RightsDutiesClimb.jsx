@@ -364,7 +364,7 @@ export default function RightsDutiesClimb() {
 
             {!showQuestion && <div className="dice-box">
               {/* <div className="dice">🎲</div> */}
-              <img src={`/src/data/dice/dice-${Number}.svg`} alt="dice1" style={{ width: "12%" }} className={`${IsActiveDice ? "dicerotate" : ""}`} />
+              <img src={`/dice/dice-${Number}.svg`} alt="dice1" style={{ width: "12%" }} className={`${IsActiveDice ? "dicerotate" : ""}`} />
               <button onClick={rollDice} disabled={showQuestion}>
                 <Dices /> <h3>{t.climb.roll}</h3>
               </button>
