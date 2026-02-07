@@ -240,12 +240,14 @@ const Learn = () => {
                                     <button onClick={() => setOrgan("Union")} className={organ === "Union" ? "active" : ""}>🇮🇳 {t.learn.filters.union}</button>
                                     <button onClick={() => setOrgan("State")} className={organ === "State" ? "active" : ""}>🏛️ {t.learn.filters.state}</button>
                                 </div>
+                                <div className="label-showing-box">
                                 <p className="label-showing">{t.learn.showing} {filteredArticles.length} {t.learn.articles}</p>
+                                </div>
                             </div>
                         </div>
 
                         <div className="explorer-layout">
-                            {/* Left Pane: Article Cards */}
+                            {/* Left Pane: Article Cards (Horizontal scroll on Tablet/Mobile) */}
                             <div className="article-sidebar">
                                 <div className="articles detailed-grid">
                                     {filteredArticles.length > 0 ? (

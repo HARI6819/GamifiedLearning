@@ -87,7 +87,7 @@ export default function Games() {
   };
 
   if (loading) {
-    return <div className="loading-screen"><div className="spinner"></div></div>;
+    return <div className="loading-screen"><div className="spinner"></div>Loading Games...</div>;
   }
 
   return (

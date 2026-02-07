@@ -12,7 +12,7 @@ function Navbar() {
     const profileImage = localStorage.getItem('profileImage');
 
     const navigate = useNavigate();
-
+ 
     function handleNavigateH() {
         navigate('/home');
     }

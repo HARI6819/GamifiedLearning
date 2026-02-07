@@ -71,6 +71,7 @@
   display: flex;
   align-items: center;
   justify-content: end;
+
 }
 
 .navigation ul {
@@ -98,7 +99,7 @@
 
 .nav-profile-img {
   display: flex;
-  width: clamp(20px, 4.5vw,  24px);
+  width: clamp(20px, 4.5vw, 24px);
   height: clamp(20px, 4.5vw, 24px);
   border-radius: 50%;
   object-fit: cover;
@@ -119,13 +120,16 @@
   font-size: 28px;
   cursor: pointer;
   color: #1e3a8a;
-  z-index: 1002;
+  position: relative;
+  z-index: 1005;
   transition: transform 0.3s ease;
 }
 
 .MobileView:active {
   transform: scale(0.9);
 }
+
+
 
 .menu-overlay {
   position: fixed;
@@ -183,7 +187,7 @@
     /* Hide subtitle on tablets to save space */
   }
 
-  .LName{
+  .LName {
     display: flex;
     align-items: center;
   }
@@ -254,8 +258,10 @@
     font-size: 15px;
   }
 
+
   .navigation ul {
-    width: 100%;
+    width: 60%;
+    height: fit-content;
     /* Full screen menu on very small devices */
   }
 
