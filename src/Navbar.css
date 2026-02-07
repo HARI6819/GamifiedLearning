@@ -27,7 +27,8 @@
 
 .logo {
   height: 100%;
-  width: 40%;
+  width: 30%;
+  background-color: red;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -67,7 +68,7 @@
 
 .navigation {
   height: 100%;
-  width: 60%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -211,6 +212,14 @@
     flex-direction: column;
     z-index: 1001;
     gap: 20px;
+  }
+
+  .navigation{
+    width: 30%;
+  }
+
+  .logo{
+    width: 70%;
   }
 
   .navigation ul.show {
