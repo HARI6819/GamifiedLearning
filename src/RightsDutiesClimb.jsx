@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./RightsDutiesClimb.css";
 import questions from "./data/arti.json";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { Dices, RotateCcw } from 'lucide-react';
+import { Dices, RotateCcw, Lock, LockOpen } from 'lucide-react';
 import { useLanguage } from "./context/LanguageContext";
 import config from "./config";
 
@@ -12,7 +12,8 @@ const ladders = {
   4: 13,
   27: 37,
   42: 54,
-  57: 76
+  57: 76,
+  46:80
 };
 
 const snakes = {
@@ -37,6 +38,32 @@ export default function RightsDutiesClimb() {
   const [currentQ, setCurrentQ] = useState(null);
   const [Number, setNumber] = useState(1);
   const [IsActiveDice, setIsActiveDice] = useState(false);
+  const [difficulty, setDifficulty] = useState("Easy");
+  const [unlockedLevels, setUnlockedLevels] = useState(["Easy"]);
+
+  useEffect(() => {
+    const fetchProgress = async () => {
+      const email = localStorage.getItem('userEmail');
+      if (!email) return;
+      try {
+        const res = await fetch(`${config.API_URL}/api/progress/${email}`, {
+          headers: { "ngrok-skip-browser-warning": "true" }
+        });
+        if (res.ok) {
+          const data = await res.json();
+          const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards"];
+          const completed = data.completedLevels || {};
+          const levels = ["Easy"];
+          if (allGames.every(g => completed[g]?.includes("Easy"))) levels.push("Medium");
+          if (allGames.every(g => completed[g]?.includes("Medium"))) levels.push("Hard");
+          setUnlockedLevels(levels);
+        }
+      } catch (e) {
+        console.error("Failed to fetch progress", e);
+      }
+    };
+    fetchProgress();
+  }, []);
 
   const rollDice = () => {
     let roll = 0;
@@ -50,8 +77,12 @@ export default function RightsDutiesClimb() {
 
     setTimeout(() => {
       clearInterval(id);
-      const randomQ =
-        questions[Math.floor(Math.random() * questions.length)];
+
+      // Filter questions by difficulty
+      const diffQuestions = questions.filter(q => q.difficulty === difficulty);
+      const pool = diffQuestions.length > 0 ? diffQuestions : questions;
+      const randomQ = pool[Math.floor(Math.random() * pool.length)];
+
       setIsActiveDice(false);
       setDice(roll);
       setCurrentQ(randomQ);
@@ -108,15 +139,12 @@ export default function RightsDutiesClimb() {
         setTimeout(() => setPopup(prev => ({ ...prev, show: false })), 2000);
       } else if (newPos === 100) {
         setPopup({ show: true, title: "🏆 Winner!", message: "Congratulations! You completed the game!", type: "win" });
-        updateGamesPlayed();
+        updateCompletion();
       }
     }, 800); // 800ms delay for smooth arrival before next move
   };
 
-
-
-
-  const updateGamesPlayed = async () => {
+  const updateCompletion = async () => {
     const email = localStorage.getItem('userEmail');
     if (!email) return;
     try {
@@ -125,11 +153,14 @@ export default function RightsDutiesClimb() {
         headers: { 'Content-Type': 'application/json', "ngrok-skip-browser-warning": "true" },
         body: JSON.stringify({
           email,
-          gamesPlayed: 1
+          gamesPlayed: 1,
+          totalPoints: difficulty === "Hard" ? 100 : (difficulty === "Medium" ? 60 : 30),
+          gameId: "rightsDutiesClimb",
+          completedLevel: difficulty
         })
       });
     } catch (e) {
-      console.error("Failed to update games played", e);
+      console.error("Failed to update progress", e);
     }
   };
 
@@ -347,6 +378,40 @@ export default function RightsDutiesClimb() {
 
           {/* SIDE PANEL */}
           <aside className="panel">
+            <div className="diff-selection" style={{ marginBottom: "20px", display: "flex", gap: "10px", justifyContent: "center", flexWrap: "wrap" }}>
+              {['Easy', 'Medium', 'Hard'].map((level) => {
+                const isUnlocked = unlockedLevels.includes(level);
+                return (
+                  <button
+                    key={level}
+                    onClick={() => isUnlocked && setDifficulty(level)}
+                    className={`diff-btn ${difficulty === level ? 'active' : ''}`}
+                    disabled={!isUnlocked}
+                    style={{
+                      padding: "8px 16px",
+                      borderRadius: "20px",
+                      border: "1px solid #ddd",
+                      background: difficulty === level ? "#1e3a8a" : (isUnlocked ? "#fff" : "#f1f5f9"),
+                      color: difficulty === level ? "#fff" : (isUnlocked ? "#1e3a8a" : "#94a3b8"),
+                      cursor: isUnlocked ? "pointer" : "not-allowed",
+                      fontSize: "0.85rem",
+                      fontWeight: "600",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "5px"
+                    }}
+                  >
+                    {isUnlocked ? (
+                      difficulty !== level && <LockOpen size={12} style={{ opacity: 0.7 }} />
+                    ) : (
+                      <Lock size={12} />
+                    )}
+                    {t.common.difficulty[level]}
+                  </button>
+                );
+              })}
+            </div>
+
             <div className="stats">
               <div>
                 <h2 style={{ color: " #1e3a8a" }}>{position}</h2>

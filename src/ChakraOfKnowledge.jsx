@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import articles from "./data/articles.json";
 import "./ChakraOfKnowledge.css";
 import Navbar from "./Navbar";
@@ -22,67 +22,60 @@ const SEGMENT_ANGLE = 360 / SEGMENTS.length;
 export default function ChakraOfKnowledge() {
   const { t } = useLanguage();
   const [rotation, setRotation] = useState(0);
-  const [selectedArticle, setSelectedArticle] = useState(null);
   const [isSpinning, setIsSpinning] = useState(false);
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  useEffect(() => {
+    // No longer fetching progression for this game
+  }, []);
 
   const spinWheel = () => {
     if (isSpinning) return;
 
     setIsSpinning(true);
     setSelectedArticle(null);
-
-    const randomAngle = Math.floor(Math.random() * 360);
-    const spins = 5 * 360;
-    const finalRotation = rotation + spins + randomAngle;
-
-    setRotation(finalRotation);
+    const newRotation = rotation + 1440 + Math.random() * 360;
+    setRotation(newRotation);
 
     setTimeout(() => {
-      const normalizedAngle = (360 - (finalRotation % 360)) % 360;
-      const segmentIndex = Math.floor(normalizedAngle / SEGMENT_ANGLE);
-      const category = SEGMENTS[segmentIndex];
+      const finalAngle = (newRotation % 360);
+      let category = "";
+      if (finalAngle >= 0 && finalAngle < 120) category = "Executive";
+      else if (finalAngle >= 120 && finalAngle < 240) category = "Legislature";
+      else category = "Judiciary";
 
-      const categoryArticles = articles.filter(
-        (a) => a.category === category
-      );
-
-      if (categoryArticles.length === 0) {
-        setIsSpinning(false);
-        return;
-      }
-
-      const randomArticle =
-        categoryArticles[
-        Math.floor(Math.random() * categoryArticles.length)
-        ];
+      // Filter articles by category ONLY. Difficulty no longer matters.
+      const pool = articles.filter(a => a.category === category);
+      const randomArticle = pool[Math.floor(Math.random() * pool.length)];
 
       setSelectedArticle(randomArticle);
       setIsSpinning(false);
       updateProgress(category);
-    }, 2500);
+    }, 4000);
   };
 
   const updateProgress = async (category) => {
     const email = localStorage.getItem('userEmail');
     if (!email) return;
 
+    const masteryKey = category.toLowerCase();
+
     try {
       await fetch(`${config.API_URL}/api/progress/update`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          "ngrok-skip-browser-warning": "true"
+          "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "true",
         },
         body: JSON.stringify({
           email,
           articlesRead: 1,
           totalPoints: 10,
-          gameId: "chakra",
-          mastery: { [category.toLowerCase()]: 5 } // Each article read gives 5% mastery for that category
-        })
+          mastery: { [masteryKey]: 5 },
+          gameId: "chakra"
+        }),
       });
     } catch (e) {
-      console.error("Failed to update progress", e);
+      console.error("Progress update failed", e);
     }
   };
 
@@ -176,14 +169,15 @@ export default function ChakraOfKnowledge() {
                 <text x="50" y="50" className="center-icon">⚖️</text>
               </svg>
             </div>
-
-            <button
-              className="spin-btn"
-              onClick={spinWheel}
-              disabled={isSpinning}
-            >
-              {t.chakra.spinBtn}
-            </button>
+            <div className="wheel-controls">
+              <button
+                className={`spin-btn ${isSpinning ? "spinning" : ""}`}
+                onClick={spinWheel}
+                disabled={isSpinning}
+              >
+                {isSpinning ? "..." : t.chakra.spinBtn}
+              </button>
+            </div>
           </div>
 
           {/* Info Section */}
@@ -221,14 +215,9 @@ export default function ChakraOfKnowledge() {
                   <p >{selectedArticle.funFact}</p>
                 </div>
 
-                <div className="badge-row bottom">
-                  <span className="badge">
-                    Part {selectedArticle.originalPart}
-                  </span>
-                  <span className="badge">
-                    {selectedArticle.difficulty}
-                  </span>
-                </div>
+                <span className="badge">
+                  Part {selectedArticle.originalPart}
+                </span>
               </div>
             )}
           </div>

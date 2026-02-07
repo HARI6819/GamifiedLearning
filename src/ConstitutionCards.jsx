@@ -1,10 +1,11 @@
-import { useState } from "react";
-import cards from "./data/cards.json";
+import { useState, useEffect } from "react";
+import cardData from "./data/cards.json";
 import "./ConstitutionCards.css";
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { useLanguage } from './context/LanguageContext';
 import config from "./config";
+import { Lock, LockOpen } from "lucide-react";
 
 export default function ConstitutionCards() {
     const { t, language } = useLanguage();
@@ -14,8 +15,46 @@ export default function ConstitutionCards() {
     const [learnedCount, setLearnedCount] = useState(0);
     const [assessedCards, setAssessedCards] = useState([]);
     const [popup, setPopup] = useState({ show: false, message: "", type: "" });
+    const [difficulty, setDifficulty] = useState("Easy");
+    const [unlockedLevels, setUnlockedLevels] = useState(["Easy"]);
+    const [cards, setCards] = useState([]);
 
     const currentCard = cards[currentIndex];
+
+    useEffect(() => {
+        const fetchProgress = async () => {
+            const email = localStorage.getItem('userEmail');
+            if (!email) return;
+            try {
+                const res = await fetch(`${config.API_URL}/api/progress/${email}`, {
+                    headers: { "ngrok-skip-browser-warning": "true" }
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards"];
+                    const completed = data.completedLevels || {};
+                    const levels = ["Easy"];
+                    if (allGames.every(g => completed[g]?.includes("Easy"))) levels.push("Medium");
+                    if (allGames.every(g => completed[g]?.includes("Medium"))) levels.push("Hard");
+                    setUnlockedLevels(levels);
+                }
+            } catch (e) {
+                console.error("Failed to fetch progress", e);
+            }
+        };
+        fetchProgress();
+    }, []);
+
+    useEffect(() => {
+        const filtered = cardData.filter(c => c.difficulty === difficulty);
+        const pool = filtered.length > 0 ? filtered : cardData;
+        setCards([...pool].sort(() => 0.5 - Math.random()));
+        setCurrentIndex(0);
+        setFlipped(false);
+        setKnewCount(0);
+        setLearnedCount(0);
+        setAssessedCards([]);
+    }, [difficulty]);
 
     // Helper to get translated content
     const getCardContent = () => {
@@ -57,27 +96,21 @@ export default function ConstitutionCards() {
             "Expanding your horizon! 🌅"
         ];
 
-        const messages = type === 'knew' ? knewMessages : learnedMessages;
-        const randomMsg = messages[Math.floor(Math.random() * messages.length)];
-
-        setPopup({ show: true, message: randomMsg, type });
-        setTimeout(() => setPopup(prev => ({ ...prev, show: false })), 2000);
-
         if (type === 'knew') setKnewCount(prev => prev + 1);
-        if (type === 'learned') setLearnedCount(prev => prev + 1);
+        else setLearnedCount(prev => prev + 1);
 
-        const newAssessed = [...assessedCards, currentCard.id];
+        const newAssessed = [...assessedCards, cards[currentIndex].id];
         setAssessedCards(newAssessed);
+
+        const popupMsg = type === 'knew' ? knewMessages[Math.floor(Math.random() * knewMessages.length)] : learnedMessages[Math.floor(Math.random() * learnedMessages.length)];
+        setPopup({ show: true, message: popupMsg, type });
+        setTimeout(() => setPopup({ show: false, message: '', type: '' }), 2000);
 
         if (newAssessed.length === cards.length) {
             setTimeout(() => {
-                setPopup({ show: true, message: "🎉 You've learned all the cards! Well done!", type: "complete" });
+                setPopup({ show: true, message: "🎉 Congratulations! All cards mastered!", type: 'knew' });
                 updateProgress();
-            }, 2000);
-
-            setTimeout(() => {
-                setPopup({ show: false, message: "", type: "" });
-            }, 4000);
+            }, 1000);
         }
     };
 
@@ -95,8 +128,9 @@ export default function ConstitutionCards() {
                 body: JSON.stringify({
                     email,
                     gamesPlayed: 1,
-                    totalPoints: 20, // Fixed points for completing all cards
-                    gameId: "constitutionCards"
+                    totalPoints: difficulty === "Hard" ? 40 : (difficulty === "Medium" ? 25 : 10),
+                    gameId: "constitutionCards",
+                    completedLevel: difficulty
                 })
             });
         } catch (e) {
@@ -118,9 +152,39 @@ export default function ConstitutionCards() {
                     </div>
                 </div>
                 <div className="container10">
-                    {/* Header */}
-
-
+                    <div className="diff-selection" style={{ marginBottom: "20px", display: "flex", gap: "10px", justifyContent: "center" }}>
+                        {['Easy', 'Medium', 'Hard'].map((level) => {
+                            const isUnlocked = unlockedLevels.includes(level);
+                            return (
+                                <button
+                                    key={level}
+                                    onClick={() => isUnlocked && setDifficulty(level)}
+                                    className={`diff-btn ${difficulty === level ? 'active' : ''}`}
+                                    disabled={!isUnlocked}
+                                    style={{
+                                        padding: "8px 16px",
+                                        borderRadius: "20px",
+                                        border: "1px solid #ddd",
+                                        background: difficulty === level ? "#1e3a8a" : (isUnlocked ? "#fff" : "#f1f5f9"),
+                                        color: difficulty === level ? "#fff" : (isUnlocked ? "#1e3a8a" : "#94a3b8"),
+                                        cursor: isUnlocked ? "pointer" : "not-allowed",
+                                        fontSize: "0.85rem",
+                                        fontWeight: "600",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: "5px"
+                                    }}
+                                >
+                                    {isUnlocked ? (
+                                        difficulty !== level && <LockOpen size={12} style={{ opacity: 0.7 }} />
+                                    ) : (
+                                        <Lock size={12} />
+                                    )}
+                                    {t.common.difficulty[level]}
+                                </button>
+                            );
+                        })}
+                    </div>
                     {/* Progress */}
                     <div className="progress-header10">
                         <span>
@@ -140,30 +204,32 @@ export default function ConstitutionCards() {
                     </div>
 
                     {/* Flashcard */}
-                    <div className="card-wrapper10" onClick={() => setFlipped(!flipped)}>
-                        <div className={`card10 ${flipped ? "flipped10" : ""}`}>
-                            {/* Front */}
-                            <div className="card-face10 card-front10">
-                                <span className="tag10">{currentCard.category}</span>
-                                <div className="icon10">📖</div>
-                                <h2>{content.q}</h2>
-                                <p className="hint10">{t.cards.flip}</p>
-                            </div>
+                    {currentCard && (
+                        <div className="card-wrapper10" onClick={() => setFlipped(!flipped)}>
+                            <div className={`card10 ${flipped ? "flipped10" : ""}`}>
+                                {/* Front */}
+                                <div className="card-face10 card-front10">
+                                    <span className="tag10">{currentCard.category}</span>
+                                    <div className="icon10">📖</div>
+                                    <h2>{content.q}</h2>
+                                    <p className="hint10">{t.cards.flip}</p>
+                                </div>
 
-                            {/* Back */}
-                            <div className="card-face10 card-back10">
-                                <span className="tag10">{currentCard.category}</span>
-                                <p className="answer10">{content.a}</p>
+                                {/* Back */}
+                                <div className="card-face10 card-back10">
+                                    <span className="tag10">{currentCard.category}</span>
+                                    <p className="answer10">{content.a}</p>
 
-                                <div className="fact10">
-                                    💡 Tip: This question belong to <b>{currentCard.category}</b>
+                                    <div className="fact10">
+                                        💡 Tip: This question belong to <b>{currentCard.category}</b>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    )}
 
                     {/* Actions */}
-                    {flipped && (
+                    {flipped && currentCard && (
                         <div className="actions10">
                             <button
                                 className="btn10 secondary10"

@@ -95,13 +95,17 @@ export const translations = {
                 judiciary: "Judiciary",
                 all: "All",
                 union: "Union (Part V)",
-                state: "States (Part VI)"
-            }
+                state: "States (Part VI)",
+                articles: "Articles"
+            },
+            noArticlesFound: "No articles found in this category."
         },
         gamesPage: {
             hub: "Game Hub",
             title: "Choose Your Game",
             subtitle: "Multiple formats to learn about Legislature, Executive & Judiciary.",
+            lockedMessage: "Complete reading 10 articles to unlock this page",
+            articlesToUnlock: "Articles need to be read to unlock",
             comingSoon: {
                 title: "More Games Coming Soon!",
                 desc: "We're working on Board Games, Snake & Ladder, and Monopoly versions. Stay tuned for more fun ways to learn the Constitution!"
@@ -233,6 +237,8 @@ export const translations = {
             desc: "Match articles with their simplified meanings in this memory game!",
             startDesc: "Match constitutional articles with their simplified meanings. Test your memory and learn!",
             difficulty: "Select Difficulty",
+            article: "Article",
+            meaning: "Meaning",
             startGame: "Start Game",
             moves: "Moves",
             time: "Time",
@@ -243,14 +249,20 @@ export const translations = {
             wellDone: "Well Done!",
             playAgain: "Play Again",
             pairs: [
-                { id: 1, article: "Article 14", mean: "Equality before law" },
-                { id: 2, article: "Article 19", mean: "Freedom of Speech" },
-                { id: 3, article: "Article 21", mean: "Right to Life" },
-                { id: 4, article: "Article 32", mean: "Constitutional Remedies" },
-                { id: 5, article: "Article 52", mean: "President of India" },
-                { id: 6, article: "Article 63", mean: "Vice-President of India" },
-                { id: 7, article: "Article 72", mean: "Pardoning Power" },
-                { id: 8, article: "Article 76", mean: "Attorney General" }
+                { id: 1, article: "Article 14", mean: "Equality before law", difficulty: "Easy" },
+                { id: 2, article: "Article 19", mean: "Freedom of Speech", difficulty: "Easy" },
+                { id: 3, article: "Article 21", mean: "Right to Life", difficulty: "Easy" },
+                { id: 4, article: "Article 32", mean: "Constitutional Remedies", difficulty: "Easy" },
+                { id: 5, article: "Article 52", mean: "President of India", difficulty: "Easy" },
+                { id: 6, article: "Article 63", mean: "Vice-President of India", difficulty: "Medium" },
+                { id: 7, article: "Article 72", mean: "Pardoning Power", difficulty: "Medium" },
+                { id: 8, article: "Article 76", mean: "Attorney General", difficulty: "Medium" },
+                { id: 9, article: "Article 124", mean: "Supreme Court", difficulty: "Medium" },
+                { id: 10, article: "Article 153", mean: "State Governors", difficulty: "Medium" },
+                { id: 11, article: "Article 163", mean: "State CM Advice", difficulty: "Hard" },
+                { id: 12, article: "Article 214", mean: "High Courts", difficulty: "Hard" },
+                { id: 13, article: "Article 226", mean: "Writ Power", difficulty: "Hard" },
+                { id: 14, article: "Article 368", mean: "Amend Constitution", difficulty: "Hard" }
             ]
         }
     },
@@ -350,13 +362,17 @@ export const translations = {
                 judiciary: "न्यायपालिका",
                 all: "सभी",
                 union: "संघ (भाग V)",
-                state: "राज्य (भाग VI)"
-            }
+                state: "राज्य (भाग VI)",
+                articles: "लेख"
+            },
+            noArticlesFound: "इस श्रेणी में कोई लेख नहीं मिला।"
         },
         gamesPage: {
             hub: "खेल हब",
             title: "अपना खेल चुनें",
             subtitle: "विधायिका, कार्यपालिका और न्यायपालिका के बारे में जानने के लिए कई प्रारूप।",
+            lockedMessage: "इस पृष्ठ को अनलॉक करने के लिए कम से कम 10 लेख पढ़ना पूरा करें",
+            articlesToUnlock: "अनलॉक करने के लिए लेखों को पढ़ने की आवश्यकता है",
             comingSoon: {
                 title: "और खेल जल्द ही आ रहे हैं!",
                 desc: "हम बोर्ड गेम्स, सांप और सीढ़ी, और एकाधिकार संस्करणों पर काम कर रहे हैं। संविधान सीखने के और मज़ेदार तरीकों के लिए बने रहें!"
@@ -488,6 +504,8 @@ export const translations = {
             desc: "इस मेमोरी गेम में लेखों को उनके सरल अर्थों के साथ मिलाएं!",
             startDesc: "संवैधानिक लेखों को उनके सरल अर्थों के साथ मिलाएं। अपनी स्मृति का परीक्षण करें और सीखें!",
             difficulty: "कठिनाई चुनें",
+            article: "अनुच्छेद",
+            meaning: "अर्थ",
             startGame: "खेल शुरू करें",
             moves: "चालें",
             time: "समय",
@@ -498,14 +516,20 @@ export const translations = {
             wellDone: "बहुत बढ़िया!",
             playAgain: "फिर से खेलें",
             pairs: [
-                { id: 1, article: "अनुच्छेद 14", mean: "कानून के समक्ष समानता" },
-                { id: 2, article: "अनुच्छेद 19", mean: "अभिव्यक्ति की स्वतंत्रता" },
-                { id: 3, article: "अनुच्छेद 21", mean: "जीवन का अधिकार" },
-                { id: 4, article: "अनुच्छेद 32", mean: "संवैधानिक उपचार" },
-                { id: 5, article: "अनुच्छेद 52", mean: "भारत के राष्ट्रपति" },
-                { id: 6, article: "अनुच्छेद 63", mean: "भारत के उपराष्ट्रपति" },
-                { id: 7, article: "अनुच्छेद 72", mean: "क्षमादान शक्ति" },
-                { id: 8, article: "अनुच्छेद 76", mean: "महान्यायवादी" }
+                { id: 1, article: "अनुच्छेद 14", mean: "कानून के समक्ष समानता", difficulty: "Easy" },
+                { id: 2, article: "अनुच्छेद 19", mean: "अभिव्यक्ति की स्वतंत्रता", difficulty: "Easy" },
+                { id: 3, article: "अनुच्छेद 21", mean: "जीवन का अधिकार", difficulty: "Easy" },
+                { id: 4, article: "अनुच्छेद 32", mean: "संवैधानिक उपचार", difficulty: "Easy" },
+                { id: 5, article: "अनुच्छेद 52", mean: "भारत के राष्ट्रपति", difficulty: "Easy" },
+                { id: 6, article: "अनुच्छेद 63", mean: "भारत के उपराष्ट्रपति", difficulty: "Medium" },
+                { id: 7, article: "अनुच्छेद 72", mean: "क्षमादान शक्ति", difficulty: "Medium" },
+                { id: 8, article: "अनुच्छेद 76", mean: "महान्यायवादी", difficulty: "Medium" },
+                { id: 9, article: "अनुच्छेद 124", mean: "सर्वोच्च न्यायालय", difficulty: "Medium" },
+                { id: 10, article: "अनुच्छेद 153", mean: "राज्य के राज्यपाल", difficulty: "Medium" },
+                { id: 11, article: "अनुच्छेद 163", mean: "मुख्यमंत्री की सलाह", difficulty: "Hard" },
+                { id: 12, article: "अनुच्छेद 214", mean: "उच्च न्यायालय", difficulty: "Hard" },
+                { id: 13, article: "अनुच्छेद 226", mean: "रिट शक्ति", difficulty: "Hard" },
+                { id: 14, article: "अनुच्छेद 368", mean: "संविधान संशोधन", difficulty: "Hard" }
             ]
         }
     }

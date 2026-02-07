@@ -106,11 +106,16 @@
   dominant-baseline: middle;
 }
 
+.wheel-controls{
+  overflow: visible;
+}
+
 .spin-btn {
   margin-top: 1rem;
   padding: 0.6rem 1.2rem;
   font-size: 1rem;
   cursor: pointer;
+  /* overflow: visible; */
 }
 
 .spin-btn:disabled {

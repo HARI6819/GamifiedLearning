@@ -3,49 +3,74 @@ import { useLanguage } from "./context/LanguageContext";
 import "./ArticleMatch.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { Brain, RotateCcw, Timer, Trophy } from "lucide-react";
+import { Brain, RotateCcw, Timer, Trophy, Lock, LockOpen, Sparkles } from "lucide-react";
 import config from "./config";
+
+const diffConfig = {
+    Easy: { pairs: 4, grid: "grid-4" },
+    Medium: { pairs: 6, grid: "grid-6" },
+    Hard: { pairs: 8, grid: "grid-8" }
+};
 
 export default function ArticleMatch() {
     const { t } = useLanguage();
     const [gameState, setGameState] = useState("start"); // start, playing, won
     const [difficulty, setDifficulty] = useState("Easy"); // Easy, Medium, Hard
+    const [unlockedLevels, setUnlockedLevels] = useState(["Easy"]);
     const [cards, setCards] = useState([]);
     const [flipped, setFlipped] = useState([]);
     const [matched, setMatched] = useState([]);
     const [moves, setMoves] = useState(0);
     const [timer, setTimer] = useState(0);
 
-    // Difficulty Config
-    const diffConfig = {
-        Easy: { pairs: 4, grid: "grid-4" },
-        Medium: { pairs: 6, grid: "grid-6" },
-        Hard: { pairs: 8, grid: "grid-8" }
-    };
-
-    // Timer Effect
     useEffect(() => {
         let interval;
         if (gameState === "playing") {
-            interval = setInterval(() => setTimer(prev => prev + 1), 1000);
+            interval = setInterval(() => {
+                setTimer(prev => prev + 1);
+            }, 1000);
         }
         return () => clearInterval(interval);
     }, [gameState]);
 
+    useEffect(() => {
+        const fetchProgress = async () => {
+            const email = localStorage.getItem('userEmail');
+            if (!email) return;
+            try {
+                const res = await fetch(`${config.API_URL}/api/progress/${email}`, {
+                    headers: { "ngrok-skip-browser-warning": "true" }
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards"];
+                    const completed = data.completedLevels || {};
+                    const levels = ["Easy"];
+                    if (allGames.every(g => completed[g]?.includes("Easy"))) levels.push("Medium");
+                    if (allGames.every(g => completed[g]?.includes("Medium"))) levels.push("Hard");
+                    setUnlockedLevels(levels);
+                }
+            } catch (e) {
+                console.error("Failed to fetch progress", e);
+            }
+        };
+        fetchProgress();
+    }, []);
+
     const startGame = () => {
         const pairCount = diffConfig[difficulty].pairs;
-        // Get pairs from translations to ensure language refresh
-        const allPairs = t.articleMatch.pairs;
+        // Filter pairs by difficulty or just take from current pool
+        const allPairs = t.articleMatch.pairs.filter(p => p.difficulty === difficulty);
 
-        // Shuffle and slice pairs
-        const selectedPairs = [...allPairs]
+        // If not enough pairs for specific difficulty, fallback to all but warn
+        const pool = allPairs.length >= pairCount ? allPairs : t.articleMatch.pairs;
+
+        const selectedPairs = [...pool]
             .sort(() => 0.5 - Math.random())
             .slice(0, pairCount);
 
-        // Create cards: 2 for each pair (Article & Meaning)
         const deck = [];
         selectedPairs.forEach((pair) => {
-            // Card type 1: Article Name
             deck.push({
                 id: `a-${pair.id}`,
                 pairId: pair.id,
@@ -53,7 +78,6 @@ export default function ArticleMatch() {
                 type: 'article',
                 icon: '📜'
             });
-            // Card type 2: Meaning
             deck.push({
                 id: `m-${pair.id}`,
                 pairId: pair.id,
@@ -63,7 +87,6 @@ export default function ArticleMatch() {
             });
         });
 
-        // Shuffle deck
         setCards(deck.sort(() => 0.5 - Math.random()));
         setFlipped([]);
         setMatched([]);
@@ -73,7 +96,6 @@ export default function ArticleMatch() {
     };
 
     const handleCardClick = (id) => {
-        // Prevent clicking if 2 cards flipped match animation logic, or already matched/flipped
         if (flipped.length === 2 || matched.includes(id) || flipped.includes(id)) return;
 
         const newFlipped = [...flipped, id];
@@ -86,19 +108,18 @@ export default function ArticleMatch() {
             const card2 = cards.find(c => c.id === id2);
 
             if (card1.pairId === card2.pairId) {
-                // Match found
-                setMatched(prev => [...prev, id1, id2]);
+                setMatched(prev => {
+                    const updatedMatched = [...prev, id1, id2];
+                    if (updatedMatched.length === cards.length) {
+                        setTimeout(() => {
+                            setGameState("won");
+                            updateProgress();
+                        }, 500);
+                    }
+                    return updatedMatched;
+                });
                 setFlipped([]);
-
-                // Check Win
-                if (matched.length + 2 === cards.length) {
-                    setTimeout(() => {
-                        setGameState("won");
-                        updateProgress();
-                    }, 500);
-                }
             } else {
-                // No match - flip back after delay
                 setTimeout(() => setFlipped([]), 1000);
             }
         }
@@ -119,7 +140,8 @@ export default function ArticleMatch() {
                     email,
                     gamesPlayed: 1,
                     totalPoints: difficulty === "Hard" ? 50 : (difficulty === "Medium" ? 30 : 15),
-                    gameId: "articleMatch"
+                    gameId: "articleMatch",
+                    completedLevel: difficulty
                 })
             });
         } catch (e) {
@@ -154,19 +176,25 @@ export default function ArticleMatch() {
                         <h2>{t.articleMatch.startTitle}</h2>
                         <p style={{ fontFamily: "sans-serif", marginBottom: "20px", fontSize: ".9rem", maxWidth: "80%", color: "grey" }}>{t.articleMatch.startDesc}</p>
                         <h4>{t.articleMatch.difficulty}</h4>
-                        <div className="difficulty-options">
-                            {Object.keys(diffConfig).map((lvl) => (
-                                <button
-                                    key={lvl}
-                                    className={`diff-btn ${difficulty === lvl ? "active" : ""}`}
-                                    onClick={() => setDifficulty(lvl)}
-                                >
-                                    {t.common.difficulty[lvl] || lvl}
-                                    <span style={{ fontSize: '0.8em', display: 'block', opacity: 0.8 }}>
-                                        ({diffConfig[lvl].pairs} Pairs)
-                                    </span>
-                                </button>
-                            ))}
+                        <div className="diff-grid1">
+                            {['Easy', 'Medium', 'Hard'].map((level) => {
+                                const isUnlocked = unlockedLevels.includes(level);
+                                return (
+                                    <button
+                                        key={level}
+                                        onClick={() => isUnlocked && setDifficulty(level)}
+                                        className={`diff-btn1 ${difficulty === level ? 'active' : ''} ${!isUnlocked ? 'locked' : ''}`}
+                                        disabled={!isUnlocked}
+                                    >
+                                        {isUnlocked ? (
+                                            difficulty !== level && <LockOpen size={14} style={{ marginRight: 8, opacity: 0.7 }} />
+                                        ) : (
+                                            <Lock size={14} style={{ marginRight: 8 }} />
+                                        )}
+                                        {t.common.difficulty[level]}
+                                    </button>
+                                );
+                            })}
                         </div>
                         <button className="start-btn" onClick={startGame}>
                             {t.articleMatch.startGame}
@@ -196,7 +224,7 @@ export default function ArticleMatch() {
                                 return (
                                     <div
                                         key={card.id}
-                                        className={`memory-card ${isFlipped ? "flipped" : ""} ${matched.includes(card.id) ? "matched" : ""}`}
+                                        className={`memory-card ${isFlipped ? "flipped" : ""} ${matched.includes(card.id) ? "matched" : ""} type-${card.type}`}
                                         onClick={() => handleCardClick(card.id)}
                                     >
                                         <div className="card-face card-front">
@@ -204,7 +232,12 @@ export default function ArticleMatch() {
                                             <span style={{ marginTop: '8px', fontSize: '0.8rem' }}>Click to flip</span>
                                         </div>
                                         <div className="card-face card-back">
-                                            <div className="card-icon">{card.icon}</div>
+                                            <div className="card-header-row">
+                                                <div className={`card-badge ${card.type}`}>
+                                                    {card.type === 'article' ? `📜 ${t.articleMatch.article}` : `💡 ${t.articleMatch.meaning}`}
+                                                </div>
+                                                {matched.includes(card.id) && <Sparkles className="sparkle-icon" size={20} />}
+                                            </div>
                                             <div className="card-text">{card.content}</div>
                                         </div>
                                     </div>

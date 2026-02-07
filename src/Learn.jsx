@@ -3,8 +3,8 @@ import "./Learn.css";
 // import articlesData from "./data/articles.json";
 import Navbar from './Navbar'
 import Footer from "./Footer";
-import { BookOpen, Search, X } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { BookOpen, Search, X, ArrowLeft, MoveRight } from "lucide-react";
+import { useLocation, useSearchParams, useNavigate } from "react-router-dom";
 import { useLanguage } from "./context/LanguageContext";
 import { articleTranslations } from "./data/articleTranslations";
 import config from "./config";
@@ -12,9 +12,11 @@ import config from "./config";
 
 const Learn = () => {
     const { t, language } = useLanguage();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const selectedCategory = searchParams.get("category");
+
     const [articlesData, setArticlesData] = useState([]);
     const [search1, setSearch] = useState("");
-    const [category, setCategory] = useState("all");
     const [organ, setOrgan] = useState("all");
     const [loading, setLoading] = useState(true);
     const [selectedArticle, setSelectedArticle] = useState(null);
@@ -48,17 +50,7 @@ const Learn = () => {
         updateProgress(article.category);
     };
 
-    const { search } = useLocation();
-    const params = new URLSearchParams(search);
-
-    const query = params.get("category");
-
     useEffect(() => {
-        if (query) {
-            const formatedData = query.charAt(0).toUpperCase() + query.substring(1);
-            setCategory(formatedData);
-        }
-
         async function fetchArticalData() {
             try {
                 const datas = await fetch(`${config.API_URL}/api/articles`, {
@@ -78,7 +70,6 @@ const Learn = () => {
         fetchArticalData();
     }, []);
 
-
     const filteredArticles = articlesData.filter(article => {
         const matchesSearch =
             article.title.toLowerCase().includes(search1.toLowerCase()) ||
@@ -86,13 +77,20 @@ const Learn = () => {
             article.number.includes(search1);
 
         const matchesCategory =
-            category === "all" || article.category === category;
+            !selectedCategory || article.category === selectedCategory;
 
         const matchesOrgan =
             organ === "all" || article.organ === organ;
 
         return matchesSearch && matchesCategory && matchesOrgan;
     });
+
+    // Auto-select first article when category changes
+    useEffect(() => {
+        if (selectedCategory && filteredArticles.length > 0 && !selectedArticle) {
+            setSelectedArticle(filteredArticles[0]);
+        }
+    }, [selectedCategory, filteredArticles, selectedArticle]);
 
     // Helper to get translated article data
     const getTranslatedArticle = (article) => {
@@ -105,22 +103,53 @@ const Learn = () => {
     // Helper to translate category/organ/difficulty
     const getTranslatedString = (key, type) => {
         if (!key) return "";
-        // Map API values to translation keys if necessary (lowercase for keys)
         const lowerKey = key.toLowerCase();
 
         if (type === 'category') {
-            // 'Legislature' -> t.learn.filters.legislature
             return t.learn.filters[lowerKey] || key;
         }
         if (type === 'organ') {
-            // 'Union' -> t.learn.filters.union
-            // 'State' -> t.learn.filters.state
             return t.learn.filters[lowerKey] || key;
         }
         if (type === 'difficulty') {
             return t.common.difficulty[key] || key;
         }
         return key;
+    };
+
+    const organs = [
+        {
+            id: "Legislature",
+            icon: "📜",
+            title: t.learn.filters.legislature,
+            desc: t.home.pillars.legislature.desc,
+            color: "orange"
+        },
+        {
+            id: "Executive",
+            icon: "🏛️",
+            title: t.learn.filters.executive,
+            desc: t.home.pillars.executive.desc,
+            color: "blue"
+        },
+        {
+            id: "Judiciary",
+            icon: "⚖️",
+            title: t.learn.filters.judiciary,
+            desc: t.home.pillars.judiciary.desc,
+            color: "green"
+        }
+    ];
+
+    const handleCategorySelect = (id) => {
+        setSearchParams({ category: id });
+        window.scrollTo(0, 0);
+    };
+
+    const handleBack = () => {
+        setSearchParams({});
+        setSearch("");
+        setOrgan("all");
     };
 
     if (loading) {
@@ -144,107 +173,167 @@ const Learn = () => {
                         <BookOpen className="badge1-icon" />
                         <span>{t.learn.badge}</span>
                     </div>
-                    <div>
+
+                    <div className="learn-header">
                         <h1 className="title">{t.learn.title}</h1>
                         <p className="subtitle">
                             {t.learn.subtitle}
                         </p>
-
-                        {/* Search */}
-
-                        <input
-                            className="search-box"
-                            placeholder={t.learn.searchPlaceholder}
-                            value={search1}
-                            onChange={(e) => setSearch(e.target.value)}
-                        />
-
-                        {/* Filters */}
-                        <div className="filters">
-                            <button onClick={() => setCategory("all")} className={category === "all" ? "active" : ""}>{t.learn.filters.allCategories}</button>
-                            <button onClick={() => setCategory("Legislature")} className={category === "Legislature" ? "active" : ""}>📜 {t.learn.filters.legislature}</button>
-                            <button onClick={() => setCategory("Executive")} className={category === "Executive" ? "active" : ""}>🏛️ {t.learn.filters.executive}</button>
-                            <button onClick={() => setCategory("Judiciary")} className={category === "Judiciary" ? "active" : ""}>⚖️ {t.learn.filters.judiciary}</button>
-                        </div>
-
-                        <div className="filters secondary">
-                            <button onClick={() => setOrgan("all")} className={organ === "all" ? "active" : ""}>{t.learn.filters.all}</button>
-                            <button onClick={() => setOrgan("Union")} className={organ === "Union" ? "active" : ""}>🇮🇳 {t.learn.filters.union}</button>
-                            <button onClick={() => setOrgan("State")} className={organ === "State" ? "active" : ""}>🏛️ {t.learn.filters.state}</button>
-                        </div>
-
-                        <p className="count">{t.learn.showing} {filteredArticles.length} {t.learn.articles}</p>
-
-                        {/* Articles */}
-                        <div className="articles">
-                            {filteredArticles.map(article => {
-                                const translatedArticle = getTranslatedArticle(article);
-                                return (
-                                    <div
-                                        className={`article-card ${article.category} clickable`}
-                                        key={article.id}
-                                        onClick={() => handleArticleClick(article)}
-                                    >
-                                        <div className="badges">
-                                            <span className="badge outl">{getTranslatedString(article.category, 'category')}</span>
-                                            <span className="badge outline">{getTranslatedString(article.organ, 'organ')}</span>
-                                            <span className="badge outline">Part {article.originalPart}</span>
-                                        </div>
-
-                                        <h3 className="ArticleLine">
-                                            <span className="article-number">Article {article.number}</span> — {translatedArticle.title}
-                                        </h3>
-                                        <p style={{ color: "grey" }}>Read more...</p>
-                                    </div>
-                                )
-                            })}
-                        </div>
                     </div>
                 </div>
+                {!selectedCategory ? (
+                    /* View 1: Category Selection */
+                    <div className="category-grid">
+                        {organs.map(org => (
+                            <div
+                                key={org.id}
+                                className={`category-hero-card ${org.color}`}
+                                onClick={() => handleCategorySelect(org.id)}
+                            >
+                                <div>
+                                    <div className="hero-card-icon">{org.icon}</div>
+                                    <div className="hero-card-content">
 
-                {/* Article Detail Popup */}
-                {selectedArticle && (
-                    <div className="article-popup-overlay" onClick={() => setSelectedArticle(null)}>
-                        <div className="article-popup-content" onClick={e => e.stopPropagation()}>
-                            <button className="popup-close-btn" onClick={() => setSelectedArticle(null)}>
-                                <X size={24} />
+                                        <h3>{org.title}</h3>
+                                        <p>{org.desc}</p>
+                                    </div>
+                                </div>
+                                <div className="explore-btn">
+                                    <span>{t.home.pillars.explore}</span>
+                                    <MoveRight size={18} />
+                                </div>
+
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    /* View 2: Article List (Split-Pane Explorer) */
+                    <div className="detailed-articles-view">
+                        <div className="detailed-view-header">
+                            <button className="back-to-selection" onClick={handleBack}>
+                                <ArrowLeft size={20} />
+                                <span>{t.login.back}</span>
                             </button>
 
-                            <div className="popup-header">
-                                <span className={`popup-badge ${selectedArticle.category}`}>
-                                    {getTranslatedString(selectedArticle.category, 'category')}
-                                </span>
-                                <span className="popup-badge outline">
-                                    {getTranslatedString(selectedArticle.organ, 'organ')}
-                                </span>
+                            <div className="current-category-header">
+                                <div className="category-info">
+                                    <span className={`category-tag ${selectedCategory}`}>
+                                        {organs.find(o => o.id === selectedCategory)?.icon} {organs.find(o => o.id === selectedCategory)?.title} {t.learn.filters.articles}
+                                    </span>
+                                </div>
                             </div>
 
-                            <h2 className="popup-title">
-                                <span className="popup-article-num">Article {selectedArticle.number}</span>
-                                <br />
-                                {getTranslatedArticle(selectedArticle).title}
-                            </h2>
+                            {/* Global Filters: Search & Organ (Union/State) */}
+                            <div className="global-filters">
+                                <div className="search-wrapper">
+                                    <Search className="search-icon" size={20} />
+                                    <input
+                                        className="search-box"
+                                        placeholder={t.learn.searchPlaceholder}
+                                        value={search1}
+                                        onChange={(e) => setSearch(e.target.value)}
+                                    />
+                                </div>
 
-                            <div className="popup-body">
-                                <p className="popup-description">
-                                    {getTranslatedArticle(selectedArticle).simplifiedText}
-                                </p>
+                                <div className="filters secondary">
+                                    <button onClick={() => setOrgan("all")} className={organ === "all" ? "active" : ""}>{t.learn.filters.all}</button>
+                                    <button onClick={() => setOrgan("Union")} className={organ === "Union" ? "active" : ""}>🇮🇳 {t.learn.filters.union}</button>
+                                    <button onClick={() => setOrgan("State")} className={organ === "State" ? "active" : ""}>🏛️ {t.learn.filters.state}</button>
+                                </div>
+                                <p className="label-showing">{t.learn.showing} {filteredArticles.length} {t.learn.articles}</p>
+                            </div>
+                        </div>
 
-                                {getTranslatedArticle(selectedArticle).funFact && (
-                                    <div className="popup-fun-fact">
-                                        <h4>💡 {t.learn.funFact}</h4>
-                                        <p>{getTranslatedArticle(selectedArticle).funFact}</p>
+                        <div className="explorer-layout">
+                            {/* Left Pane: Article Cards */}
+                            <div className="article-sidebar">
+                                <div className="articles detailed-grid">
+                                    {filteredArticles.length > 0 ? (
+                                        filteredArticles.map(article => {
+                                            const translatedArticle = getTranslatedArticle(article);
+                                            const isActive = selectedArticle?.id === article.id;
+                                            return (
+                                                <div
+                                                    className={`article-card ${article.category} clickable ${isActive ? 'active-card' : ''}`}
+                                                    key={article.id}
+                                                    onClick={() => handleArticleClick(article)}
+                                                >
+                                                    <div className="badges">
+                                                        <span className="badge outline">{getTranslatedString(article.organ, 'organ')}</span>
+                                                        <span className="badge outline">Part {article.originalPart}</span>
+                                                    </div>
+
+                                                    <h3 className="ArticleLine">
+                                                        <span className="article-number">Article {article.number}</span>
+                                                        <span className="article-title"> — {translatedArticle.title}</span>
+                                                    </h3>
+                                                    <p className="read-more">View summary</p>
+                                                </div>
+                                            );
+                                        })
+                                    ) : (
+                                        <div className="no-results">
+                                            <p>{t.learn.noArticlesFound}</p>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* Right Pane: Article Details Content */}
+                            <div className="article-details-pane">
+                                {selectedArticle ? (
+                                    <div className="details-content-card">
+                                        <div className="details-header">
+                                            <span className={`popup-badge ${selectedArticle.category}`}>
+                                                {getTranslatedString(selectedArticle.category, 'category')}
+                                            </span>
+                                            <span className="popup-badge outline">
+                                                {getTranslatedString(selectedArticle.organ, 'organ')}
+                                            </span>
+                                        </div>
+
+                                        <h2 className="details-title">
+                                            <span className="details-article-num">Article {selectedArticle.number}</span>
+                                            <br />
+                                            {getTranslatedArticle(selectedArticle).title}
+                                        </h2>
+
+                                        <div className="details-body">
+                                            <div className="summary-block">
+                                                <h4>Description</h4>
+                                                <p className="details-description">
+                                                    {getTranslatedArticle(selectedArticle).simplifiedText}
+                                                </p>
+                                            </div>
+
+                                            {getTranslatedArticle(selectedArticle).funFact && (
+                                                <div className="details-fun-fact">
+                                                    <h4>💡 {t.learn.funFact}</h4>
+                                                    <p>{getTranslatedArticle(selectedArticle).funFact}</p>
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        <div className="details-footer">
+                                            <div className="meta-tags">
+                                                <span>Part {selectedArticle.originalPart}</span>
+                                                <span>{getTranslatedString(selectedArticle.difficulty, 'difficulty')}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="no-selection-state">
+                                        <BookOpen size={48} />
+                                        <p>Select an article from the list to view its summary.</p>
                                     </div>
                                 )}
-                            </div>
-
-                            <div className="popup-footer">
-                                <span>Part {selectedArticle.originalPart}</span>
-                                <span>{getTranslatedString(selectedArticle.difficulty, 'difficulty')}</span>
                             </div>
                         </div>
                     </div>
                 )}
+
+                {/* Article Detail Popup (Fallback/Mobile Only) */}
+                {/* User requested side-by-side split view for this category explorer */}
             </section>
             <section>
                 <Footer />

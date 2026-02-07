@@ -26,6 +26,8 @@ function Login() {
     const [popup, setPopup] = useState(false);
     // AlreadyExistPopup
     const [Apopup, setAlreadyExistPopup] = useState(false);
+    // Loading state
+    const [isLoading, setIsLoading] = useState(false);
 
     const navigate = useNavigate();
     function showSignup() {
@@ -87,6 +89,7 @@ function Login() {
 
     async function handleGuest(e) {
         if (!Username) return;
+        setIsLoading(true);
         try {
             const res = await fetch(`${config.API_URL}/guest`, {
                 method: 'POST',
@@ -102,15 +105,19 @@ function Login() {
                 localStorage.setItem('userEmail', Username);
                 localStorage.setItem('userName', Username);
                 navigate('/home', { state: { name: Username, extra: data, flag: true } });
+            } else {
+                setIsLoading(false);
             }
         } catch (e) {
             console.log("Error", e);
+            setIsLoading(false);
         }
     }
 
     async function handleSignup(e) {
         if (!Name || !Email || !Password) return;
         setAlreadyExistPopup(false);
+        setIsLoading(true);
 
         // Default avatar if none uploaded
         const finalProfileImage = profileImage || "https://ui-avatars.com/api/?name=" + encodeURIComponent(Name) + "&background=1e3a8a&color=fff";
@@ -134,19 +141,23 @@ function Login() {
                 navigate('/home', { state: { name: Name, email: Email, extra: data, flag: true } });
             } else if (data.Error && data.Error.includes("duplicate key")) {
                 console.log(data.Error);
-                
+
                 setAlreadyExistPopup(true);
+                setIsLoading(false);
             } else {
                 setAlreadyExistPopup(false);
+                setIsLoading(false);
             }
         } catch (e) {
             console.log("Error", e);
             setAlreadyExistPopup(false);
+            setIsLoading(false);
         }
     }
 
     async function handleLogin() {
         if (!LEmail || !LPassword) return;
+        setIsLoading(true);
         try {
             const res = await fetch(`${config.API_URL}/login`, {
                 method: "POST",
@@ -167,14 +178,22 @@ function Login() {
                 navigate('/home', { state: { email: LEmail, extra: data, flag: true } });
             } else {
                 setPopup(true);
+                setIsLoading(false);
             }
         } catch (e) {
             console.log(e);
+            setIsLoading(false);
         }
     }
 
     return (
         <div className='MainContainer'>
+            {isLoading && (
+                <div className="loader-overlay">
+                    <div className="spinner"></div>
+                    <p style={{ color: '#1e3a8a', fontWeight: '500', marginTop: '15px' }}>Logging in...</p>
+                </div>
+            )}
             <div className='container'>
                 <div className='firstBox'>
                     <h1>Constitution Explorer</h1>
