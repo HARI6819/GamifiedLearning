@@ -13,6 +13,12 @@
   border-radius: 10px;
   animation: openUp .3s ease;
   background: white;
+  transition: background 0.3s;
+}
+
+.dark .chatBotIcon {
+  background: var(--card-bg);
+  border-color: var(--border-color);
 }
 
 @media (max-width: 600px) {

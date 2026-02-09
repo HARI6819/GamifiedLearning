@@ -1,6 +1,11 @@
 .games-section {
   padding: 80px 20px;
-   background: hsl(40, 20%, 95%);
+  background: hsl(40, 20%, 95%);
+  transition: background 0.3s;
+}
+
+.dark .games-section {
+  background: var(--bg-color);
 }
 
 .games-container {
@@ -20,12 +25,19 @@
   border: 1px solid #ddd;
   font-size: 12px;
   margin-bottom: 14px;
+  transition: border-color 0.3s;
+}
+
+.dark .badge {
+  border-color: var(--border-color);
+  color: var(--text-secondary);
 }
 
 .games-header h2 {
   font-size: 2.5rem;
   font-family: serif;
   margin-bottom: 12px;
+  color: var(--text-color);
 }
 
 .games-header p {
@@ -35,25 +47,29 @@
   font-size: 1.1rem;
 }
 
+.dark .games-header p {
+  color: var(--text-secondary);
+}
+
 /* GRID */
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   overflow: visible;
   padding: 10px 10px;
 }
 
 @media (max-width:1070px) {
-    .games-grid{
-        grid-template-columns: repeat(2,1fr);
-    }
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width:760px) {
-    .games-grid{
-        grid-template-columns: repeat(1,1fr);
-    }
+  .games-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /* CARD */
@@ -67,6 +83,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.dark .game-card {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
 .game-card:hover {
@@ -101,11 +123,16 @@
   font-family: serif;
   font-size: 1.2rem;
   margin-bottom: 6px;
+  color: var(--text-color);
 }
 
 .game-top p {
   font-size: 0.85rem;
   color: #666;
+}
+
+.dark .game-top p {
+  color: var(--text-secondary);
 }
 
 /* BOTTOM */
@@ -133,6 +160,10 @@
   color: #666;
 }
 
+.dark .time {
+  color: var(--text-secondary);
+}
+
 .play-btn {
   display: block;
   text-align: center;
@@ -142,6 +173,7 @@
   text-decoration: none;
   font-size: 0.9rem;
   transition: 0.3s ease;
+  color: var(--text-color);
 }
 
 .play-btn:hover {
@@ -159,7 +191,7 @@
 }
 
 .saffphire {
-  background: linear-gradient(135deg, #2557c3,rgb(73, 73, 206), #c08b36);
+  background: linear-gradient(135deg, #2557c3, rgb(73, 73, 206), #c08b36);
 }
 
 .gold {

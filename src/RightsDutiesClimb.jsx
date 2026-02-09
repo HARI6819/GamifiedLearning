@@ -10,18 +10,19 @@ import config from "./config";
 
 const ladders = {
   4: 13,
-  27: 37,
-  42: 54,
-  57: 76,
-  46:80
+  17: 38,
+  43: 64,
+  56: 75,
+  47: 78
 };
+
 
 const snakes = {
   32: 12,
   36: 15,
-  48: 30,
+  49: 30,
   62: 41,
-  88: 67,
+  86: 67,
   95: 72,
   99: 60
 };
@@ -106,8 +107,13 @@ export default function RightsDutiesClimb() {
     let newPos = position;
 
     if (index === currentQ.correctIndex) {
-      newPos += dice;
-      setMessage(`✅ Correct! +${dice} steps`);
+      if (position + dice > 100) {
+        setMessage(`⚠️ Correct, but rolled ${dice}. Need exact to finish!`);
+        newPos = position;
+      } else {
+        newPos += dice;
+        setMessage(`✅ Correct! +${dice} steps`);
+      }
     } else {
       const penalty = Math.floor(dice / 2);
       newPos -= penalty;
@@ -308,52 +314,78 @@ export default function RightsDutiesClimb() {
 
                 {/* Snakes */}
                 {Object.entries(snakes).map(([start, end], index) => {
-
-
                   const head = getCoords(start); // Start (Mouth/Head)
                   const tail = getCoords(end);   // End (Tail)
 
-                  // Wavy Path Logic
-                  const dx = tail.x - head.x;
-                  const dy = tail.y - head.y;
-                  const midX = (head.x + tail.x) / 2;
-                  const midY = (head.y + tail.y) / 2;
+                  // Advanced Wavy Path Logic (Sine Wave)
+                  const deltaX = tail.x - head.x;
+                  const deltaY = tail.y - head.y;
+                  const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                  const angle = Math.atan2(deltaY, deltaX);
 
-                  // Vary curvature direction
-                  const curveOffset = index % 2 === 0 ? 20 : -20;
+                  // Calculate path string
+                  let pathStr = `M ${head.x} ${head.y}`;
+                  const steps = 30;
+                  const amp = 4; // Amplitude of wave
 
-                  const controlX = midX + curveOffset;
-                  const controlY = midY + curveOffset;
-                  const pathData = `M ${head.x} ${head.y} Q ${controlX} ${controlY} ${tail.x} ${tail.y}`;
+                  for (let i = 1; i <= steps; i++) {
+                    const t = i / steps;
+                    // Base position on line
+                    const bx = head.x + deltaX * t;
+                    const by = head.y + deltaY * t;
 
-                  // Snake Colors (Yellow, Purple, Green, Pink)
-                  const colors = [
-                    { body: "#facc15", detail: "#a16207" }, // Yellow
-                    { body: "#a855f7", detail: "#6b21a8" }, // Purple
-                    { body: "#4ade80", detail: "#15803d" }, // Green
-                    { body: "#f472b6", detail: "#be185d" }, // Pink
+                    // Oscillate perpendicular
+                    const wavePhase = t * Math.PI * 2 * (dist / 20); // Frequency depends on length
+                    const currentAmp = amp * Math.sin(wavePhase);
+
+                    // Perpendicular direction
+                    const px = -Math.sin(angle) * currentAmp;
+                    const py = Math.cos(angle) * currentAmp;
+
+                    // Taper amplitude at ends
+                    const taper = Math.sin(t * Math.PI);
+
+                    pathStr += ` L ${bx + px * taper} ${by + py * taper}`;
+                  }
+
+                  // Snake Colors
+                  const snakeColors = [
+                    { body: "#4ade80", stripe: "#15803d", head: "#166534" }, // Green Mamba
+                    { body: "#f87171", stripe: "#991b1b", head: "#7f1d1d" }, // Coral Snake
+                    { body: "#fbbf24", stripe: "#92400e", head: "#854d0e" }, // Python
+                    { body: "#a855f7", stripe: "#581c87", head: "#4c1d95" }, // Viper
                   ];
-                  const theme = colors[index % colors.length];
+                  const theme = snakeColors[index % snakeColors.length];
 
                   return (
                     <g key={`snake-${start}`} filter="url(#shadow)">
-                      {/* Body */}
-                      <path d={pathData} stroke={theme.body} strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                      {/* Thick Body (Outline/Border) */}
+                      <path d={pathStr} stroke={theme.stripe} strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
 
-                      {/* Decorative Stripes/Dots along body (Simple dashes) */}
-                      <path d={pathData} stroke={theme.detail} strokeWidth="2" fill="none" strokeDasharray="1 8" strokeOpacity="0.3" strokeLinecap="round" />
+                      {/* Main Body Color */}
+                      <path d={pathStr} stroke={theme.body} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
 
-                      {/* Cartoon Head */}
-                      <ellipse cx={head.x} cy={head.y} rx="2.5" ry="2" fill={theme.body} stroke={theme.detail} strokeWidth="0.5" />
+                      {/* Pattern/Stripes */}
+                      <path className="snake-body-pattern" d={pathStr} stroke={theme.stripe} strokeWidth="3" fill="none" strokeDasharray="1 4" strokeLinecap="round" strokeLinejoin="round" opacity="0.6" />
 
-                      {/* Eyes */}
-                      <circle cx={head.x - 1} cy={head.y - 1} r=".5" fill="white" />
-                      <circle cx={head.x + 1} cy={head.y - 1} r=".5" fill="white" />
-                      <circle cx={head.x - 1} cy={head.y - 1} r="0.2" fill="black" />
-                      <circle cx={head.x + 1} cy={head.y - 1} r="0.2" fill="black" />
+                      {/* Head */}
+                      <g transform={`translate(${head.x}, ${head.y}) rotate(${angle * 180 / Math.PI + 90})`}>
+                        {/* More realistic head shape - Viper style */}
+                        <path d="M -3.5 -1 C -4 -4, -2 -6, 0 -6 C 2 -6, 4 -4, 3.5 -1 C 3 2, 2 3, 0 3 C -2 3, -3 2, -3.5 -1 Z" fill={theme.head} stroke={theme.stripe} strokeWidth="0.5" />
 
-                      {/* Tongue */}
-                      <path d={`M ${head.x} ${head.y + 2.5} q -1 2 0 3`} stroke="#ef4444" strokeWidth="1" fill="none" />
+                        {/* Eyes - Slit pupils for realism */}
+                        <ellipse cx="-1.5" cy="-2.5" rx="1" ry="1.5" fill="#fbbf24" stroke="none" />
+                        <ellipse cx="1.5" cy="-2.5" rx="1" ry="1.5" fill="#fbbf24" stroke="none" />
+                        <ellipse cx="-1.5" cy="-2.5" rx="0.3" ry="1.2" fill="black" />
+                        <ellipse cx="1.5" cy="-2.5" rx="0.3" ry="1.2" fill="black" />
+
+                        {/* Nostrils */}
+                        <circle cx="-0.8" cy="1.5" r="0.3" fill="black" opacity="0.5" />
+                        <circle cx="0.8" cy="1.5" r="0.3" fill="black" opacity="0.5" />
+
+                        {/* Tongue (Static & Small) */}
+                        <path d="M 0 4 L 0 3.2 L -0.9 6.5 M 0 4 L 0.9 6.5" stroke="#ef4444" strokeWidth="0.8" fill="none" />
+                      </g>
                     </g>
                   );
                 })}

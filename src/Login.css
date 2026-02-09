@@ -16,6 +16,12 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+    transition: background 0.3s;
+}
+
+.dark .MainContainer {
+    background: var(--bg-color);
+    /* Override image with dark bg */
 }
 
 /* Background elements for depth */
@@ -30,6 +36,12 @@
     border-radius: 50%;
 }
 
+.dark .MainContainer::before {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    /* Subtler in dark mode */
+}
+
+
 .MainContainer::after {
     content: '';
     position: absolute;
@@ -39,6 +51,10 @@
     bottom: -150px;
     right: -100px;
     border-radius: 50%;
+}
+
+.dark .MainContainer::after {
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
 }
 
 .container {
@@ -53,6 +69,13 @@
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
     z-index: 10;
     overflow: hidden;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.dark .container {
+    background: rgba(30, 41, 59, 0.6);
+    /* Darker glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .firstBox {
@@ -131,6 +154,12 @@
     margin-bottom: 30px;
 }
 
+.dark .Loginform h1,
+.dark .signupform h1,
+.dark .guestForm h1 {
+    color: var(--text-color);
+}
+
 /* Input containers */
 .input-group {
     width: 80%;
@@ -146,6 +175,10 @@
     color: #64748b;
 }
 
+.dark .input-group svg {
+    color: var(--text-secondary);
+}
+
 .input-group input {
     height: 52px;
     width: 100%;
@@ -158,10 +191,21 @@
     color: #1e293b;
 }
 
+.dark .input-group input {
+    background: var(--input-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
 .input-group input:focus {
     outline: none;
     border-color: #1e3a8a;
     box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1);
+}
+
+.dark .input-group input:focus {
+    border-color: var(--button-bg);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
 }
 
 /* Button */
@@ -192,9 +236,19 @@
     box-shadow: none;
 }
 
+.dark .btn-guest {
+    background: transparent;
+    color: var(--text-color);
+    border-color: var(--button-bg);
+}
+
 .btn-guest:hover {
     background: #f1f5f9;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.dark .btn-guest:hover {
+    background: rgba(59, 130, 246, 0.1);
 }
 
 .Loginform p,
@@ -205,6 +259,12 @@
     font-size: 0.95rem;
 }
 
+.dark .Loginform p,
+.dark .signupform p,
+.dark .guestForm p {
+    color: var(--text-secondary);
+}
+
 .Loginform p span,
 .signupform p span,
 .guestForm p span {
@@ -212,6 +272,12 @@
     font-weight: 600;
     cursor: pointer;
     margin-left: 5px;
+}
+
+.dark .Loginform p span,
+.dark .signupform p span,
+.dark .guestForm p span {
+    color: var(--button-bg);
 }
 
 .Loginform p span:hover,
@@ -242,9 +308,19 @@
     position: relative;
 }
 
+.dark .profile-upload-label {
+    background: var(--input-bg);
+    border-color: var(--border-color);
+}
+
 .profile-upload-label:hover {
     border-color: #1e3a8a;
     background: #f1f5f9;
+}
+
+.dark .profile-upload-label:hover {
+    border-color: var(--button-bg);
+    background: rgba(59, 130, 246, 0.1);
 }
 
 .profile-preview {
@@ -274,6 +350,10 @@
     border: none;
     height: 1px;
     background-color: #e2e8f0;
+}
+
+.dark .hr-text hr {
+    background-color: var(--border-color);
 }
 
 .hr-text span {
@@ -329,6 +409,10 @@
     border-radius: 24px;
 }
 
+.dark .loader-overlay {
+    background: rgba(15, 23, 42, 0.85);
+}
+
 .spinner {
     width: 50px;
     height: 50px;
@@ -336,6 +420,11 @@
     border-top-color: #f97316;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+}
+
+.dark .spinner {
+    border-color: var(--border-color);
+    border-top-color: var(--button-bg);
 }
 
 @keyframes spin {

@@ -1,9 +1,40 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --text-secondary: #4b5563;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --button-bg: #3b82f6;
+  --button-text: #ffffff;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --card-bg: #1e293b;
+  --input-bg: #1e293b;
+  --border-color: #334155;
+  --button-bg: #3b82f6;
+  --button-text: #ffffff;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  border-color: var(--border-color);
 }
 
 .reveal {

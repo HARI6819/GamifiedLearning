@@ -1,13 +1,12 @@
 import './App.css'
-import LearnConstitution from './Learn'
 import Login from './Login'
-import Learn from './Learn.jsx'
+import { ThemeProvider } from './context/ThemeContext'
 
 function App() {
-  return(
-    <>
-    <Login />
-    </>
+  return (
+    <ThemeProvider>
+      <Login />
+    </ThemeProvider>
   )
 }
 

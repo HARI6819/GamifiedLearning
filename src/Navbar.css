@@ -22,8 +22,14 @@
 
   z-index: 1000;
   overflow: visible;
+  transition: background 0.3s, border-color 0.3s;
 }
 
+.dark .nav {
+  background: rgba(15, 23, 42, 0.85);
+  /* Darker background for dark mode */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 .logo {
   height: 100%;
@@ -36,7 +42,7 @@
 .Logoname {
   font-family: 'Times New Roman', Times, serif;
   font-size: 17.5px;
-  color: rgb(73, 64, 94);
+  color: var(--text-color);
 }
 
 .Logoicon {
@@ -62,7 +68,7 @@
 
 .LName p {
   font-size: 11px;
-  color: rgb(126, 124, 124);
+  color: var(--text-secondary);
 }
 
 .navigation {
@@ -90,6 +96,7 @@
   /* Slightly increased gap for better legibility */
   align-items: center;
   transition: 0.4s all ease;
+  color: var(--text-color);
 }
 
 .navigation ul li svg {
@@ -111,8 +118,8 @@
 }
 
 .navigation ul li:hover {
-  background-color: #f2a136;
-  color: white;
+  background-color: var(--button-bg);
+  color: var(--button-text);
 }
 
 .MobileView {
@@ -123,6 +130,10 @@
   position: relative;
   z-index: 1005;
   transition: transform 0.3s ease;
+}
+
+.dark .MobileView {
+  color: var(--text-color);
 }
 
 .MobileView:active {
@@ -205,7 +216,9 @@
     right: 0;
     width: 280px;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.98);
+    background: var(--card-bg);
+    /* Use card-bg which adapts to theme */
+    color: var(--text-color);
     padding: 80px 30px;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
     flex-direction: column;
@@ -213,11 +226,11 @@
     gap: 20px;
   }
 
-  .navigation{
+  .navigation {
     width: 30%;
   }
 
-  .logo{
+  .logo {
     width: 70%;
   }
 

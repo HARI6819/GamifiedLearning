@@ -3,6 +3,11 @@
   background: #faf8f5;
   font-family: "Inter", sans-serif;
   position: relative;
+  transition: background 0.3s;
+}
+
+.dark .gamehub1 {
+  background: var(--bg-color);
 }
 
 .container1 {
@@ -31,11 +36,20 @@
   margin-bottom: 1rem;
 }
 
+.dark .pill1 {
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
 .header1 h1 {
   font-family: "Merriweather", serif;
   font-size: 3rem;
   margin-bottom: 1rem;
   color: #0f172a;
+}
+
+.dark .header1 h1 {
+  color: var(--text-color);
 }
 
 .header1 p {
@@ -44,6 +58,10 @@
   font-size: 1.05rem;
   color: #64748b;
   font-family: sans-serif;
+}
+
+.dark .header1 p {
+  color: var(--text-secondary);
 }
 
 /* Grid */
@@ -62,6 +80,12 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   overflow: hidden;
+}
+
+.dark .game-card1 {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .game-card1:hover {
@@ -128,6 +152,7 @@
   margin-top: 1rem;
   font-family: "Merriweather", serif;
   font-size: 1.4rem;
+  color: var(--text-color);
 }
 
 .desc1 {
@@ -135,6 +160,10 @@
   color: #64748b;
   font-size: 0.95rem;
   font-family: sans-serif;
+}
+
+.dark .desc1 {
+  color: var(--text-secondary);
 }
 
 .progression-status {
@@ -155,9 +184,18 @@
   width: fit-content;
 }
 
+.dark .current-tier {
+  background: rgba(30, 58, 138, 0.2);
+  border-color: rgba(30, 58, 138, 0.4);
+}
+
 .current-tier span {
   font-size: 0.95rem;
   color: #475569;
+}
+
+.dark .current-tier span {
+  color: var(--text-secondary);
 }
 
 .current-tier strong {
@@ -166,10 +204,18 @@
   letter-spacing: 1px;
 }
 
+.dark .current-tier strong {
+  color: #60a5fa;
+}
+
 .unlock-hint {
   font-size: 0.85rem !important;
   color: #d97706 !important;
   font-weight: 500;
+}
+
+.dark .unlock-hint {
+  color: #fbbf24 !important;
 }
 
 .status-pill {
@@ -194,6 +240,10 @@
   gap: 6px;
   font-size: 0.9rem;
   color: #64748b;
+}
+
+.dark .time1 {
+  color: var(--text-secondary);
 }
 
 .play-btn1 {
@@ -226,15 +276,25 @@
   backdrop-filter: blur(10px);
 }
 
+.dark .coming-soon1 {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: var(--border-color);
+}
+
 .coming-soon1 h3 {
   margin-top: .8rem;
   font-family: "Merriweather", serif;
+  color: var(--text-color);
 }
 
 .coming-soon1 p {
   margin-top: 0.5rem;
   color: #64748b;
   font-family: sans-serif;
+}
+
+.dark .coming-soon1 p {
+  color: var(--text-secondary);
 }
 
 /* Responsive */
@@ -267,6 +327,10 @@
   /* Adjust for padding in .gamehub1 */
 }
 
+.dark .locked-overlay {
+  background: rgba(15, 23, 42, 0.6);
+}
+
 .locked-card {
   background: rgba(255, 255, 255, 0.8);
   padding: 3rem;
@@ -277,6 +341,11 @@
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dark .locked-card {
+  background: var(--card-bg);
+  border-color: var(--border-color);
 }
 
 @keyframes modalPop {
@@ -312,6 +381,10 @@
   line-height: 1.4;
 }
 
+.dark .locked-card h2 {
+  color: var(--text-color);
+}
+
 .unlock-progress {
   margin-bottom: 2rem;
 }
@@ -323,11 +396,19 @@
   font-weight: 500;
 }
 
+.dark .progress-text {
+  color: var(--text-secondary);
+}
+
 .progress-bar-mini {
   height: 8px;
   background: #e2e8f0;
   border-radius: 4px;
   overflow: hidden;
+}
+
+.dark .progress-bar-mini {
+  background: var(--border-color);
 }
 
 .progress-bar-mini .fill {
@@ -355,8 +436,8 @@
 
 @media (max-width:480px) {
   .current-tier {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

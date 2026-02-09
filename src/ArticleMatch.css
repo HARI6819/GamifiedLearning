@@ -5,6 +5,11 @@
     padding: 2rem 1rem;
     font-family: 'Inter', sans-serif;
     color: #1e293b;
+    transition: color 0.3s;
+}
+
+.dark .match-container {
+    color: var(--text-color);
 }
 
 /* Header */
@@ -35,11 +40,16 @@
     cursor: pointer;
     transition: all 0.2s;
     font-size: 1.2rem;
+    color: inherit;
 }
 
 .back-btn:hover {
     background: #f1f5f9;
     transform: translateX(-2px);
+}
+
+.dark .back-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .match-header h1 {
@@ -48,9 +58,17 @@
     color: #0f172a;
 }
 
+.dark .match-header h1 {
+    color: var(--text-color);
+}
+
 .match-header p {
     color: #64748b;
     font-size: 0.95rem;
+}
+
+.dark .match-header p {
+    color: var(--text-secondary);
 }
 
 /* Start Screen */
@@ -66,6 +84,11 @@
     flex-direction: column;
     align-items: center;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dark .start-screen {
+    background: var(--card-bg);
+    border-color: var(--border-color);
 }
 
 .start-screen h4 {
@@ -94,6 +117,10 @@
     font-family: 'Times New Roman', serif;
 }
 
+.dark .start-screen h2 {
+    color: var(--text-color);
+}
+
 .diff-grid1 {
     display: flex;
     justify-content: center;
@@ -114,14 +141,28 @@
     text-transform: capitalize;
 }
 
+.dark .diff-btn1 {
+    border-color: #60a5fa;
+    color: #60a5fa;
+}
+
 .diff-btn1:hover {
     background: #eff6ff;
+}
+
+.dark .diff-btn1:hover {
+    background: rgba(96, 165, 250, 0.1);
 }
 
 .diff-btn1.active {
     background: linear-gradient(135deg, #1344c9, #b16207f1);
     color: white;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.dark .diff-btn1.active {
+    border-color: transparent;
+    color: white;
 }
 
 .start-btn {
@@ -161,6 +202,12 @@
     align-items: center;
     gap: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dark .info-item {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
 }
 
 .restart-btn {
@@ -306,6 +353,12 @@
     opacity: 1;
 }
 
+.dark .card-front {
+    background: #1e3a8a;
+    /* Keep brand color even in dark mode for card back (which is visually front until flipped) */
+    border-color: #3b82f6;
+}
+
 /* Back Face */
 .card-back {
     background: white;
@@ -315,6 +368,12 @@
     z-index: 10;
     opacity: 0;
     /* Hidden by default */
+}
+
+.dark .card-back {
+    background: var(--card-bg);
+    border-color: #60a5fa;
+    color: var(--text-color);
 }
 
 /* FLIPPED STATE LOGIC */
@@ -335,9 +394,19 @@
     border: 2px solid #fdba74;
 }
 
+.dark .type-article .card-back {
+    background: rgba(255, 247, 237, 0.1);
+    border-color: #fdba74;
+}
+
 .type-meaning .card-back {
     background: #f0fdf4;
     border: 2px solid #86efac;
+}
+
+.dark .type-meaning .card-back {
+    background: rgba(240, 253, 244, 0.1);
+    border-color: #4ade80;
 }
 
 /* Card Header & Badges */
@@ -373,6 +442,12 @@
     color: #1f2937;
 }
 
+.dark .card-badge.meaning {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
 .sparkle-icon {
     color: #22c55e;
     opacity: 0;
@@ -389,6 +464,10 @@
     width: 100%;
 }
 
+.dark .card-text {
+    color: var(--text-color);
+}
+
 .tip-box {
     text-align: center;
     background: #fffbeb;
@@ -398,6 +477,12 @@
     border: 1px solid #fcd34d;
     color: #92400e;
     font-size: 0.9rem;
+}
+
+.dark .tip-box {
+    background: rgba(255, 251, 235, 0.1);
+    border-color: #fcd34d;
+    color: #fcd34d;
 }
 
 /* Modal Overlay for Win */
@@ -422,6 +507,11 @@
     border-radius: 20px;
     text-align: center;
     animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dark .win-content {
+    background: var(--card-bg);
+    color: var(--text-color);
 }
 
 .win-icon {

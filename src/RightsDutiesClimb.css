@@ -1,6 +1,11 @@
 body {
   background: #faf7f2;
   font-family: Inter, sans-serif;
+  transition: background 0.3s;
+}
+
+.dark body {
+  background: var(--bg-color);
 }
 
 .game-container {
@@ -25,11 +30,20 @@ body {
   font-size: 25px;
   font-family: 'Times New Roman', Times, serif;
   margin-bottom: 5px;
+  color: #111827;
+}
+
+.dark .game-header h1 {
+  color: var(--text-color);
 }
 
 .game-header p {
   font-family: sans-serif;
   color: grey;
+}
+
+.dark .game-header p {
+  color: var(--text-secondary);
 }
 
 .game-layout {
@@ -52,6 +66,12 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   padding: 16px;
   border: 2px solid rgba(128, 128, 128, 0.247);
+}
+
+.dark .boardouter {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .board {
@@ -105,12 +125,22 @@ body {
   display: flex;
   gap: 5px;
   align-items: center;
+  color: #374151;
+}
+
+.dark .lup {
+  color: var(--text-color);
 }
 
 .ldown {
   display: flex;
   gap: 5px;
   align-items: center;
+  color: #374151;
+}
+
+.dark .ldown {
+  color: var(--text-color);
 }
 
 
@@ -143,6 +173,13 @@ body {
   justify-content: center;
   position: relative;
   font-size: 12px;
+  color: #374151;
+}
+
+.dark .cell {
+  background: #334155;
+  color: #f3f4f6;
+  font-weight: 600;
 }
 
 .ladder {
@@ -150,9 +187,19 @@ body {
   border: 2px solid #10b981;
 }
 
+.dark .ladder {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: #10b981;
+}
+
 .snake {
   background: #fee2e2;
   border: 2px solid #ef4444;
+}
+
+.dark .snake {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
 }
 
 .player-cell {
@@ -181,6 +228,11 @@ body {
   border: 2px solid rgba(128, 128, 128, 0.247);
 }
 
+.dark .stats {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
 .player-token {
   position: absolute;
   /* x, y will be set inline */
@@ -204,6 +256,10 @@ body {
   font-size: 13px;
 }
 
+.dark .stats span {
+  color: var(--text-secondary);
+}
+
 .dice-box {
   background: white;
   border: 2px solid rgba(128, 128, 128, 0.247);
@@ -211,6 +267,11 @@ body {
   border-radius: 16px;
   text-align: center;
   color: white;
+}
+
+.dark .dice-box {
+  background: var(--card-bg);
+  border-color: var(--border-color);
 }
 
 .dice-box button {
@@ -277,9 +338,19 @@ body {
 
 }
 
+.dark .question-box {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
 .question-box h3 {
   font-family: 'Times New Roman', Times, serif;
   margin-bottom: 3%;
+  color: #111827;
+}
+
+.dark .question-box h3 {
+  color: var(--text-color);
 }
 
 .Qoptions {
@@ -299,6 +370,11 @@ body {
   cursor: pointer;
 }
 
+.dark .option {
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
 
 .option:hover {
   background: #1e3a8a;
@@ -312,6 +388,13 @@ body {
   border-radius: 12px;
   text-align: center;
   border: 1px solid rgba(128, 128, 128, 0.219);
+  color: #111827;
+}
+
+.dark .messageBox {
+  background: rgba(236, 254, 255, 0.1);
+  border-color: var(--border-color);
+  color: var(--text-color);
 }
 
 .reset {
@@ -320,6 +403,12 @@ body {
   border: 2px solid #2321b3;
   background: transparent;
   cursor: pointer;
+  color: #2321b3;
+}
+
+.dark .reset {
+  border-color: #60a5fa;
+  color: #60a5fa;
 }
 
 .rules {
@@ -329,9 +418,19 @@ body {
   border: 2px solid rgba(128, 128, 128, 0.247);
 }
 
+.dark .rules {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
 .rules h4 {
   font-family: 'Times New Roman', Times, serif;
   margin-bottom: 6px;
+  color: #111827;
+}
+
+.dark .rules h4 {
+  color: var(--text-color);
 }
 
 .rules ul li {
@@ -340,6 +439,10 @@ body {
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 5px;
+}
+
+.dark .rules ul li {
+  color: var(--text-secondary);
 }
 
 /* Game Popups Overlay */
@@ -366,6 +469,12 @@ body {
   animation: popCenter 0.3s ease-out;
 }
 
+.dark .climb-popup {
+  background: var(--card-bg);
+  border-bottom-color: inherit;
+  /* Will be overridden by specific classes */
+}
+
 .climb-popup.ladder {
   border-bottom: 8px solid #15803d;
 }
@@ -378,15 +487,28 @@ body {
   border-bottom: 8px solid #1e3a8a;
 }
 
+.dark .climb-popup.win {
+  border-bottom-color: #60a5fa;
+}
+
 .climb-popup h2 {
   font-size: 2rem;
   margin-bottom: 10px;
+  color: #111827;
+}
+
+.dark .climb-popup h2 {
+  color: var(--text-color);
 }
 
 .climb-popup p {
   font-size: 1.1rem;
   color: #4b5563;
   margin-bottom: 20px;
+}
+
+.dark .climb-popup p {
+  color: var(--text-secondary);
 }
 
 @keyframes popCenter {
@@ -409,6 +531,10 @@ body {
   position: relative;
 }
 
+.dark .loader-line {
+  background: var(--border-color);
+}
+
 .loader-line::after {
   content: '';
   position: absolute;
@@ -420,6 +546,10 @@ body {
   animation: shrinkLine 2s linear forwards;
 }
 
+.dark .loader-line::after {
+  background: #60a5fa;
+}
+
 @keyframes shrinkLine {
   0% {
     width: 100%;
@@ -427,5 +557,15 @@ body {
 
   100% {
     width: 0%;
+  }
+}
+
+.snake-body-pattern {
+  animation: snake-crawl 1.5s linear infinite;
+}
+
+@keyframes snake-crawl {
+  to {
+    stroke-dashoffset: -5;
   }
 }

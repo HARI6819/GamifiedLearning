@@ -1,18 +1,20 @@
 import './Navbar.css'
 import { useState } from "react";
-import { Home, Gamepad2, BookOpen, Trophy, Menu, Languages, User } from "lucide-react";
+import { Home, Gamepad2, BookOpen, Trophy, Menu, Languages, User, Sun, Moon } from "lucide-react";
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from './context/LanguageContext';
+import { useTheme } from './context/ThemeContext';
 import Chat from "./Chat";
 
 function Navbar() {
     const [popUp, setPopUp] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { t, language, toggleLanguage } = useLanguage();
+    const { theme, toggleTheme } = useTheme();
     const profileImage = localStorage.getItem('profileImage');
 
     const navigate = useNavigate();
- 
+
     function handleNavigateH() {
         navigate('/home');
     }
@@ -90,6 +92,10 @@ function Navbar() {
                             <li onClick={() => { toggleLanguage(); setIsMenuOpen(false); }} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
                                 <Languages size={20} />
                                 {language === 'en' ? 'HI' : 'EN'}
+                            </li>
+                            <li onClick={() => { toggleTheme(); setIsMenuOpen(false); }} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+                                {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+                                {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
                             </li>
                         </ul>
                     </div>

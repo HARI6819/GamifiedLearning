@@ -1,5 +1,4 @@
-
-.footer{
+.footer {
     height: 10.3vh;
     width: 100vw;
     display: grid;
@@ -11,10 +10,16 @@
     align-items: center;
     color: rgb(99, 95, 95);
     border-top: 1px solid rgba(128, 128, 128, 0.322);
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.dark .footer {
+    color: var(--text-secondary);
+    border-top-color: var(--border-color);
 }
 
 @media (max-width:550px) {
-    .footer{
+    .footer {
         font-size: 10px;
     }
 }

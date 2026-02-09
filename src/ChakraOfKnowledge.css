@@ -5,6 +5,11 @@
   font-family: "Inter", sans-serif;
   margin-top: 10.3vh;
   padding: 1% 8%;
+  transition: background 0.3s;
+}
+
+.dark .chakra-page {
+  background: var(--bg-color);
 }
 
 /* Header */
@@ -23,17 +28,35 @@
   background: #f3f4f6;
   font-size: 20px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.dark .back-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
 }
 
 .chakra-header h1 {
   font-family: serif;
   font-size: 32px;
   font-weight: 700;
+  color: inherit;
+}
+
+.dark .chakra-header h1 {
+  color: var(--text-color);
 }
 
 .chakra-header p {
   color: #6b7280;
   font-family: sans-serif;
+}
+
+.dark .chakra-header p {
+  color: var(--text-secondary);
 }
 
 /* Layout */
@@ -106,7 +129,7 @@
   dominant-baseline: middle;
 }
 
-.wheel-controls{
+.wheel-controls {
   overflow: visible;
 }
 
@@ -133,18 +156,18 @@
   font-size: 18px;
   font-weight: 600;
   color: white;
-  background: linear-gradient(90deg,#1e3a8a,#f97316);
+  background: linear-gradient(90deg, #1e3a8a, #f97316);
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .spin-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(249,115,22,0.5);
+  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.5);
 }
 
 /* Info Card */
-.info-section{
+.info-section {
   overflow: visible;
 }
 
@@ -152,7 +175,12 @@
   background: white;
   border-radius: 18px;
   padding: 28px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.dark .info-card {
+  background: var(--card-bg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .info-card.center {
@@ -163,20 +191,35 @@
   font-size: 64px;
   margin-bottom: 16px;
 }
-.h3info{
+
+.h3info {
   font-family: 'Times New Roman', Times, serif;
   margin-bottom: 5px;
+  color: inherit;
+}
+
+.dark .h3info {
+  color: var(--text-color);
 }
 
 .info-card h2 {
   font-size: 28px;
-  font-family:serif;
+  font-family: serif;
   margin-bottom: 10px;
+  color: inherit;
 }
 
-.info-card p{
+.dark .info-card h2 {
+  color: var(--text-color);
+}
+
+.info-card p {
   font-family: sans-serif;
   color: rgb(156, 155, 155);
+}
+
+.dark .info-card p {
+  color: var(--text-secondary);
 }
 
 .article-title {
@@ -185,7 +228,10 @@
   font-family: sans-serif;
   font-weight: 300;
 }
- 
+
+.dark .article-title {
+  color: #60a5fa;
+}
 
 .desc-box {
   background: #f3f4f6;
@@ -195,6 +241,13 @@
   border: 1px solid #d2d3d4;
   font-family: sans-serif;
   line-height: 25px;
+  color: inherit;
+}
+
+.dark .desc-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-color);
+  color: var(--text-color);
 }
 
 .fact-box {
@@ -205,7 +258,13 @@
   color: orange;
 }
 
-.fact-box p{
+.dark .fact-box {
+  background: rgba(255, 243, 232, 0.05);
+  border-color: #fdba74;
+  color: #fdba74;
+}
+
+.fact-box p {
   padding-left: 25px;
 }
 
@@ -224,29 +283,60 @@
   border-radius: 999px;
   font-size: 13px;
   background: #f3f4f6;
+  color: inherit;
+}
+
+.dark .badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
 }
 
 .badge.primary {
   background: #e0e7ff;
   color: #1e3a8a;
 }
-.badge.Legislature{
+
+.dark .badge.primary {
+  background: rgba(30, 58, 138, 0.2);
+  color: #60a5fa;
+}
+
+.badge.Legislature {
   border: 1px solid orange;
   color: orange;
   background: rgb(251, 245, 233);
 }
 
-.badge.Judiciary{
-   border: 1px solid green;
+.dark .badge.Legislature {
+  background: rgba(255, 165, 0, 0.1);
+  color: #fdba74;
+  border-color: #fdba74;
+}
+
+.badge.Judiciary {
+  border: 1px solid green;
   color: green;
   background: rgb(231, 250, 231);
 }
 
-.badge.Executive{
+.dark .badge.Judiciary {
+  background: rgba(0, 128, 0, 0.1);
+  color: #86efac;
+  border-color: #86efac;
+}
+
+.badge.Executive {
   border: 1px solid #102166;
   color: #102166;
   background: #eef2ff;
 }
+
+.dark .badge.Executive {
+  background: rgba(16, 33, 102, 0.2);
+  color: #a5b4fc;
+  border-color: #a5b4fc;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .chakra-content {

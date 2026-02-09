@@ -1,4 +1,4 @@
-/* Page */
+/* ProgressPage.css */
 .sectionProgress {
   padding-top: 5.3vh;
 }
@@ -8,6 +8,11 @@
   min-height: 100vh;
   padding: 60px 15px;
   font-family: "Inter", sans-serif;
+  transition: background 0.3s;
+}
+
+.dark .pa-wrapper {
+  background: var(--bg-color);
 }
 
 /* Header */
@@ -23,12 +28,23 @@
   border: 1px solid #e7e1d9;
   font-size: 13px;
   margin-bottom: 16px;
+  color: #4b5563;
+}
+
+.dark .pa-pill {
+  border-color: var(--border-color);
+  color: var(--text-secondary);
 }
 
 .pa-header h1 {
   font-family: serif;
   font-size: clamp(2rem, 8vw, 3rem);
   margin-bottom: 12px;
+  color: #111827;
+}
+
+.dark .pa-header h1 {
+  color: var(--text-color);
 }
 
 .pa-header p {
@@ -37,6 +53,10 @@
   font-family: sans-serif;
   max-width: 600px;
   margin: 0 auto;
+}
+
+.dark .pa-header p {
+  color: var(--text-secondary);
 }
 
 /* Container */
@@ -55,6 +75,11 @@
   border-radius: 16px;
   padding: 28px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.dark .pa-card {
+  background: var(--card-bg);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .pa-card:hover {
@@ -80,6 +105,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #111827;
+}
+
+.dark .section-title {
+  color: var(--text-color);
 }
 
 /* Stats */
@@ -113,9 +143,18 @@
   color: #6b7280;
 }
 
+.dark .stat-box span {
+  color: var(--text-secondary);
+}
+
 .stat-box.blue {
   background: #eef2ff;
   color: #1e40af;
+}
+
+.dark .stat-box.blue {
+  background: rgba(30, 64, 175, 0.2);
+  color: #60a5fa;
 }
 
 .stat-box.orange {
@@ -123,9 +162,19 @@
   color: #ea580c;
 }
 
+.dark .stat-box.orange {
+  background: rgba(234, 88, 12, 0.2);
+  color: #fbbf24;
+}
+
 .stat-box.green {
   background: #f0fdf4;
   color: #15803d;
+}
+
+.dark .stat-box.green {
+  background: rgba(21, 128, 61, 0.2);
+  color: #4ade80;
 }
 
 .stat-box.clickable {
@@ -133,7 +182,7 @@
   transition: all 0.2s ease;
   border: 2px solid transparent;
   position: relative;
-  
+
 }
 
 .stat-box.clickable:hover {
@@ -158,6 +207,10 @@
   border-radius: 14px;
   padding: 24px;
   text-align: center;
+}
+
+.dark .cta-box {
+  background: rgba(249, 247, 243, 0.05);
 }
 
 .primary-btn {
@@ -186,6 +239,11 @@
   justify-content: space-between;
   margin-bottom: 8px;
   font-weight: 500;
+  color: #374151;
+}
+
+.dark .progress-label {
+  color: var(--text-color);
 }
 
 .progress-bar {
@@ -193,6 +251,10 @@
   background: #f3f4f6;
   border-radius: 10px;
   overflow: hidden;
+}
+
+.dark .progress-bar {
+  background: rgba(243, 244, 246, 0.1);
 }
 
 .progress-bar div {
@@ -216,11 +278,20 @@
 .achievement h4 {
   font-size: 14px;
   margin-bottom: 6px;
+  color: #111827;
+}
+
+.dark .achievement h4 {
+  color: var(--text-color);
 }
 
 .achievement p {
   font-size: 12px;
   color: #6b7280;
+}
+
+.dark .achievement p {
+  color: var(--text-secondary);
 }
 
 .achievement .emoji {
@@ -234,10 +305,20 @@
   border: 2px solid #fdba74;
 }
 
+.dark .unlocked {
+  background: rgba(255, 243, 232, 0.1);
+  border-color: #fdba74;
+}
+
 .locked {
   background: #f9fafb;
   border: 2px solid #e5e7eb;
   opacity: 0.65;
+}
+
+.dark .locked {
+  background: rgba(249, 250, 251, 0.05);
+  border-color: var(--border-color);
 }
 
 .lock {
@@ -264,20 +345,47 @@
   border-bottom: 1px solid #f3f4f6;
 }
 
+.dark .leaderboard-table th,
+.dark .leaderboard-table td {
+  border-bottom-color: var(--border-color);
+}
+
 .leaderboard-table th {
   background-color: #f9fafb;
   font-weight: 600;
   color: #4b5563;
 }
 
+.dark .leaderboard-table th {
+  background-color: rgba(249, 250, 251, 0.1);
+  color: var(--text-secondary);
+}
+
 .leaderboard-table tr:hover {
   background-color: #f9fafb;
+}
+
+.dark .leaderboard-table tr:hover {
+  background-color: rgba(249, 250, 251, 0.05);
+}
+
+.leaderboard-table td {
+  color: #374151;
+}
+
+.dark .leaderboard-table td {
+  color: var(--text-color);
 }
 
 .highlight-me {
   background-color: #fff7ed !important;
   font-weight: 600;
   color: #f97316;
+}
+
+.dark .highlight-me {
+  background-color: rgba(255, 247, 237, 0.2) !important;
+  color: #fbbf24;
 }
 
 /* Loading Screen */
@@ -290,6 +398,11 @@
   background-color: #fffaf3;
   color: #1e3a8a;
   gap: 20px;
+}
+
+.dark .loading-screen {
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .spinner {
@@ -334,6 +447,11 @@
   animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.dark .summary-modal {
+  background: var(--card-bg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
 .close-modal {
   position: absolute;
   top: 20px;
@@ -352,9 +470,19 @@
   transition: all 0.2s;
 }
 
+.dark .close-modal {
+  background: rgba(243, 244, 246, 0.1);
+  color: var(--text-secondary);
+}
+
 .close-modal:hover {
   background: #e5e7eb;
   color: #111827;
+}
+
+.dark .close-modal:hover {
+  background: rgba(229, 231, 235, 0.2);
+  color: var(--text-color);
 }
 
 .modal-title {
@@ -362,6 +490,10 @@
   font-size: 24px;
   margin-bottom: 24px;
   color: #111827;
+}
+
+.dark .modal-title {
+  color: var(--text-color);
 }
 
 .summary-list {
@@ -381,8 +513,16 @@
   transition: background 0.2s;
 }
 
+.dark .summary-item {
+  background: rgba(249, 250, 251, 0.05);
+}
+
 .summary-item:hover {
   background: #f3f4f6;
+}
+
+.dark .summary-item:hover {
+  background: rgba(243, 244, 246, 0.1);
 }
 
 .item-info {
@@ -403,15 +543,29 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+.dark .item-icon {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  /* Emoji will keep color, avoiding clash */
+}
+
 .item-info h4 {
   font-size: 15px;
   margin-bottom: 2px;
   color: #111827;
 }
 
+.dark .item-info h4 {
+  color: var(--text-color);
+}
+
 .item-info p {
   font-size: 12px;
   color: #6b7280;
+}
+
+.dark .item-info p {
+  color: var(--text-secondary);
 }
 
 .item-points {
@@ -420,9 +574,17 @@
   font-size: 16px;
 }
 
+.dark .item-points {
+  color: #4ade80;
+}
+
 .modal-footer {
   border-top: 1px solid #f3f4f6;
   padding-top: 20px;
+}
+
+.dark .modal-footer {
+  border-top-color: var(--border-color);
 }
 
 .total-row {
@@ -433,10 +595,18 @@
   color: #111827;
 }
 
+.dark .total-row {
+  color: var(--text-color);
+}
+
 .total-val {
   font-size: 20px;
   color: #1e3a8a;
   font-family: serif;
+}
+
+.dark .total-val {
+  color: #60a5fa;
 }
 
 @keyframes fadeIn {
