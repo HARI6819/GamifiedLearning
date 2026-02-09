@@ -1,6 +1,6 @@
 import './Navbar.css'
 import { useState } from "react";
-import { Home, Gamepad2, BookOpen, Trophy, Menu, Languages, User, Sun, Moon } from "lucide-react";
+import { Home, Gamepad2, BookOpen, Trophy, Menu, Languages, User, Sun, Moon, MessageCircle } from "lucide-react";
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from './context/LanguageContext';
 import { useTheme } from './context/ThemeContext';
@@ -52,7 +52,10 @@ function Navbar() {
 
     return (
         <>
-            <div className="chatBotLable" onClick={handleChatPopUp}>{t.navbar.client}</div>
+            <div className="chatBotLable" onClick={handleChatPopUp}>
+                <span className="chat-tooltip">Ask me anything</span>
+                <MessageCircle size={35} />
+            </div>
 
             {popUp && <section className="chatBotIcon">
                 <Chat />

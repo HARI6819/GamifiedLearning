@@ -432,3 +432,13 @@
         transform: rotate(360deg);
     }
 }
+
+.login-status-text {
+    color: #1e3a8a;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.dark .login-status-text {
+    color: white;
+}

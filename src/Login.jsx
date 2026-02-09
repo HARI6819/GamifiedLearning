@@ -191,7 +191,7 @@ function Login() {
             {isLoading && (
                 <div className="loader-overlay">
                     <div className="spinner"></div>
-                    <p style={{ color: '#1e3a8a', fontWeight: '500', marginTop: '15px' }}>Logging in...</p>
+                    <p className="login-status-text">Logging in...</p>
                 </div>
             )}
             <div className='container'>

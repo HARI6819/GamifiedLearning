@@ -313,8 +313,21 @@ body {
   }
 }
 
+.dice-display {
+  color: #1e3a8a;
+  transition: color 0.3s;
+}
+
+.dark .dice-display {
+  color: #ffffff;
+}
+
 .dicerotate {
   animation: dice-rotate 1.2s infinite;
+}
+
+.roll-btn.rolling{
+  cursor: not-allowed;
 }
 
 @keyframes dice-rotate {

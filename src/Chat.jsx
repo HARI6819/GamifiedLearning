@@ -2,20 +2,57 @@ import { useState, useRef, useEffect } from "react";
 import "./Chat.css";
 import { useLanguage } from "./context/LanguageContext";
 import config from "./config";
+import ReactMarkdown from "react-markdown";
+import {Bot} from "lucide-react"
 
 export default function Chat() {
   const { t } = useLanguage();
+
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const chatMessagesRef = useRef(null);
+
+  const messagesContainerRef = useRef(null);
+  const messagesEndRef = useRef(null);
+  const shouldAutoScroll = useRef(true);
+
+  /* ------------------ SMART SCROLL DETECTION ------------------ */
+  useEffect(() => {
+    const container = messagesContainerRef.current;
+
+    const handleScroll = () => {
+      if (!container) return;
+
+      const threshold = 120; // px from bottom
+      const isNearBottom =
+        container.scrollHeight - container.scrollTop - container.clientHeight <
+        threshold;
+
+      shouldAutoScroll.current = isNearBottom;
+    };
+
+    container?.addEventListener("scroll", handleScroll);
+    return () => container?.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  /* ------------------ SCROLL TO BOTTOM ------------------ */
+  const scrollToBottom = (force = false) => {
+    const container = messagesContainerRef.current;
+    if (!container) return;
+
+    if (force || shouldAutoScroll.current) {
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
-    const el = chatMessagesRef.current;
-    if (!el) return;
-    el.scrollTop = el.scrollHeight;
+    scrollToBottom();
   }, [messages, loading]);
 
+  /* ------------------ SEND MESSAGE ------------------ */
   const sendMessage = async () => {
     if (!input.trim() || loading) return;
 
@@ -24,12 +61,15 @@ export default function Chat() {
     setInput("");
     setLoading(true);
 
+    // Force scroll when user sends message
+    scrollToBottom(true);
+
     try {
       const res = await fetch(`${config.API_URL}/api/chat`, {
         method: "POST",
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "true"
+          "ngrok-skip-browser-warning": "true",
         },
         body: JSON.stringify({ message: userMsg.content }),
       });
@@ -57,33 +97,101 @@ export default function Chat() {
 
   return (
     <div className="chat-container">
-      <div className="chat-header">
-        <h1>{t.chat.title}</h1>
-        <img src="/chatlogo.png" className="chatlogo"></img>
-      </div>
+      <div className="chat-main">
+        {/* ------------------ HEADER ------------------ */}
+        <div className="chat-header">
+          <h1>{t.chat.title}</h1>
+        </div>
 
-      <div className="chat-messages" ref={chatMessagesRef}>
-        {messages.map((msg, i) => (
-          <div key={i} className={`message ${msg.role}`}>
-            {msg.content}
+        {/* ------------------ MESSAGES ------------------ */}
+        <div className="chat-messages" ref={messagesContainerRef}>
+          {messages.length === 0 && (
+            <div className="empty-state">
+              <div className="gpt-logo">
+                <Bot size={45} />
+              </div>
+              <h2>How can I help you today?</h2>
+            </div>
+          )}
+
+          {messages.map((msg, i) => (
+            <div key={i} className={`message-wrapper ${msg.role}`}>
+              <div className="message-content">
+                <div className="message-avatar">
+                  {msg.role === "assistant" ? (
+                    <Bot size={25} />
+                  ) : (
+                    <div className="user-avatar">U</div>
+                  )}
+                </div>
+
+                <div className="message-text">
+                  {msg.role === "assistant" ? (
+                    <ReactMarkdown>{msg.content}</ReactMarkdown>
+                  ) : (
+                    msg.content
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* ------------------ TYPING INDICATOR ------------------ */}
+          {loading && (
+            <div className="message-wrapper assistant">
+              <div className="message-content">
+                <div className="message-avatar">
+                  <Bot size={25} />
+                </div>
+                <div className="message-text typing-indicator">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div ref={messagesEndRef} />
+        </div>
+
+        {/* ------------------ INPUT ------------------ */}
+        <div className="chat-input-area">
+          <div className="input-wrapper">
+            <textarea
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Message ..."
+              rows={1}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  sendMessage();
+                }
+              }}
+            />
+
+            <button onClick={sendMessage} disabled={!input.trim() || loading}>
+              <svg
+                stroke="currentColor"
+                fill="none"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                height="1em"
+                width="1em"
+              >
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
           </div>
-        ))}
 
-        {loading && (
-          <div className="message assistant typing">{t.chat.typing}</div>
-        )}
-
-
-      </div>
-
-      <div className="chat-input">
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder={t.chat.placeholder}
-          onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-        />
-        <button onClick={sendMessage}>➤</button>
+          <div className="disclaimer">
+            AI can make mistakes. Consider checking important information.
+          </div>
+        </div>
       </div>
     </div>
   );

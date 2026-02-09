@@ -31,6 +31,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+
 .logo {
   height: 100%;
   width: 30%;
@@ -299,5 +300,125 @@
 @media (max-width: 350px) {
   .LName {
     display: none;
+  }
+}
+
+.chatBotLable {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: fit-content;
+  gap: 8px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(13, 73, 223);
+  cursor: pointer;
+  z-index: 1000;
+  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); */
+  transition: all 0.3s ease;
+  animation: animate 4s infinite;
+  overflow: visible;
+  border: none;
+}
+
+@keyframes animate {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.chatBotLable:hover {
+  transform: translateY(-5px);
+}
+
+.chat-tooltip {
+  /* position: absolute; */
+  right: 70px;
+  background: white;
+  color: #1e3a8a;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  z-index: 5;
+  /* Always visible */
+  transform: translateX(0);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Removed hover dependency for visibility */
+/* .chatBotLable:hover .chat-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+} */
+
+.dark .chatBotLable {
+  color: white;
+  border: none;
+}
+
+.dark .chat-tooltip {
+  background: white;
+  color: #1e3a8a;
+  border: 1px solid #334155;
+}
+
+.chatBotIcon {
+  position: fixed;
+  top: 15%;
+  right: 2%;
+  z-index: 2000;
+  /* Increased z-index to be above everything */
+  height: 70%;
+  width: 400px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  animation: openUp .3s ease;
+  background: white;
+  transition: background 0.3s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* Important for rounded corners */
+  display: flex;
+  flex-direction: column;
+}
+
+.dark .chatBotIcon {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  .chatBotIcon {
+    width: 90%;
+    right: 5%;
+    top: 10%;
+    height: 77%;
+    z-index: 2005;
+  }
+}
+
+@keyframes openUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

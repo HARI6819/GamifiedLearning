@@ -3,7 +3,8 @@ import "./RightsDutiesClimb.css";
 import questions from "./data/arti.json";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { Dices, RotateCcw, Lock, LockOpen } from 'lucide-react';
+import { Dices, RotateCcw, Lock, LockOpen, Dice1, Dice2, Dice3, Dice4, Dice5, Dice6 } from 'lucide-react';
+
 import { useLanguage } from "./context/LanguageContext";
 import config from "./config";
 
@@ -25,6 +26,18 @@ const snakes = {
   86: 67,
   95: 72,
   99: 60
+};
+
+const DiceIcon = ({ num }) => {
+  switch (num) {
+    case 1: return <Dice1 size={48} color="currentColor" strokeWidth={1.5} />;
+    case 2: return <Dice2 size={48} color="currentColor" strokeWidth={1.5} />;
+    case 3: return <Dice3 size={48} color="currentColor" strokeWidth={1.5} />;
+    case 4: return <Dice4 size={48} color="currentColor" strokeWidth={1.5} />;
+    case 5: return <Dice5 size={48} color="currentColor" strokeWidth={1.5} />;
+    case 6: return <Dice6 size={48} color="currentColor" strokeWidth={1.5} />;
+    default: return <Dice1 size={48} color="currentColor" strokeWidth={1.5} />;
+  }
 };
 
 export default function RightsDutiesClimb() {
@@ -67,32 +80,45 @@ export default function RightsDutiesClimb() {
   }, []);
 
   const rollDice = () => {
-    let roll = 0;
     setIsActiveDice(true);
-    const id = setInterval(() => {
-      roll = Math.floor(Math.random() * 6) + 1;
-      setNumber(roll);
-      if (position + roll > 100) return;
+    let shuffleRoll = 1;
 
-    }, 150);
+    // 1. Shuffle Animation
+    const shuffleId = setInterval(() => {
+      shuffleRoll = Math.floor(Math.random() * 6) + 1;
+      setNumber(shuffleRoll); // Update visual dice
+    }, 100);
 
+    // 2. Stop Shuffling and determine final value
     setTimeout(() => {
-      clearInterval(id);
+      clearInterval(shuffleId);
 
-      // Filter questions by difficulty
-      const diffQuestions = questions.filter(q => q.difficulty === difficulty);
-      const pool = diffQuestions.length > 0 ? diffQuestions : questions;
-      const randomQ = pool[Math.floor(Math.random() * pool.length)];
+      const finalRoll = Math.floor(Math.random() * 6) + 1;
+      setNumber(finalRoll); // Show final dice face
 
-      setIsActiveDice(false);
-      setDice(roll);
-      setCurrentQ(randomQ);
-      setShowQuestion(true);
-      setMessage("");
-    }, 1500);
+      // Check if move is valid (exact 100 rule)
+      if (position + finalRoll > 100) {
+        setDice(finalRoll);
+        setMessage(`⚠️ Rolled ${finalRoll}. Need exact number to finish!`);
+        setIsActiveDice(false);
+        return; // Don't show question, just wait for next roll
+      }
 
-    // roll = Math.floor(Math.random() * 6) + 1;
+      // 3. Delay before showing question
+      setTimeout(() => {
+        setIsActiveDice(false);
+        // Filter questions by difficulty
+        const diffQuestions = questions.filter(q => q.difficulty === difficulty);
+        const pool = diffQuestions.length > 0 ? diffQuestions : questions;
+        const randomQ = pool[Math.floor(Math.random() * pool.length)];
 
+        setDice(finalRoll);
+        setCurrentQ(randomQ);
+        setShowQuestion(true);
+        setMessage("");
+      }, 1000); // 1 second delay to see the dice result
+
+    }, 2000); // Shuffle for 2 seconds
   };
 
   /* Helper to get coordinates for any board number (1-100) */
@@ -460,10 +486,11 @@ export default function RightsDutiesClimb() {
             </div>
 
             {!showQuestion && <div className="dice-box">
-              {/* <div className="dice">🎲</div> */}
-              <img src={`/dice/dice-${Number}.svg`} alt="dice1" style={{ width: "12%" }} className={`${IsActiveDice ? "dicerotate" : ""}`} />
-              <button onClick={rollDice} disabled={showQuestion}>
-                <Dices /> <h3>{t.climb.roll}</h3>
+              <div className={`dice-display ${IsActiveDice ? "dicerotate" : ""}`} style={{ margin: "0 auto 10px", display: "flex", justifyContent: "center" }}>
+                <DiceIcon num={Number} />
+              </div>
+              <button onClick={rollDice} disabled={showQuestion || IsActiveDice} className={`roll-btn ${IsActiveDice ? "rolling" : ""}`}>
+                <Dices /> <h3>{IsActiveDice ? "Rolling..." : t.climb.roll}</h3>
               </button>
             </div>}
 
