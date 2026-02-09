@@ -10,6 +10,48 @@
     background-color: var(--bg-color);
 }
 
+.badge1 {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 16px;
+    margin-bottom: 16px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+
+    font-size: 12px;
+    font-weight: 600;
+    color: #111827;
+
+    cursor: default;
+    transition: all 0.2s ease-in-out;
+}
+
+.badge:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+}
+
+.badge1-icon {
+    width: 12px;
+    height: 12px;
+    margin-top: 2px;
+}
+
+.dark .badge1 {
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.dark .badge1:focus {
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+}
+
+.dark .badge1-icon {
+    fill: var(--text-color);
+}
+
 .learn-page {
     max-width: 900px;
     margin: auto;
