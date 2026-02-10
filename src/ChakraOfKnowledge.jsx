@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import articles from "./data/articles.json";
 import chakraQuestions from "./data/chakraQuestions.json";
 import "./ChakraOfKnowledge.css";
@@ -24,6 +24,7 @@ export default function ChakraOfKnowledge() {
   const [rotation, setRotation] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState(null);
+  const quizRef = useRef(null);
 
   // Quiz and Difficulty States
   const [difficulty, setDifficulty] = useState("Easy");
@@ -103,6 +104,11 @@ export default function ChakraOfKnowledge() {
 
       setIsSpinning(false);
       setShowQuizModal(true);
+
+      // Auto-scroll to quiz section on mobile after spin
+      if (window.innerWidth < 768 && quizRef.current) {
+        quizRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+      }
     }, 4000);
   };
 
@@ -309,7 +315,7 @@ export default function ChakraOfKnowledge() {
           </div>
 
           {/* Quiz/Info Section (Inline) */}
-          <div className="quiz-section-chakra">
+          <div className="quiz-section-chakra" ref={quizRef}>
             {!currentQuestion ? (
               <div className="info-card-chakra center">
                 <div className="big-icon-chakra">🎡</div>
