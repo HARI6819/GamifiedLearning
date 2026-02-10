@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./Learn.css";
 // import articlesData from "./data/articles.json";
 import Navbar from './Navbar'
@@ -20,6 +20,7 @@ const Learn = () => {
     const [organ, setOrgan] = useState("all");
     const [loading, setLoading] = useState(true);
     const [selectedArticle, setSelectedArticle] = useState(null);
+    const activeCardRef = useRef(null);
 
     const updateProgress = async (category) => {
         const email = localStorage.getItem('userEmail');
@@ -91,6 +92,17 @@ const Learn = () => {
             setSelectedArticle(filteredArticles[0]);
         }
     }, [selectedCategory, filteredArticles, selectedArticle]);
+
+    // Handle auto-scroll to active card in mobile view
+    useEffect(() => {
+        if (selectedArticle && activeCardRef.current && window.innerWidth <= 1024) {
+            activeCardRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
+    }, [selectedArticle]);
 
     // Helper to get translated article data
     const getTranslatedArticle = (article) => {
@@ -241,7 +253,7 @@ const Learn = () => {
                                     <button onClick={() => setOrgan("State")} className={organ === "State" ? "active" : ""}>🏛️ {t.learn.filters.state}</button>
                                 </div>
                                 <div className="label-showing-box">
-                                <p className="label-showing">{t.learn.showing} {filteredArticles.length} {t.learn.articles}</p>
+                                    <p className="label-showing">{t.learn.showing} {filteredArticles.length} {t.learn.articles}</p>
                                 </div>
                             </div>
                         </div>
@@ -258,6 +270,7 @@ const Learn = () => {
                                                 <div
                                                     className={`article-card ${article.category} clickable ${isActive ? 'active-card' : ''}`}
                                                     key={article.id}
+                                                    ref={isActive ? activeCardRef : null}
                                                     onClick={() => handleArticleClick(article)}
                                                 >
                                                     <div className="badges">

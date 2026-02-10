@@ -72,6 +72,9 @@ function Navbar() {
                 </div>
                 <div className="navigation">
                     <div className="mobile-wrapper">
+                        <div className="theme-toggle-standalone" onClick={toggleTheme}>
+                            {theme === 'light' ? <Moon size={24} /> : <Sun size={24} />}
+                        </div>
                         <div className="MobileView" onClick={toggleMenu}>
                             {isMenuOpen ? "✕" : "☰"}
                         </div>
@@ -96,7 +99,7 @@ function Navbar() {
                                 <Languages size={20} />
                                 {language === 'en' ? 'HI' : 'EN'}
                             </li>
-                            <li onClick={() => { toggleTheme(); setIsMenuOpen(false); }} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+                            <li className="desktop-theme-toggle" onClick={toggleTheme} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
                                 {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
                                 {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
                             </li>

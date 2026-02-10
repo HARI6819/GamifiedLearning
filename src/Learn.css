@@ -275,9 +275,13 @@
     width: 100px;
     height: 100px;
     background: currentColor;
-    opacity: 0.05;
+    opacity: 0.09;
     border-radius: 0 0 0 100%;
     transition: transform 0.5s ease;
+}
+
+.category-hero-card:hover::after {
+    transform: scale(1.5);
 }
 
 .category-hero-card:hover {
@@ -308,6 +312,12 @@
     border-radius: 20px;
     transition: transform 0.3s ease;
 }
+
+
+.category-hero-card:hover .hero-card-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
 
 .dark .hero-card-icon {
     background: rgba(255, 255, 255, 0.05);
@@ -452,6 +462,9 @@
     border: 1px solid #e2e8f0;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
+.article-details-pane::-webkit-scrollbar {
+    display: none;
+}
 
 .dark .article-details-pane {
     background: var(--card-bg);
@@ -461,6 +474,12 @@
 .details-content-card {
     padding: 40px;
     animation: fadeIn 0.3s ease;
+}
+
+.details-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
 }
 
 .details-title {
@@ -483,6 +502,22 @@
     letter-spacing: 1px;
 }
 
+.details-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.summary-block h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+
+
 .details-description {
     font-size: 18px;
     line-height: 1.7;
@@ -499,6 +534,7 @@
     border: 1px solid #fbd38d;
     border-radius: 20px;
     padding: 24px;
+    margin-bottom: 20px;
 }
 
 .dark .details-fun-fact {
@@ -511,10 +547,28 @@
     margin-bottom: 8px;
 }
 
+.dark .details-fun-fact h4{
+    color: grey;
+}
+
+.dark .details-fun-fact p{
+    color: rgb(238, 218, 218);
+}
+
 .details-fun-fact p {
     color: #b45309;
     font-size: 16px;
 }
+
+.meta-tags {
+    color: #94a3b8;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 
 .meta-tags span {
     border: 1px solid #1d4483;
@@ -527,6 +581,18 @@
     border-color: #60a5fa;
     color: #bfdbfe;
 }
+.no-selection-state {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    gap: 16px;
+    text-align: center;
+    padding: 40px;
+}
+
 
 .active-card {
     border-color: #3b82f6 !important;
