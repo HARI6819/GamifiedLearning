@@ -115,6 +115,18 @@ const ProgressPage = () => {
         <Navbar />
       </section>
       <main className="pa-wrapper">
+        {localStorage.getItem('isGuest') === 'true' && (
+          <div className="guest-restriction-overlay animated fadeIn">
+            <div className="glossy-card-guest">
+              <span className="lock-icon-guest">🔒</span>
+              <h2>{t.login.guestRestrictedTitle || "Access Restricted"}</h2>
+              <p>{t.login.guestRestrictedMsg || "Please login to view your personal progress and achievements."}</p>
+              <button className="login-redirect-btn" onClick={() => { localStorage.clear(); window.location.href = '/'; }}>
+                {t.login.login || "Login Now"}
+              </button>
+            </div>
+          </div>
+        )}
         {/* Header */}
         <div className="pa-header">
           <span className="pa-pill">{t.progress.journey}</span>
@@ -273,72 +285,72 @@ const ProgressPage = () => {
               <button className="close-modal" onClick={() => setShowSummary(false)}>&times;</button>
               <h2 className="modal-title">📊 Points Breakdown</h2>
               <div className="list-box">
-              <div className="summary-list">
-                <div className="summary-item">
-                  <div className="item-info">
-                    <span className="item-icon">📚</span>
-                    <div>
-                      <h4>{t.learn.title}</h4>
-                      <p>Articles Read Progress</p>
+                <div className="summary-list">
+                  <div className="summary-item">
+                    <div className="item-info">
+                      <span className="item-icon">📚</span>
+                      <div>
+                        <h4>{t.learn.title}</h4>
+                        <p>Articles Read Progress</p>
+                      </div>
                     </div>
+                    <span className="item-points">+{stats.pointsBreakdown.learn}</span>
                   </div>
-                  <span className="item-points">+{stats.pointsBreakdown.learn}</span>
-                </div>
 
-                <div className="summary-item">
-                  <div className="item-info">
-                    <span className="item-icon">🧩</span>
-                    <div>
-                      <h4>{t.home.gameFormats.games.match.title}</h4>
-                      <p>Article Match Challenge</p>
+                  <div className="summary-item">
+                    <div className="item-info">
+                      <span className="item-icon">🧩</span>
+                      <div>
+                        <h4>{t.home.gameFormats.games.match.title}</h4>
+                        <p>Article Match Challenge</p>
+                      </div>
                     </div>
+                    <span className="item-points">+{stats.pointsBreakdown.articleMatch}</span>
                   </div>
-                  <span className="item-points">+{stats.pointsBreakdown.articleMatch}</span>
-                </div>
 
-                <div className="summary-item">
-                  <div className="item-info">
-                    <span className="item-icon">🐍</span>
-                    <div>
-                      <h4>{t.home.gameFormats.games.climb.title}</h4>
-                      <p>Snakes & Ladders Quiz</p>
+                  <div className="summary-item">
+                    <div className="item-info">
+                      <span className="item-icon">🐍</span>
+                      <div>
+                        <h4>{t.home.gameFormats.games.climb.title}</h4>
+                        <p>Snakes & Ladders Quiz</p>
+                      </div>
                     </div>
+                    <span className="item-points">+{stats.pointsBreakdown.rightsDutiesClimb}</span>
                   </div>
-                  <span className="item-points">+{stats.pointsBreakdown.rightsDutiesClimb}</span>
-                </div>
 
-                <div className="summary-item">
-                  <div className="item-info">
-                    <span className="item-icon">🎴</span>
-                    <div>
-                      <h4>{t.home.gameFormats.games.cards.title}</h4>
-                      <p>Constitutional Flashcards</p>
+                  <div className="summary-item">
+                    <div className="item-info">
+                      <span className="item-icon">🎴</span>
+                      <div>
+                        <h4>{t.home.gameFormats.games.cards.title}</h4>
+                        <p>Constitutional Flashcards</p>
+                      </div>
                     </div>
+                    <span className="item-points">+{stats.pointsBreakdown.constitutionCards}</span>
                   </div>
-                  <span className="item-points">+{stats.pointsBreakdown.constitutionCards}</span>
-                </div>
 
-                <div className="summary-item">
-                  <div className="item-info">
-                    <span className="item-icon">🎡</span>
-                    <div>
-                      <h4>{t.home.gameFormats.games.wheel.title}</h4>
-                      <p>Chakra of Knowledge</p>
+                  <div className="summary-item">
+                    <div className="item-info">
+                      <span className="item-icon">🎡</span>
+                      <div>
+                        <h4>{t.home.gameFormats.games.wheel.title}</h4>
+                        <p>Chakra of Knowledge</p>
+                      </div>
                     </div>
+                    <span className="item-points">+{stats.pointsBreakdown.chakra}</span>
                   </div>
-                  <span className="item-points">+{stats.pointsBreakdown.chakra}</span>
-                </div>
 
-                <div className="summary-item">
-                  <div className="item-info">
-                    <span className="item-icon">🧠</span>
-                    <div>
-                      <h4>Constitutional Quiz</h4>
-                      <p>Quiz Challenges</p>
+                  <div className="summary-item">
+                    <div className="item-info">
+                      <span className="item-icon">🧠</span>
+                      <div>
+                        <h4>Constitutional Quiz</h4>
+                        <p>Quiz Challenges</p>
+                      </div>
                     </div>
+                    <span className="item-points">+{stats.pointsBreakdown.quiz}</span>
                   </div>
-                  <span className="item-points">+{stats.pointsBreakdown.quiz}</span>
-                </div>
                 </div>
               </div>
               <div className="modal-footer">

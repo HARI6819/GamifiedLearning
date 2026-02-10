@@ -181,6 +181,18 @@ const ProfilePage = () => {
                 <Navbar />
             </section>
             <main className="profile-wrapper">
+                {localStorage.getItem('isGuest') === 'true' && (
+                    <div className="guest-restriction-overlay animated fadeIn">
+                        <div className="glossy-card-guest">
+                            <span className="lock-icon-guest">🔒</span>
+                            <h2>{t.login.guestRestrictedTitle || "Access Restricted"}</h2>
+                            <p>{t.login.guestRestrictedMsg || "Please login to customize your profile and manage your journey."}</p>
+                            <button className="login-redirect-btn" onClick={() => { localStorage.clear(); window.location.href = '/'; }}>
+                                {t.login.login || "Login Now"}
+                            </button>
+                        </div>
+                    </div>
+                )}
                 <div className="profile-container">
                     {/* Profile Header */}
                     <div className="profile-card profile-header-card">

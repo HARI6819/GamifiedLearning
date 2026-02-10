@@ -96,6 +96,18 @@ export default function Games() {
     <>
       <Navbar />
       <main className="gamehub1" ref={mainRef}>
+        {localStorage.getItem('isGuest') === 'true' && (
+          <div className="guest-restriction-overlay animated fadeIn">
+            <div className="glossy-card-guest">
+              <span className="lock-icon-guest">🔒</span>
+              <h2>{t.login.guestRestrictedTitle || "Access Restricted"}</h2>
+              <p>{t.login.guestRestrictedMsg || "Please login to access the full game experience and track your progress."}</p>
+              <button className="login-redirect-btn" onClick={() => { localStorage.clear(); window.location.href = '/'; }}>
+                {t.login.login || "Login Now"}
+              </button>
+            </div>
+          </div>
+        )}
         {articlesRead < 10 && (
           <div className="locked-overlay">
             <div className="locked-card" ref={lockRef}>

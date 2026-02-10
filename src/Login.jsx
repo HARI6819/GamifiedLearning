@@ -104,6 +104,7 @@ function Login() {
             if (res.ok) {
                 localStorage.setItem('userEmail', Username);
                 localStorage.setItem('userName', Username);
+                localStorage.setItem('isGuest', 'true');
                 navigate('/home', { state: { name: Username, extra: data, flag: true } });
             } else {
                 setIsLoading(false);
@@ -138,6 +139,7 @@ function Login() {
                 localStorage.setItem('userEmail', Email);
                 localStorage.setItem('userName', Name);
                 localStorage.setItem('profileImage', finalProfileImage);
+                localStorage.setItem('isGuest', 'false');
                 navigate('/home', { state: { name: Name, email: Email, extra: data, flag: true } });
             } else if (data.Error && data.Error.includes("duplicate key")) {
                 console.log(data.Error);
@@ -175,6 +177,7 @@ function Login() {
                 if (data.profileImage) {
                     localStorage.setItem('profileImage', data.profileImage);
                 }
+                localStorage.setItem('isGuest', 'false');
                 navigate('/home', { state: { email: LEmail, extra: data, flag: true } });
             } else {
                 setPopup(true);
