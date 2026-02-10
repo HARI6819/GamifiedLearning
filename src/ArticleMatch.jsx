@@ -43,7 +43,7 @@ export default function ArticleMatch() {
                 });
                 if (res.ok) {
                     const data = await res.json();
-                    const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards"];
+                    const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz"];
                     const completed = data.completedLevels || {};
                     const levels = ["Easy"];
                     if (allGames.every(g => completed[g]?.includes("Easy"))) levels.push("Medium");
@@ -141,7 +141,8 @@ export default function ArticleMatch() {
                     gamesPlayed: 1,
                     totalPoints: difficulty === "Hard" ? 50 : (difficulty === "Medium" ? 30 : 15),
                     gameId: "articleMatch",
-                    completedLevel: difficulty
+                    completedLevel: difficulty,
+                    mastery: { legislature: 5, executive: 5, judiciary: 5 }
                 })
             });
         } catch (e) {
@@ -253,17 +254,22 @@ export default function ArticleMatch() {
 
                 {/* Win Modal */}
                 {gameState === "won" && (
-                    <div className="win-modal">
-                        <div className="win-content">
-                            <span className="win-icon">🎉</span>
+                    <div className="article-completion-overlay animated fadeIn">
+                        <div className="article-completion-card">
+                            <div className="completion-icon">🏆</div>
                             <h2>{t.articleMatch.wellDone}</h2>
-                            <p style={{ margin: '1rem 0', color: '#64748b' }}>
-                                You matched all {diffConfig[difficulty].pairs} pairs in {moves} moves!
+                            <p>
+                                {t.articleMatch.wellDoneDesc || `You've matched all ${diffConfig[difficulty].pairs} pairs successfully!`}
                             </p>
-                            <div className="game-meta" style={{ justifyContent: 'center', marginBottom: '1.5rem' }}>
-                                <span className="time">⏱ {formatTime(timer)}</span>
+                            <div className="completion-stats">
+                                <div className="stat-pill">
+                                    <Timer size={16} /> {formatTime(timer)}
+                                </div>
+                                <div className="stat-pill">
+                                    Moves: {moves}
+                                </div>
                             </div>
-                            <button className="start-btn" onClick={() => setGameState("start")}>
+                            <button className="continue-btn-article" onClick={() => setGameState("start")}>
                                 {t.articleMatch.playAgain}
                             </button>
                         </div>

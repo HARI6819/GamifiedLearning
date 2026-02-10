@@ -13,7 +13,8 @@ export default function Games() {
     articleMatch: [],
     rightsDutiesClimb: [],
     constitutionCards: [],
-    chakra: []
+    chakra: [],
+    quiz: []
   });
   const [loading, setLoading] = useState(true);
   const [articlesRead, setArticlesRead] = useState(0);
@@ -63,10 +64,11 @@ export default function Games() {
     { id: "constitutionCards", title: t.home.gameFormats.games.cards.title, desc: t.home.gameFormats.games.cards.desc, time: t.home.gameFormats.games.cards.time, icon: "🃏", color: "green", link: "/games/quiz-cards" },
     { id: "rightsDutiesClimb", title: t.home.gameFormats.games.climb.title, desc: t.home.gameFormats.games.climb.desc, time: t.home.gameFormats.games.climb.time, icon: "🐍", color: "blue", link: "/games/snake-ladder" },
     { id: "articleMatch", title: t.home.gameFormats.games.match.title, desc: t.home.gameFormats.games.match.desc, time: t.home.gameFormats.games.match.time, icon: "🎴", color: "gold", link: "/games/match-pairs" },
+    { id: "quiz", title: "Constitutional Quiz", desc: "Test your knowledge with 10 questions and a timer!", time: "5-10 mins", icon: "🧠", color: "purple", link: "/games/quiz" },
   ];
 
   // Logic to determine global unlocks
-  const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards"];
+  const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz"];
   const isEasyDone = allGames.every(g => completedLevels[g]?.includes("Easy"));
   const isMediumDone = allGames.every(g => completedLevels[g]?.includes("Medium"));
 
@@ -148,10 +150,10 @@ export default function Games() {
                       <div className={`icon-box1 ${game.color}`}>
                         <span>{game.icon}</span>
                       </div>
-                      {(game.id != "chakra") && <div className="status-pill" style={{ backgroundColor: status.color + '22', color: status.color }}>
+                      <div className="status-pill" style={{ backgroundColor: status.color + '22', color: status.color }}>
                         {isGameDoneAtGlobalLevel && <CheckCircle2 size={12} style={{ marginRight: 4 }} />}
                         {status.label}
-                      </div>}
+                      </div>
                     </div>
                     <h3>{game.title}</h3>
                     <p className="desc1">{game.desc}</p>

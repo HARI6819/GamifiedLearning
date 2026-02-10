@@ -38,7 +38,7 @@ const Learn = () => {
                     articlesRead: 1,
                     totalPoints: 5,
                     gameId: "learn",
-                    mastery: { [category.toLowerCase()]: 2 }
+                    mastery: { [category.toLowerCase()]: 5 }
                 })
             });
         } catch (e) {
@@ -48,7 +48,6 @@ const Learn = () => {
 
     const handleArticleClick = (article) => {
         setSelectedArticle(article);
-        updateProgress(article.category);
     };
 
     useEffect(() => {
@@ -102,6 +101,17 @@ const Learn = () => {
                 inline: 'center'
             });
         }
+    }, [selectedArticle]);
+
+    // Track 10-second read progress
+    useEffect(() => {
+        if (!selectedArticle) return;
+
+        const timer = setTimeout(() => {
+            updateProgress(selectedArticle.category);
+        }, 10000);
+
+        return () => clearTimeout(timer);
     }, [selectedArticle]);
 
     // Helper to get translated article data

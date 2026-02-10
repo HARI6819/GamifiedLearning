@@ -71,6 +71,12 @@ export const translations = {
                         desc: "Match articles with their meanings in this memory game!",
                         level: "Easy",
                         time: "5-10 mins"
+                    },
+                    quiz: {
+                        title: "Constitutional Quiz",
+                        desc: "Test your knowledge with 10 questions and a timer!",
+                        level: "Medium",
+                        time: "5-10 mins"
                     }
                 }
             },
@@ -337,6 +343,12 @@ export const translations = {
                         title: "लेख मिलान",
                         desc: "इस मेमोरी गेम में लेखों को उनके अर्थों के साथ मिलाएं!",
                         level: "आसान",
+                        time: "5-10 मिनट"
+                    },
+                    quiz: {
+                        title: "संवैधानिक प्रश्नोत्तरी",
+                        desc: "10 प्रश्नों और टाइमर के साथ अपने ज्ञान का परीक्षण करें!",
+                        level: "मध्यम",
                         time: "5-10 मिनट"
                     }
                 }

@@ -14,6 +14,7 @@ import ChakraOfKnowledge from './ChakraOfKnowledge.jsx'
 import RightsDutiesClimb from './RightsDutiesClimb.jsx'
 import ConstitutionCards from './ConstitutionCards.jsx'
 import ArticleMatch from './ArticleMatch.jsx'
+import Quiz from './Quiz.jsx'
 import ProfilePage from './ProfilePage.jsx'
 
 import ProtectedRoute from './ProtectedRoute.jsx'
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
   {
     path: '/games/match-pairs',
     element: <ProtectedRoute><ArticleMatch /></ProtectedRoute>
+  },
+  {
+    path: '/games/quiz',
+    element: <ProtectedRoute><Quiz /></ProtectedRoute>
   },
   {
     path: '/profile',

@@ -65,7 +65,7 @@ export default function RightsDutiesClimb() {
         });
         if (res.ok) {
           const data = await res.json();
-          const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards"];
+          const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz"];
           const completed = data.completedLevels || {};
           const levels = ["Easy"];
           if (allGames.every(g => completed[g]?.includes("Easy"))) levels.push("Medium");
@@ -188,7 +188,8 @@ export default function RightsDutiesClimb() {
           gamesPlayed: 1,
           totalPoints: difficulty === "Hard" ? 100 : (difficulty === "Medium" ? 60 : 30),
           gameId: "rightsDutiesClimb",
-          completedLevel: difficulty
+          completedLevel: difficulty,
+          mastery: { legislature: 10, executive: 10, judiciary: 10 }
         })
       });
     } catch (e) {
@@ -208,7 +209,8 @@ export default function RightsDutiesClimb() {
         body: JSON.stringify({
           email,
           totalPoints: points,
-          gameId: "rightsDutiesClimb"
+          gameId: "rightsDutiesClimb",
+          mastery: { legislature: 3, executive: 3, judiciary: 3 }
         })
       });
     } catch (e) {
@@ -528,13 +530,35 @@ export default function RightsDutiesClimb() {
 
         {/* Game Popups */}
         {popup.show && (
-          <div className={`climb-popup-overlay`}>
-            <div className={`climb-popup ${popup.type}`}>
-              <h2>{popup.title}</h2>
-              <p>{popup.message}</p>
-              {popup.type === 'win' && <button className="start-btn" onClick={() => { setPopup(prev => ({ ...prev, show: false })); resetGame(); }}>Play Again</button>}
-              {popup.type !== 'win' && <div className="loader-line"></div>}
-            </div>
+          <div className={`climb-popup-overlay animated fadeIn`}>
+            {popup.type === 'win' ? (
+              <div className="climb-completion-card">
+                <div className="completion-icon">🏆</div>
+                <h2>{language === 'hi' ? 'बधाई हो!' : 'Congratulations!'}</h2>
+                <p>
+                  {language === 'hi'
+                    ? `आपने ${moves} चालों में खेल सफलतापूर्वक पूरा कर लिया है!`
+                    : `You've successfully completed the game in ${moves} moves!`}
+                </p>
+                <div className="completion-stats">
+                  <div className="stat-pill">
+                    Position: 100
+                  </div>
+                  <div className="stat-pill">
+                    Moves: {moves}
+                  </div>
+                </div>
+                <button className="continue-btn-climb" onClick={() => { setPopup(prev => ({ ...prev, show: false })); resetGame(); }}>
+                  {language === 'hi' ? 'फिर से खेलें' : 'Play Again'}
+                </button>
+              </div>
+            ) : (
+              <div className={`climb-popup ${popup.type}`}>
+                <h2>{popup.title}</h2>
+                <p>{popup.message}</p>
+                <div className="loader-line"></div>
+              </div>
+            )}
           </div>
         )}
       </main>

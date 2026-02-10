@@ -501,8 +501,17 @@
   flex-direction: column;
   gap: 16px;
   margin-bottom: 24px;
+  /* max-height: 60vh; */
+  /* overflow-y: auto; */
+  /* padding-right: 8px; */
+  /* Added padding for scrollbar space */
 }
 
+.list-box{
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
 .summary-item {
   display: flex;
   justify-content: space-between;

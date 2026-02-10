@@ -15,44 +15,198 @@
     },
     {
         "id": "card-3",
-        "question": "Which Article relates to the abolition of Untouchability?",
-        "answer": "Article 17",
-        "category": "Fundamental Rights",
-        "difficulty": "Medium"
-    },
-    {
-        "id": "card-4",
         "question": "Who appoints the Prime Minister of India?",
         "answer": "The President of India",
         "category": "Executive",
         "difficulty": "Easy"
     },
     {
-        "id": "card-5",
-        "question": "What is the maximum gap allowed between two sessions of Parliament?",
-        "answer": "6 months",
-        "category": "Legislature",
-        "difficulty": "Medium"
-    },
-    {
-        "id": "card-6",
+        "id": "card-4",
         "question": "Who is known as the Father of the Indian Constitution?",
         "answer": "Dr. B.R. Ambedkar",
         "category": "History",
         "difficulty": "Easy"
     },
     {
+        "id": "card-5",
+        "question": "What is the minimum age to vote in India?",
+        "answer": "18 years",
+        "category": "Citizenship",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-6",
+        "question": "What is the lower house of the Indian Parliament called?",
+        "answer": "Lok Sabha",
+        "category": "Legislature",
+        "difficulty": "Easy"
+    },
+    {
         "id": "card-7",
+        "question": "What is the upper house of the Indian Parliament called?",
+        "answer": "Rajya Sabha",
+        "category": "Legislature",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-8",
+        "question": "The Preamble starts with which three words?",
+        "answer": "We, the People",
+        "category": "Preamble",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-9",
+        "question": "Which body is the Guardian of the Indian Constitution?",
+        "answer": "Supreme Court of India",
+        "category": "Judiciary",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-10",
+        "question": "What is the tenure of the Lok Sabha?",
+        "answer": "5 years",
+        "category": "Legislature",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-11",
+        "question": "Which Article relates to the abolition of Untouchability?",
+        "answer": "Article 17",
+        "category": "Fundamental Rights",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-12",
+        "question": "What is the maximum gap allowed between two sessions of Parliament?",
+        "answer": "6 months",
+        "category": "Legislature",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-13",
+        "question": "Which Article is known as the 'Right to Education'?",
+        "answer": "Article 21A",
+        "category": "Fundamental Rights",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-14",
+        "question": "In which part of the Constitution are Fundamental Duties mentioned?",
+        "answer": "Part IV-A",
+        "category": "Duties",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-15",
+        "question": "How many Schedules are there in the Indian Constitution currently?",
+        "answer": "12 Schedules",
+        "category": "General",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-16",
+        "question": "Who is considered the 'First Citizen' of India?",
+        "answer": "The President of India",
+        "category": "Executive",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-17",
+        "question": "What is the term of a member of the Rajya Sabha?",
+        "answer": "6 years",
+        "category": "Legislature",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-18",
+        "question": "Which Fundamental Right was described by Dr. Ambedkar as the 'Heart and Soul'?",
+        "answer": "Right to Constitutional Remedies (Article 32)",
+        "category": "Fundamental Rights",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-19",
+        "question": "The Directive Principles of State Policy are borrowed from which Constitution?",
+        "answer": "Irish Constitution",
+        "category": "Principles",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-20",
+        "question": "Which amendment is known as the 'Mini-Constitution' of India?",
+        "answer": "42nd Amendment (1976)",
+        "category": "Amendments",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-21",
         "question": "Which is the highest judicial court in a State?",
         "answer": "High Court",
         "category": "Judiciary",
         "difficulty": "Hard"
     },
     {
-        "id": "card-8",
-        "question": "How many Fundamental Duties are there in the Indian Constitution?",
+        "id": "card-22",
+        "question": "How many Fundamental Duties are there currently?",
         "answer": "11 Fundamental Duties",
         "category": "Duties",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-23",
+        "question": "Which Article provides for the 'Joint Sitting' of both houses of Parliament?",
+        "answer": "Article 108",
+        "category": "Legislature",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-24",
+        "question": "Article 360 of the Constitution refers to which type of Emergency?",
+        "answer": "Financial Emergency",
+        "category": "Emergency",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-25",
+        "question": "Which Article deals with the 'Uniform Civil Code'?",
+        "answer": "Article 44",
+        "category": "Principles",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-26",
+        "question": "Which Article empowers the President to grant pardons?",
+        "answer": "Article 72",
+        "category": "Executive",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-27",
+        "question": "In which case did the Supreme Court propound the 'Basic Structure Doctrine'?",
+        "answer": "Kesavananda Bharati v. State of Kerala (1973)",
+        "category": "Judiciary",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-28",
+        "question": "Which Article describes India as a 'Union of States'?",
+        "answer": "Article 1",
+        "category": "General",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-29",
+        "question": "Which Article gives the power to amend the Constitution to the Parliament?",
+        "answer": "Article 368",
+        "category": "Legislature",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-30",
+        "question": "How many members can the President nominate to the Rajya Sabha?",
+        "answer": "12 members",
+        "category": "Legislature",
         "difficulty": "Hard"
     }
 ]

@@ -14,6 +14,123 @@
   },
   {
     "id": 2,
+    "question": "Who is known as the Father of the Indian Constitution?",
+    "options": [
+      "Mahatma Gandhi",
+      "Jawaharlal Nehru",
+      "Dr. B.R. Ambedkar",
+      "Sardar Patel"
+    ],
+    "correctIndex": 2,
+    "points": 5,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 3,
+    "question": "What is the minimum age to vote in India?",
+    "options": [
+      "16 years",
+      "18 years",
+      "21 years",
+      "25 years"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 4,
+    "question": "How many Fundamental Duties are listed in the Constitution?",
+    "options": [
+      "8",
+      "10",
+      "11",
+      "12"
+    ],
+    "correctIndex": 2,
+    "points": 5,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 5,
+    "question": "What is the lower house of the Indian Parliament called?",
+    "options": [
+      "Rajya Sabha",
+      "Lok Sabha",
+      "Vidhan Sabha",
+      "Parliament House"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 6,
+    "question": "Who appoints the Prime Minister of India?",
+    "options": [
+      "The Chief Justice",
+      "The People",
+      "The President",
+      "The Speaker"
+    ],
+    "correctIndex": 2,
+    "points": 5,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 7,
+    "question": "What is the term length of the President of India?",
+    "options": [
+      "4 years",
+      "5 years",
+      "6 years",
+      "No fixed term"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 8,
+    "question": "How many Fundamental Rights were originally in the Constitution?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 9,
+    "question": "Which color in the Indian Flag represents courage and sacrifice?",
+    "options": [
+      "White",
+      "Green",
+      "Saffron",
+      "Blue"
+    ],
+    "correctIndex": 2,
+    "points": 5,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 10,
+    "question": "The National Anthem of India was written by:",
+    "options": [
+      "Bankim Chandra Chatterjee",
+      "Rabindranath Tagore",
+      "Sarojini Naidu",
+      "Subhash Chandra Bose"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy"
+  },
+  {
+    "id": 11,
     "question": "Right to Equality is covered under which Articles?",
     "options": [
       "12–35",
@@ -26,13 +143,247 @@
     "difficulty": "Medium"
   },
   {
-    "id": 3,
+    "id": 12,
+    "question": "Which article abolished untouchability?",
+    "options": [
+      "Article 14",
+      "Article 15",
+      "Article 17",
+      "Article 19"
+    ],
+    "correctIndex": 2,
+    "points": 4,
+    "difficulty": "Medium"
+  },
+  {
+    "id": 13,
+    "question": "Which article provides for the Right to Constitutional Remedies?",
+    "options": [
+      "Article 19",
+      "Article 21",
+      "Article 32",
+      "Article 44"
+    ],
+    "correctIndex": 2,
+    "points": 4,
+    "difficulty": "Medium"
+  },
+  {
+    "id": 14,
+    "question": "Which part of the Constitution contains Fundamental Rights?",
+    "options": [
+      "Part II",
+      "Part III",
+      "Part IV",
+      "Part V"
+    ],
+    "correctIndex": 1,
+    "points": 4,
+    "difficulty": "Medium"
+  },
+  {
+    "id": 15,
+    "question": "In which year was the first amendment to the Indian Constitution made?",
+    "options": [
+      "1950",
+      "1951",
+      "1952",
+      "1955"
+    ],
+    "correctIndex": 1,
+    "points": 4,
+    "difficulty": "Medium"
+  },
+  {
+    "id": 16,
+    "question": "Right to Education (Article 21A) was added by which amendment?",
+    "options": [
+      "42nd Amendment",
+      "44th Amendment",
+      "86th Amendment",
+      "92nd Amendment"
+    ],
+    "correctIndex": 2,
+    "points": 4,
+    "difficulty": "Medium"
+  },
+  {
+    "id": 17,
+    "question": "Who can declare a National Emergency in India?",
+    "options": [
+      "The Prime Minister",
+      "The Supreme Court",
+      "The President",
+      "The Parliament"
+    ],
+    "correctIndex": 2,
+    "points": 4,
+    "difficulty": "Medium"
+  },
+  {
+    "id": 18,
+    "question": "Fundamental Duties were added to the Constitution by which amendment?",
+    "options": [
+      "24th Amendment",
+      "42nd Amendment",
+      "44th Amendment",
+      "52nd Amendment"
+    ],
+    "correctIndex": 1,
+    "points": 4,
+    "difficulty": "Medium"
+  },
+  {
+    "id": 19,
+    "question": "Who is the ex-officio Chairman of the Rajya Sabha?",
+    "options": [
+      "The President",
+      "The Vice President",
+      "The Prime Minister",
+      "The Speaker"
+    ],
+    "correctIndex": 1,
+    "points": 4,
+    "difficulty": "Medium"
+  },
+  {
+    "id": 20,
+    "question": "The Directive Principles of State Policy are mentioned in:",
+    "options": [
+      "Part III",
+      "Part IV",
+      "Part IVA",
+      "Part V"
+    ],
+    "correctIndex": 1,
+    "points": 4,
+    "difficulty": "Medium"
+  },
+  {
+    "id": 21,
     "question": "Which article guarantees Freedom of Speech?",
     "options": [
       "Article 14",
       "Article 19",
       "Article 21",
       "Article 32"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard"
+  },
+  {
+    "id": 22,
+    "question": "The concept of 'Directive Principles' was borrowed from which country?",
+    "options": [
+      "USA",
+      "UK",
+      "Ireland",
+      "Canada"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard"
+  },
+  {
+    "id": 23,
+    "question": "Which Supreme Court case established the 'Basic Structure Doctrine'?",
+    "options": [
+      "Golaknath Case",
+      "Kesavananda Bharati Case",
+      "Minerva Mills Case",
+      "Maneka Gandhi Case"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard"
+  },
+  {
+    "id": 24,
+    "question": "Article 360 deals with which type of emergency?",
+    "options": [
+      "National Emergency",
+      "State Emergency",
+      "Financial Emergency",
+      "Health Emergency"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard"
+  },
+  {
+    "id": 25,
+    "question": "The 'Right to Property' was removed from Fundamental Rights by which amendment?",
+    "options": [
+      "42nd",
+      "44th",
+      "52nd",
+      "61st"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard"
+  },
+  {
+    "id": 26,
+    "question": "Which article deals with the Uniform Civil Code?",
+    "options": [
+      "Article 40",
+      "Article 44",
+      "Article 48",
+      "Article 51"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard"
+  },
+  {
+    "id": 27,
+    "question": "How many members are nominated by the President to the Rajya Sabha?",
+    "options": [
+      "2",
+      "10",
+      "12",
+      "15"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard"
+  },
+  {
+    "id": 28,
+    "question": "Which article allows the Parliament to amend the Constitution?",
+    "options": [
+      "Article 352",
+      "Article 360",
+      "Article 368",
+      "Article 370"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard"
+  },
+  {
+    "id": 29,
+    "question": "The procedure for the impeachment of the President is in which Article?",
+    "options": [
+      "Article 52",
+      "Article 61",
+      "Article 72",
+      "Article 74"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard"
+  },
+  {
+    "id": 30,
+    "question": "Who was the Chairman of the Drafting Committee?",
+    "options": [
+      "Dr. Rajendra Prasad",
+      "Dr. B.R. Ambedkar",
+      "B.N. Rau",
+      "Alladi Krishnaswamy Iyer"
     ],
     "correctIndex": 1,
     "points": 6,

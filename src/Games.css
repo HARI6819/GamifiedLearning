@@ -112,6 +112,10 @@
   background: linear-gradient(90deg, #facc15, #eab308);
 }
 
+.purple {
+  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+}
+
 .card-body1 {
   padding: 1.5rem;
 }

@@ -1,0 +1,368 @@
+{
+    "Easy": [
+        {
+            "id": 1,
+            "question": "Who is the Constitutional Head of India?",
+            "options": [
+                "Prime Minister",
+                "President",
+                "Chief Justice",
+                "Speaker"
+            ],
+            "correctIndex": 1,
+            "category": "Executive"
+        },
+        {
+            "id": 2,
+            "question": "What is the lower house of the Indian Parliament called?",
+            "options": [
+                "Rajya Sabha",
+                "Vidhan Sabha",
+                "Lok Sabha",
+                "Vidhan Parishad"
+            ],
+            "correctIndex": 2,
+            "category": "Legislature"
+        },
+        {
+            "id": 3,
+            "question": "Which article of the Indian Constitution ensures equality before law?",
+            "options": [
+                "Article 14",
+                "Article 19",
+                "Article 21",
+                "Article 32"
+            ],
+            "correctIndex": 0,
+            "category": "Judiciary"
+        },
+        {
+            "id": 4,
+            "question": "Who appoints the Chief Justice of India?",
+            "options": [
+                "Prime Minister",
+                "President",
+                "Parliament",
+                "Law Minister"
+            ],
+            "correctIndex": 1,
+            "category": "Judiciary"
+        },
+        {
+            "id": 5,
+            "question": "What is the minimum age to be eligible for the Lok Sabha?",
+            "options": [
+                "18 years",
+                "21 years",
+                "25 years",
+                "30 years"
+            ],
+            "correctIndex": 2,
+            "category": "Legislature"
+        },
+        {
+            "id": 6,
+            "question": "Who is the head of the Union Council of Ministers?",
+            "options": [
+                "President",
+                "Vice-President",
+                "Prime Minister",
+                "Speaker"
+            ],
+            "correctIndex": 2,
+            "category": "Executive"
+        },
+        {
+            "id": 7,
+            "question": "Which organ of government makes laws?",
+            "options": [
+                "Executive",
+                "Judiciary",
+                "Legislature",
+                "Media"
+            ],
+            "correctIndex": 2,
+            "category": "Legislature"
+        },
+        {
+            "id": 8,
+            "question": "How many years is the term of the President of India?",
+            "options": [
+                "4 years",
+                "5 years",
+                "6 years",
+                "Indefinite"
+            ],
+            "correctIndex": 1,
+            "category": "Executive"
+        },
+        {
+            "id": 9,
+            "question": "Which is the highest court in a State?",
+            "options": [
+                "Supreme Court",
+                "High Court",
+                "District Court",
+                "Sessions Court"
+            ],
+            "correctIndex": 1,
+            "category": "Judiciary"
+        },
+        {
+            "id": 10,
+            "question": "Who is the first citizen of India?",
+            "options": [
+                "Prime Minister",
+                "President",
+                "Governor",
+                "Chief Justice"
+            ],
+            "correctIndex": 1,
+            "category": "Executive"
+        }
+    ],
+    "Medium": [
+        {
+            "id": 11,
+            "question": "Which Article of the Indian Constitution deals with the 'Writ' jurisdiction of the Supreme Court?",
+            "options": [
+                "Article 226",
+                "Article 32",
+                "Article 131",
+                "Article 143"
+            ],
+            "correctIndex": 1,
+            "category": "Judiciary"
+        },
+        {
+            "id": 12,
+            "question": "Which house of Parliament is known as the 'Permanent House'?",
+            "options": [
+                "Lok Sabha",
+                "Rajya Sabha",
+                " दोन्ही",
+                "कोणतेही नाही"
+            ],
+            "correctIndex": 1,
+            "category": "Legislature"
+        },
+        {
+            "id": 13,
+            "question": "The Governor of a state is appointed by whom?",
+            "options": [
+                "Chief Minister",
+                "Prime Minister",
+                "President",
+                "Chief Justice of HC"
+            ],
+            "correctIndex": 2,
+            "category": "Executive"
+        },
+        {
+            "id": 14,
+            "question": "Who has the power to pardon a death sentence in India?",
+            "options": [
+                "Prime Minister",
+                "Governor",
+                "President",
+                "CJI"
+            ],
+            "correctIndex": 2,
+            "category": "Executive"
+        },
+        {
+            "id": 15,
+            "question": "How many members does the President nominate to the Rajya Sabha?",
+            "options": [
+                "2 members",
+                "10 members",
+                "12 members",
+                "15 members"
+            ],
+            "correctIndex": 2,
+            "category": "Legislature"
+        },
+        {
+            "id": 16,
+            "question": "Which Article provides for the establishment of a High Court for each state?",
+            "options": [
+                "Article 214",
+                "Article 124",
+                "Article 153",
+                "Article 163"
+            ],
+            "correctIndex": 0,
+            "category": "Judiciary"
+        },
+        {
+            "id": 17,
+            "question": "Who can remove a Judge of the Supreme Court?",
+            "options": [
+                "President alone",
+                "Parliament through impeachment",
+                "Prime Minister",
+                "CJI"
+            ],
+            "correctIndex": 1,
+            "category": "Judiciary"
+        },
+        {
+            "id": 18,
+            "question": "Which part of the Constitution deals with the Union Executive?",
+            "options": [
+                "Part IV",
+                "Part V",
+                "Part VI",
+                "Part VII"
+            ],
+            "correctIndex": 1,
+            "category": "Executive"
+        },
+        {
+            "id": 19,
+            "question": "The 'Money Bill' can only be introduced in which house?",
+            "options": [
+                "Rajya Sabha",
+                "Lok Sabha",
+                "Joint Session",
+                "State Assembly"
+            ],
+            "correctIndex": 1,
+            "category": "Legislature"
+        },
+        {
+            "id": 20,
+            "question": "Who is the ex-officio Chairman of the Rajya Sabha?",
+            "options": [
+                "President",
+                "Speaker",
+                "Vice-President",
+                "Prime Minister"
+            ],
+            "correctIndex": 2,
+            "category": "Legislature"
+        }
+    ],
+    "Hard": [
+        {
+            "id": 21,
+            "question": "Which Article describes the 'Original Jurisdiction' of the Supreme Court?",
+            "options": [
+                "Article 131",
+                "Article 132",
+                "Article 143",
+                "Article 124"
+            ],
+            "correctIndex": 0,
+            "category": "Judiciary"
+        },
+        {
+            "id": 22,
+            "question": "Under which Article can the President seek the opinion of the Supreme Court?",
+            "options": [
+                "Article 124",
+                "Article 131",
+                "Article 143",
+                "Article 145"
+            ],
+            "correctIndex": 2,
+            "category": "Judiciary"
+        },
+        {
+            "id": 23,
+            "question": "The Legislative Council (Vidhan Parishad) can have a maximum of how many members?",
+            "options": [
+                "500 members",
+                "1/3rd of Legislative Assembly",
+                "1/2 of Legislative Assembly",
+                "Fixed at 60"
+            ],
+            "correctIndex": 1,
+            "category": "Legislature"
+        },
+        {
+            "id": 24,
+            "question": "Which Article deals with the 'Special Majority' required for Constitutional Amendment?",
+            "options": [
+                "Article 356",
+                "Article 360",
+                "Article 365",
+                "Article 368"
+            ],
+            "correctIndex": 3,
+            "category": "Legislature"
+        },
+        {
+            "id": 25,
+            "question": "The concept of 'Public Interest Litigation' (PIL) originated in which country?",
+            "options": [
+                "UK",
+                "USA",
+                "India",
+                "Canada"
+            ],
+            "correctIndex": 1,
+            "category": "Judiciary"
+        },
+        {
+            "id": 26,
+            "question": "Who was the first Chief Justice of Independent India?",
+            "options": [
+                "H.J. Kania",
+                "M. Patanjali Sastri",
+                "Mehr Chand Mahajan",
+                "B.K. Mukherjea"
+            ],
+            "correctIndex": 0,
+            "category": "Judiciary"
+        },
+        {
+            "id": 27,
+            "question": "Article 164 of the Constitution deals with the appointment of whom?",
+            "options": [
+                "Governor",
+                "Chief Minister",
+                "High Court Judges",
+                "Advocate General"
+            ],
+            "correctIndex": 1,
+            "category": "Executive"
+        },
+        {
+            "id": 28,
+            "question": "The 'doctrine of pleasure' is associated with which office?",
+            "options": [
+                "Prime Minister",
+                "President",
+                "Attorney General",
+                "Civil Servants"
+            ],
+            "correctIndex": 3,
+            "category": "Executive"
+        },
+        {
+            "id": 29,
+            "question": "Which committee recommended the inclusion of Fundamental Duties?",
+            "options": [
+                "Sarkaria Commission",
+                "Swaran Singh Committee",
+                "Verma Committee",
+                "Balwant Rai Mehta Committee"
+            ],
+            "correctIndex": 1,
+            "category": "Legislature"
+        },
+        {
+            "id": 30,
+            "question": "The 42nd Amendment Act (1976) is also known as?",
+            "options": [
+                "People's Charter",
+                "Mini Constitution",
+                "Judicial Review Act",
+                "Fundamental Rights Act"
+            ],
+            "correctIndex": 1,
+            "category": "Legislature"
+        }
+    ]
+}

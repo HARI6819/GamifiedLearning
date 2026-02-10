@@ -48,12 +48,20 @@ const ProgressPage = () => {
             articlesRead: statsData.articlesRead || 0,
             totalPoints: statsData.totalPoints || 0,
             mastery: statsData.mastery || { executive: 0, legislature: 0, judiciary: 0 },
-            pointsBreakdown: statsData.pointsBreakdown || {
+            pointsBreakdown: statsData.pointsBreakdown ? {
+              articleMatch: statsData.pointsBreakdown.articleMatch || 0,
+              rightsDutiesClimb: statsData.pointsBreakdown.rightsDutiesClimb || 0,
+              constitutionCards: statsData.pointsBreakdown.constitutionCards || 0,
+              chakra: statsData.pointsBreakdown.chakra || 0,
+              learn: statsData.pointsBreakdown.learn || 0,
+              quiz: statsData.pointsBreakdown.quiz || 0
+            } : {
               articleMatch: 0,
               rightsDutiesClimb: 0,
               constitutionCards: 0,
               chakra: 0,
-              learn: 0
+              learn: 0,
+              quiz: 0
             }
           });
         }
@@ -180,7 +188,7 @@ const ProgressPage = () => {
             <div className="progress-item">
               <div className="progress-label">
                 <span>🏛️ {t.learn.filters.executive}</span>
-                <span>{stats.mastery.executive}%</span>
+                <span>{Math.min(stats.mastery.executive, 100)}%</span>
               </div>
               <div className="progress-bar">
                 <div style={{ width: `${Math.min(stats.mastery.executive, 100)}%` }}></div>
@@ -190,7 +198,7 @@ const ProgressPage = () => {
             <div className="progress-item">
               <div className="progress-label">
                 <span>📜 {t.learn.filters.legislature}</span>
-                <span>{stats.mastery.legislature}%</span>
+                <span>{Math.min(stats.mastery.legislature, 100)}%</span>
               </div>
               <div className="progress-bar">
                 <div style={{ width: `${Math.min(stats.mastery.legislature, 100)}%` }}></div>
@@ -200,7 +208,7 @@ const ProgressPage = () => {
             <div className="progress-item">
               <div className="progress-label">
                 <span>⚖️ {t.learn.filters.judiciary}</span>
-                <span>{stats.mastery.judiciary}%</span>
+                <span>{Math.min(stats.mastery.judiciary, 100)}%</span>
               </div>
               <div className="progress-bar">
                 <div style={{ width: `${Math.min(stats.mastery.judiciary, 100)}%` }}></div>
@@ -264,6 +272,7 @@ const ProgressPage = () => {
             <div className="summary-modal" onClick={e => e.stopPropagation()}>
               <button className="close-modal" onClick={() => setShowSummary(false)}>&times;</button>
               <h2 className="modal-title">📊 Points Breakdown</h2>
+              <div className="list-box">
               <div className="summary-list">
                 <div className="summary-item">
                   <div className="item-info">
@@ -318,6 +327,18 @@ const ProgressPage = () => {
                     </div>
                   </div>
                   <span className="item-points">+{stats.pointsBreakdown.chakra}</span>
+                </div>
+
+                <div className="summary-item">
+                  <div className="item-info">
+                    <span className="item-icon">🧠</span>
+                    <div>
+                      <h4>Constitutional Quiz</h4>
+                      <p>Quiz Challenges</p>
+                    </div>
+                  </div>
+                  <span className="item-points">+{stats.pointsBreakdown.quiz}</span>
+                </div>
                 </div>
               </div>
               <div className="modal-footer">
