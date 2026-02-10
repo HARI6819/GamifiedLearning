@@ -482,7 +482,7 @@
 
 @media (max-width: 600px) {
     .diff-grid-quiz {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .result-actions-quiz {
