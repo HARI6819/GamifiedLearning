@@ -16,6 +16,7 @@ import ConstitutionCards from './ConstitutionCards.jsx'
 import ArticleMatch from './ArticleMatch.jsx'
 import Quiz from './Quiz.jsx'
 import ProfilePage from './ProfilePage.jsx'
+import ConstitutionalSort from './ConstitutionalSort.jsx'
 
 import ProtectedRoute from './ProtectedRoute.jsx'
 
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
   {
     path: '/games/quiz',
     element: <ProtectedRoute><Quiz /></ProtectedRoute>
+  },
+  {
+    path: '/games/constitutional-sort',
+    element: <ProtectedRoute><ConstitutionalSort /></ProtectedRoute>
   },
   {
     path: '/profile',

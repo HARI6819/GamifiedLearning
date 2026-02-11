@@ -54,7 +54,7 @@ export default function ChakraOfKnowledge() {
           const data = await res.json();
           setArticlesRead(data.articlesRead || 0);
 
-          const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz"];
+          const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz", "sort"];
           const completed = data.completedLevels || {};
           const levels = ["Easy"];
 

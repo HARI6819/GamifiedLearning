@@ -14,7 +14,8 @@ export default function Games() {
     rightsDutiesClimb: [],
     constitutionCards: [],
     chakra: [],
-    quiz: []
+    quiz: [],
+    sort: []
   });
   const [loading, setLoading] = useState(true);
   const [articlesRead, setArticlesRead] = useState(0);
@@ -59,16 +60,18 @@ export default function Games() {
     }
   }, [loading, articlesRead]);
 
+
   const gamesList = [
     { id: "chakra", title: t.home.gameFormats.games.wheel.title, desc: t.home.gameFormats.games.wheel.desc, time: t.home.gameFormats.games.wheel.time, icon: "🎡", color: "saffron", link: "/games/spin-wheel" },
     { id: "constitutionCards", title: t.home.gameFormats.games.cards.title, desc: t.home.gameFormats.games.cards.desc, time: t.home.gameFormats.games.cards.time, icon: "🃏", color: "green", link: "/games/quiz-cards" },
     { id: "rightsDutiesClimb", title: t.home.gameFormats.games.climb.title, desc: t.home.gameFormats.games.climb.desc, time: t.home.gameFormats.games.climb.time, icon: "🐍", color: "blue", link: "/games/snake-ladder" },
     { id: "articleMatch", title: t.home.gameFormats.games.match.title, desc: t.home.gameFormats.games.match.desc, time: t.home.gameFormats.games.match.time, icon: "🎴", color: "gold", link: "/games/match-pairs" },
-    { id: "quiz", title: "Constitutional Quiz", desc: "Test your knowledge with 10 questions and a timer!", time: "5-10 mins", icon: "🧠", color: "purple", link: "/games/quiz" },
+    { id: "quiz", title: t.home.gameFormats.games.quiz.title, desc: t.home.gameFormats.games.quiz.desc, time: t.home.gameFormats.games.quiz.time, icon: "🧠", color: "purple", link: "/games/quiz" },
+    { id: "sort", title: t.constitutionalSort.title, desc: t.constitutionalSort.desc, time: t.constitutionalSort.time, icon: "⫽", color: "gold", link: "/games/constitutional-sort" },
   ];
 
   // Logic to determine global unlocks
-  const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz"];
+  const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz", "sort"];
   const isEasyDone = allGames.every(g => completedLevels[g]?.includes("Easy"));
   const isMediumDone = allGames.every(g => completedLevels[g]?.includes("Medium"));
 
@@ -82,14 +85,14 @@ export default function Games() {
 
   const getLevelStatus = (gameId) => {
     const completed = completedLevels[gameId] || [];
-    if (completed.includes("Hard")) return { label: "Completed All", color: "#166534" };
-    if (completed.includes("Medium")) return { label: "Next: Hard", color: "#d97706" };
-    if (completed.includes("Easy")) return { label: "Next: Medium", color: "#d97706" };
-    return { label: "Next: Easy", color: "#1e3a8a" };
+    if (completed.includes("Hard")) return { label: t.gamesPage.progression.status.completedAll, color: "#166534" };
+    if (completed.includes("Medium")) return { label: `${t.gamesPage.progression.status.next}: ${t.common.difficulty.Hard}`, color: "#d97706" };
+    if (completed.includes("Easy")) return { label: `${t.gamesPage.progression.status.next}: ${t.common.difficulty.Medium}`, color: "#d97706" };
+    return { label: `${t.gamesPage.progression.status.next}: ${t.common.difficulty.Easy}`, color: "#1e3a8a" };
   };
 
   if (loading) {
-    return <div className="loading-screen"><div className="spinner"></div>Loading Games...</div>;
+    return <div className="loading-screen"><div className="spinner"></div>{t.gamesPage.progression.loading}</div>;
   }
 
   return (
@@ -139,10 +142,10 @@ export default function Games() {
             <p>{t.gamesPage.subtitle}</p>
             <div className="progression-status">
               <div className="current-tier">
-                <span>Current Tier: <strong>{globalLevel}</strong></span>
+                <span>{t.gamesPage.progression.currentTier}: <strong>{t.common.difficulty[globalLevel]}</strong></span>
                 {!isMediumDone && (
                   <span className="unlock-hint">
-                    {globalLevel === "Easy" ? "Complete Easy level of all games to unlock Medium Tier" : "Complete Medium level of all games to unlock Hard Tier"}
+                    {globalLevel === "Easy" ? t.gamesPage.progression.unlockedMedium : t.gamesPage.progression.unlockedHard}
                   </span>
                 )}
               </div>

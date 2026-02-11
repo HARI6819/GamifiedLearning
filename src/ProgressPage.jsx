@@ -19,7 +19,9 @@ const ProgressPage = () => {
       rightsDutiesClimb: 0,
       constitutionCards: 0,
       chakra: 0,
-      learn: 0
+      learn: 0,
+      quiz: 0,
+      sort: 0
     }
   });
   const [leaderboard, setLeaderboard] = useState([]);
@@ -54,14 +56,16 @@ const ProgressPage = () => {
               constitutionCards: statsData.pointsBreakdown.constitutionCards || 0,
               chakra: statsData.pointsBreakdown.chakra || 0,
               learn: statsData.pointsBreakdown.learn || 0,
-              quiz: statsData.pointsBreakdown.quiz || 0
+              quiz: statsData.pointsBreakdown.quiz || 0,
+              sort: statsData.pointsBreakdown.sort || 0
             } : {
               articleMatch: 0,
               rightsDutiesClimb: 0,
               constitutionCards: 0,
               chakra: 0,
               learn: 0,
-              quiz: 0
+              quiz: 0,
+              sort: 0
             }
           });
         }
@@ -350,6 +354,17 @@ const ProgressPage = () => {
                       </div>
                     </div>
                     <span className="item-points">+{stats.pointsBreakdown.quiz}</span>
+                  </div>
+
+                  <div className="summary-item">
+                    <div className="item-info">
+                      <span className="item-icon">⫽</span>
+                      <div>
+                        <h4>{t.constitutionalSort.title}</h4>
+                        <p>Sorting Challenge</p>
+                      </div>
+                    </div>
+                    <span className="item-points">+{stats.pointsBreakdown.sort}</span>
                   </div>
                 </div>
               </div>

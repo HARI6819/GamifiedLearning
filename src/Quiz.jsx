@@ -30,7 +30,7 @@ export default function Quiz() {
                 });
                 if (res.ok) {
                     const data = await res.json();
-                    const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz"];
+                    const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz", "sort"];
                     const completed = data.completedLevels || {};
                     const levels = ["Easy"];
                     if (allGames.every(g => completed[g]?.includes("Easy"))) levels.push("Medium");
@@ -45,8 +45,9 @@ export default function Quiz() {
     }, [gameState]);
 
     const startQuiz = () => {
-        const levelQuestions = quizData[difficulty] || [];
-        setQuestions(levelQuestions.sort(() => Math.random() - 0.5).slice(0, 10));
+        // Fetch questions from translations
+        const localizedQuestions = t.quiz.questions?.[difficulty] || [];
+        setQuestions(localizedQuestions.sort(() => Math.random() - 0.5).slice(0, 10));
         setGameState("playing");
         setCurrentIdx(0);
         setScore(0);
@@ -140,18 +141,18 @@ export default function Quiz() {
                 <header className="quiz-header">
                     <button onClick={() => window.history.back()} className="back-btn-quiz">←</button>
                     <div>
-                        <h1>Constitutional Quiz</h1>
-                        <p>Test your knowledge of the Indian Constitution with tiered challenges.</p>
+                        <h1>{t.quiz.title}</h1>
+                        <p>{t.quiz.desc}</p>
                     </div>
                 </header>
 
                 {gameState === "difficulty" && (
                     <div className="start-screen-quiz">
                         <div className="icon-wrapper-quiz"><Brain size={40} /></div>
-                        <h2>Constitutional Quiz</h2>
-                        <p>Answer 10 randomized questions based on your chosen difficulty. Good luck!</p>
+                        <h2>{t.quiz.title}</h2>
+                        <p>{t.quiz.startDesc}</p>
 
-                        <h4 style={{ fontFamily: "'Times New Roman', serif", fontWeight: 700, marginTop: '1rem' }}>Select Difficulty</h4>
+                        <h4 style={{ fontFamily: "'Times New Roman', serif", fontWeight: 700, marginTop: '1rem' }}>{t.quiz.difficulty}</h4>
                         <div className="diff-grid-quiz">
                             {["Easy", "Medium", "Hard"].map((level) => {
                                 const isUnlocked = unlockedLevels.includes(level);
@@ -164,13 +165,13 @@ export default function Quiz() {
                                     >
 
                                         {!isUnlocked ? <Lock size={14} /> : (difficulty !== level && <LockOpen size={14} style={{ opacity: 0.7 }} />)}
-                                        {level}
+                                        {t.common.difficulty[level]}
                                     </button>
                                 );
                             })}
                         </div>
                         <button className="start-btn-quiz" onClick={startQuiz}>
-                            Start Quiz
+                            {t.quiz.startBtn}
                         </button>
                     </div>
                 )}
@@ -179,8 +180,8 @@ export default function Quiz() {
                     <div className="playing-screen-quiz">
                         <div className="game-info-bar-quiz">
                             <div className="quiz-info">
-                                <span style={{ fontWeight: 600 }}>Question {currentIdx + 1} / 10</span>
-                                <span style={{ marginLeft: '12px', fontSize: '0.8rem', padding: '4px 10px', background: 'rgba(59, 130, 246, 0.1)', borderRadius: '20px', color: '#3b82f6' }}>{difficulty}</span>
+                                <span style={{ fontWeight: 600 }}>{t.quiz.questionCount} {currentIdx + 1} / 10</span>
+                                <span style={{ marginLeft: '12px', fontSize: '0.8rem', padding: '4px 10px', background: 'rgba(59, 130, 246, 0.1)', borderRadius: '20px', color: '#3b82f6' }}>{t.common.difficulty[difficulty]}</span>
                             </div>
                             <div className={`timer-quiz ${timeLeft < 10 ? "low" : ""}`}>
                                 <Timer size={18} />
@@ -225,9 +226,9 @@ export default function Quiz() {
                     <div className="quiz-completion-overlay animated fadeIn">
                         <div className="quiz-completion-card">
                             <div className="completion-icon">🏆</div>
-                            <h2>Quiz Completed!</h2>
+                            <h2>{t.quiz.completion.title}</h2>
                             <p>
-                                Great job! You've finished the {difficulty} level quiz.
+                                {t.quiz.completion.desc.replace("{difficulty}", t.common.difficulty[difficulty])}
                             </p>
                             <div className="score-circle-quiz">
                                 <span className="score-num-quiz">{score}</span>
@@ -235,15 +236,15 @@ export default function Quiz() {
                             </div>
                             <div className="completion-stats">
                                 <div className="stat-pill">
-                                    Points: {score * (difficulty === "Hard" ? 10 : difficulty === "Medium" ? 7 : 5)}
+                                    {t.quiz.completion.points}: {score * (difficulty === "Hard" ? 10 : difficulty === "Medium" ? 7 : 5)}
                                 </div>
                                 <div className="stat-pill">
-                                    Difficulty: {difficulty}
+                                    {t.quiz.completion.diff}: {t.common.difficulty[difficulty]}
                                 </div>
                             </div>
                             <div className="result-actions-quiz">
                                 <button onClick={resetQuiz} className="continue-btn-quiz">
-                                    <RotateCcw size={18} /> Play Again
+                                    <RotateCcw size={18} /> {t.quiz.completion.playAgain}
                                 </button>
                             </div>
                         </div>

@@ -65,7 +65,7 @@ export default function RightsDutiesClimb() {
         });
         if (res.ok) {
           const data = await res.json();
-          const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz"];
+          const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz", "sort"];
           const completed = data.completedLevels || {};
           const levels = ["Easy"];
           if (allGames.every(g => completed[g]?.includes("Easy"))) levels.push("Medium");
