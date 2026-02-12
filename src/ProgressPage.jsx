@@ -21,17 +21,57 @@ const ProgressPage = () => {
       chakra: 0,
       learn: 0,
       quiz: 0,
-      sort: 0
+      sort: 0,
+      timeline: 0,
+      crossroads: 0,
+      crossroads: 0
     }
   });
   const [leaderboard, setLeaderboard] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [leaderboardLoading, setLeaderboardLoading] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
+  const [activeTab, setActiveTab] = useState('overall');
+
+  const leaderboardTabs = [
+    { id: 'overall', label: 'Overall', icon: '🏆' },
+    { id: 'quiz', label: t.home.gameFormats.games.quiz.title, icon: '🃏' },
+    { id: 'constitutionCards', label: t.home.gameFormats.games.cards.title, icon: '📚' },
+    { id: 'articleMatch', label: t.home.gameFormats.games.match.title, icon: '🧠' },
+    { id: 'rightsDutiesClimb', label: t.home.gameFormats.games.climb.title, icon: '🎲' },
+    { id: 'chakra', label: t.home.gameFormats.games.wheel.title, icon: '🎡' },
+    { id: 'sort', label: t.constitutionalSort.title, icon: '⫽' },
+    { id: 'crossroads', label: t.constitutionalCrossroads.title, icon: '🧩' },
+  ];
+
+  const fetchLeaderboard = async (type) => {
+    setLeaderboardLoading(true);
+    try {
+      const lbRes = await fetch(`${config.API_URL}/api/leaderboard?type=${type}`, {
+        headers: { "ngrok-skip-browser-warning": "true" }
+      });
+      if (lbRes.ok) {
+        const lbData = await lbRes.json();
+        setLeaderboard(lbData);
+      }
+    } catch (e) {
+      console.error("Failed to fetch leaderboard", e);
+    } finally {
+      setLeaderboardLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchLeaderboard(activeTab);
+  }, [activeTab]);
 
   useEffect(() => {
     const fetchData = async () => {
       const email = localStorage.getItem('userEmail');
-      if (!email) {
+      const isGuest = localStorage.getItem('isGuest') === 'true';
+      console.log("ProgressPage fetchData check:", { email, isGuest });
+      if (!email || isGuest) {
+        if (isGuest) console.log("Guest mode detected in Progress page, skipping API fetch.");
         setLoading(false);
         return;
       }
@@ -57,7 +97,9 @@ const ProgressPage = () => {
               chakra: statsData.pointsBreakdown.chakra || 0,
               learn: statsData.pointsBreakdown.learn || 0,
               quiz: statsData.pointsBreakdown.quiz || 0,
-              sort: statsData.pointsBreakdown.sort || 0
+              sort: statsData.pointsBreakdown.sort || 0,
+              timeline: statsData.pointsBreakdown.timeline || 0,
+              crossroads: statsData.pointsBreakdown.crossroads || 0,
             } : {
               articleMatch: 0,
               rightsDutiesClimb: 0,
@@ -65,31 +107,12 @@ const ProgressPage = () => {
               chakra: 0,
               learn: 0,
               quiz: 0,
-              sort: 0
+              sort: 0,
+              timeline: 0,
+              crossroads: 0,
             }
           });
         }
-
-        // Fetch Leaderboard
-        const lbRes = await fetch(`${config.API_URL}/api/leaderboard`, {
-          method: "GET",
-          headers: {
-            "Accept": "application/json",
-            "ngrok-skip-browser-warning": "true"
-          }
-        }
-        );
-
-        console.log("Status:", lbRes.status);
-        console.log("Redirected:", lbRes.redirected);
-        console.log("Content-Type:", lbRes.headers.get("content-type"));
-
-        const raw = await lbRes.text();
-        console.log("RAW RESPONSE:", raw);
-
-        const lbData = JSON.parse(raw);
-        setLeaderboard(lbData);
-
       } catch (e) {
         console.error("Failed to fetch progress data", e);
       } finally {
@@ -103,6 +126,11 @@ const ProgressPage = () => {
   function handleStartPlaying() {
     navigate('/games');
   }
+
+  const getScoreByType = (user, type) => {
+    if (type === 'overall') return user.totalPoints;
+    return user.pointsBreakdown?.[type] || 0;
+  };
 
   if (loading) {
     return (
@@ -168,32 +196,71 @@ const ProgressPage = () => {
           </section>
 
           {/* Leaderboard Section */}
-          <section className="pa-card">
-            <h2 className="section-title">🏆 Leaderboard</h2>
-            <div className="leaderboard-table-container">
-              <table className="leaderboard-table">
-                <thead>
-                  <tr>
-                    <th>Rank</th>
-                    <th>Name</th>
-                    <th>Points</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {leaderboard.map((user, index) => (
-                    <tr key={index} className={user.name === localStorage.getItem('userName') ? 'highlight-me' : ''}>
-                      <td>{index + 1}</td>
-                      <td>{user.name}</td>
-                      <td>{user.totalPoints}</td>
-                    </tr>
-                  ))}
-                  {leaderboard.length === 0 && (
-                    <tr>
-                      <td colSpan="3" style={{ textAlign: 'center', padding: '20px' }}>No entries yet. Be the first!</td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
+          <section className="pa-card leaderboard-section">
+            <div className="leaderboard-header">
+              <div className="header-title">
+                <span className="trophy-icon">🏆</span>
+                <h2>Leaderboard</h2>
+              </div>
+            </div>
+
+            <div className="leaderboard-tabs-wrapper">
+              <div className="leaderboard-tabs">
+                {leaderboardTabs.map(tab => (
+                  <button
+                    key={tab.id}
+                    className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
+                    onClick={() => setActiveTab(tab.id)}
+                  >
+                    <span className="tab-icon">{tab.icon}</span>
+                    <span className="tab-label">{tab.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="leaderboard-overflow">
+              <div className="leaderboard-list">
+                {leaderboardLoading ? (
+                  <div className="leaderboard-loader">
+                    <div className="spinner mini"></div>
+                    <p>Loading...</p>
+                  </div>
+                ) : (
+                  <>
+                    {leaderboard.map((user, index) => {
+                      const rank = index + 1;
+                      const score = getScoreByType(user, activeTab);
+                      const isMe = user.name === localStorage.getItem('userName');
+                      const date = user.createdAt ? new Date(user.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : 'Jan 19';
+
+                      return (
+
+                        <div key={index} className={`leaderboard-item rank-${rank} ${isMe ? 'is-me' : ''}`}>
+                          <div className="item-rank-icon">
+                            {rank === 1 ? <span className="rank-emoji crown">🥇</span> : rank === 2 ? <span className="rank-emoji medal">🥈</span> : rank === 3 ? <span className="rank-emoji medal">🥉</span> : <span className="rank-emoji medal">🎖️</span>}
+                          </div>
+                          <div className="item-user-info">
+                            <div className="user-avatar">
+                              <span className="user-icon">👤</span>
+                            </div>
+                            <div className="user-details">
+                              <span className="user-name">{user.name}</span>
+                              <span className="item-date">{date}</span>
+                            </div>
+                          </div>
+                          <div className="item-score-pill">
+                            {score} pts
+                          </div>
+                        </div>
+
+                      );
+                    })}
+                    {leaderboard.length === 0 && (
+                      <div className="no-entries">No entries yet for this category.</div>
+                    )}
+                  </>
+                )}
+              </div>
             </div>
           </section>
 
@@ -366,6 +433,20 @@ const ProgressPage = () => {
                     </div>
                     <span className="item-points">+{stats.pointsBreakdown.sort}</span>
                   </div>
+
+
+                  <div className="summary-item">
+                    <div className="item-info">
+                      <span className="item-icon">⚖️</span>
+                      <div>
+                        <h4>{t.constitutionalCrossroads.title}</h4>
+                        <p>Constitutional Crossroads</p>
+                      </div>
+                    </div>
+                    <span className="item-points">+{stats.pointsBreakdown.crossroads}</span>
+                  </div>
+
+
                 </div>
               </div>
               <div className="modal-footer">

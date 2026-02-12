@@ -327,65 +327,287 @@
   right: 14px;
 }
 
-/* Leaderboard */
-.leaderboard-table-container {
-  overflow-x: auto;
+/* Leaderboard Redesign */
+.leaderboard-section {
+  padding: 32px;
 }
 
-.leaderboard-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+.leaderboard-header {
+  margin-bottom: 24px;
 }
 
-.leaderboard-table th,
-.leaderboard-table td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #f3f4f6;
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.dark .leaderboard-table th,
-.dark .leaderboard-table td {
-  border-bottom-color: var(--border-color);
-}
-
-.leaderboard-table th {
-  background-color: #f9fafb;
-  font-weight: 600;
-  color: #4b5563;
-}
-
-.dark .leaderboard-table th {
-  background-color: rgba(249, 250, 251, 0.1);
-  color: var(--text-secondary);
-}
-
-.leaderboard-table tr:hover {
-  background-color: #f9fafb;
-}
-
-.dark .leaderboard-table tr:hover {
-  background-color: rgba(249, 250, 251, 0.05);
-}
-
-.leaderboard-table td {
-  color: #374151;
-}
-
-.dark .leaderboard-table td {
-  color: var(--text-color);
-}
-
-.highlight-me {
-  background-color: #fff7ed !important;
-  font-weight: 600;
+.trophy-icon {
+  font-size: 32px;
   color: #f97316;
 }
 
-.dark .highlight-me {
-  background-color: rgba(255, 247, 237, 0.2) !important;
+.header-title h2 {
+  font-family: serif;
+  font-size: 34px;
+  color: #111827;
+  font-weight: 700;
+}
+
+.dark .header-title h2 {
+  color: var(--text-color);
+}
+
+.leaderboard-tabs-wrapper {
+  background: #f1ede8;
+  border-radius: 12px;
+  padding: 8px;
+  margin-bottom: 32px;
+  overflow-x: auto;
+}
+
+.leaderboard-tabs-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+
+.leaderboard-tabs-wrapper::-webkit-scrollbar-track {
+  background: #f1ede8;
+}
+
+.leaderboard-tabs-wrapper::-webkit-scrollbar-thumb {
+  background: #f97316;
+}
+
+.dark .leaderboard-tabs-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-tabs {
+  display: flex;
+  gap: 4px;
+  min-width: max-content;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: #4b5563;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.dark .tab-btn {
+  color: var(--text-secondary);
+}
+
+.tab-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.dark .tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active {
+  background: #ffffff;
+  color: #111827;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dark .tab-btn.active {
+  background: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tab-icon {
+  font-size: 18px;
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 32px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+
+
+.leaderboard-item span {
+  font-size: 14px;
+}
+
+.leaderboard-item .rank-emoji {
+  font-size: 25px;
+}
+
+.dark .leaderboard-item {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.leaderboard-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+}
+
+.leaderboard-item.rank-1 {
+  background: #fffbef;
+  border-color: #fef3c7;
+}
+
+.dark .leaderboard-item.rank-1 {
+  background: rgba(254, 243, 199, 0.05);
+  border-color: rgba(254, 243, 199, 0.2);
+}
+
+.item-rank-icon {
+  margin-right: 24px;
+}
+
+.rank-emoji {
+  font-size: 28px;
+}
+
+.crown {
   color: #fbbf24;
+}
+
+.medal {
+  color: #9ca3af;
+}
+
+.rank-1 .medal {
+  color: #fbbf24;
+}
+
+.rank-2 .medal {
+  color: #d1d5db;
+}
+
+.rank-3 .medal {
+  color: #b45309;
+}
+
+.item-user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-grow: 1;
+}
+
+.user-avatar {
+  width: 44px;
+  height: 44px;
+  background: #f3f4f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.dark .user-avatar {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  text-transform: uppercase;
+}
+
+.dark .user-name {
+  color: var(--text-color);
+}
+
+.item-date {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.dark .item-date {
+  color: var(--text-secondary);
+}
+
+.item-score-pill {
+  background: #f97316;
+  color: #ffffff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.is-me {
+  border-left: 6px solid #f97316;
+}
+
+.no-entries {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.dark .no-entries {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .leaderboard-item {
+    padding: 12px 20px;
+  }
+
+  .leaderboard-overflow {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+    /* Space for scrollbar if needed */
+  }
+
+  .leaderboard-list {
+    min-width: 400px;
+    /* Ensure it stays wide enough to trigger scroll */
+  }
+
+  .user-name {
+    font-size: 16px;
+  }
+
+  .item-rank-icon {
+    margin-right: 12px;
+  }
+
+  .item-score-pill {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
 }
 
 /* Loading Screen */
@@ -412,6 +634,28 @@
   border-top-color: #f97316;
   border-radius: 50%;
   animation: spin 1s linear infinite;
+}
+
+.spinner.mini {
+  width: 30px;
+  height: 30px;
+  border-width: 3px;
+}
+
+.leaderboard-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 12px;
+  color: #f97316;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+.dark .leaderboard-loader {
+  color: var(--text-secondary);
 }
 
 @keyframes spin {
@@ -507,11 +751,12 @@
   /* Added padding for scrollbar space */
 }
 
-.list-box{
+.list-box {
   max-height: 60vh;
   overflow-y: auto;
   padding-right: 8px;
 }
+
 .summary-item {
   display: flex;
   justify-content: space-between;

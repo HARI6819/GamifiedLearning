@@ -160,12 +160,23 @@
     color: var(--text-color);
 }
 
+.form-details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+
 /* Input containers */
 .input-group {
     width: 80%;
     position: relative;
     margin-bottom: 20px;
 }
+
 
 .input-group svg {
     position: absolute;

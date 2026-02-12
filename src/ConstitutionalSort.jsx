@@ -26,7 +26,8 @@ export default function ConstitutionalSort() {
     useEffect(() => {
         const fetchProgress = async () => {
             const email = localStorage.getItem('userEmail');
-            if (!email) return;
+            const isGuest = localStorage.getItem('isGuest') === 'true';
+            if (!email || isGuest) return;
             try {
                 const res = await fetch(`${config.API_URL}/api/progress/${email}`, {
                     headers: { "ngrok-skip-browser-warning": "true" }
@@ -273,7 +274,8 @@ export default function ConstitutionalSort() {
 
     const updateProgress = async (finalScore) => {
         const email = localStorage.getItem('userEmail');
-        if (!email) return;
+        const isGuest = localStorage.getItem('isGuest') === 'true';
+        if (!email || isGuest) return;
 
         try {
             await fetch(`${config.API_URL}/api/progress/update`, {

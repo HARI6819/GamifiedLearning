@@ -17,6 +17,7 @@ import ArticleMatch from './ArticleMatch.jsx'
 import Quiz from './Quiz.jsx'
 import ProfilePage from './ProfilePage.jsx'
 import ConstitutionalSort from './ConstitutionalSort.jsx'
+import ConstitutionalCrossroads from './ConstitutionalCrossroads.jsx'
 
 import ProtectedRoute from './ProtectedRoute.jsx'
 
@@ -65,6 +66,11 @@ const router = createBrowserRouter([
     path: '/games/constitutional-sort',
     element: <ProtectedRoute><ConstitutionalSort /></ProtectedRoute>
   },
+  {
+    path: '/games/constitutional-crossroads',
+    element: <ProtectedRoute><ConstitutionalCrossroads /></ProtectedRoute>
+  },
+
   {
     path: '/profile',
     element: <ProtectedRoute><ProfilePage /></ProtectedRoute>

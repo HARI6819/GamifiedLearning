@@ -15,7 +15,9 @@ export default function Games() {
     constitutionCards: [],
     chakra: [],
     quiz: [],
-    sort: []
+    sort: [],
+    timeline: [],
+    crossroads: [],
   });
   const [loading, setLoading] = useState(true);
   const [articlesRead, setArticlesRead] = useState(0);
@@ -25,7 +27,10 @@ export default function Games() {
   useEffect(() => {
     const fetchProgress = async () => {
       const email = localStorage.getItem('userEmail');
-      if (!email) {
+      const isGuest = localStorage.getItem('isGuest') === 'true';
+      console.log("Games fetchProgress check:", { email, isGuest });
+      if (!email || isGuest) {
+        if (isGuest) console.log("Guest mode detected in Games page, skipping API fetch.");
         setLoading(false);
         return;
       }
@@ -68,10 +73,12 @@ export default function Games() {
     { id: "articleMatch", title: t.home.gameFormats.games.match.title, desc: t.home.gameFormats.games.match.desc, time: t.home.gameFormats.games.match.time, icon: "🎴", color: "gold", link: "/games/match-pairs" },
     { id: "quiz", title: t.home.gameFormats.games.quiz.title, desc: t.home.gameFormats.games.quiz.desc, time: t.home.gameFormats.games.quiz.time, icon: "🧠", color: "purple", link: "/games/quiz" },
     { id: "sort", title: t.constitutionalSort.title, desc: t.constitutionalSort.desc, time: t.constitutionalSort.time, icon: "⫽", color: "gold", link: "/games/constitutional-sort" },
+    { id: "crossroads", title: t.constitutionalCrossroads.title, desc: t.constitutionalCrossroads.desc, time: t.constitutionalCrossroads.time, icon: "⚖️", color: "blue", link: "/games/constitutional-crossroads" },
+
   ];
 
   // Logic to determine global unlocks
-  const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz", "sort"];
+  const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz", "sort", "crossroads"];
   const isEasyDone = allGames.every(g => completedLevels[g]?.includes("Easy"));
   const isMediumDone = allGames.every(g => completedLevels[g]?.includes("Medium"));
 

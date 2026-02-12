@@ -90,27 +90,21 @@ function Login() {
     async function handleGuest(e) {
         if (!Username) return;
         setIsLoading(true);
-        try {
-            const res = await fetch(`${config.API_URL}/guest`, {
-                method: 'POST',
-                headers: {
-                    "content-type": "application/json",
-                    "ngrok-skip-browser-warning": "true"
-                },
-                body: JSON.stringify({ name: Username }),
-            });
-            const data = await res.json();
 
-            if (res.ok) {
-                localStorage.setItem('userEmail', Username);
-                localStorage.setItem('userName', Username);
-                localStorage.setItem('isGuest', 'true');
-                navigate('/home', { state: { name: Username, extra: data, flag: true } });
-            } else {
-                setIsLoading(false);
-            }
+        // Bypass backend API for guest login to ensure data privacy
+        try {
+            // Simulate a short network delay for better UX
+            await new Promise(resolve => setTimeout(resolve, 800));
+
+            localStorage.setItem('userEmail', Username);
+            localStorage.setItem('userName', Username);
+            localStorage.setItem('isGuest', 'true');
+            // Reset image if any from previous session
+            localStorage.removeItem('profileImage');
+
+            navigate('/home', { state: { name: Username, flag: true } });
         } catch (e) {
-            console.log("Error", e);
+            console.log("Error during guest login", e);
             setIsLoading(false);
         }
     }
@@ -157,7 +151,8 @@ function Login() {
         }
     }
 
-    async function handleLogin() {
+    async function handleLogin(e) {
+        e.preventDefault();
         if (!LEmail || !LPassword) return;
         setIsLoading(true);
         try {
@@ -223,8 +218,10 @@ function Login() {
                         </div>
 
                         {/* LOGIN FORM */}
+                        
                         <div className="Loginform">
                             <h1>{t.login.login}</h1>
+                            <form onSubmit={handleLogin} className='form-details'>
                             <div className="input-group">
                                 <Mail size={20} />
                                 <input type="email" placeholder={t.login.emailPlaceholder} value={LEmail} onChange={(e) => setLEmail(e.target.value)} />
@@ -234,9 +231,10 @@ function Login() {
                                 <input type="password" placeholder={t.login.passwordPlaceholder} value={LPassword} onChange={(e) => setLPassword(e.target.value)} />
                             </div>
                             {popup && <p style={{ color: "#ef4444", fontSize: "14px", marginTop: '-10px', marginBottom: '10px' }}>{t.login.invalid}</p>}
-                            <button className="btn" onClick={handleLogin}>
+                            <button type='submit' className="btn" onClick={handleLogin}>
                                 {t.login.loginBtn}
                             </button>
+                            </form>
 
                             <p>
                                 {t.login.noAccount}

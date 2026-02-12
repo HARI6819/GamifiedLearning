@@ -42,7 +42,8 @@ export default function ChakraOfKnowledge() {
   useEffect(() => {
     const fetchProgress = async () => {
       const email = localStorage.getItem('userEmail');
-      if (!email) {
+      const isGuest = localStorage.getItem('isGuest') === 'true';
+      if (!email || isGuest) {
         setLoading(false);
         return;
       }
@@ -142,7 +143,8 @@ export default function ChakraOfKnowledge() {
 
   const updateProgress = async (category, isCompletion) => {
     const email = localStorage.getItem('userEmail');
-    if (!email) return;
+    const isGuest = localStorage.getItem('isGuest') === 'true';
+    if (!email || isGuest) return;
 
     const masteryKey = category.toLowerCase();
     const points = difficulty === "Hard" ? 20 : (difficulty === "Medium" ? 15 : 10);

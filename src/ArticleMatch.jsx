@@ -36,7 +36,8 @@ export default function ArticleMatch() {
     useEffect(() => {
         const fetchProgress = async () => {
             const email = localStorage.getItem('userEmail');
-            if (!email) return;
+            const isGuest = localStorage.getItem('isGuest') === 'true';
+            if (!email || isGuest) return;
             try {
                 const res = await fetch(`${config.API_URL}/api/progress/${email}`, {
                     headers: { "ngrok-skip-browser-warning": "true" }
@@ -127,7 +128,12 @@ export default function ArticleMatch() {
 
     const updateProgress = async () => {
         const email = localStorage.getItem('userEmail');
-        if (!email) return;
+        const isGuest = localStorage.getItem('isGuest') === 'true';
+        console.log("ArticleMatch updateProgress check:", { email, isGuest });
+        if (!email || isGuest) {
+            if (isGuest) console.log("Guest mode detected in ArticleMatch, skipping API update.");
+            return;
+        }
 
         try {
             await fetch(`${config.API_URL}/api/progress/update`, {

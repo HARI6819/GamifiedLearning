@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { useLanguage } from './context/LanguageContext';
 import config from "./config";
-import { Lock, LockOpen } from "lucide-react";
+import { Lock, LockOpen, RotateCcw } from "lucide-react";
 
 export default function ConstitutionCards() {
     const { t, language } = useLanguage();
@@ -25,7 +25,8 @@ export default function ConstitutionCards() {
     useEffect(() => {
         const fetchProgress = async () => {
             const email = localStorage.getItem('userEmail');
-            if (!email) return;
+            const isGuest = localStorage.getItem('isGuest') === 'true';
+            if (!email || isGuest) return;
             try {
                 const res = await fetch(`${config.API_URL}/api/progress/${email}`, {
                     headers: { "ngrok-skip-browser-warning": "true" }
@@ -127,7 +128,8 @@ export default function ConstitutionCards() {
 
     const updateProgress = async () => {
         const email = localStorage.getItem('userEmail');
-        if (!email) return;
+        const isGuest = localStorage.getItem('isGuest') === 'true';
+        if (!email || isGuest) return;
 
         try {
             await fetch(`${config.API_URL}/api/progress/update`, {
@@ -197,104 +199,106 @@ export default function ConstitutionCards() {
                             );
                         })}
                     </div>
-                    {isLevelComplete ? (
-                        <div className="cards-completion-card animated fadeIn">
-                            <div className="completion-icon">🏆</div>
-                            <h2>{language === 'hi' ? 'स्तर पूरा हुआ!' : 'Level Completed!'}</h2>
-                            <p>
-                                {language === 'hi'
-                                    ? `आपने ${t.common.difficulty[difficulty]} मोड में सभी ${cards.length} कार्ड सफलतापूर्वक पूरे कर लिए हैं।`
-                                    : `You've successfully completed all ${cards.length} cards in ${t.common.difficulty[difficulty]} mode.`}
-                            </p>
-                            <div className="completion-stats">
-                                <span className="pill10 knew10">✨ {knewCount} {t.cards.knew}</span>
-                                <span className="pill10 learned10">💡 {learnedCount} {t.cards.learned}</span>
+
+                    {/* Progress */}
+                    <div className="progress-header10">
+                        <span>
+                            {language === 'hi' ? `कार्ड ${currentIndex + 1} / ${cards.length}` : `Card ${currentIndex + 1} of ${cards.length}`}
+                        </span>
+                        <div className="stats10">
+                            <span className="pill10 knew10">✨ {knewCount} {t.cards.knew}</span>
+                            <span className="pill10 learned10">💡 {learnedCount} {t.cards.learned}</span>
+                        </div>
+                    </div>
+
+
+                    <div className="progress-bar10">
+                        <div
+                            className="progress-fill10"
+                            style={{ width: `${((currentIndex + 1) / cards.length) * 100}%` }}
+                        />
+                    </div>
+
+                    {/* Flashcard */}
+                    {currentCard && (
+                        <div className="card-wrapper10" onClick={() => setFlipped(!flipped)}>
+                            <div className={`card10 ${flipped ? "flipped10" : ""}`}>
+                                {/* Front */}
+                                <div className="card-face10 card-front10">
+                                    <span className="tag10">{currentCard.category}</span>
+                                    <div className="icon10">📖</div>
+                                    <h2>{content.q}</h2>
+                                    <p className="hint10">{t.cards.flip}</p>
+                                </div>
+
+                                {/* Back */}
+                                <div className="card-face10 card-back10">
+                                    <span className="tag10">{currentCard.category}</span>
+                                    <p className="answer10">{content.a}</p>
+
+                                    <div className="fact10">
+                                        💡 Tip: This question belong to <b>{currentCard.category}</b>
+                                    </div>
+                                </div>
                             </div>
-                            <button className="continue-btn-cards" onClick={resetLevel}>
-                                {language === 'hi' ? 'फिर से खेलें' : 'Play Again'}
+                        </div>
+                    )}
+
+                    {/* Actions */}
+                    {flipped && currentCard && (
+                        <div className="actions10">
+                            <button
+                                className="btn10 secondary10"
+                                onClick={() => handleAssessment('learned')}
+                                disabled={assessedCards.includes(currentCard.id)}
+                                style={{ opacity: assessedCards.includes(currentCard.id) ? 0.5 : 1 }}
+                            >
+                                💡 {t.cards.learned}
+                            </button>
+                            <button
+                                className="btn10 primary10"
+                                onClick={() => handleAssessment('knew')}
+                                disabled={assessedCards.includes(currentCard.id)}
+                                style={{ opacity: assessedCards.includes(currentCard.id) ? 0.5 : 1 }}
+                            >
+                                ✨ {t.cards.knew}
                             </button>
                         </div>
-                    ) : (
-                        <>
-                            {/* Progress */}
-                            <div className="progress-header10">
-                                <span>
-                                    {language === 'hi' ? `कार्ड ${currentIndex + 1} / ${cards.length}` : `Card ${currentIndex + 1} of ${cards.length}`}
-                                </span>
-                                <div className="stats10">
+                    )}
+
+                    {/* Navigation */}
+                    <div className="navigation10">
+                        <button onClick={prevCard} disabled={currentIndex === 0}>
+                            ‹ {t.cards.prev}
+                        </button>
+                        <span>
+                            {currentIndex + 1} / {cards.length}
+                        </span>
+                        <button onClick={nextCard} disabled={currentIndex === cards.length - 1}>
+                            {t.cards.next} ›
+                        </button>
+                    </div>
+
+                    {/* Completion Overlay */}
+                    {isLevelComplete && (
+                        <div className="cards-completion-overlay animated fadeIn">
+                            <div className="cards-completion-card">
+                                <div className="completion-icon">🏆</div>
+                                <h2>{language === 'hi' ? 'स्तर पूरा हुआ!' : 'Level Completed!'}</h2>
+                                <p>
+                                    {language === 'hi'
+                                        ? `आपने ${t.common.difficulty[difficulty]} मोड में सभी ${cards.length} कार्ड सफलतापूर्वक पूरे कर लिए हैं।`
+                                        : `You've successfully completed all ${cards.length} cards in ${t.common.difficulty[difficulty]} mode.`}
+                                </p>
+                                <div className="completion-stats">
                                     <span className="pill10 knew10">✨ {knewCount} {t.cards.knew}</span>
                                     <span className="pill10 learned10">💡 {learnedCount} {t.cards.learned}</span>
                                 </div>
-                            </div>
-
-
-                            <div className="progress-bar10">
-                                <div
-                                    className="progress-fill10"
-                                    style={{ width: `${((currentIndex + 1) / cards.length) * 100}%` }}
-                                />
-                            </div>
-
-                            {/* Flashcard */}
-                            {currentCard && (
-                                <div className="card-wrapper10" onClick={() => setFlipped(!flipped)}>
-                                    <div className={`card10 ${flipped ? "flipped10" : ""}`}>
-                                        {/* Front */}
-                                        <div className="card-face10 card-front10">
-                                            <span className="tag10">{currentCard.category}</span>
-                                            <div className="icon10">📖</div>
-                                            <h2>{content.q}</h2>
-                                            <p className="hint10">{t.cards.flip}</p>
-                                        </div>
-
-                                        {/* Back */}
-                                        <div className="card-face10 card-back10">
-                                            <span className="tag10">{currentCard.category}</span>
-                                            <p className="answer10">{content.a}</p>
-
-                                            <div className="fact10">
-                                                💡 Tip: This question belong to <b>{currentCard.category}</b>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* Actions */}
-                            {flipped && currentCard && (
-                                <div className="actions10">
-                                    <button
-                                        className="btn10 secondary10"
-                                        onClick={() => handleAssessment('learned')}
-                                        disabled={assessedCards.includes(currentCard.id)}
-                                        style={{ opacity: assessedCards.includes(currentCard.id) ? 0.5 : 1 }}
-                                    >
-                                        💡 {t.cards.learned}
-                                    </button>
-                                    <button
-                                        className="btn10 primary10"
-                                        onClick={() => handleAssessment('knew')}
-                                        disabled={assessedCards.includes(currentCard.id)}
-                                        style={{ opacity: assessedCards.includes(currentCard.id) ? 0.5 : 1 }}
-                                    >
-                                        ✨ {t.cards.knew}
-                                    </button>
-                                </div>
-                            )}
-
-                            {/* Navigation */}
-                            <div className="navigation10">
-                                <button onClick={prevCard} disabled={currentIndex === 0}>
-                                    ‹ {t.cards.prev}
-                                </button>
-                                <span>
-                                    {currentIndex + 1} / {cards.length}
-                                </span>
-                                <button onClick={nextCard} disabled={currentIndex === cards.length - 1}>
-                                    {t.cards.next} ›
+                                <button className="continue-btn-cards" onClick={resetLevel}>
+                                    <RotateCcw size={18} /> {language === 'hi' ? 'फिर से खेलें' : 'Play Again'}
                                 </button>
                             </div>
-                        </>
+                        </div>
                     )}
 
                     {/* Popup Message */}

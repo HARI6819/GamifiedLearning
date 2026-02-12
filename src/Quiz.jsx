@@ -23,7 +23,8 @@ export default function Quiz() {
     useEffect(() => {
         const fetchProgress = async () => {
             const email = localStorage.getItem("userEmail");
-            if (!email) return;
+            const isGuest = localStorage.getItem("isGuest") === "true";
+            if (!email || isGuest) return;
             try {
                 const res = await fetch(`${config.API_URL}/api/progress/${email}`, {
                     headers: { "ngrok-skip-browser-warning": "true" }
@@ -97,7 +98,12 @@ export default function Quiz() {
     const finishQuiz = async () => {
         setGameState("finished");
         const email = localStorage.getItem("userEmail");
-        if (!email) return;
+        const isGuest = localStorage.getItem("isGuest") === "true";
+        console.log("Quiz finishQuiz check:", { email, isGuest });
+        if (!email || isGuest) {
+            if (isGuest) console.log("Guest mode detected in Quiz, skipping API update.");
+            return;
+        }
 
         const pointsPerCorrect = difficulty === "Hard" ? 10 : (difficulty === "Medium" ? 7 : 5);
         const totalPoints = score * pointsPerCorrect;

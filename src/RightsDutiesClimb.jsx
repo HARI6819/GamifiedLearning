@@ -58,7 +58,8 @@ export default function RightsDutiesClimb() {
   useEffect(() => {
     const fetchProgress = async () => {
       const email = localStorage.getItem('userEmail');
-      if (!email) return;
+      const isGuest = localStorage.getItem('isGuest') === 'true';
+      if (!email || isGuest) return;
       try {
         const res = await fetch(`${config.API_URL}/api/progress/${email}`, {
           headers: { "ngrok-skip-browser-warning": "true" }
@@ -178,7 +179,8 @@ export default function RightsDutiesClimb() {
 
   const updateCompletion = async () => {
     const email = localStorage.getItem('userEmail');
-    if (!email) return;
+    const isGuest = localStorage.getItem('isGuest') === 'true';
+    if (!email || isGuest) return;
     try {
       await fetch(`${config.API_URL}/api/progress/update`, {
         method: 'POST',
@@ -200,7 +202,8 @@ export default function RightsDutiesClimb() {
   const updateProgress = async (points) => {
     if (points <= 0) return;
     const email = localStorage.getItem('userEmail');
-    if (!email) return;
+    const isGuest = localStorage.getItem('isGuest') === 'true';
+    if (!email || isGuest) return;
 
     try {
       await fetch(`${config.API_URL}/api/progress/update`, {
@@ -549,7 +552,7 @@ export default function RightsDutiesClimb() {
                   </div>
                 </div>
                 <button className="continue-btn-climb" onClick={() => { setPopup(prev => ({ ...prev, show: false })); resetGame(); }}>
-                  {language === 'hi' ? 'फिर से खेलें' : 'Play Again'}
+                  <RotateCcw size={18} /> {language === 'hi' ? 'फिर से खेलें' : 'Play Again'}
                 </button>
               </div>
             ) : (

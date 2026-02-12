@@ -72,6 +72,7 @@ export const translations = {
                         level: "Easy",
                         time: "5-10 mins"
                     },
+
                     quiz: {
                         title: "Constitutional Quiz",
                         desc: "Test your knowledge with 10 questions and a timer!",
@@ -387,7 +388,343 @@ export const translations = {
                     { id: 30, question: "The 42nd Amendment Act (1976) is also known as?", options: ["People's Charter", "Mini Constitution", "Judicial Review Act", "Fundamental Rights Act"], correctIndex: 1, category: "Legislature" }
                 ]
             }
-        }
+        },
+        timelineChallenge: {
+            title: "Timeline Challenge",
+            desc: "Arrange constitutional events in chronological order before time runs out!",
+            startTitle: "Constitutional Timeline",
+            startDesc: "Place historical events, amendments, and landmark cases in the correct chronological order. Test your knowledge of constitutional history!",
+            difficulty: "Select Difficulty",
+            startGame: "Start Challenge",
+            time: "5-15 mins",
+            timer: "Time",
+            score: "Score",
+            placed: "Placed",
+            restart: "Restart",
+            submit: "Submit Timeline",
+            tip: "Tip: Drag events from the pool onto the timeline. Arrange them in chronological order from earliest to latest!",
+            wellDone: "Perfect Timeline!",
+            wellDoneDesc: "You've successfully arranged all events in chronological order!",
+            gameOver: "Time's Up!",
+            gameOverDesc: "Time ran out! Try again to improve your speed and accuracy.",
+            playAgain: "Play Again",
+            correctOrder: "Correct",
+            wrongOrder: "Incorrect",
+            events: {
+                Easy: [
+                    { id: "e1", title: "Independence of India", year: 1947, desc: "India gained independence from British rule" },
+                    { id: "e2", title: "Constitution Adopted", year: 1950, desc: "Constitution of India came into effect on 26th January" },
+                    { id: "e3", title: "First Amendment", year: 1951, desc: "Added restrictions on freedom of speech and property rights" },
+                    { id: "e4", title: "42nd Amendment", year: 1976, desc: "Known as 'Mini Constitution', added Preamble words Socialist, Secular, Integrity" },
+                    { id: "e5", title: "44th Amendment", year: 1978, desc: "Removed right to property from fundamental rights" },
+                    { id: "e6", title: "73rd Amendment", year: 1992, desc: "Panchayati Raj institutions given constitutional status" }
+                ],
+                Medium: [
+                    { id: "m1", title: "Kesavananda Bharati Case", year: 1973, desc: "Established Basic Structure doctrine" },
+                    { id: "m2", title: "Maneka Gandhi Case", year: 1978, desc: "Expanded scope of Article 21 - Right to Life" },
+                    { id: "m3", title: "61st Amendment", year: 1989, desc: "Reduced voting age from 21 to 18 years" },
+                    { id: "m4", title: "74th Amendment", year: 1992, desc: "Constitutional status to municipalities" },
+                    { id: "m5", title: "86th Amendment", year: 2002, desc: "Right to Education made fundamental right" },
+                    { id: "m6", title: "101st Amendment", year: 2016, desc: "Introduction of Goods and Services Tax (GST)" },
+                    { id: "m7", title: "103rd Amendment", year: 2019, desc: "10% reservation for economically weaker sections" }
+                ],
+                Hard: [
+                    { id: "h1", title: "A.K. Gopalan Case", year: 1950, desc: "Narrow interpretation of Article 21" },
+                    { id: "h2", title: "Shankari Prasad Case", year: 1951, desc: "Parliament can amend fundamental rights" },
+                    { id: "h3", title: "Golaknath Case", year: 1967, desc: "Parliament cannot amend fundamental rights" },
+                    { id: "h4", title: "24th Amendment", year: 1971, desc: "Parliament's power to amend any part of Constitution" },
+                    { id: "h5", title: "Indira Gandhi Case", year: 1975, desc: "Election of PM challenged, led to Emergency" },
+                    { id: "h6", title: "Minerva Mills Case", year: 1980, desc: "Reaffirmed Basic Structure doctrine" },
+                    { id: "h7", title: "S.R. Bommai Case", year: 1994, desc: "Guidelines for Article 356 - President's Rule" },
+                    { id: "h8", title: "Vishaka Case", year: 1997, desc: "Guidelines against sexual harassment at workplace" }
+                ]
+            }
+        },
+        constitutionalCrossroads: {
+            title: "Constitutional Crossroads",
+            desc: "Face real-world constitutional dilemmas and make decisions based on constitutional principles!",
+            startTitle: "Decision Challenge",
+            startDesc: "Navigate through constitutional scenarios and make the right choices. Each decision tests your understanding of constitutional law!",
+            difficulty: "Select Difficulty",
+            startGame: "Start Challenge",
+            time: "10-15 mins",
+            scenario: "Scenario",
+            score: "Score",
+            correct: "Correct!",
+            incorrect: "Not Quite",
+            explanation: "Explanation",
+            relevantArticles: "Relevant Articles",
+            nextScenario: "Next Scenario",
+            viewResults: "View Results",
+            restart: "Restart",
+            completion: {
+                title: "Challenge Complete!",
+                desc: "You've navigated through all constitutional scenarios.",
+                correctAnswers: "Correct Answers",
+                totalScore: "Total Score",
+                playAgain: "Play Again"
+            },
+            scenarios: {
+                Easy: [
+                    {
+                        id: "e1",
+                        title: "Freedom of Speech",
+                        situation: "A citizen wants to organize a peaceful protest against a government policy. The local police deny permission citing 'public order concerns'.",
+                        choices: [
+                            { id: "a", text: "Police can deny permission as they see fit" },
+                            { id: "b", text: "Citizen has right to protest, police must allow it" },
+                            { id: "c", text: "Citizen can protest but police can impose reasonable restrictions" },
+                            { id: "d", text: "Only violent protests can be stopped" }
+                        ],
+                        correctChoice: "c",
+                        explanation: "Article 19(1)(a) guarantees freedom of speech and expression, including the right to peaceful assembly. However, Article 19(2) allows reasonable restrictions in the interest of public order, sovereignty, and security. Police can impose reasonable restrictions but cannot arbitrarily deny the right.",
+                        articles: ["Article 19(1)(a)", "Article 19(2)"]
+                    },
+                    {
+                        id: "e2",
+                        title: "Right to Education",
+                        situation: "A 7-year-old child from a poor family cannot afford school fees. The parents approach the government for help.",
+                        choices: [
+                            { id: "a", text: "Education is not a fundamental right" },
+                            { id: "b", text: "State must provide free education to children aged 6-14" },
+                            { id: "c", text: "Only children above 14 have right to education" },
+                            { id: "d", text: "Parents must pay for education" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "Article 21A makes free and compulsory education a fundamental right for all children aged 6 to 14 years. The state is constitutionally obligated to provide this education.",
+                        articles: ["Article 21A"]
+                    },
+                    {
+                        id: "e3",
+                        title: "Arrest Rights",
+                        situation: "Police arrest a person without informing them of the grounds of arrest or their rights.",
+                        choices: [
+                            { id: "a", text: "Police can arrest without giving reasons" },
+                            { id: "b", text: "Person must be informed of grounds and rights" },
+                            { id: "c", text: "Only serious crimes require informing the person" },
+                            { id: "d", text: "Rights are informed only in court" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "Article 22(1) provides that every person arrested must be informed of the grounds of arrest and has the right to consult and be defended by a legal practitioner. This is a fundamental right that cannot be denied.",
+                        articles: ["Article 22(1)"]
+                    },
+                    {
+                        id: "e4",
+                        title: "Equality Before Law",
+                        situation: "A law is passed that treats men and women differently in matters of employment without any reasonable justification.",
+                        choices: [
+                            { id: "a", text: "Law is valid as legislature can make any law" },
+                            { id: "b", text: "Law violates equality and can be challenged" },
+                            { id: "c", text: "Only courts can decide, citizens cannot challenge" },
+                            { id: "d", text: "Gender-based laws are always valid" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "Article 14 guarantees equality before law and equal protection of laws. Article 15 prohibits discrimination on grounds of sex. A law that discriminates without reasonable classification violates these fundamental rights and can be challenged in court.",
+                        articles: ["Article 14", "Article 15"]
+                    },
+                    {
+                        id: "e5",
+                        title: "Religious Freedom",
+                        situation: "A religious minority community wants to establish and manage their own educational institution.",
+                        choices: [
+                            { id: "a", text: "Only majority religion can establish institutions" },
+                            { id: "b", text: "Minorities have right to establish educational institutions" },
+                            { id: "c", text: "Government permission is mandatory" },
+                            { id: "d", text: "Only secular institutions are allowed" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "Article 30(1) specifically grants religious and linguistic minorities the right to establish and administer educational institutions of their choice. This is a fundamental right to preserve their culture and identity.",
+                        articles: ["Article 30(1)"]
+                    }
+                ],
+                Medium: [
+                    {
+                        id: "m1",
+                        title: "Parliament vs Fundamental Rights",
+                        situation: "Parliament passes a law that restricts a fundamental right. Citizens challenge it in court claiming it violates the Constitution.",
+                        choices: [
+                            { id: "a", text: "Parliament's law is supreme, cannot be challenged" },
+                            { id: "b", text: "Court can strike down law if it violates fundamental rights" },
+                            { id: "c", text: "Only President can invalidate the law" },
+                            { id: "d", text: "Fundamental rights can never be restricted" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "Under the doctrine of judicial review (established in Kesavananda Bharati case), courts can examine whether a law violates fundamental rights or the basic structure of the Constitution. If it does, the court can declare it unconstitutional and void.",
+                        articles: ["Article 13", "Article 32", "Article 226"]
+                    },
+                    {
+                        id: "m2",
+                        title: "Inter-State Water Dispute",
+                        situation: "Two states are in conflict over sharing river water. Both claim rights over the water resources.",
+                        choices: [
+                            { id: "a", text: "States must resolve it themselves" },
+                            { id: "b", text: "Parliament can form a tribunal to resolve the dispute" },
+                            { id: "c", text: "President decides unilaterally" },
+                            { id: "d", text: "Supreme Court must decide directly" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "Article 262 empowers Parliament to provide for adjudication of inter-state water disputes. Parliament can constitute a Water Disputes Tribunal whose decision is binding on the parties. This prevents prolonged litigation and ensures equitable distribution.",
+                        articles: ["Article 262"]
+                    },
+                    {
+                        id: "m3",
+                        title: "President's Rule",
+                        situation: "The Governor of a state reports that constitutional machinery has failed. The President considers imposing President's Rule.",
+                        choices: [
+                            { id: "a", text: "President can impose rule based on Governor's report alone" },
+                            { id: "b", text: "President must have objective material and Parliament must approve" },
+                            { id: "c", text: "Governor can directly impose President's Rule" },
+                            { id: "d", text: "President's Rule cannot be challenged" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "Article 356 allows President's Rule, but the S.R. Bommai case established that it must be based on objective material, not subjective satisfaction. The proclamation must be approved by both houses of Parliament within specified time limits and can be judicially reviewed.",
+                        articles: ["Article 356"]
+                    },
+                    {
+                        id: "m4",
+                        title: "Money Bill Dispute",
+                        situation: "A bill is introduced in Lok Sabha as a Money Bill. Rajya Sabha claims it's not a Money Bill and demands equal say.",
+                        choices: [
+                            { id: "a", text: "Rajya Sabha has equal power over all bills" },
+                            { id: "b", text: "Speaker's decision on Money Bill is final" },
+                            { id: "c", text: "President decides if it's a Money Bill" },
+                            { id: "d", text: "Supreme Court must certify Money Bills" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "Article 110 defines Money Bills. Article 109 provides that Money Bills can only be introduced in Lok Sabha, and the Speaker's certificate that a bill is a Money Bill is final and cannot be questioned in any court. Rajya Sabha can only make recommendations.",
+                        articles: ["Article 109", "Article 110"]
+                    },
+                    {
+                        id: "m5",
+                        title: "Judicial Appointment",
+                        situation: "A vacancy arises in the Supreme Court. There's a debate about who should appoint the new judge.",
+                        choices: [
+                            { id: "a", text: "President appoints based on government advice" },
+                            { id: "b", text: "Collegium of senior judges recommends, President appoints" },
+                            { id: "c", text: "Parliament elects Supreme Court judges" },
+                            { id: "d", text: "Chief Justice alone decides" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "While Article 124 states the President appoints Supreme Court judges, the Collegium system (established through judicial pronouncements) requires the Chief Justice to consult senior judges. The President appoints based on the Collegium's recommendation, ensuring judicial independence.",
+                        articles: ["Article 124"]
+                    },
+                    {
+                        id: "m6",
+                        title: "Fundamental Duties",
+                        situation: "A citizen refuses to perform fundamental duties listed in the Constitution, claiming they are not enforceable.",
+                        choices: [
+                            { id: "a", text: "Fundamental duties are legally enforceable like rights" },
+                            { id: "b", text: "Fundamental duties are moral obligations, not legally enforceable" },
+                            { id: "c", text: "Citizens can be jailed for not performing duties" },
+                            { id: "d", text: "Only government officials must follow duties" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "Article 51A lists Fundamental Duties added by the 42nd Amendment. Unlike Fundamental Rights, these duties are not legally enforceable through courts. They serve as moral and civic obligations to remind citizens of their responsibilities towards the nation.",
+                        articles: ["Article 51A"]
+                    }
+                ],
+                Hard: [
+                    {
+                        id: "h1",
+                        title: "Basic Structure Doctrine",
+                        situation: "Parliament passes a constitutional amendment that seeks to remove the power of judicial review from courts.",
+                        choices: [
+                            { id: "a", text: "Parliament can amend any part of Constitution" },
+                            { id: "b", text: "Amendment violates basic structure and is invalid" },
+                            { id: "c", text: "Only President can veto such amendments" },
+                            { id: "d", text: "Judicial review is not essential to Constitution" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "The Kesavananda Bharati case (1973) established the Basic Structure doctrine. While Parliament has wide amendment powers under Article 368, it cannot alter the basic structure of the Constitution. Judicial review is part of the basic structure and cannot be removed through amendment.",
+                        articles: ["Article 368", "Basic Structure Doctrine"]
+                    },
+                    {
+                        id: "h2",
+                        title: "Emergency and Rights",
+                        situation: "National Emergency is declared under Article 352. The government suspends all fundamental rights including Article 21 (Right to Life).",
+                        choices: [
+                            { id: "a", text: "All fundamental rights can be suspended during emergency" },
+                            { id: "b", text: "Article 20 and 21 cannot be suspended even during emergency" },
+                            { id: "c", text: "Only President decides which rights to suspend" },
+                            { id: "d", text: "Emergency automatically suspends all rights" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "After the 44th Amendment, Article 359 provides that even during a National Emergency, the right to move courts for enforcement of Article 20 (protection against conviction) and Article 21 (right to life and personal liberty) cannot be suspended. These are inviolable rights.",
+                        articles: ["Article 352", "Article 359", "Article 20", "Article 21"]
+                    },
+                    {
+                        id: "h3",
+                        title: "Constitutional Amendment Process",
+                        situation: "A bill to amend the Constitution is introduced. It affects federal structure and requires special procedure.",
+                        choices: [
+                            { id: "a", text: "Simple majority in Parliament is enough" },
+                            { id: "b", text: "Special majority plus ratification by half the states" },
+                            { id: "c", text: "Only President's approval is needed" },
+                            { id: "d", text: "Referendum is mandatory for all amendments" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "Article 368 prescribes different procedures for amendments. For amendments affecting federal structure, election of President, extent of executive/judicial power, etc., special majority (2/3rd present and voting + absolute majority) in Parliament plus ratification by at least half the state legislatures is required.",
+                        articles: ["Article 368"]
+                    },
+                    {
+                        id: "h4",
+                        title: "Directive Principles vs Rights",
+                        situation: "A law is passed to implement Directive Principles but it restricts a Fundamental Right. Courts must decide validity.",
+                        choices: [
+                            { id: "a", text: "Directive Principles always prevail over Rights" },
+                            { id: "b", text: "Courts must harmonize both, neither is absolutely supreme" },
+                            { id: "c", text: "Fundamental Rights always prevail" },
+                            { id: "d", text: "Parliament decides which prevails" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "The Minerva Mills case established that there must be a balance between Fundamental Rights (Part III) and Directive Principles (Part IV). Neither is absolutely supreme. Courts must harmonize both and ensure that implementation of Directive Principles doesn't destroy the basic structure or fundamental rights.",
+                        articles: ["Part III", "Part IV", "Article 37"]
+                    },
+                    {
+                        id: "h5",
+                        title: "Pardoning Power",
+                        situation: "A person is sentenced to death by the Supreme Court. They seek pardon from the President.",
+                        choices: [
+                            { id: "a", text: "President cannot pardon Supreme Court sentences" },
+                            { id: "b", text: "President can pardon even death sentences" },
+                            { id: "c", text: "Only Parliament can pardon death sentences" },
+                            { id: "d", text: "Governor has power to pardon in all cases" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "Article 72 grants the President power to pardon, reprieve, respite, or remit punishment in all cases, including death sentences and court-martial cases. This power is exercised on the advice of the Council of Ministers and can be judicially reviewed for arbitrariness.",
+                        articles: ["Article 72"]
+                    },
+                    {
+                        id: "h6",
+                        title: "Judicial Independence",
+                        situation: "Parliament passes a law reducing the retirement age of High Court judges to remove certain judges.",
+                        choices: [
+                            { id: "a", text: "Parliament can change retirement age anytime" },
+                            { id: "b", text: "Such law violates judicial independence and is invalid" },
+                            { id: "c", text: "Only constitutional amendment can change it" },
+                            { id: "d", text: "President can change retirement age by ordinance" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "Judicial independence is part of the basic structure. Any attempt to undermine it, such as arbitrarily reducing retirement age to remove specific judges, would be unconstitutional. The tenure and service conditions of judges are protected to ensure independence from executive and legislative interference.",
+                        articles: ["Article 124", "Article 217", "Basic Structure"]
+                    },
+                    {
+                        id: "h7",
+                        title: "Writ Jurisdiction",
+                        situation: "A private company violates a citizen's rights. The citizen wants to file a writ petition in the High Court.",
+                        choices: [
+                            { id: "a", text: "Writs can only be filed against government" },
+                            { id: "b", text: "Writs can be filed against private bodies performing public functions" },
+                            { id: "c", text: "Only civil suits can be filed against private companies" },
+                            { id: "d", text: "Writs are not available in High Courts" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "While Article 226 primarily provides writ jurisdiction against state and its instrumentalities, courts have expanded this to include private bodies performing public functions or statutory duties. If a private entity is discharging public or statutory functions, writs can be issued against it.",
+                        articles: ["Article 226", "Article 12"]
+                    }
+                ]
+            }
+        },
     },
     hi: {
         navbar: {
@@ -462,6 +799,7 @@ export const translations = {
                         level: "आसान",
                         time: "5-10 मिनट"
                     },
+
                     quiz: {
                         title: "संवैधानिक प्रश्नोत्तरी",
                         desc: "10 प्रश्नों और टाइमर के साथ अपने ज्ञान का परीक्षण करें!",
@@ -777,6 +1115,343 @@ export const translations = {
                     { id: 30, question: "42वें संशोधन अधिनियम (1976) को किस रूप में भी जाना जाता है?", options: ["पीपुल्स चार्टर", "लघु संविधान", "न्यायिक समीक्षा अधिनियम", "मौलिक अधिकार अधिनियम"], correctIndex: 1, category: "Legislature" }
                 ]
             }
-        }
+        },
+        timelineChallenge: {
+            title: "समयरेखा चुनौती",
+            desc: "समय समाप्त होने से पहले संवैधानिक घटनाओं को कालानुक्रमिक क्रम में व्यवस्थित करें!",
+            startTitle: "संवैधानिक समयरेखा",
+            startDesc: "ऐतिहासिक घटनाओं, संशोधनों और ऐतिहासिक मामलों को सही कालानुक्रमिक क्रम में रखें। संवैधानिक इतिहास के अपने ज्ञान का परीक्षण करें!",
+            difficulty: "कठिनाई चुनें",
+            startGame: "चुनौती शुरू करें",
+            time: "5-15 मिनट",
+            timer: "समय",
+            score: "स्कोर",
+            placed: "रखा गया",
+            restart: "पुनः आरंभ करें",
+            submit: "समयरेखा जमा करें",
+            tip: "सुझाव: पूल से घटनाओं को समयरेखा पर खींचें। उन्हें सबसे पहले से नवीनतम तक कालानुक्रमिक क्रम में व्यवस्थित करें!",
+            wellDone: "परफेक्ट टाइमलाइन!",
+            wellDoneDesc: "आपने सभी घटनाओं को कालानुक्रमिक क्रम में सफलतापूर्वक व्यवस्थित किया है!",
+            gameOver: "समय समाप्त!",
+            gameOverDesc: "समय समाप्त हो गया! अपनी गति और सटीकता में सुधार के लिए पुनः प्रयास करें।",
+            playAgain: "फिर से खेलें",
+            correctOrder: "सही",
+            wrongOrder: "गलत",
+            events: {
+                Easy: [
+                    { id: "e1", title: "भारत की स्वतंत्रता", year: 1947, desc: "भारत ने ब्रिटिश शासन से स्वतंत्रता प्राप्त की" },
+                    { id: "e2", title: "संविधान अपनाया गया", year: 1950, desc: "भारत का संविधान 26 जनवरी को लागू हुआ" },
+                    { id: "e3", title: "प्रथम संशोधन", year: 1951, desc: "अभिव्यक्ति की स्वतंत्रता और संपत्ति के अधिकार पर प्रतिबंध जोड़े गए" },
+                    { id: "e4", title: "42वां संशोधन", year: 1976, desc: "'मिनी संविधान' के रूप में जाना जाता है, प्रस्तावना में समाजवादी, धर्मनिरपेक्ष, अखंडता शब्द जोड़े गए" },
+                    { id: "e5", title: "44वां संशोधन", year: 1978, desc: "संपत्ति के अधिकार को मौलिक अधिकारों से हटाया गया" },
+                    { id: "e6", title: "73वां संशोधन", year: 1992, desc: "पंचायती राज संस्थाओं को संवैधानिक दर्जा दिया गया" }
+                ],
+                Medium: [
+                    { id: "m1", title: "केशवानंद भारती मामला", year: 1973, desc: "मूल संरचना सिद्धांत स्थापित किया" },
+                    { id: "m2", title: "मेनका गांधी मामला", year: 1978, desc: "अनुच्छेद 21 का विस्तार - जीवन का अधिकार" },
+                    { id: "m3", title: "61वां संशोधन", year: 1989, desc: "मतदान की आयु 21 से घटाकर 18 वर्ष की गई" },
+                    { id: "m4", title: "74वां संशोधन", year: 1992, desc: "नगरपालिकाओं को संवैधानिक दर्जा" },
+                    { id: "m5", title: "86वां संशोधन", year: 2002, desc: "शिक्षा का अधिकार मौलिक अधिकार बनाया गया" },
+                    { id: "m6", title: "101वां संशोधन", year: 2016, desc: "वस्तु एवं सेवा कर (GST) की शुरुआत" },
+                    { id: "m7", title: "103वां संशोधन", year: 2019, desc: "आर्थिक रूप से कमजोर वर्गों के लिए 10% आरक्षण" }
+                ],
+                Hard: [
+                    { id: "h1", title: "ए.के. गोपालन मामला", year: 1950, desc: "अनुच्छेद 21 की संकीर्ण व्याख्या" },
+                    { id: "h2", title: "शंकरी प्रसाद मामला", year: 1951, desc: "संसद मौलिक अधिकारों में संशोधन कर सकती है" },
+                    { id: "h3", title: "गोलकनाथ मामला", year: 1967, desc: "संसद मौलिक अधिकारों में संशोधन नहीं कर सकती" },
+                    { id: "h4", title: "24वां संशोधन", year: 1971, desc: "संविधान के किसी भी भाग में संशोधन करने की संसद की शक्ति" },
+                    { id: "h5", title: "इंदिरा गांधी मामला", year: 1975, desc: "पीएम के चुनाव को चुनौती, आपातकाल की ओर ले गया" },
+                    { id: "h6", title: "मिनर्वा मिल्स मामला", year: 1980, desc: "मूल संरचना सिद्धांत की पुष्टि" },
+                    { id: "h7", title: "एस.आर. बोम्मई मामला", year: 1994, desc: "अनुच्छेद 356 के लिए दिशानिर्देश - राष्ट्रपति शासन" },
+                    { id: "h8", title: "विशाखा मामला", year: 1997, desc: "कार्यस्थल पर यौन उत्पीड़न के खिलाफ दिशानिर्देश" }
+                ]
+            }
+        },
+        constitutionalCrossroads: {
+            title: "संवैधानिक चौराहा",
+            desc: "वास्तविक संवैधानिक दुविधाओं का सामना करें और संवैधानिक सिद्धांतों के आधार पर निर्णय लें!",
+            startTitle: "निर्णय चुनौती",
+            startDesc: "संवैधानिक परिदृश्यों के माध्यम से नेविगेट करें और सही विकल्प चुनें। प्रत्येक निर्णय संवैधानिक कानून की आपकी समझ का परीक्षण करता है!",
+            difficulty: "कठिनाई चुनें",
+            startGame: "चुनौती शुरू करें",
+            time: "10-15 मिनट",
+            scenario: "परिदृश्य",
+            score: "स्कोर",
+            correct: "सही!",
+            incorrect: "बिल्कुल नहीं",
+            explanation: "व्याख्या",
+            relevantArticles: "प्रासंगिक अनुच्छेद",
+            nextScenario: "अगला परिदृश्य",
+            viewResults: "परिणाम देखें",
+            restart: "पुनः आरंभ करें",
+            completion: {
+                title: "चुनौती पूर्ण!",
+                desc: "आपने सभी संवैधानिक परिदृश्यों को पार कर लिया है।",
+                correctAnswers: "सही उत्तर",
+                totalScore: "कुल स्कोर",
+                playAgain: "फिर से खेलें"
+            },
+            scenarios: {
+                Easy: [
+                    {
+                        id: "e1",
+                        title: "अभिव्यक्ति की स्वतंत्रता",
+                        situation: "एक नागरिक सरकारी नीति के खिलाफ शांतिपूर्ण विरोध प्रदर्शन आयोजित करना चाहता है। स्थानीय पुलिस 'सार्वजनिक व्यवस्था की चिंताओं' का हवाला देते हुए अनुमति से इनकार करती है।",
+                        choices: [
+                            { id: "a", text: "पुलिस अपनी इच्छानुसार अनुमति से इनकार कर सकती है" },
+                            { id: "b", text: "नागरिक को विरोध करने का अधिकार है, पुलिस को इसकी अनुमति देनी होगी" },
+                            { id: "c", text: "नागरिक विरोध कर सकता है लेकिन पुलिस उचित प्रतिबंध लगा सकती है" },
+                            { id: "d", text: "केवल हिंसक विरोध प्रदर्शनों को रोका जा सकता है" }
+                        ],
+                        correctChoice: "c",
+                        explanation: "अनुच्छेद 19(1)(a) भाषण और अभिव्यक्ति की स्वतंत्रता की गारंटी देता है, जिसमें शांतिपूर्ण सभा का अधिकार भी शामिल है। हालांकि, अनुच्छेद 19(2) सार्वजनिक व्यवस्था, संप्रभुता और सुरक्षा के हित में उचित प्रतिबंधों की अनुमति देता है। पुलिस उचित प्रतिबंध लगा सकती है लेकिन मनमाने ढंग से अधिकार से इनकार नहीं कर सकती।",
+                        articles: ["अनुच्छेद 19(1)(a)", "अनुच्छेद 19(2)"]
+                    },
+                    {
+                        id: "e2",
+                        title: "शिक्षा का अधिकार",
+                        situation: "एक गरीब परिवार का 7 वर्षीय बच्चा स्कूल की फीस नहीं दे सकता। माता-पिता मदद के लिए सरकार से संपर्क करते हैं।",
+                        choices: [
+                            { id: "a", text: "शिक्षा मौलिक अधिकार नहीं है" },
+                            { id: "b", text: "राज्य को 6-14 वर्ष के बच्चों को मुफ्त शिक्षा प्रदान करनी होगी" },
+                            { id: "c", text: "केवल 14 वर्ष से अधिक उम्र के बच्चों को शिक्षा का अधिकार है" },
+                            { id: "d", text: "माता-पिता को शिक्षा के लिए भुगतान करना होगा" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "अनुच्छेद 21A 6 से 14 वर्ष की आयु के सभी बच्चों के लिए मुफ्त और अनिवार्य शिक्षा को मौलिक अधिकार बनाता है। राज्य संवैधानिक रूप से यह शिक्षा प्रदान करने के लिए बाध्य है।",
+                        articles: ["अनुच्छेद 21A"]
+                    },
+                    {
+                        id: "e3",
+                        title: "गिरफ्तारी के अधिकार",
+                        situation: "पुलिस एक व्यक्ति को गिरफ्तार करती है बिना उन्हें गिरफ्तारी के आधार या उनके अधिकारों के बारे में सूचित किए।",
+                        choices: [
+                            { id: "a", text: "पुलिस बिना कारण बताए गिरफ्तार कर सकती है" },
+                            { id: "b", text: "व्यक्ति को आधार और अधिकारों के बारे में सूचित किया जाना चाहिए" },
+                            { id: "c", text: "केवल गंभीर अपराधों में व्यक्ति को सूचित करना आवश्यक है" },
+                            { id: "d", text: "अधिकार केवल अदालत में सूचित किए जाते हैं" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "अनुच्छेद 22(1) प्रदान करता है कि गिरफ्तार किए गए प्रत्येक व्यक्ति को गिरफ्तारी के आधार के बारे में सूचित किया जाना चाहिए और उसे कानूनी व्यवसायी से परामर्श करने और बचाव करने का अधिकार है। यह एक मौलिक अधिकार है जिसे नकारा नहीं जा सकता।",
+                        articles: ["अनुच्छेद 22(1)"]
+                    },
+                    {
+                        id: "e4",
+                        title: "कानून के समक्ष समानता",
+                        situation: "एक कानून पारित किया जाता है जो बिना किसी उचित औचित्य के रोजगार के मामलों में पुरुषों और महिलाओं के साथ अलग-अलग व्यवहार करता है।",
+                        choices: [
+                            { id: "a", text: "कानून वैध है क्योंकि विधायिका कोई भी कानून बना सकती है" },
+                            { id: "b", text: "कानून समानता का उल्लंघन करता है और इसे चुनौती दी जा सकती है" },
+                            { id: "c", text: "केवल अदालतें निर्णय ले सकती हैं, नागरिक चुनौती नहीं दे सकते" },
+                            { id: "d", text: "लिंग-आधारित कानून हमेशा वैध होते हैं" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "अनुच्छेद 14 कानून के समक्ष समानता और कानूनों के समान संरक्षण की गारंटी देता है। अनुच्छेद 15 लिंग के आधार पर भेदभाव को प्रतिबंधित करता है। एक कानून जो उचित वर्गीकरण के बिना भेदभाव करता है, इन मौलिक अधिकारों का उल्लंघन करता है और अदालत में चुनौती दी जा सकती है।",
+                        articles: ["अनुच्छेद 14", "अनुच्छेद 15"]
+                    },
+                    {
+                        id: "e5",
+                        title: "धार्मिक स्वतंत्रता",
+                        situation: "एक धार्मिक अल्पसंख्यक समुदाय अपनी शैक्षणिक संस्था स्थापित और प्रबंधित करना चाहता है।",
+                        choices: [
+                            { id: "a", text: "केवल बहुसंख्यक धर्म संस्थान स्थापित कर सकता है" },
+                            { id: "b", text: "अल्पसंख्यकों को शैक्षणिक संस्थान स्थापित करने का अधिकार है" },
+                            { id: "c", text: "सरकारी अनुमति अनिवार्य है" },
+                            { id: "d", text: "केवल धर्मनिरपेक्ष संस्थानों की अनुमति है" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "अनुच्छेद 30(1) विशेष रूप से धार्मिक और भाषाई अल्पसंख्यकों को अपनी पसंद की शैक्षणिक संस्थाओं की स्थापना और प्रशासन का अधिकार देता है। यह उनकी संस्कृति और पहचान को संरक्षित करने का मौलिक अधिकार है।",
+                        articles: ["अनुच्छेद 30(1)"]
+                    }
+                ],
+                Medium: [
+                    {
+                        id: "m1",
+                        title: "संसद बनाम मौलिक अधिकार",
+                        situation: "संसद एक कानून पारित करती है जो एक मौलिक अधिकार को प्रतिबंधित करता है। नागरिक अदालत में इसे चुनौती देते हैं कि यह संविधान का उल्लंघन करता है।",
+                        choices: [
+                            { id: "a", text: "संसद का कानून सर्वोच्च है, चुनौती नहीं दी जा सकती" },
+                            { id: "b", text: "अदालत कानून को रद्द कर सकती है यदि यह मौलिक अधिकारों का उल्लंघन करता है" },
+                            { id: "c", text: "केवल राष्ट्रपति कानून को अमान्य कर सकते हैं" },
+                            { id: "d", text: "मौलिक अधिकारों को कभी प्रतिबंधित नहीं किया जा सकता" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "न्यायिक समीक्षा के सिद्धांत (केशवानंद भारती मामले में स्थापित) के तहत, अदालतें जांच कर सकती हैं कि कोई कानून मौलिक अधिकारों या संविधान की मूल संरचना का उल्लंघन करता है या नहीं। यदि ऐसा होता है, तो अदालत इसे असंवैधानिक और शून्य घोषित कर सकती है।",
+                        articles: ["अनुच्छेद 13", "अनुच्छेद 32", "अनुच्छेद 226"]
+                    },
+                    {
+                        id: "m2",
+                        title: "अंतर-राज्य जल विवाद",
+                        situation: "दो राज्य नदी के पानी को साझा करने पर संघर्ष में हैं। दोनों जल संसाधनों पर अधिकार का दावा करते हैं।",
+                        choices: [
+                            { id: "a", text: "राज्यों को इसे स्वयं हल करना होगा" },
+                            { id: "b", text: "संसद विवाद को हल करने के लिए एक न्यायाधिकरण बना सकती है" },
+                            { id: "c", text: "राष्ट्रपति एकतरफा निर्णय लेते हैं" },
+                            { id: "d", text: "सर्वोच्च न्यायालय को सीधे निर्णय लेना होगा" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "अनुच्छेद 262 संसद को अंतर-राज्य जल विवादों के न्यायनिर्णयन के लिए प्रावधान करने का अधिकार देता है। संसद एक जल विवाद न्यायाधिकरण का गठन कर सकती है जिसका निर्णय पक्षों पर बाध्यकारी होता है। यह लंबे मुकदमेबाजी को रोकता है और न्यायसंगत वितरण सुनिश्चित करता है।",
+                        articles: ["अनुच्छेद 262"]
+                    },
+                    {
+                        id: "m3",
+                        title: "राष्ट्रपति शासन",
+                        situation: "एक राज्य के राज्यपाल रिपोर्ट करते हैं कि संवैधानिक तंत्र विफल हो गया है। राष्ट्रपति राष्ट्रपति शासन लगाने पर विचार कर रहे हैं।",
+                        choices: [
+                            { id: "a", text: "राष्ट्रपति केवल राज्यपाल की रिपोर्ट के आधार पर शासन लगा सकते हैं" },
+                            { id: "b", text: "राष्ट्रपति के पास वस्तुनिष्ठ सामग्री होनी चाहिए और संसद को अनुमोदन करना होगा" },
+                            { id: "c", text: "राज्यपाल सीधे राष्ट्रपति शासन लगा सकते हैं" },
+                            { id: "d", text: "राष्ट्रपति शासन को चुनौती नहीं दी जा सकती" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "अनुच्छेद 356 राष्ट्रपति शासन की अनुमति देता है, लेकिन एस.आर. बोम्मई मामले ने स्थापित किया कि यह वस्तुनिष्ठ सामग्री पर आधारित होना चाहिए, न कि व्यक्तिपरक संतुष्टि पर। घोषणा को निर्दिष्ट समय सीमा के भीतर संसद के दोनों सदनों द्वारा अनुमोदित किया जाना चाहिए और न्यायिक समीक्षा की जा सकती है।",
+                        articles: ["अनुच्छेद 356"]
+                    },
+                    {
+                        id: "m4",
+                        title: "धन विधेयक विवाद",
+                        situation: "लोकसभा में एक विधेयक को धन विधेयक के रूप में पेश किया जाता है। राज्यसभा दावा करती है कि यह धन विधेयक नहीं है और समान अधिकार की मांग करती है।",
+                        choices: [
+                            { id: "a", text: "राज्यसभा को सभी विधेयकों पर समान शक्ति है" },
+                            { id: "b", text: "धन विधेयक पर अध्यक्ष का निर्णय अंतिम है" },
+                            { id: "c", text: "राष्ट्रपति तय करते हैं कि यह धन विधेयक है या नहीं" },
+                            { id: "d", text: "सर्वोच्च न्यायालय को धन विधेयकों को प्रमाणित करना होगा" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "अनुच्छेद 110 धन विधेयकों को परिभाषित करता है। अनुच्छेद 109 प्रदान करता है कि धन विधेयक केवल लोकसभा में पेश किए जा सकते हैं, और अध्यक्ष का प्रमाण पत्र कि एक विधेयक धन विधेयक है, अंतिम है और किसी भी अदालत में सवाल नहीं उठाया जा सकता। राज्यसभा केवल सिफारिशें कर सकती है।",
+                        articles: ["अनुच्छेद 109", "अनुच्छेद 110"]
+                    },
+                    {
+                        id: "m5",
+                        title: "न्यायिक नियुक्ति",
+                        situation: "सर्वोच्च न्यायालय में एक रिक्ति उत्पन्न होती है। नए न्यायाधीश की नियुक्ति कौन करेगा, इस पर बहस है।",
+                        choices: [
+                            { id: "a", text: "राष्ट्रपति सरकारी सलाह के आधार पर नियुक्त करते हैं" },
+                            { id: "b", text: "वरिष्ठ न्यायाधीशों का कॉलेजियम सिफारिश करता है, राष्ट्रपति नियुक्त करते हैं" },
+                            { id: "c", text: "संसद सर्वोच्च न्यायालय के न्यायाधीशों का चुनाव करती है" },
+                            { id: "d", text: "केवल मुख्य न्यायाधीश निर्णय लेते हैं" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "जबकि अनुच्छेद 124 कहता है कि राष्ट्रपति सर्वोच्च न्यायालय के न्यायाधीशों की नियुक्ति करते हैं, कॉलेजियम प्रणाली (न्यायिक घोषणाओं के माध्यम से स्थापित) के लिए मुख्य न्यायाधीश को वरिष्ठ न्यायाधीशों से परामर्श करने की आवश्यकता होती है। राष्ट्रपति कॉलेजियम की सिफारिश के आधार पर नियुक्ति करते हैं, जो न्यायिक स्वतंत्रता सुनिश्चित करता है।",
+                        articles: ["अनुच्छेद 124"]
+                    },
+                    {
+                        id: "m6",
+                        title: "मौलिक कर्तव्य",
+                        situation: "एक नागरिक संविधान में सूचीबद्ध मौलिक कर्तव्यों को निभाने से इनकार करता है, यह दावा करते हुए कि वे लागू करने योग्य नहीं हैं।",
+                        choices: [
+                            { id: "a", text: "मौलिक कर्तव्य अधिकारों की तरह कानूनी रूप से लागू करने योग्य हैं" },
+                            { id: "b", text: "मौलिक कर्तव्य नैतिक दायित्व हैं, कानूनी रूप से लागू करने योग्य नहीं" },
+                            { id: "c", text: "कर्तव्यों को न निभाने पर नागरिकों को जेल भेजा जा सकता है" },
+                            { id: "d", text: "केवल सरकारी अधिकारियों को कर्तव्यों का पालन करना होगा" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "अनुच्छेद 51A 42वें संशोधन द्वारा जोड़े गए मौलिक कर्तव्यों को सूचीबद्ध करता है। मौलिक अधिकारों के विपरीत, ये कर्तव्य अदालतों के माध्यम से कानूनी रूप से लागू करने योग्य नहीं हैं। वे नागरिकों को राष्ट्र के प्रति उनकी जिम्मेदारियों की याद दिलाने के लिए नैतिक और नागरिक दायित्वों के रूप में काम करते हैं।",
+                        articles: ["अनुच्छेद 51A"]
+                    }
+                ],
+                Hard: [
+                    {
+                        id: "h1",
+                        title: "मूल संरचना सिद्धांत",
+                        situation: "संसद एक संवैधानिक संशोधन पारित करती है जो अदालतों से न्यायिक समीक्षा की शक्ति को हटाने का प्रयास करता है।",
+                        choices: [
+                            { id: "a", text: "संसद संविधान के किसी भी भाग में संशोधन कर सकती है" },
+                            { id: "b", text: "संशोधन मूल संरचना का उल्लंघन करता है और अमान्य है" },
+                            { id: "c", text: "केवल राष्ट्रपति ऐसे संशोधनों को वीटो कर सकते हैं" },
+                            { id: "d", text: "न्यायिक समीक्षा संविधान के लिए आवश्यक नहीं है" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "केशवानंद भारती मामले (1973) ने मूल संरचना सिद्धांत स्थापित किया। जबकि संसद के पास अनुच्छेद 368 के तहत व्यापक संशोधन शक्तियां हैं, यह संविधान की मूल संरचना को बदल नहीं सकती। न्यायिक समीक्षा मूल संरचना का हिस्सा है और संशोधन के माध्यम से इसे हटाया नहीं जा सकता।",
+                        articles: ["अनुच्छेद 368", "मूल संरचना सिद्धांत"]
+                    },
+                    {
+                        id: "h2",
+                        title: "आपातकाल और अधिकार",
+                        situation: "अनुच्छेद 352 के तहत राष्ट्रीय आपातकाल घोषित किया जाता है। सरकार अनुच्छेद 21 (जीवन का अधिकार) सहित सभी मौलिक अधिकारों को निलंबित कर देती है।",
+                        choices: [
+                            { id: "a", text: "आपातकाल के दौरान सभी मौलिक अधिकारों को निलंबित किया जा सकता है" },
+                            { id: "b", text: "अनुच्छेद 20 और 21 को आपातकाल के दौरान भी निलंबित नहीं किया जा सकता" },
+                            { id: "c", text: "केवल राष्ट्रपति तय करते हैं कि कौन से अधिकार निलंबित करने हैं" },
+                            { id: "d", text: "आपातकाल स्वचालित रूप से सभी अधिकारों को निलंबित कर देता है" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "44वें संशोधन के बाद, अनुच्छेद 359 प्रदान करता है कि राष्ट्रीय आपातकाल के दौरान भी, अनुच्छेद 20 (सजा के खिलाफ संरक्षण) और अनुच्छेद 21 (जीवन और व्यक्तिगत स्वतंत्रता का अधिकार) के प्रवर्तन के लिए अदालतों में जाने के अधिकार को निलंबित नहीं किया जा सकता। ये अनुल्लंघनीय अधिकार हैं।",
+                        articles: ["अनुच्छेद 352", "अनुच्छेद 359", "अनुच्छेद 20", "अनुच्छेद 21"]
+                    },
+                    {
+                        id: "h3",
+                        title: "संवैधानिक संशोधन प्रक्रिया",
+                        situation: "संविधान में संशोधन के लिए एक विधेयक पेश किया जाता है। यह संघीय संरचना को प्रभावित करता है और विशेष प्रक्रिया की आवश्यकता है।",
+                        choices: [
+                            { id: "a", text: "संसद में साधारण बहुमत पर्याप्त है" },
+                            { id: "b", text: "विशेष बहुमत और आधे राज्यों द्वारा अनुसमर्थन" },
+                            { id: "c", text: "केवल राष्ट्रपति की स्वीकृति आवश्यक है" },
+                            { id: "d", text: "सभी संशोधनों के लिए जनमत संग्रह अनिवार्य है" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "अनुच्छेद 368 संशोधनों के लिए विभिन्न प्रक्रियाएं निर्धारित करता है। संघीय संरचना, राष्ट्रपति के चुनाव, कार्यकारी/न्यायिक शक्ति की सीमा आदि को प्रभावित करने वाले संशोधनों के लिए, संसद में विशेष बहुमत (2/3 उपस्थित और मतदान + पूर्ण बहुमत) और कम से कम आधे राज्य विधानमंडलों द्वारा अनुसमर्थन आवश्यक है।",
+                        articles: ["अनुच्छेद 368"]
+                    },
+                    {
+                        id: "h4",
+                        title: "निर्देशक सिद्धांत बनाम अधिकार",
+                        situation: "निर्देशक सिद्धांतों को लागू करने के लिए एक कानून पारित किया जाता है लेकिन यह एक मौलिक अधिकार को प्रतिबंधित करता है। अदालतों को वैधता तय करनी होगी।",
+                        choices: [
+                            { id: "a", text: "निर्देशक सिद्धांत हमेशा अधिकारों पर हावी होते हैं" },
+                            { id: "b", text: "अदालतों को दोनों को सामंजस्य बिठाना चाहिए, कोई भी पूर्णतः सर्वोच्च नहीं है" },
+                            { id: "c", text: "मौलिक अधिकार हमेशा प्रबल होते हैं" },
+                            { id: "d", text: "संसद तय करती है कि कौन प्रबल होता है" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "मिनर्वा मिल्स मामले ने स्थापित किया कि मौलिक अधिकारों (भाग III) और निर्देशक सिद्धांतों (भाग IV) के बीच संतुलन होना चाहिए। कोई भी पूर्णतः सर्वोच्च नहीं है। अदालतों को दोनों को सामंजस्य बिठाना चाहिए और यह सुनिश्चित करना चाहिए कि निर्देशक सिद्धांतों का कार्यान्वयन मूल संरचना या मौलिक अधिकारों को नष्ट न करे।",
+                        articles: ["भाग III", "भाग IV", "अनुच्छेद 37"]
+                    },
+                    {
+                        id: "h5",
+                        title: "क्षमादान शक्ति",
+                        situation: "सर्वोच्च न्यायालय द्वारा एक व्यक्ति को मृत्युदंड की सजा सुनाई जाती है। वे राष्ट्रपति से क्षमा मांगते हैं।",
+                        choices: [
+                            { id: "a", text: "राष्ट्रपति सर्वोच्च न्यायालय की सजाओं को क्षमा नहीं कर सकते" },
+                            { id: "b", text: "राष्ट्रपति मृत्युदंड को भी क्षमा कर सकते हैं" },
+                            { id: "c", text: "केवल संसद मृत्युदंड को क्षमा कर सकती है" },
+                            { id: "d", text: "राज्यपाल को सभी मामलों में क्षमा करने की शक्ति है" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "अनुच्छेद 72 राष्ट्रपति को सभी मामलों में, मृत्युदंड और कोर्ट-मार्शल मामलों सहित, सजा को क्षमा करने, राहत देने, विराम देने या कम करने की शक्ति प्रदान करता है। यह शक्ति मंत्रिपरिषद की सलाह पर प्रयोग की जाती है और मनमानेपन के लिए न्यायिक समीक्षा की जा सकती है।",
+                        articles: ["अनुच्छेद 72"]
+                    },
+                    {
+                        id: "h6",
+                        title: "न्यायिक स्वतंत्रता",
+                        situation: "संसद कुछ न्यायाधीशों को हटाने के लिए उच्च न्यायालय के न्यायाधीशों की सेवानिवृत्ति आयु कम करने वाला कानून पारित करती है।",
+                        choices: [
+                            { id: "a", text: "संसद किसी भी समय सेवानिवृत्ति आयु बदल सकती है" },
+                            { id: "b", text: "ऐसा कानून न्यायिक स्वतंत्रता का उल्लंघन करता है और अमान्य है" },
+                            { id: "c", text: "केवल संवैधानिक संशोधन इसे बदल सकता है" },
+                            { id: "d", text: "राष्ट्रपति अध्यादेश द्वारा सेवानिवृत्ति आयु बदल सकते हैं" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "न्यायिक स्वतंत्रता मूल संरचना का हिस्सा है। इसे कमजोर करने का कोई भी प्रयास, जैसे कि विशिष्ट न्यायाधीशों को हटाने के लिए मनमाने ढंग से सेवानिवृत्ति आयु कम करना, असंवैधानिक होगा। न्यायाधीशों का कार्यकाल और सेवा शर्तें कार्यकारी और विधायी हस्तक्षेप से स्वतंत्रता सुनिश्चित करने के लिए संरक्षित हैं।",
+                        articles: ["अनुच्छेद 124", "अनुच्छेद 217", "मूल संरचना"]
+                    },
+                    {
+                        id: "h7",
+                        title: "रिट अधिकार क्षेत्र",
+                        situation: "एक निजी कंपनी एक नागरिक के अधिकारों का उल्लंघन करती है। नागरिक उच्च न्यायालय में रिट याचिका दायर करना चाहता है।",
+                        choices: [
+                            { id: "a", text: "रिट केवल सरकार के खिलाफ दायर की जा सकती हैं" },
+                            { id: "b", text: "सार्वजनिक कार्य करने वाले निजी निकायों के खिलाफ रिट दायर की जा सकती हैं" },
+                            { id: "c", text: "निजी कंपनियों के खिलाफ केवल सिविल मुकदमे दायर किए जा सकते हैं" },
+                            { id: "d", text: "उच्च न्यायालयों में रिट उपलब्ध नहीं हैं" }
+                        ],
+                        correctChoice: "b",
+                        explanation: "जबकि अनुच्छेद 226 मुख्य रूप से राज्य और इसके उपकरणों के खिलाफ रिट अधिकार क्षेत्र प्रदान करता है, अदालतों ने इसे सार्वजनिक कार्यों या वैधानिक कर्तव्यों का निर्वहन करने वाले निजी निकायों को शामिल करने के लिए विस्तारित किया है। यदि कोई निजी इकाई सार्वजनिक या वैधानिक कार्यों का निर्वहन कर रही है, तो इसके खिलाफ रिट जारी की जा सकती हैं।",
+                        articles: ["अनुच्छेद 226", "अनुच्छेद 12"]
+                    }
+                ]
+            }
+        },
+
     }
 };

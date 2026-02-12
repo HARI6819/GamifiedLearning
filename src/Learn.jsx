@@ -24,7 +24,8 @@ const Learn = () => {
 
     const updateProgress = async (category) => {
         const email = localStorage.getItem('userEmail');
-        if (!email) return;
+        const isGuest = localStorage.getItem('isGuest') === 'true';
+        if (!email || isGuest) return;
 
         try {
             await fetch(`${config.API_URL}/api/progress/update`, {

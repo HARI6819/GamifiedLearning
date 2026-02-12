@@ -40,9 +40,25 @@ const ProfilePage = () => {
         const fetchData = async () => {
             const email = localStorage.getItem('userEmail');
             const name = localStorage.getItem('userName');
+            const isGuest = localStorage.getItem('isGuest') === 'true';
 
             if (!email) {
                 navigate('/');
+                return;
+            }
+
+            if (isGuest) {
+                console.log("Guest mode detected in Profile page, using local guest profile data.");
+                setUser({
+                    name: name || "Guest",
+                    email: email,
+                    profileImage: localStorage.getItem('profileImage') || null,
+                    dob: "",
+                    gamesPlayed: 0,
+                    articlesRead: 0,
+                    totalPoints: 0
+                });
+                setLoading(false);
                 return;
             }
 
@@ -128,6 +144,8 @@ const ProfilePage = () => {
 
     const handleUpdateProfile = async (e) => {
         e.preventDefault();
+        const isGuest = localStorage.getItem('isGuest') === 'true';
+        if (isGuest) return;
         setUpdateLoading(true);
         try {
             const res = await fetch(`${config.API_URL}/api/user/update`, {
