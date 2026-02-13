@@ -77,10 +77,13 @@ const router = createBrowserRouter([
   }
 ])
 
+import ConnectivityToast from './ConnectivityToast'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <LanguageProvider>
       <ThemeProvider>
+        <ConnectivityToast />
         <RouterProvider router={router} />
       </ThemeProvider>
     </LanguageProvider>

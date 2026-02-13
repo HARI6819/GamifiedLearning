@@ -1,0 +1,57 @@
+.connectivity-toast {
+    width: 100vw;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    z-index: 10000;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s;
+    opacity: 0;
+    pointer-events: none;
+    gap: 10px;
+}
+
+.connectivity-toast.visible {
+    opacity: 1;
+}
+
+.connectivity-toast.offline {
+    background-color: #ef4444;
+    /* Tailwind red-500 */
+    border: 1px solid #dc2626;
+}
+
+.connectivity-toast.online {
+    background-color: #10b981;
+    /* Tailwind emerald-500 */
+    border: 1px solid #059669;
+}
+
+/* Animations for smooth entry */
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform:  translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
