@@ -158,13 +158,13 @@ export default function ConstitutionCards() {
                 <Navbar />
             </section>
             <main className="page10">
-                <div className="header10">
+                <header className="header10">
                     <button onClick={() => window.history.back()} className="back-btn10">←</button>
                     <div>
                         <h1>📚 {t.cards.title}</h1>
                         <p>{t.cards.desc}</p>
                     </div>
-                </div>
+                </header>
                 <div className="container10">
                     <div className="diff-selection" style={{ marginBottom: "20px", display: "flex", gap: "10px", justifyContent: "center" }}>
                         {['Easy', 'Medium', 'Hard'].map((level) => {

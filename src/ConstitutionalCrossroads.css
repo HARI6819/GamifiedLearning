@@ -46,7 +46,7 @@
 
 .crossroads-container {
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    /* background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%); */
     color: var(--text-primary);
     padding: 2rem 1rem;
 }
@@ -68,6 +68,11 @@
     font-size: 1.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    color: inherit;
+}
+
+.dark .crossroads-header .back-btn {
+    color: white;
 }
 
 .crossroads-header .back-btn:hover {
@@ -83,7 +88,7 @@
 
 .crossroads-header p {
     margin: 0.5rem 0 0;
-    color: var(--text-muted);
+    color: grey;
     font-size: 0.95rem;
     font-family: sans-serif;
 }
@@ -603,7 +608,10 @@
 @media (max-width: 768px) {
     .crossroads-header {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+        padding-left: 0;
+        gap: 1.5rem;
     }
 
     .crossroads-header h1 {

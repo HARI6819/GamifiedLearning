@@ -221,13 +221,13 @@ export default function ChakraOfKnowledge() {
         )}
 
         {/* Header */}
-        <div className="chakra-header">
+        <header className="chakra-header">
           <button className="back-btn" onClick={handleBack}>←</button>
           <div>
             <h1>{t.chakra.title}</h1>
             <p>{t.chakra.desc}</p>
           </div>
-        </div>
+        </header>
 
         {/* Difficulty Selection overlay patterns (Standardized) */}
         <div className="difficulty-container-chakra" style={{ marginBottom: "20px", display: "flex", gap: "10px", justifyContent: "center" }}>

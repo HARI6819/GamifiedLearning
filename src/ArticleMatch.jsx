@@ -172,14 +172,14 @@ export default function ArticleMatch() {
                 <header className="match-header">
                     <button onClick={() => window.history.back()} className="back-btn">←</button>
                     <div>
-                        <h1>{t.articleMatch.title}</h1>
+                        <h1>🎴{t.articleMatch.title}</h1>
                         <p>{t.articleMatch.desc}</p>
                     </div>
                 </header>
 
                 {gameState === "start" && (
                     <div className="start-screen">
-                        <div className="icon-wrapper"><Brain size={40} /></div>
+                        <div className="icon-wrapper"> 🎴</div>
                         <h2>{t.articleMatch.startTitle}</h2>
                         <p style={{ fontFamily: "sans-serif", marginBottom: "20px", fontSize: ".9rem", maxWidth: "80%", color: "grey" }}>{t.articleMatch.startDesc}</p>
                         <h4>{t.articleMatch.difficulty}</h4>

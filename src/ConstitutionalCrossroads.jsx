@@ -122,7 +122,7 @@ export default function ConstitutionalCrossroads() {
                 <header className="crossroads-header">
                     <button onClick={() => window.history.back()} className="back-btn">←</button>
                     <div>
-                        <h1>{t.constitutionalCrossroads.title}</h1>
+                        <h1>⚖️{t.constitutionalCrossroads.title}</h1>
                         <p>{t.constitutionalCrossroads.desc}</p>
                     </div>
                 </header>

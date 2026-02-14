@@ -24,6 +24,11 @@
     font-size: 1.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    color: inherit;
+}
+
+.dark .sort-header .back-btn {
+    color: white;
 }
 
 .sort-header .back-btn:hover {
@@ -39,7 +44,7 @@
 
 .sort-header p {
     margin: 0.5rem 0 0;
-    color: #64748b;
+    color: grey;
     font-size: 0.95rem;
     font-family: sans-serif;
 }
@@ -305,11 +310,10 @@
 
     .sort-header {
         flex-direction: column;
+        align-items: center;
         text-align: center;
-    }
-
-    .sort-header h1 {
-        font-size: 1.5rem;
+        padding-left: 0;
+        gap: 1.5rem;
     }
 
     .game-info-bar {

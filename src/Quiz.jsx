@@ -147,7 +147,7 @@ export default function Quiz() {
                 <header className="quiz-header">
                     <button onClick={() => window.history.back()} className="back-btn-quiz">←</button>
                     <div>
-                        <h1>{t.quiz.title}</h1>
+                        <h1>🧠{t.quiz.title}</h1>
                         <p>{t.quiz.desc}</p>
                     </div>
                 </header>

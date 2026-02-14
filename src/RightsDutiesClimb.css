@@ -12,17 +12,57 @@ body {
   padding: 2% 6%;
 }
 
+
 .game-header {
   display: flex;
   align-items: center;
-  margin-bottom: 2%;
-  gap: 15px;
+  gap: 1rem;
+  padding-left: 11%;
+  margin-bottom: 16px;
 }
 
-@media (max-width: 600px) {
+.game-header .back-btn {
+  background: rgba(128, 128, 128, 0.137);
+  border: 1px solid grey;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: inherit;
+}
+
+.dark .game-header .back-btn {
+  color: white;
+}
+
+.game-header .back-btn:hover {
+  background: rgb(222, 222, 245);
+  transform: translateX(-4px);
+}
+
+.game-header h1 {
+  font-size: 1.6rem;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.game-header p {
+  margin: 0.5rem 0 0;
+  color: grey;
+  font-size: 0.95rem;
+  font-family: sans-serif;
+}
+
+
+@media (max-width: 768px) {
   .game-header {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+    padding-left: 0;
+    gap: 1.5rem;
   }
 }
 

@@ -309,7 +309,7 @@ export default function ConstitutionalSort() {
                 <header className="sort-header">
                     <button onClick={() => window.history.back()} className="back-btn">←</button>
                     <div>
-                        <h1>{t.constitutionalSort.title}</h1>
+                        <h1>⫽ {t.constitutionalSort.title}</h1>
                         <p>{t.constitutionalSort.desc}</p>
                     </div>
                 </header>

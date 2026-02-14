@@ -15,49 +15,55 @@
 
 
 /* Header */
+
+
 .chakra-header {
   display: flex;
-  gap: 16px;
   align-items: center;
-  margin-bottom: 40px;
+  gap: 1rem;
+  padding-left: 11%;
+  margin-bottom: 16px;
 }
 
-
-
-.back-btn {
-  width: 42px;
-  height: 42px;
+.chakra-header .back-btn {
+  background: rgba(128, 128, 128, 0.137);
+  border: 1px solid grey;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
-  border: none;
-  background: #f3f4f6;
-  font-size: 20px;
+  font-size: 1.5rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: inherit;
+  transition: all 0.3s ease;
 }
 
-.dark .back-btn {
+.chakra-header .back-btn:hover {
+  background: rgb(222, 222, 245);
+  transform: translateX(-4px);
+}
+
+.chakra-header h1 {
+  font-size: 1.6rem;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.chakra-header p {
+  margin: 0.5rem 0 0;
+  color: grey;
+  font-size: 0.95rem;
+  font-family: sans-serif;
+}
+
+.dark .chakra-header .back-btn {
   background: rgba(255, 255, 255, 0.1);
   color: var(--text-color);
 }
 
-.chakra-header h1 {
-  font-family: serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: inherit;
-}
 
 .dark .chakra-header h1 {
   color: var(--text-color);
 }
 
-.chakra-header p {
-  color: #6b7280;
-  font-family: sans-serif;
-}
 
 .dark .chakra-header p {
   color: var(--text-secondary);
@@ -211,7 +217,7 @@
 
 /* Info Card / Initial State */
 
-.quiz-section-chakra{
+.quiz-section-chakra {
   overflow: visible;
 }
 
@@ -661,5 +667,13 @@
 @media (max-width: 900px) {
   .chakra-content {
     grid-template-columns: 1fr;
+  }
+
+  .chakra-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+    gap: 1.5rem;
   }
 }
