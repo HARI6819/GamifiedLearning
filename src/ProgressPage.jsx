@@ -32,6 +32,7 @@ const ProgressPage = () => {
   const [leaderboardLoading, setLeaderboardLoading] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
   const [activeTab, setActiveTab] = useState('overall');
+  const [showBadgeCelebration, setShowBadgeCelebration] = useState(false);
 
   const leaderboardTabs = [
     { id: 'overall', label: 'Overall', icon: '🏆' },
@@ -123,6 +124,18 @@ const ProgressPage = () => {
     fetchData();
   }, []);
 
+  const isSupremeChampion = stats.articlesRead >= 10 && stats.totalPoints >= 100 && stats.mastery.executive >= 100 && stats.mastery.legislature >= 100 && stats.mastery.judiciary >= 100;
+
+  useEffect(() => {
+    if (isSupremeChampion) {
+      const hasSeenCelebration = localStorage.getItem('hasSeenBadgeCelebration');
+      if (!hasSeenCelebration) {
+        setShowBadgeCelebration(true);
+        localStorage.setItem('hasSeenBadgeCelebration', 'true');
+      }
+    }
+  }, [isSupremeChampion]);
+
   function handleStartPlaying() {
     navigate('/games');
   }
@@ -167,6 +180,21 @@ const ProgressPage = () => {
         </div>
 
         <div className="pa-container">
+          {/* Supreme Champion Badge */}
+          {isSupremeChampion && (
+            <section className="pa-card supreme-badge-card animated pulse-glow">
+              <div className="badge-visual">
+                <div className="badge-glow"></div>
+                <span className="badge-emoji">🏅</span>
+              </div>
+              <div className="badge-content">
+                <span className="badge-label">{t.progress.constitutionBadge}</span>
+                <h2>{t.progress.supremeChampion}</h2>
+                <p>{t.progress.supremeChampionDesc}</p>
+              </div>
+            </section>
+          )}
+
           {/* Overall Progress */}
           <section className="pa-card gradient-border">
             <div className="card-top-gradient"></div>
@@ -304,11 +332,11 @@ const ProgressPage = () => {
             <h2 className="section-title">{t.progress.achievements}</h2>
 
             <div className="achievements-grid">
-              <div className={`achievement ${stats.articlesRead > 0 ? 'unlocked' : 'locked'}`}>
+              <div className={`achievement ${stats.pointsBreakdown.chakra > 0 ? 'unlocked' : 'locked'}`}>
                 <span className="emoji">🎡</span>
                 <h4>{t.progress.firstSpin}</h4>
                 <p>{t.progress.completeSpin}</p>
-                {stats.articlesRead === 0 && <span className="lock">🔒</span>}
+                {stats.pointsBreakdown.chakra ===0 && <span className="lock">🔒</span>}
               </div>
 
               <div className={`achievement ${stats.totalPoints >= 100 ? 'unlocked' : 'locked'}`}>
@@ -455,6 +483,26 @@ const ProgressPage = () => {
                   <span className="total-val">{stats.totalPoints} pts</span>
                 </div>
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* Badge Celebration Modal */}
+        {showBadgeCelebration && (
+          <div className="celebration-overlay" onClick={() => setShowBadgeCelebration(false)}>
+            <div className="celebration-card" onClick={e => e.stopPropagation()}>
+              <div className="confetti-container">
+                {/* Confetti elements will be styled in CSS */}
+                {[...Array(12)].map((_, i) => <div key={i} className={`confetti c${i}`}></div>)}
+              </div>
+              <div className="badge-reveal">
+                <div className="reveal-glow"></div>
+                <span className="massive-badge">🏅</span>
+              </div>
+              <h2>{t.progress.wellDone}!</h2>
+              <h3>{t.progress.supremeChampion} Unlocked</h3>
+              <p>{t.progress.supremeChampionDesc}</p>
+              <button className="celebrate-btn" onClick={() => setShowBadgeCelebration(false)}>AWESOME!</button>
             </div>
           </div>
         )}

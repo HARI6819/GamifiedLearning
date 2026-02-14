@@ -47,8 +47,22 @@ const Learn = () => {
         }
     };
 
+    const [isExpanded, setIsExpanded] = useState(false);
+    const detailsBodyRef = useRef(null);
+
     const handleArticleClick = (article) => {
         setSelectedArticle(article);
+        setIsExpanded(false); // Reset expansion when switching articles
+    };
+
+    const toggleExpand = () => {
+        setIsExpanded(!isExpanded);
+        if (!isExpanded) {
+            // Wait for re-render then scroll to the expanded content
+            setTimeout(() => {
+                detailsBodyRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }, 100);
+        }
     };
 
     useEffect(() => {
@@ -324,28 +338,61 @@ const Learn = () => {
                                             {getTranslatedArticle(selectedArticle).title}
                                         </h2>
 
-                                        <div className="details-body">
+                                        <div className={`details-body ${!isExpanded ? 'collapsed' : 'expanded'}`} ref={detailsBodyRef}>
+                                            {selectedArticle.imageUrl && (
+                                                <div className="article-image-container">
+                                                    <img src={selectedArticle.imageUrl} alt={getTranslatedArticle(selectedArticle).title} className="article-image" />
+                                                </div>
+                                            )}
                                             <div className="summary-block">
-                                                <h4>Description</h4>
+                                                <h4>{t.learn.filters.articles}</h4>
                                                 <p className="details-description">
                                                     {getTranslatedArticle(selectedArticle).simplifiedText}
                                                 </p>
                                             </div>
 
-                                            {getTranslatedArticle(selectedArticle).funFact && (
-                                                <div className="details-fun-fact">
-                                                    <h4>💡 {t.learn.funFact}</h4>
-                                                    <p>{getTranslatedArticle(selectedArticle).funFact}</p>
-                                                </div>
-                                            )}
-                                        </div>
+                                            {isExpanded && (
+                                                <>
+                                                    {getTranslatedArticle(selectedArticle).example && (
+                                                        <div className="example-block">
+                                                            <h4>📚 {t.learn.realLifeExample}</h4>
+                                                            <p className="details-example">
+                                                                {getTranslatedArticle(selectedArticle).example}
+                                                            </p>
+                                                        </div>
+                                                    )}
 
-                                        <div className="details-footer">
+                                                    {getTranslatedArticle(selectedArticle).funFact && (
+                                                        <div className="details-fun-fact">
+                                                            <h4>💡 {t.learn.funFact}</h4>
+                                                            <p>{getTranslatedArticle(selectedArticle).funFact}</p>
+                                                        </div>
+                                                    )}
+                                                    <div className="details-footer">
                                             <div className="meta-tags">
                                                 <span>Part {selectedArticle.originalPart}</span>
                                                 <span>{getTranslatedString(selectedArticle.difficulty, 'difficulty')}</span>
                                             </div>
                                         </div>
+                                                </>
+                                            )}
+
+                                            {!isExpanded && (
+                                                <div className="fade-overlay">
+                                                    <button className="read-more-btn" onClick={toggleExpand}>
+                                                        {t.learn.readMore}
+                                                    </button>
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {isExpanded && (
+                                            <button className="read-more-btn expanded" onClick={toggleExpand}>
+                                                {t.learn.readLess}
+                                            </button>
+                                        )}
+
+                                        
                                     </div>
                                 ) : (
                                     <div className="no-selection-state">

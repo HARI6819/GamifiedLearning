@@ -159,6 +159,7 @@ export default function ChakraOfKnowledge() {
         },
         body: JSON.stringify({
           email,
+          gamesPlayed: isCompletion ? 1 : 0,
           articlesRead: isCompletion ? 0 : 1,
           totalPoints: points + bonusPoints,
           mastery: { [masteryKey]: 5 },

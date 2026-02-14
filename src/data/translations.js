@@ -105,7 +105,10 @@ export const translations = {
                 state: "States (Part VI)",
                 articles: "Articles"
             },
-            noArticlesFound: "No articles found in this category."
+            noArticlesFound: "No articles found in this category.",
+            readMore: "Read More",
+            readLess: "Read Less",
+            realLifeExample: "Real-life Example"
         },
         gamesPage: {
             hub: "Game Hub",
@@ -171,7 +174,10 @@ export const translations = {
             executiveExpert: "Executive Expert",
             masterExec: "Master all Executive articles",
             judiciaryExpert: "Judiciary Expert",
-            masterJud: "Master all Judiciary articles"
+            masterJud: "Master all Judiciary articles",
+            supremeChampion: "Supreme Champion",
+            supremeChampionDesc: "You have unlocked all achievements! You are a true Constitutional Master.",
+            constitutionBadge: "Constitution Badge"
         },
         profile: {
             title: "Your Profile",
@@ -832,7 +838,10 @@ export const translations = {
                 state: "राज्य (भाग VI)",
                 articles: "लेख"
             },
-            noArticlesFound: "इस श्रेणी में कोई लेख नहीं मिला।"
+            noArticlesFound: "इस श्रेणी में कोई लेख नहीं मिला।",
+            readMore: "और पढ़ें",
+            readLess: "कम दिखाएं",
+            realLifeExample: "वास्तविक जीवन का उदाहरण"
         },
         gamesPage: {
             hub: "खेल हब",

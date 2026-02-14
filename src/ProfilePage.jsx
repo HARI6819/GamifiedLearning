@@ -15,9 +15,9 @@ const ProfilePage = () => {
         email: "guest@example.com",
         profileImage: null,
         dob: "",
-        gamesPlayed: 0,
-        articlesRead: 0,
-        totalPoints: 0
+        totalPoints: 0,
+        pointsBreakdown: {},
+        mastery: {}
     });
     const [loading, setLoading] = useState(true);
     const [isEditing, setIsEditing] = useState(false);
@@ -77,7 +77,9 @@ const ProfilePage = () => {
                         dob: data.dob || "",
                         gamesPlayed: data.gamesPlayed || 0,
                         articlesRead: data.articlesRead || 0,
-                        totalPoints: data.totalPoints || 0
+                        totalPoints: data.totalPoints || 0,
+                        pointsBreakdown: data.pointsBreakdown || {},
+                        mastery: data.mastery || {}
                     });
                     setEditData({
                         name: name || data.name,
@@ -214,6 +216,7 @@ const ProfilePage = () => {
                 <div className="profile-container">
                     {/* Profile Header */}
                     <div className="profile-card profile-header-card">
+                        <div className="profile-info-container">
                         <div className="profile-avatar">
                             {user.profileImage ? (
                                 <img src={user.profileImage} alt="Profile" className="avatar-img" />
@@ -226,16 +229,32 @@ const ProfilePage = () => {
                             <p className="profile-email"><Mail size={16} /> {user.email}</p>
                             <span className="profile-badge">{t.progress.journey}</span>
                         </div>
-                        <div className="profile-actions">
-                            {!isEditing && (
-                                <button className="edit-btn" onClick={() => setIsEditing(true)}>
-                                    <User size={18} /> {t.profile.edit || "Edit Profile"}
-                                </button>
-                            )}
+                        </div>
 
-                            <button className="logout-btn" onClick={handleLogout}>
-                                <LogOut size={18} /> {t.profile.logout}
-                            </button>
+
+                        <div className="profile-badge-container">
+                            
+                            {user.articlesRead >= 10 && user.totalPoints >= 100 && user.mastery?.executive >= 100 && user.mastery?.legislature >= 100 && user.mastery?.judiciary >= 100 && (
+                                <div className="profile-supreme-badge" title={t.progress.supremeChampion}>
+                                    <div className="p-badge-icon">🏅</div>
+                                    <div className="p-badge-info">
+                                        <span className="p-badge-name">{t.progress.supremeChampion}</span>
+                                        <span className="p-badge-desc">{t.progress.constitutionBadge}</span>
+                                    </div>
+                                </div>
+                            )}
+                        
+                            <div className="profile-actions">
+                                {!isEditing && (
+                                    <button className="edit-btn" onClick={() => setIsEditing(true)}>
+                                        <User size={18} /> {t.profile.edit || "Edit Profile"}
+                                    </button>
+                                )}
+
+                                <button className="logout-btn" onClick={handleLogout}>
+                                    <LogOut size={18} /> {t.profile.logout}
+                                </button>
+                            </div>
                         </div>
                     </div>
 

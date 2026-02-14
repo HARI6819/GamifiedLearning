@@ -1,244 +1,366 @@
 [
   {
+    "id": "art-14",
+    "number": "14",
+    "title": "Equality before Law",
+    "simplifiedText": "In India, everyone is equal in the eyes of the law! This means the government cannot treat people differently based on their background. Article 14 ensures two things: first, 'Equality before Law' (no one is above the law), and second, 'Equal Protection of Laws' (the law should treat everyone in similar situations equally).",
+    "example": "If a famous celebrity and a common citizen commit the same traffic violation, both should face the same fine and legal process. The law doesn't care about your fame or wealth when delivering justice.",
+    "originalPart": "III",
+    "category": "Judiciary",
+    "organ": "Union",
+    "difficulty": "Easy",
+    "funFact": "This is one of the most important fundamental rights in India!",
+    "imageUrl": "/assets/articles/equality_illustration_1771044348189.png"
+  },
+  {
+    "id": "art-19",
+    "number": "19",
+    "title": "Protection of Certain Rights regarding Freedom of Speech",
+    "simplifiedText": "Article 19 is the 'Charter of Liberties'. It guarantees every citizen six essential freedoms: speech, assembly, forming groups, moving freely, living anywhere in India, and choosing any job. These rights allow us to express our thoughts and live freely.",
+    "example": "When you write a blog post criticizing a new government policy or join a peaceful protest at a designated site, you are exercising your Article 19 rights. However, you cannot use this freedom to incite violence or spread lies that hurt the country's security.",
+    "originalPart": "III",
+    "category": "Legislature",
+    "organ": "Union",
+    "difficulty": "Medium",
+    "funFact": "There are 6 fundamental freedoms guaranteed by this article!",
+    "imageUrl": "/assets/articles/executive_branch_1771046464103.png"
+  },
+  {
+    "id": "art-21",
+    "number": "21",
+    "title": "Protection of Life and Personal Liberty",
+    "simplifiedText": "This is the most precious right! It states that nobody can take away your life or your freedom unless there is a proper legal procedure. Courts have expanded this to include the right to live with dignity.",
+    "example": "If the police arrest someone, they must follow the legal rules (like producing them before a magistrate within 24 hours). Also, the right to Article 21 means the government must work to provide clean drinking water and a healthy environment, as these are essential for a dignified life.",
+    "originalPart": "III",
+    "category": "Judiciary",
+    "organ": "Union",
+    "difficulty": "Easy",
+    "funFact": "The courts have expanded this to include the right to clean air and water!",
+    "imageUrl": "/assets/articles/executive_branch_art_1771049294810.png"
+  },
+  {
+    "id": "art-32",
+    "number": "32",
+    "title": "Remedies for Enforcement of Rights",
+    "simplifiedText": "Rights are meaningless if they can't be protected! Article 32 gives you the power to go directly to the Supreme Court if your Fundamental Rights are violated. This makes our rights 'real' and enforceable.",
+    "example": "If a person is kept in jail without any charges (violating their freedom), their family can file a 'Habeas Corpus' petition under Article 32. The Supreme Court can then order the jailer to bring the person to court and explain why they are being held.",
+    "originalPart": "III",
+    "category": "Judiciary",
+    "organ": "Union",
+    "difficulty": "Hard",
+    "funFact": "Dr. Ambedkar called this article the 'Soul of the Constitution'!",
+    "imageUrl": "/assets/articles/executive_branch_hero_1771044828478.png"
+  },
+  {
+    "id": "art-44",
+    "number": "44",
+    "title": "Uniform Civil Code",
+    "simplifiedText": "Article 44 suggests that the government should try to have one common set of laws for all citizens regarding personal matters like marriage, divorce, and property, regardless of their religion. Currently, different communities often follow different personal laws based on tradition.",
+    "example": "Imagine a country where the rules for inheriting property are the same for everyone, whether they are Hindu, Muslim, Christian, or Sikh. That is what a Uniform Civil Code aims to achieve—a single law for civil matters for every citizen.",
+    "originalPart": "IV",
+    "category": "Legislature",
+    "organ": "Union",
+    "difficulty": "Hard",
+    "funFact": "Currently, only Goa has a form of Uniform Civil Code in India!",
+    "imageUrl": "/assets/articles/executive_branch_india_1771045228434.png"
+  },
+  {
+    "id": "art-51A",
+    "number": "51A",
+    "title": "Fundamental Duties",
+    "simplifiedText": "Just as we have rights, we also have duties! Article 51A lists the responsibilities of every citizen, like respecting the National Flag, protecting the environment, and safeguarding public property.",
+    "example": "When you pick up litter in a public park or stand up respectfully when the National Anthem is played, you are fulfilling your Fundamental Duties. It’s about being a responsible citizen who helps make the country better for everyone.",
+    "originalPart": "IVA",
+    "category": "Executive",
+    "organ": "Union",
+    "difficulty": "Easy",
+    "funFact": "Fundamental Duties were added to the Constitution in 1976!",
+    "imageUrl": "/assets/articles/fundamental_rights_icon_1771045207570.png"
+  },
+  {
     "id": "art-52",
     "number": "52",
     "title": "The President of India",
-    "simplifiedText": "India shall have a President who is the head of the country. The President is like the captain of a ship - they represent the nation!",
+    "simplifiedText": "India shall have a President who is the Head of the State. the President represents the dignity and unity of India.",
+    "example": "When India hosts a grand event like the Republic Day Parade, the President takes the salute. While the Prime Minister handles the daily work of the government, the President is like the guardian of the nation’s rules, signing important documents to make them official.",
     "originalPart": "V",
     "category": "Executive",
     "organ": "Union",
     "difficulty": "Easy",
-    "funFact": "The President lives in Rashtrapati Bhavan, which has 340 rooms!"
+    "funFact": "The President lives in Rashtrapati Bhavan, which has 340 rooms!",
+    "imageUrl": "/assets/articles/fundamental_rights_illustration_1771044270654.png"
   },
   {
     "id": "art-53",
     "number": "53",
     "title": "Executive Power of the Union",
-    "simplifiedText": "The President holds all executive power of India. But like a wise ruler, they work through the Prime Minister and Council of Ministers.",
+    "simplifiedText": "The President holds the highest executive power and is the Supreme Commander of the Defense Forces. However, they usually act on the advice of the Prime Minister.",
+    "example": "If India needs to sign a treaty with another country, it is done in the name of the President. Even though the Prime Minister’s team negotiated the deal, the President’s authority makes it a binding agreement for the entire nation.",
     "originalPart": "V",
     "category": "Executive",
     "organ": "Union",
     "difficulty": "Medium",
-    "funFact": "The President can pardon death sentences!"
+    "funFact": "The President can pardon death sentences!",
+    "imageUrl": "/assets/articles/governor_india_1771044165721.png"
   },
   {
     "id": "art-54",
     "number": "54",
     "title": "Election of President",
-    "simplifiedText": "The President is elected by an Electoral College - special voters who are elected members of Parliament and State Legislatures.",
+    "simplifiedText": "The President is elected by an 'Electoral College'—special voters who are already elected representatives (MPs and MLAs). Citizens don't vote for the President directly.",
+    "example": "During a Presidential election, you won't see long lines of regular people at voting booths. Instead, your local MLA and MP will travel to the capital to cast their votes. This ensures that the President has the support of leaders from all different states.",
     "originalPart": "V",
     "category": "Executive",
     "organ": "Union",
     "difficulty": "Medium",
-    "funFact": "The election uses a special voting system called Single Transferable Vote!"
+    "funFact": "The election uses a special voting system called Single Transferable Vote!",
+    "imageUrl": "/assets/articles/high_court_illustration_1771044440164.png"
   },
   {
     "id": "art-74",
     "number": "74",
     "title": "Council of Ministers",
-    "simplifiedText": "The Prime Minister leads a team called the Council of Ministers who help run the country. The President acts on their advice.",
+    "simplifiedText": "The President is aided by a Council of Ministers, led by the Prime Minister. In most cases, the President must follow their advice.",
+    "example": "When the government decides to launch a new national scholarship scheme, the Cabinet (Council of Ministers) discusses it first. Once they agree, they advise the President, who then gives the official approval. This keeps the power in the hands of leaders elected by the people.",
     "originalPart": "V",
     "category": "Executive",
     "organ": "Union",
     "difficulty": "Easy",
-    "funFact": "The Cabinet meets at least once a week to discuss important matters!"
+    "funFact": "The Cabinet meets at least once a week to discuss important matters!",
+    "imageUrl": "/assets/articles/indian_parliament_illustration_1771044387970.png"
   },
   {
     "id": "art-75",
     "number": "75",
     "title": "Prime Minister Appointment",
-    "simplifiedText": "The President appoints the Prime Minister, who is usually the leader of the party with most seats. Other ministers are appointed on PM's advice.",
+    "simplifiedText": "The President appoints the Prime Minister, usually the leader who has the most support in the Lok Sabha. Other ministers are chosen on the PM's advice.",
+    "example": "After a general election, the party with the most seats chooses its leader. The President then invites that person to take the oath as Prime Minister. The PM then selects who will be the Finance Minister, Education Minister, etc., to form the government team.",
     "originalPart": "V",
     "category": "Executive",
     "organ": "Union",
     "difficulty": "Easy",
-    "funFact": "India has had 14 Prime Ministers since independence!"
+    "funFact": "India has had 14 Prime Ministers since independence!",
+    "imageUrl": "/assets/articles/judiciary_branch_1771046495428.png"
   },
   {
     "id": "art-79",
     "number": "79",
     "title": "Constitution of Parliament",
-    "simplifiedText": "Parliament has two houses: Lok Sabha (House of People) and Rajya Sabha (Council of States), along with the President.",
+    "simplifiedText": "Parliament is India's law-making body. it has three parts: the President, the Lok Sabha (people's house), and the Rajya Sabha (states' house).",
+    "example": "Think of Parliament as a big debating club where the final decision becomes a rule foreveryone. If the country needs a new law to protect animals, members of both houses meet in the Parliament House in Delhi to discuss, change, and finally vote on the proposal.",
     "originalPart": "V",
     "category": "Legislature",
     "organ": "Union",
     "difficulty": "Easy",
-    "funFact": "The Parliament building took 6 years to build and was inaugurated in 1927!"
+    "funFact": "The Parliament building took 6 years to build and was inaugurated in 1927!",
+    "imageUrl": "/assets/articles/judiciary_branch_hero_1771044865419.png"
   },
   {
     "id": "art-80",
     "number": "80",
     "title": "Rajya Sabha Composition",
-    "simplifiedText": "Rajya Sabha has up to 250 members - 238 elected by State Assemblies and 12 nominated by President for their expertise.",
+    "simplifiedText": "The Rajya Sabha represents the States and is a 'permanent' house. It has up to 250 members, including 12 specialists nominated by the President.",
+    "example": "While most members are politicians elected by state leaders, you might see a famous scientist, an athlete, or an artist in the Rajya Sabha. They are there because the President nominated them for their expert knowledge, ensuring the house has diverse perspectives.",
     "originalPart": "V",
     "category": "Legislature",
     "organ": "Union",
     "difficulty": "Medium",
-    "funFact": "Rajya Sabha is called the \"Upper House\" and never fully dissolves!"
+    "funFact": "Rajya Sabha is called the \"Upper House\" and never fully dissolves!",
+    "imageUrl": "/assets/articles/judiciary_branch_india_1771045259455.png"
   },
   {
     "id": "art-81",
     "number": "81",
     "title": "Lok Sabha Composition",
-    "simplifiedText": "Lok Sabha can have up to 552 members directly elected by citizens. Each member represents about 16-18 lakh people!",
+    "simplifiedText": "The Lok Sabha represents the people directly. Its members are elected every five years. It currently has 543 members chosen by us.",
+    "example": "When your parents go to vote in the 'General Elections', they are choosing a representative for the Lok Sabha. Each area (constituency) sends one person to sit in this house and speak for the people living in that specific area.",
     "originalPart": "V",
     "category": "Legislature",
     "organ": "Union",
     "difficulty": "Easy",
-    "funFact": "Lok Sabha is called the \"Lower House\" but it's actually more powerful in money matters!"
+    "funFact": "Lok Sabha is called the \"Lower House\" but it's actually more powerful in money matters!",
+    "imageUrl": "/assets/articles/judiciary_illustration_1771044568240.png"
   },
   {
     "id": "art-100",
     "number": "100",
     "title": "Voting in Parliament",
-    "simplifiedText": "Decisions in Parliament are made by majority vote. If there's a tie, the Speaker or Chairman casts the deciding vote!",
+    "simplifiedText": "Decisions in Parliament are made by a majority vote. If there's a tie, the Speaker casts the 'casting vote' to decide.",
+    "example": "Imagine a new law is being voted on, and 200 people say 'Yes' and 200 say 'No'. In this rare tie, the Speaker (who usually stays neutral) will cast one final vote to either pass the law or reject it, acting as the ultimate tie-breaker.",
     "originalPart": "V",
     "category": "Legislature",
     "organ": "Union",
     "difficulty": "Easy",
-    "funFact": "The Speaker rarely votes to maintain impartiality!"
+    "funFact": "The Speaker rarely votes to maintain impartiality!",
+    "imageUrl": "/assets/articles/judiciary_pillar_1771045189047.png"
   },
   {
     "id": "art-107",
     "number": "107",
     "title": "How Laws are Made",
-    "simplifiedText": "A bill (proposed law) must be passed by both Houses of Parliament and get President's assent to become a law.",
+    "simplifiedText": "A law starts as a 'Bill'. It must be passed by both houses and signed by the President to become an actual law.",
+    "example": "If the government wants to change the rules for school exams nationwide, they first write a 'Bill'. It is debated in the Lok Sabha, then sent to the Rajya Sabha. If both agree and the President signs it, the new exam rules become the law of the land.",
     "originalPart": "V",
     "category": "Legislature",
     "organ": "Union",
     "difficulty": "Medium",
-    "funFact": "Some bills need a special majority of 2/3rd members!"
+    "funFact": "Some bills need a special majority of 2/3rd members!",
+    "imageUrl": "/assets/articles/law_and_justice_india_1771044199869.png"
   },
   {
     "id": "art-124",
     "number": "124",
     "title": "Supreme Court of India",
-    "simplifiedText": "The Supreme Court is the highest court in India with a Chief Justice and other judges. They are the final word on justice!",
+    "simplifiedText": "The Supreme Court is the highest court and the final word on justice. It consists of the Chief Justice and other judges appointed by the President.",
+    "example": "If someone feels a lower court made a huge mistake in their case, they can 'appeal' to the Supreme Court. The decisions made here are final and must be followed by every person and every other court in India. It is like the 'Grand Umpire' of the legal system.",
     "originalPart": "V",
     "category": "Judiciary",
     "organ": "Union",
     "difficulty": "Easy",
-    "funFact": "The Supreme Court building's design represents the scales of justice!"
+    "funFact": "The Supreme Court building's design represents the scales of justice!",
+    "imageUrl": "/assets/articles/legislature_branch_1771046479097.png"
   },
   {
     "id": "art-129",
     "number": "129",
     "title": "Court of Record",
-    "simplifiedText": "The Supreme Court keeps records of all its decisions. These records are very important and can be used as evidence.",
+    "simplifiedText": "The Supreme Court keeps permanent records of all its decisions to be used as evidence or examples in the future.",
+    "example": "If a lawyer in a small town court wants to prove a point, they can quote a famous judgment the Supreme Court made 10 years ago. Because it's a 'Court of Record', that old decision acts as a powerful rule that the local judge should follow.",
     "originalPart": "V",
     "category": "Judiciary",
     "organ": "Union",
     "difficulty": "Medium",
-    "funFact": "Supreme Court judgments become precedents that lower courts must follow!"
+    "funFact": "Supreme Court judgments become precedents that lower courts must follow!",
+    "imageUrl": "/assets/articles/legislature_branch_hero_1771044850068.png"
   },
   {
     "id": "art-131",
     "number": "131",
     "title": "Original Jurisdiction",
-    "simplifiedText": "The Supreme Court can directly hear disputes between the Union and States, or between States themselves.",
+    "simplifiedText": "The Supreme Court has the exclusive power to settle disputes between the Union government and States, or between different States.",
+    "example": "If two states (like Karnataka and Tamil Nadu) have a serious disagreement over sharing river water, they can't go to a normal local court. They go straight to the Supreme Court under Article 131 to get a final, fair decision from the highest authority.",
     "originalPart": "V",
     "category": "Judiciary",
     "organ": "Union",
     "difficulty": "Hard",
-    "funFact": "This is like being a referee in disputes between governments!"
+    "funFact": "This is like being a referee in disputes between governments!",
+    "imageUrl": "/assets/articles/legislature_branch_india_1771045244888.png"
   },
   {
     "id": "art-153",
     "number": "153",
     "title": "Governor of State",
-    "simplifiedText": "Each State has a Governor who is like the President at the state level. They are appointed by the President of India.",
+    "simplifiedText": "Every State has a Governor appointed by the President. They act as the constitutional head of the state.",
+    "example": "When a new state government is formed after an election, the Governor is the one who 'swears in' the Chief Minister. They represent the central government's presence in the state, ensuring that the state's administration follows the Constitution.",
     "originalPart": "VI",
     "category": "Executive",
     "organ": "State",
     "difficulty": "Easy",
-    "funFact": "A Governor must be at least 35 years old!"
+    "funFact": "A Governor must be at least 35 years old!",
+    "imageUrl": "/assets/articles/legislature_illustration_1771044551592.png"
   },
   {
     "id": "art-163",
     "number": "163",
     "title": "State Council of Ministers",
-    "simplifiedText": "The Chief Minister leads the State Council of Ministers who help run the state. The Governor acts on their advice.",
+    "simplifiedText": "Every State has a Council of Ministers led by the Chief Minister to advise the Governor. Most decisions are based on their advice.",
+    "example": "If a state government wants to announce a new holiday for a local festival, the State Cabinet (Council of Ministers) makes the decision. They then inform the Governor, who issues the official order. It's the same system as the central government, but at the state level.",
     "originalPart": "VI",
     "category": "Executive",
     "organ": "State",
     "difficulty": "Easy",
-    "funFact": "The Chief Minister is like the Prime Minister but for a state!"
+    "funFact": "The Chief Minister is like the Prime Minister but for a state!",
+    "imageUrl": "/assets/articles/legislature_pillar_1771045173548.png"
   },
   {
     "id": "art-164",
     "number": "164",
     "title": "Chief Minister Appointment",
-    "simplifiedText": "The Governor appoints the Chief Minister, who is usually the leader of the party with most seats in the State Assembly.",
+    "simplifiedText": "The Governor appoints the Chief Minister, usually the leader of the party that won the most seats in the State Assembly.",
+    "example": "After state elections, the winning party's members meet to choose their leader. That person then visits the Governor's house (Raj Bhavan) to show they have enough support. The Governor then officially appoints them as the Chief Minister.",
     "originalPart": "VI",
     "category": "Executive",
     "organ": "State",
     "difficulty": "Easy",
-    "funFact": "India has had many young Chief Ministers, some in their 30s!"
+    "funFact": "India has had many young Chief Ministers, some in their 30s!",
+    "imageUrl": "/assets/articles/parliament_illustration_1771044236750.png"
   },
   {
     "id": "art-168",
     "number": "168",
     "title": "State Legislature",
-    "simplifiedText": "States can have one house (Legislative Assembly) or two houses (with Legislative Council). The Governor is part of it.",
+    "simplifiedText": "States have their own legislatures to make local laws. A State Legislature consists of the Governor and one or two houses.",
+    "example": "Just like the Parliament in Delhi makes laws for the whole country, each state has its own building (like the Vidhana Soudha in Bengaluru) where representatives meet to pass laws specifically for that state, like rules for local transport or farming.",
     "originalPart": "VI",
     "category": "Legislature",
     "organ": "State",
     "difficulty": "Medium",
-    "funFact": "Only 6 states have two houses of legislature!"
+    "funFact": "Only 6 states have two houses of legislature!",
+    "imageUrl": "/assets/articles/parliament_india_1771044134109.png"
   },
   {
     "id": "art-170",
     "number": "170",
     "title": "Legislative Assembly",
-    "simplifiedText": "The Legislative Assembly (Vidhan Sabha) has members directly elected by people. It can have 60 to 500 members.",
+    "simplifiedText": "The Legislative Assembly (Vidhan Sabha) is the main body where members (MLAs) are directly elected by the state's citizens.",
+    "example": "When people vote in 'State Assembly Elections', they are choosing their local MLA. These MLAs then sit in the Vidhan Sabha to debate how the state's money should be spent on schools, roads, and hospitals in their regions.",
     "originalPart": "VI",
     "category": "Legislature",
     "organ": "State",
     "difficulty": "Easy",
-    "funFact": "UP has the largest Legislative Assembly with 403 members!"
+    "funFact": "UP has the largest Legislative Assembly with 403 members!",
+    "imageUrl": "/assets/articles/preamble_illustration_1771045972132.png"
   },
   {
     "id": "art-171",
     "number": "171",
     "title": "Legislative Council",
-    "simplifiedText": "The Legislative Council (Vidhan Parishad) is the upper house. Members are elected indirectly and some are nominated.",
+    "simplifiedText": "Some states have an upper house called the Legislative Council (Vidhan Parishad), where members are chosen indirectly.",
+    "example": "In states with a Council, you might find members who were chosen by local teachers or university graduates. They provide extra expert advice on laws before they are finalized, acting as a second 'layer' of review for the state.",
     "originalPart": "VI",
     "category": "Legislature",
     "organ": "State",
     "difficulty": "Medium",
-    "funFact": "Members include teachers, graduates, and local body representatives!"
+    "funFact": "Members include teachers, graduates, and local body representatives!",
+    "imageUrl": "/assets/articles/president_illustration_1771044221817.png"
   },
   {
     "id": "art-214",
     "number": "214",
     "title": "High Courts",
-    "simplifiedText": "Each State has a High Court which is the highest court in that state. They ensure justice at the state level.",
+    "simplifiedText": "Each State has a High Court, the highest judicial authority there. They ensure justice and supervise lower district courts.",
+    "example": "If a person is unhappy with the verdict of a local district court regarding a land dispute, they can take their case to the state's High Court. The High Court's decision is binding across the entire state, unless it is later challenged in the Supreme Court.",
     "originalPart": "VI",
     "category": "Judiciary",
     "organ": "State",
     "difficulty": "Easy",
-    "funFact": "Calcutta High Court is the oldest in India, established in 1862!"
+    "funFact": "Calcutta High Court is the oldest in India, established in 1862!",
+    "imageUrl": "/assets/articles/president_india_1771044119549.png"
   },
   {
     "id": "art-226",
     "number": "226",
     "title": "Writ Jurisdiction",
-    "simplifiedText": "High Courts can issue special orders called writs to protect fundamental rights. They are guardians of our rights!",
+    "simplifiedText": "High Courts can issue special orders (Writs) to protect fundamental rights and for other legal purposes within their state.",
+    "example": "If someone’s property is illegally taken away by the local municipal corporation, the person can file a petition in the High Court under Article 226. The Court can then issue an order (Writ) to the corporation to return the property or stop the illegal action.",
     "originalPart": "VI",
     "category": "Judiciary",
     "organ": "State",
     "difficulty": "Hard",
-    "funFact": "There are 5 types of writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, and Quo Warranto!"
+    "funFact": "There are 5 types of writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, and Quo Warranto!",
+    "imageUrl": "/assets/articles/supreme_court_illustration_1771044251244.png"
   },
   {
     "id": "art-227",
     "number": "227",
     "title": "Superintendence over Lower Courts",
-    "simplifiedText": "High Courts supervise all lower courts and tribunals in their jurisdiction. They ensure everyone follows the law.",
+    "simplifiedText": "The High Court supervises all lower courts in its jurisdiction, setting rules and ensuring they function correctly.",
+    "example": "The High Court acts like a principal of a school but for courts. It can check the records of a district court, tell them how to handle cases faster, or move a complicated case from one small-town court to another to ensure a fair trial.",
     "originalPart": "VI",
     "category": "Judiciary",
     "organ": "State",
     "difficulty": "Medium",
-    "funFact": "High Courts can transfer cases from one lower court to another!"
+    "funFact": "High Courts can transfer cases from one lower court to another!",
+    "imageUrl": "/assets/articles/supreme_court_india_1771044151085.png"
   }
 ]
