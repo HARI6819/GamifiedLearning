@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import articles from "./data/articles.json";
 import chakraQuestions from "./data/chakraQuestions.json";
 import "./ChakraOfKnowledge.css";
@@ -21,6 +22,7 @@ const SEGMENTS = [
 
 export default function ChakraOfKnowledge() {
   const { t } = useLanguage();
+  const location = useLocation();
   const [rotation, setRotation] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState(null);
@@ -87,11 +89,18 @@ export default function ChakraOfKnowledge() {
     setRotation(newRotation);
 
     setTimeout(() => {
+      const queryParams = new URLSearchParams(location.search);
+      const selectedCatParams = queryParams.get("category");
+
       const finalAngle = (newRotation % 360);
       let category = "";
-      if (finalAngle >= 0 && finalAngle < 120) category = "Executive";
-      else if (finalAngle >= 120 && finalAngle < 240) category = "Legislature";
-      else category = "Judiciary";
+      if (selectedCatParams) {
+        category = selectedCatParams;
+      } else {
+        if (finalAngle >= 0 && finalAngle < 120) category = "Executive";
+        else if (finalAngle >= 120 && finalAngle < 240) category = "Legislature";
+        else category = "Judiciary";
+      }
 
       // Select a random article
       const artPool = articles.filter(a => a.category === category);

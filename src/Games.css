@@ -64,6 +64,54 @@
   color: var(--text-secondary);
 }
 
+.category-filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dark .category-btn {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.category-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.dark .category-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.category-btn.active {
+  background: #1e3a8a;
+  color: white;
+  border-color: #1e3a8a;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+}
+
+.dark .category-btn.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
 /* Grid */
 .game-grid1 {
   display: grid;

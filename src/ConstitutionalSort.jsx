@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { useLanguage } from "./context/LanguageContext";
 import "./ConstitutionalSort.css";
 import Navbar from "./Navbar";
@@ -8,6 +9,7 @@ import config from "./config";
 
 export default function ConstitutionalSort() {
     const { t } = useLanguage();
+    const location = useLocation();
     const [gameState, setGameState] = useState("start"); // start, playing, won, lost
     const [difficulty, setDifficulty] = useState("Easy");
     const [unlockedLevels, setUnlockedLevels] = useState(["Easy"]);
@@ -67,7 +69,15 @@ export default function ConstitutionalSort() {
     }, [gameState]);
 
     const startGame = () => {
-        const difficultyItems = t.constitutionalSort.items[difficulty];
+        const queryParams = new URLSearchParams(location.search);
+        const selectedCat = queryParams.get("category");
+
+        let difficultyItems = t.constitutionalSort.items[difficulty];
+
+        if (selectedCat) {
+            difficultyItems = difficultyItems.filter(i => i.category === selectedCat);
+        }
+
         setItems([...difficultyItems].sort(() => 0.5 - Math.random()));
         setPlacedItems({});
         setScore(0);

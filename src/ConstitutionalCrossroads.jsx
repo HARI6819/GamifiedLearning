@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useLanguage } from "./context/LanguageContext";
 import { useTheme } from "./context/ThemeContext";
 import "./ConstitutionalCrossroads.css";
@@ -9,6 +10,7 @@ import config from "./config";
 
 export default function ConstitutionalCrossroads() {
     const { t } = useLanguage();
+    const location = useLocation();
     const { theme } = useTheme();
     const [gameState, setGameState] = useState("start"); // start, scenario, feedback, complete
     const [difficulty, setDifficulty] = useState("Easy");
@@ -45,7 +47,15 @@ export default function ConstitutionalCrossroads() {
     }, []);
 
     const startGame = () => {
-        const scenarioList = t.constitutionalCrossroads.scenarios[difficulty];
+        const queryParams = new URLSearchParams(location.search);
+        const selectedCat = queryParams.get("category");
+
+        let scenarioList = t.constitutionalCrossroads.scenarios[difficulty];
+
+        if (selectedCat) {
+            scenarioList = scenarioList.filter(s => s.category === selectedCat);
+        }
+
         setScenarios(scenarioList);
         setCurrentScenarioIndex(0);
         setScore(0);

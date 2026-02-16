@@ -3,12 +3,14 @@ import cardData from "./data/cards.json";
 import "./ConstitutionCards.css";
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { useLocation } from "react-router-dom";
 import { useLanguage } from './context/LanguageContext';
 import config from "./config";
 import { Lock, LockOpen, RotateCcw } from "lucide-react";
 
 export default function ConstitutionCards() {
     const { t, language } = useLanguage();
+    const location = useLocation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [flipped, setFlipped] = useState(false);
     const [knewCount, setKnewCount] = useState(0);
@@ -48,7 +50,15 @@ export default function ConstitutionCards() {
     }, []);
 
     useEffect(() => {
-        const filtered = cardData.filter(c => c.difficulty === difficulty);
+        const queryParams = new URLSearchParams(location.search);
+        const selectedCat = queryParams.get("category");
+
+        let filtered = cardData.filter(c => c.difficulty === difficulty);
+
+        if (selectedCat) {
+            filtered = filtered.filter(c => c.category === selectedCat);
+        }
+
         const pool = filtered.length > 0 ? filtered : cardData;
         setCards([...pool].sort(() => 0.5 - Math.random()));
         setCurrentIndex(0);
@@ -57,7 +67,7 @@ export default function ConstitutionCards() {
         setLearnedCount(0);
         setAssessedCards([]);
         setIsLevelComplete(false);
-    }, [difficulty]);
+    }, [difficulty, location.search]);
 
     const resetLevel = () => {
         setCurrentIndex(0);

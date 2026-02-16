@@ -23,7 +23,6 @@ const ProgressPage = () => {
       quiz: 0,
       sort: 0,
       timeline: 0,
-      crossroads: 0,
       crossroads: 0
     }
   });
@@ -336,7 +335,7 @@ const ProgressPage = () => {
                 <span className="emoji">🎡</span>
                 <h4>{t.progress.firstSpin}</h4>
                 <p>{t.progress.completeSpin}</p>
-                {stats.pointsBreakdown.chakra ===0 && <span className="lock">🔒</span>}
+                {stats.pointsBreakdown.chakra === 0 && <span className="lock">🔒</span>}
               </div>
 
               <div className={`achievement ${stats.totalPoints >= 100 ? 'unlocked' : 'locked'}`}>

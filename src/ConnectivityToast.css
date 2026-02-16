@@ -12,7 +12,7 @@
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s;
     opacity: 0;
     pointer-events: none;
-    gap: 10px;
+    gap: 10px; 
 }
 
 .connectivity-toast.visible {
@@ -26,9 +26,9 @@
 }
 
 .connectivity-toast.online {
-    background-color: #10b981;
+    background-color: green;
     /* Tailwind emerald-500 */
-    border: 1px solid #059669;
+    border: 1px solid green;
 }
 
 /* Animations for smooth entry */

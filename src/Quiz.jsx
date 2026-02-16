@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import "./Quiz.css";
 import quizData from "./data/quizData.json";
 import Navbar from "./Navbar";
@@ -9,6 +10,7 @@ import config from "./config";
 
 export default function Quiz() {
     const { t } = useLanguage();
+    const location = useLocation();
     const [gameState, setGameState] = useState("difficulty"); // difficulty, playing, finished
     const [difficulty, setDifficulty] = useState("Easy"); // Easy, Medium, Hard
     const [questions, setQuestions] = useState([]);
@@ -46,8 +48,17 @@ export default function Quiz() {
     }, [gameState]);
 
     const startQuiz = () => {
+        const queryParams = new URLSearchParams(location.search);
+        const selectedCat = queryParams.get("category");
+
         // Fetch questions from translations
-        const localizedQuestions = t.quiz.questions?.[difficulty] || [];
+        let localizedQuestions = t.quiz.questions?.[difficulty] || [];
+
+        // Filter by category if one is selected
+        if (selectedCat) {
+            localizedQuestions = localizedQuestions.filter(q => q.category === selectedCat);
+        }
+
         setQuestions(localizedQuestions.sort(() => Math.random() - 0.5).slice(0, 10));
         setGameState("playing");
         setCurrentIdx(0);

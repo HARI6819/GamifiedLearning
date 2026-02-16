@@ -1,212 +1,632 @@
 [
     {
         "id": "card-1",
-        "question": "What is the minimum age to become the President of India?",
+        "question": "Minimum age for President of India?",
         "answer": "35 years",
         "category": "Executive",
         "difficulty": "Easy"
     },
     {
         "id": "card-2",
-        "question": "Who is the Ex-officio Chairman of the Rajya Sabha?",
-        "answer": "The Vice-President of India",
+        "question": "Chairman of Rajya Sabha?",
+        "answer": "Vice-President",
         "category": "Legislature",
         "difficulty": "Easy"
     },
     {
         "id": "card-3",
-        "question": "Who appoints the Prime Minister of India?",
-        "answer": "The President of India",
+        "question": "Who appoints the Prime Minister?",
+        "answer": "President",
         "category": "Executive",
         "difficulty": "Easy"
     },
     {
         "id": "card-4",
-        "question": "Who is known as the Father of the Indian Constitution?",
+        "question": "Father of the Constitution?",
         "answer": "Dr. B.R. Ambedkar",
-        "category": "History",
+        "category": "Legislature",
         "difficulty": "Easy"
     },
     {
         "id": "card-5",
-        "question": "What is the minimum age to vote in India?",
+        "question": "Minimum age to vote?",
         "answer": "18 years",
-        "category": "Citizenship",
+        "category": "Legislature",
         "difficulty": "Easy"
     },
     {
         "id": "card-6",
-        "question": "What is the lower house of the Indian Parliament called?",
+        "question": "Lower house of Parliament?",
         "answer": "Lok Sabha",
         "category": "Legislature",
         "difficulty": "Easy"
     },
     {
         "id": "card-7",
-        "question": "What is the upper house of the Indian Parliament called?",
+        "question": "Upper house of Parliament?",
         "answer": "Rajya Sabha",
         "category": "Legislature",
         "difficulty": "Easy"
     },
     {
         "id": "card-8",
-        "question": "The Preamble starts with which three words?",
+        "question": "First words of the Preamble?",
         "answer": "We, the People",
-        "category": "Preamble",
+        "category": "Legislature",
         "difficulty": "Easy"
     },
     {
         "id": "card-9",
-        "question": "Which body is the Guardian of the Indian Constitution?",
-        "answer": "Supreme Court of India",
+        "question": "Guardian of the Constitution?",
+        "answer": "Supreme Court",
         "category": "Judiciary",
         "difficulty": "Easy"
     },
     {
         "id": "card-10",
-        "question": "What is the tenure of the Lok Sabha?",
+        "question": "Tenure of the Lok Sabha?",
         "answer": "5 years",
         "category": "Legislature",
         "difficulty": "Easy"
     },
     {
+        "id": "card-101",
+        "question": "Who appoints the Governor?",
+        "answer": "President",
+        "category": "Executive",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-102",
+        "question": "Head of Union Council of Ministers?",
+        "answer": "Prime Minister",
+        "category": "Executive",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-103",
+        "question": "Supreme Commander of Armed Forces?",
+        "answer": "President",
+        "category": "Executive",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-104",
+        "question": "Who is the first citizen of India?",
+        "answer": "President",
+        "category": "Executive",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-105",
+        "question": "Who appoints the Chief Justice?",
+        "answer": "President",
+        "category": "Executive",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-106",
+        "question": "Real head of State government?",
+        "answer": "Chief Minister",
+        "category": "Executive",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-107",
+        "question": "Constitutional head of State?",
+        "answer": "Governor",
+        "category": "Executive",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-108",
+        "question": "Who invites the majority party to form govt?",
+        "answer": "President / Governor",
+        "category": "Executive",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-109",
+        "question": "Who is the head of the Indian State?",
+        "answer": "President",
+        "category": "Judiciary",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-110",
+        "question": "Who presides over Lok Sabha?",
+        "answer": "Speaker",
+        "category": "Legislature",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-111",
+        "question": "What is Parliament made of?",
+        "answer": "Lok Sabha, Rajya Sabha and President",
+        "category": "Legislature",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-112",
+        "question": "How many members in LS?",
+        "answer": "545 (currently)",
+        "category": "Legislature",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-113",
+        "question": "How many members in RS?",
+        "answer": "250 (max)",
+        "category": "Judiciary",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-114",
+        "question": "Where is the Supreme Court?",
+        "answer": "New Delhi",
+        "category": "Judiciary",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-115",
+        "question": "Who protects Fundamental Rights?",
+        "answer": "Supreme Court / High Courts",
+        "category": "Judiciary",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-116",
+        "question": "Highest Court in a District?",
+        "answer": "District Court",
+        "category": "Judiciary",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-117",
+        "question": "How many High Courts in India?",
+        "answer": "25",
+        "category": "Judiciary",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-118",
+        "question": "Who interprets the Constitution?",
+        "answer": "Judiciary",
+        "category": "Judiciary",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-119",
+        "question": "Symbol of Judiciary?",
+        "answer": "Scales of Justice",
+        "category": "Judiciary",
+        "difficulty": "Easy"
+    },
+    {
+        "id": "card-120",
+        "question": "Do judges have political affiliations?",
+        "answer": "No, they must be impartial",
+        "category": "Judiciary",
+        "difficulty": "Easy"
+    },
+    {
         "id": "card-11",
-        "question": "Which Article relates to the abolition of Untouchability?",
+        "question": "Article for abolition of Untouchability?",
         "answer": "Article 17",
-        "category": "Fundamental Rights",
+        "category": "Judiciary",
         "difficulty": "Medium"
     },
     {
         "id": "card-12",
-        "question": "What is the maximum gap allowed between two sessions of Parliament?",
+        "question": "Max gap between Parliament sessions?",
         "answer": "6 months",
         "category": "Legislature",
         "difficulty": "Medium"
     },
     {
         "id": "card-13",
-        "question": "Which Article is known as the 'Right to Education'?",
+        "question": "Right to Education Article?",
         "answer": "Article 21A",
-        "category": "Fundamental Rights",
+        "category": "Judiciary",
         "difficulty": "Medium"
     },
     {
         "id": "card-14",
-        "question": "In which part of the Constitution are Fundamental Duties mentioned?",
+        "question": "In which part are Fundamental Duties?",
         "answer": "Part IV-A",
-        "category": "Duties",
+        "category": "Legislature",
         "difficulty": "Medium"
     },
     {
         "id": "card-15",
-        "question": "How many Schedules are there in the Indian Constitution currently?",
+        "question": "How many Schedules are there now?",
         "answer": "12 Schedules",
-        "category": "General",
+        "category": "Legislature",
         "difficulty": "Medium"
     },
     {
         "id": "card-16",
-        "question": "Who is considered the 'First Citizen' of India?",
-        "answer": "The President of India",
+        "question": "Who is the 'First Citizen'?",
+        "answer": "President",
         "category": "Executive",
         "difficulty": "Medium"
     },
     {
         "id": "card-17",
-        "question": "What is the term of a member of the Rajya Sabha?",
+        "question": "Term of a Rajya Sabha member?",
         "answer": "6 years",
         "category": "Legislature",
         "difficulty": "Medium"
     },
     {
         "id": "card-18",
-        "question": "Which Fundamental Right was described by Dr. Ambedkar as the 'Heart and Soul'?",
-        "answer": "Right to Constitutional Remedies (Article 32)",
-        "category": "Fundamental Rights",
+        "question": "Ambedkar called which right 'Heart and Soul'?",
+        "answer": "Art 32 (Constitutional Remedies)",
+        "category": "Judiciary",
         "difficulty": "Medium"
     },
     {
         "id": "card-19",
-        "question": "The Directive Principles of State Policy are borrowed from which Constitution?",
+        "question": "DPSP source?",
         "answer": "Irish Constitution",
-        "category": "Principles",
+        "category": "Executive",
         "difficulty": "Medium"
     },
     {
         "id": "card-20",
-        "question": "Which amendment is known as the 'Mini-Constitution' of India?",
-        "answer": "42nd Amendment (1976)",
-        "category": "Amendments",
+        "question": "Mini-Constitution amendment?",
+        "answer": "42nd Amendment",
+        "category": "Legislature",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-121",
+        "question": "Who appoints Attorney General?",
+        "answer": "President",
+        "category": "Executive",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-122",
+        "question": "Article for Council of Ministers?",
+        "answer": "Article 74",
+        "category": "Executive",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-123",
+        "question": "Who can dissolve Lok Sabha?",
+        "answer": "President",
+        "category": "Executive",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-124",
+        "question": "Pardon power article?",
+        "answer": "Article 72",
+        "category": "Executive",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-125",
+        "question": "Who appoints Chief Election Commissioner?",
+        "answer": "President",
+        "category": "Executive",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-126",
+        "question": "Can Governor pardon death sentence?",
+        "answer": "No, only President can",
+        "category": "Executive",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-127",
+        "question": "Who decides if a bill is a Money Bill?",
+        "answer": "Speaker of Lok Sabha",
+        "category": "Legislature",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-128",
+        "question": "Minimum age for Rajya Sabha?",
+        "answer": "30 years",
+        "category": "Legislature",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-129",
+        "question": "Which house has power over money bills?",
+        "answer": "Lok Sabha",
+        "category": "Legislature",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-130",
+        "question": "Joint Sitting presided by?",
+        "answer": "Speaker of Lok Sabha",
+        "category": "Legislature",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-131",
+        "question": "Quorum of Lok Sabha?",
+        "answer": "1/10th of total members",
+        "category": "Legislature",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-132",
+        "question": "Adjournment motion purpose?",
+        "answer": "To discuss urgent public matter",
+        "category": "Executive",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-133",
+        "question": "Who appoints HC judges?",
+        "answer": "President",
+        "category": "Judiciary",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-134",
+        "question": "Retirement age of HC judges?",
+        "answer": "62 years",
+        "category": "Judiciary",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-135",
+        "question": "Which Article allows advisory to SC?",
+        "answer": "Article 143",
+        "category": "Executive",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-136",
+        "question": "Common High Court established by?",
+        "answer": "Parliament",
+        "category": "Judiciary",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-137",
+        "question": "Original Jurisdiction Article?",
+        "answer": "Article 131",
+        "category": "Judiciary",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-138",
+        "question": "Who pays SC judges?",
+        "answer": "Consolidated Fund of India",
+        "category": "Judiciary",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-139",
+        "question": "Can SC review its own judgment?",
+        "answer": "Yes (Article 137)",
+        "category": "Judiciary",
+        "difficulty": "Medium"
+    },
+    {
+        "id": "card-140",
+        "question": "Power of Writ jurisdiction for SC?",
+        "answer": "Article 32",
+        "category": "Judiciary",
         "difficulty": "Medium"
     },
     {
         "id": "card-21",
-        "question": "Which is the highest judicial court in a State?",
+        "question": "Highest judicial court in a State?",
         "answer": "High Court",
         "category": "Judiciary",
         "difficulty": "Hard"
     },
     {
         "id": "card-22",
-        "question": "How many Fundamental Duties are there currently?",
-        "answer": "11 Fundamental Duties",
-        "category": "Duties",
+        "question": "Fundamental Duties count?",
+        "answer": "11 currently",
+        "category": "Legislature",
         "difficulty": "Hard"
     },
     {
         "id": "card-23",
-        "question": "Which Article provides for the 'Joint Sitting' of both houses of Parliament?",
+        "question": "Joint Sitting Article?",
         "answer": "Article 108",
         "category": "Legislature",
         "difficulty": "Hard"
     },
     {
         "id": "card-24",
-        "question": "Article 360 of the Constitution refers to which type of Emergency?",
-        "answer": "Financial Emergency",
-        "category": "Emergency",
+        "question": "Financial Emergency Article?",
+        "answer": "Article 360",
+        "category": "Executive",
         "difficulty": "Hard"
     },
     {
         "id": "card-25",
-        "question": "Which Article deals with the 'Uniform Civil Code'?",
+        "question": "Uniform Civil Code Article?",
         "answer": "Article 44",
-        "category": "Principles",
+        "category": "Legislature",
         "difficulty": "Hard"
     },
     {
         "id": "card-26",
-        "question": "Which Article empowers the President to grant pardons?",
+        "question": "President's Pardon Power Article?",
         "answer": "Article 72",
         "category": "Executive",
         "difficulty": "Hard"
     },
     {
         "id": "card-27",
-        "question": "In which case did the Supreme Court propound the 'Basic Structure Doctrine'?",
-        "answer": "Kesavananda Bharati v. State of Kerala (1973)",
+        "question": "Case for Basic Structure Doctrine?",
+        "answer": "Kesavananda Bharati v. State of Kerala",
         "category": "Judiciary",
         "difficulty": "Hard"
     },
     {
         "id": "card-28",
-        "question": "Which Article describes India as a 'Union of States'?",
+        "question": "India as 'Union of States' Article?",
         "answer": "Article 1",
-        "category": "General",
+        "category": "Legislature",
         "difficulty": "Hard"
     },
     {
         "id": "card-29",
-        "question": "Which Article gives the power to amend the Constitution to the Parliament?",
+        "question": "Parliament Amendment Power Article?",
         "answer": "Article 368",
         "category": "Legislature",
         "difficulty": "Hard"
     },
     {
         "id": "card-30",
-        "question": "How many members can the President nominate to the Rajya Sabha?",
+        "question": "Presidential Nominations to RS?",
         "answer": "12 members",
         "category": "Legislature",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-141",
+        "question": "What is Pocket Veto?",
+        "answer": "Pres keeps bill without signing/returning",
+        "category": "Executive",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-142",
+        "question": "Article 352 refers to?",
+        "answer": "National Emergency",
+        "category": "Executive",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-143",
+        "question": "Who initiates impeachment of President?",
+        "answer": "Either House of Parliament",
+        "category": "Legislature",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-144",
+        "question": "Who appoints Advocate General of State?",
+        "answer": "Governor",
+        "category": "Executive",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-145",
+        "question": "Article 164 is about?",
+        "answer": "Appointment of CM and Ministers",
+        "category": "Executive",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-146",
+        "question": "Who is the ex-officio chairman of the Civil Services Board?",
+        "answer": "Cabinet Secretary",
+        "category": "Executive",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-147",
+        "question": "Residuary powers lie with?",
+        "answer": "Union Parliament (Article 248)",
+        "category": "Legislature",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-148",
+        "question": "Art 249 gives Power to Parliament on?",
+        "answer": "State List in national interest",
+        "category": "Legislature",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-149",
+        "question": "Which house can create All India Services?",
+        "answer": "Rajya Sabha (Article 312)",
+        "category": "Legislature",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-150",
+        "question": "Anti-defection Schedule?",
+        "answer": "10th Schedule",
+        "category": "Executive",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-151",
+        "question": "Special Majority for amendment in Art?",
+        "answer": "Article 368",
+        "category": "Judiciary",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-152",
+        "question": "Who decides disqualification on defection?",
+        "answer": "Speaker / Chairman",
+        "category": "Judiciary",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-153",
+        "question": "Article 142 refers to?",
+        "answer": "Complete Justice by SC",
+        "category": "Judiciary",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-154",
+        "question": "What is Curative Petition?",
+        "answer": "Last resort for review of SC judgment",
+        "category": "Judiciary",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-155",
+        "question": "Article 136 relates to?",
+        "answer": "Special Leave to Appeal (SLP)",
+        "category": "Judiciary",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-156",
+        "question": "Who can transfer HC Judges?",
+        "answer": "President after consulting CJI",
+        "category": "Judiciary",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-157",
+        "question": "Separation of Judiciary Article?",
+        "answer": "Article 50",
+        "category": "Judiciary",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-158",
+        "question": "Judicial Review source?",
+        "answer": "USA (Constitution)",
+        "category": "Judiciary",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-159",
+        "question": "Court of Record Article?",
+        "answer": "Article 129",
+        "category": "Executive",
+        "difficulty": "Hard"
+    },
+    {
+        "id": "card-160",
+        "question": "Can Parliament override Basic Structure?",
+        "answer": "No (Kesavananda Bharati case)",
+        "category": "Executive",
         "difficulty": "Hard"
     }
 ]

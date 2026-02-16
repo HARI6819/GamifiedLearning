@@ -10,37 +10,40 @@
     ],
     "correctIndex": 2,
     "points": 5,
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "category": "Judiciary"
   },
   {
     "id": 2,
     "question": "Who is known as the Father of the Indian Constitution?",
     "options": [
-      "Mahatma Gandhi",
-      "Jawaharlal Nehru",
-      "Dr. B.R. Ambedkar",
-      "Sardar Patel"
+      "Gandhi",
+      "Nehru",
+      "Ambedkar",
+      "Patel"
     ],
     "correctIndex": 2,
     "points": 5,
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "category": "Legislature"
   },
   {
     "id": 3,
     "question": "What is the minimum age to vote in India?",
     "options": [
-      "16 years",
-      "18 years",
-      "21 years",
-      "25 years"
+      "16",
+      "18",
+      "21",
+      "25"
     ],
     "correctIndex": 1,
     "points": 5,
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "category": "Executive"
   },
   {
     "id": 4,
-    "question": "How many Fundamental Duties are listed in the Constitution?",
+    "question": "How many Fundamental Duties are in the Constitution?",
     "options": [
       "8",
       "10",
@@ -49,11 +52,12 @@
     ],
     "correctIndex": 2,
     "points": 5,
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "category": "Legislature"
   },
   {
     "id": 5,
-    "question": "What is the lower house of the Indian Parliament called?",
+    "question": "What is the lower house of the Indian Parliament?",
     "options": [
       "Rajya Sabha",
       "Lok Sabha",
@@ -62,37 +66,40 @@
     ],
     "correctIndex": 1,
     "points": 5,
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "category": "Legislature"
   },
   {
     "id": 6,
-    "question": "Who appoints the Prime Minister of India?",
+    "question": "Who appoints the Prime Minister?",
     "options": [
-      "The Chief Justice",
-      "The People",
-      "The President",
-      "The Speaker"
+      "Chief Justice",
+      "People",
+      "President",
+      "Speaker"
     ],
     "correctIndex": 2,
     "points": 5,
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "category": "Executive"
   },
   {
     "id": 7,
-    "question": "What is the term length of the President of India?",
+    "question": "What is the term of the President?",
     "options": [
-      "4 years",
-      "5 years",
-      "6 years",
-      "No fixed term"
+      "4",
+      "5",
+      "6",
+      "Indefinite"
     ],
     "correctIndex": 1,
     "points": 5,
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "category": "Executive"
   },
   {
     "id": 8,
-    "question": "How many Fundamental Rights were originally in the Constitution?",
+    "question": "How many Fundamental Rights were originally there?",
     "options": [
       "6",
       "7",
@@ -101,11 +108,12 @@
     ],
     "correctIndex": 1,
     "points": 5,
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "category": "Legislature"
   },
   {
     "id": 9,
-    "question": "Which color in the Indian Flag represents courage and sacrifice?",
+    "question": "Symbol of courage in Indian Flag?",
     "options": [
       "White",
       "Green",
@@ -114,24 +122,292 @@
     ],
     "correctIndex": 2,
     "points": 5,
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "category": "Legislature"
   },
   {
     "id": 10,
-    "question": "The National Anthem of India was written by:",
+    "question": "Who wrote Jana Gana Mana?",
     "options": [
-      "Bankim Chandra Chatterjee",
-      "Rabindranath Tagore",
-      "Sarojini Naidu",
-      "Subhash Chandra Bose"
+      "Chatterjee",
+      "Tagore",
+      "Naidu",
+      "Bose"
     ],
     "correctIndex": 1,
     "points": 5,
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 101,
+    "question": "Who is the Constitutional Head of India?",
+    "options": [
+      "PM",
+      "President",
+      "CJI",
+      "Governor"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 102,
+    "question": "Who is head of Union Council of Ministers?",
+    "options": [
+      "President",
+      "Speaker",
+      "PM",
+      "VP"
+    ],
+    "correctIndex": 2,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 103,
+    "question": "Who appoints the Governor?",
+    "options": [
+      "PM",
+      "President",
+      "CM",
+      "CJI"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 104,
+    "question": "Real executive head of a State?",
+    "options": [
+      "Governor",
+      "CM",
+      "President",
+      "Speaker"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 105,
+    "question": "Head of the Indian State?",
+    "options": [
+      "PM",
+      "President",
+      "CJI",
+      "Public"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 106,
+    "question": "Nominal executive of India?",
+    "options": [
+      "PM",
+      "President",
+      "Chief Justice",
+      "Speaker"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 107,
+    "question": "Legislative organ of India?",
+    "options": [
+      "Parliament",
+      "Supreme Court",
+      "Cabinet",
+      "Police"
+    ],
+    "correctIndex": 0,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 108,
+    "question": "Who makes laws for India?",
+    "options": [
+      "Courts",
+      "Parliament",
+      "President",
+      "Governors"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 109,
+    "question": "Upper House of Parliament?",
+    "options": [
+      "Lok Sabha",
+      "Rajya Sabha",
+      "Legislative Council",
+      "Panchayat"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 110,
+    "question": "Who is Chairman of Rajya Sabha?",
+    "options": [
+      "Speaker",
+      "VP",
+      "PM",
+      "President"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 111,
+    "question": "Who presides over Lok Sabha?",
+    "options": [
+      "Speaker",
+      "Chairman",
+      "President",
+      "PM"
+    ],
+    "correctIndex": 0,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 112,
+    "question": "Tenure of Rajya Sabha member?",
+    "options": [
+      "5",
+      "6",
+      "2",
+      "Permanent"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 113,
+    "question": "Highest Court in a State?",
+    "options": [
+      "SC",
+      "HC",
+      "District Court",
+      "Tehsil Court"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 114,
+    "question": "Where is the Supreme Court?",
+    "options": [
+      "Mumbai",
+      "Delhi",
+      "Kolkata",
+      "Chennai"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 115,
+    "question": "Can SC judges be removed easily?",
+    "options": [
+      "Yes",
+      "No",
+      "Only by PM",
+      "Only by CJI"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 116,
+    "question": "Retirement age of SC judges?",
+    "options": [
+      "60",
+      "62",
+      "65",
+      "70"
+    ],
+    "correctIndex": 2,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 117,
+    "question": "Who interprets laws?",
+    "options": [
+      "Legislature",
+      "Executive",
+      "Judiciary",
+      "Press"
+    ],
+    "correctIndex": 2,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 118,
+    "question": "Protector of our rights?",
+    "options": [
+      "Police",
+      "Courts",
+      "Elections",
+      "Politicians"
+    ],
+    "correctIndex": 1,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 119,
+    "question": "First CJI of India?",
+    "options": [
+      "H.J. Kania",
+      "M.P. Sastri",
+      "Mehr Chand",
+      "B.K. Mukherjea"
+    ],
+    "correctIndex": 0,
+    "points": 5,
+    "difficulty": "Easy",
+    "category": "Judiciary"
   },
   {
     "id": 11,
-    "question": "Right to Equality is covered under which Articles?",
+    "question": "Right to Equality Articles?",
     "options": [
       "12–35",
       "14–18",
@@ -140,50 +416,54 @@
     ],
     "correctIndex": 1,
     "points": 4,
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "category": "Legislature"
   },
   {
     "id": 12,
     "question": "Which article abolished untouchability?",
     "options": [
-      "Article 14",
-      "Article 15",
-      "Article 17",
-      "Article 19"
+      "14",
+      "15",
+      "17",
+      "19"
     ],
     "correctIndex": 2,
     "points": 4,
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "category": "Legislature"
   },
   {
     "id": 13,
-    "question": "Which article provides for the Right to Constitutional Remedies?",
+    "question": "Article for Constitutional Remedies?",
     "options": [
-      "Article 19",
-      "Article 21",
-      "Article 32",
-      "Article 44"
+      "19",
+      "21",
+      "32",
+      "44"
     ],
     "correctIndex": 2,
     "points": 4,
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "category": "Judiciary"
   },
   {
     "id": 14,
-    "question": "Which part of the Constitution contains Fundamental Rights?",
+    "question": "Which part has Fundamental Rights?",
     "options": [
-      "Part II",
-      "Part III",
-      "Part IV",
-      "Part V"
+      "II",
+      "III",
+      "IV",
+      "V"
     ],
     "correctIndex": 1,
     "points": 4,
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "category": "Legislature"
   },
   {
     "id": 15,
-    "question": "In which year was the first amendment to the Indian Constitution made?",
+    "question": "First Amendment year?",
     "options": [
       "1950",
       "1951",
@@ -192,89 +472,362 @@
     ],
     "correctIndex": 1,
     "points": 4,
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "category": "Legislature"
   },
   {
     "id": 16,
-    "question": "Right to Education (Article 21A) was added by which amendment?",
+    "question": "RTE (21A) Amendment?",
     "options": [
-      "42nd Amendment",
-      "44th Amendment",
-      "86th Amendment",
-      "92nd Amendment"
+      "42nd",
+      "44th",
+      "86th",
+      "92nd"
     ],
     "correctIndex": 2,
     "points": 4,
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "category": "Legislature"
   },
   {
     "id": 17,
-    "question": "Who can declare a National Emergency in India?",
+    "question": "Who declares National Emergency?",
     "options": [
-      "The Prime Minister",
-      "The Supreme Court",
-      "The President",
-      "The Parliament"
+      "PM",
+      "SC",
+      "President",
+      "Parliament"
     ],
     "correctIndex": 2,
     "points": 4,
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "category": "Executive"
   },
   {
     "id": 18,
-    "question": "Fundamental Duties were added to the Constitution by which amendment?",
+    "question": "Fundamental Duties Amendment?",
     "options": [
-      "24th Amendment",
-      "42nd Amendment",
-      "44th Amendment",
-      "52nd Amendment"
+      "24th",
+      "42nd",
+      "44th",
+      "52nd"
     ],
     "correctIndex": 1,
     "points": 4,
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "category": "Legislature"
   },
   {
     "id": 19,
-    "question": "Who is the ex-officio Chairman of the Rajya Sabha?",
+    "question": "Ex-officio Chairman of Rajya Sabha?",
     "options": [
-      "The President",
-      "The Vice President",
-      "The Prime Minister",
-      "The Speaker"
+      "President",
+      "VP",
+      "PM",
+      "Speaker"
     ],
     "correctIndex": 1,
     "points": 4,
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "category": "Legislature"
   },
   {
     "id": 20,
-    "question": "The Directive Principles of State Policy are mentioned in:",
+    "question": "DPSP mention in which part?",
     "options": [
-      "Part III",
-      "Part IV",
-      "Part IVA",
-      "Part V"
+      "III",
+      "IV",
+      "IVA",
+      "V"
     ],
     "correctIndex": 1,
     "points": 4,
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 121,
+    "question": "Who appoints Solicitor General?",
+    "options": [
+      "PM",
+      "President",
+      "Speaker",
+      "CJI"
+    ],
+    "correctIndex": 1,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 122,
+    "question": "Article 72 talks about?",
+    "options": [
+      "Pardon power",
+      "PM appointment",
+      "Emergency",
+      "Elections"
+    ],
+    "correctIndex": 0,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 123,
+    "question": "Who is the Chairman of NITI Aayog?",
+    "options": [
+      "President",
+      "Finance Minister",
+      "Prime Minister",
+      "CJI"
+    ],
+    "correctIndex": 2,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 124,
+    "question": "Council of Ministers responsible to?",
+    "options": [
+      "President",
+      "Rajya Sabha",
+      "Lok Sabha",
+      "Public"
+    ],
+    "correctIndex": 2,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 125,
+    "question": "Who appoints judges of HC?",
+    "options": [
+      "Governor",
+      "CJI",
+      "President",
+      "CM"
+    ],
+    "correctIndex": 2,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 126,
+    "question": "Attorney General tenure?",
+    "options": [
+      "5 years",
+      "6 years",
+      "Fixed by PM",
+      "Not fixed"
+    ],
+    "correctIndex": 3,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 127,
+    "question": "Joint sitting of Parliament presided by?",
+    "options": [
+      "President",
+      "VP",
+      "Speaker",
+      "PM"
+    ],
+    "correctIndex": 2,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 128,
+    "question": "Quorum of a House?",
+    "options": [
+      "1/5",
+      "1/10",
+      "1/12",
+      "1/20"
+    ],
+    "correctIndex": 1,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 129,
+    "question": "Who summons Parliament?",
+    "options": [
+      "Speaker",
+      "PM",
+      "President",
+      "Minister"
+    ],
+    "correctIndex": 2,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 130,
+    "question": "Money Bill introduction?",
+    "options": [
+      "Rajya Sabha",
+      "Lok Sabha",
+      "Both",
+      "President's office"
+    ],
+    "correctIndex": 1,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 131,
+    "question": "Maximum strength of Lok Sabha?",
+    "options": [
+      "250",
+      "450",
+      "550",
+      "600"
+    ],
+    "correctIndex": 2,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 132,
+    "question": "Voting in Rajya Sabha by?",
+    "options": [
+      "Public",
+      "State Assemblies",
+      "Panchayats",
+      "Nominees"
+    ],
+    "correctIndex": 1,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 133,
+    "question": "Power to issue writs is in Articles?",
+    "options": [
+      "32 & 226",
+      "14 & 19",
+      "21 & 32",
+      "50 & 51"
+    ],
+    "correctIndex": 0,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 134,
+    "question": "HC judges retire at?",
+    "options": [
+      "60",
+      "62",
+      "65",
+      "68"
+    ],
+    "correctIndex": 1,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 135,
+    "question": "Original jurisdiction of SC Article?",
+    "options": [
+      "131",
+      "132",
+      "143",
+      "226"
+    ],
+    "correctIndex": 0,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 136,
+    "question": "Can SC review its own judgment?",
+    "options": [
+      "Yes",
+      "No",
+      "Only if PM wants",
+      "Only if CJI dies"
+    ],
+    "correctIndex": 0,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 137,
+    "question": "Advisory jurisdiction of SC Article?",
+    "options": [
+      "137",
+      "141",
+      "142",
+      "143"
+    ],
+    "correctIndex": 3,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 138,
+    "question": "Guardian of liberties?",
+    "options": [
+      "Police",
+      "Courts",
+      "Elections",
+      "Army"
+    ],
+    "correctIndex": 1,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 139,
+    "question": "Single Integrated Judiciary source?",
+    "options": [
+      "USA",
+      "UK",
+      "1935 Act",
+      "Ireland"
+    ],
+    "correctIndex": 2,
+    "points": 4,
+    "difficulty": "Medium",
+    "category": "Judiciary"
   },
   {
     "id": 21,
-    "question": "Which article guarantees Freedom of Speech?",
+    "question": "Art 19: Freedom of Speech?",
     "options": [
-      "Article 14",
-      "Article 19",
-      "Article 21",
-      "Article 32"
+      "14",
+      "19",
+      "21",
+      "32"
     ],
     "correctIndex": 1,
     "points": 6,
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "category": "Legislature"
   },
   {
     "id": 22,
-    "question": "The concept of 'Directive Principles' was borrowed from which country?",
+    "question": "DPSP borrowed from?",
     "options": [
       "USA",
       "UK",
@@ -283,37 +836,40 @@
     ],
     "correctIndex": 2,
     "points": 6,
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "category": "Legislature"
   },
   {
     "id": 23,
-    "question": "Which Supreme Court case established the 'Basic Structure Doctrine'?",
+    "question": "Basic Structure case?",
     "options": [
-      "Golaknath Case",
-      "Kesavananda Bharati Case",
-      "Minerva Mills Case",
-      "Maneka Gandhi Case"
+      "Golaknath",
+      "Keshavananda",
+      "Minerva",
+      "Maneka"
     ],
     "correctIndex": 1,
     "points": 6,
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "category": "Judiciary"
   },
   {
     "id": 24,
-    "question": "Article 360 deals with which type of emergency?",
+    "question": "Art 360 type of emergency?",
     "options": [
-      "National Emergency",
-      "State Emergency",
-      "Financial Emergency",
-      "Health Emergency"
+      "National",
+      "State",
+      "Financial",
+      "Health"
     ],
     "correctIndex": 2,
     "points": 6,
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "category": "Executive"
   },
   {
     "id": 25,
-    "question": "The 'Right to Property' was removed from Fundamental Rights by which amendment?",
+    "question": "Right to Property removed by?",
     "options": [
       "42nd",
       "44th",
@@ -322,24 +878,26 @@
     ],
     "correctIndex": 1,
     "points": 6,
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "category": "Legislature"
   },
   {
     "id": 26,
-    "question": "Which article deals with the Uniform Civil Code?",
+    "question": "Art 44: Uniform Civil Code?",
     "options": [
-      "Article 40",
-      "Article 44",
-      "Article 48",
-      "Article 51"
+      "40",
+      "44",
+      "48",
+      "51"
     ],
     "correctIndex": 1,
     "points": 6,
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "category": "Legislature"
   },
   {
     "id": 27,
-    "question": "How many members are nominated by the President to the Rajya Sabha?",
+    "question": "Members nominated to RS?",
     "options": [
       "2",
       "10",
@@ -348,45 +906,329 @@
     ],
     "correctIndex": 2,
     "points": 6,
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "category": "Legislature"
   },
   {
     "id": 28,
-    "question": "Which article allows the Parliament to amend the Constitution?",
+    "question": "Art 368: Amendment power?",
     "options": [
-      "Article 352",
-      "Article 360",
-      "Article 368",
-      "Article 370"
+      "352",
+      "360",
+      "368",
+      "370"
     ],
     "correctIndex": 2,
     "points": 6,
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "category": "Legislature"
   },
   {
     "id": 29,
-    "question": "The procedure for the impeachment of the President is in which Article?",
+    "question": "President impeachment Article?",
     "options": [
-      "Article 52",
-      "Article 61",
-      "Article 72",
-      "Article 74"
+      "52",
+      "61",
+      "72",
+      "74"
     ],
     "correctIndex": 1,
     "points": 6,
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "category": "Executive"
   },
   {
     "id": 30,
-    "question": "Who was the Chairman of the Drafting Committee?",
+    "question": "Chairman of Drafting Committee?",
     "options": [
-      "Dr. Rajendra Prasad",
-      "Dr. B.R. Ambedkar",
-      "B.N. Rau",
-      "Alladi Krishnaswamy Iyer"
+      "Prasad",
+      "Ambedkar",
+      "Rau",
+      "Krishnaswamy"
     ],
     "correctIndex": 1,
     "points": 6,
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 141,
+    "question": "Doctrine of Pleasure Article?",
+    "options": [
+      "310",
+      "311",
+      "312",
+      "315"
+    ],
+    "correctIndex": 0,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 142,
+    "question": "Governor removal grounds?",
+    "options": [
+      "Misbehavior",
+      "PM wish",
+      "Pleasure of President",
+      "Constitutional violation"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 143,
+    "question": "Article 352 addition of 'Cabinet'?",
+    "options": [
+      "42nd",
+      "44th",
+      "73rd",
+      "86th"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 144,
+    "question": "Pocket Veto is based on?",
+    "options": [
+      "Art 111",
+      "Silence",
+      "Art 123",
+      "Custom"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 145,
+    "question": "Controller of Contingency Fund?",
+    "options": [
+      "PM",
+      "Finance Minister",
+      "President",
+      "CAG"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 146,
+    "question": "Who initiates President impeachment?",
+    "options": [
+      "LS",
+      "RS",
+      "Either House",
+      "Joint Session"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 147,
+    "question": "Anti-defection is in Schedule?",
+    "options": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 148,
+    "question": "Power of RS to create All India Services?",
+    "options": [
+      "249",
+      "312",
+      "368",
+      "315"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 149,
+    "question": "Art 248 residuary powers with?",
+    "options": [
+      "States",
+      "Union",
+      "Both",
+      "None"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 150,
+    "question": "Special session of Parliament summon?",
+    "options": [
+      "Speaker",
+      "PM",
+      "President",
+      "VP"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 151,
+    "question": "Joint sitting not for?",
+    "options": [
+      "Money Bill",
+      "Amendment Bill",
+      "Both",
+      "Ordinary Bill"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 152,
+    "question": "Who is the custodian of the Constitution?",
+    "options": [
+      "President",
+      "Parliament",
+      "Supreme Court",
+      "People"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 153,
+    "question": "Art 141 preecedents binding on?",
+    "options": [
+      "SC",
+      "All courts in India",
+      "Only HCs",
+      "Only District courts"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 154,
+    "question": "Art 142 Complete Justice?",
+    "options": [
+      "137",
+      "141",
+      "142",
+      "143"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 155,
+    "question": "Power to increase SC judges?",
+    "options": [
+      "President",
+      "CJI",
+      "Parliament",
+      "Law Ministry"
+    ],
+    "correctIndex": 2,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 156,
+    "question": "SLP is which article?",
+    "options": [
+      "132",
+      "136",
+      "137",
+      "143"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 157,
+    "question": "Rule of Law is basic structure in case?",
+    "options": [
+      "Keshavananda",
+      "Indira Gandhi v. Raj Narain",
+      "Minerva Mills",
+      "Waman Rao"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 158,
+    "question": "Court of Record is Art?",
+    "options": [
+      "124",
+      "129",
+      "131",
+      "132"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 159,
+    "question": "Due Process vs Procedure Established case?",
+    "options": [
+      "Maneka Gandhi",
+      "Gopalan",
+      "Karan",
+      "Vishaka"
+    ],
+    "correctIndex": 0,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 160,
+    "question": "Epistolary jurisdiction refers to?",
+    "options": [
+      "Writs",
+      "PIL via letters",
+      "Appeals",
+      "Reviews"
+    ],
+    "correctIndex": 1,
+    "points": 6,
+    "difficulty": "Hard",
+    "category": "Judiciary"
   }
 ]

@@ -130,6 +130,253 @@
         "category": "Legislature"
     },
     {
+        "id": "cq-101",
+        "question": "Who is the Constitutional Head of the State government?",
+        "options": [
+            "Chief Minister",
+            "Governor",
+            "President",
+            "High Court Judge"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Easy",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-102",
+        "question": "Who appoints the Governor of a State?",
+        "options": [
+            "President",
+            "Prime Minister",
+            "Chief Minister",
+            "Chief Justice of India"
+        ],
+        "correctIndex": 0,
+        "difficulty": "Easy",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-103",
+        "question": "What is the minimum age to become the President of India?",
+        "options": [
+            "25 years",
+            "30 years",
+            "35 years",
+            "40 years"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Easy",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-104",
+        "question": "Who is the head of the Union Council of Ministers?",
+        "options": [
+            "President",
+            "Prime Minister",
+            "Speaker",
+            "Vice President"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Easy",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-105",
+        "question": "Who administers oath to the State Prime Minister (Chief Minister)?",
+        "options": [
+            "President",
+            "Governor",
+            "High Court Judge",
+            "Speaker"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Easy",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-106",
+        "question": "How many members does the President nominate to Lok Sabha (defunct)?",
+        "options": [
+            "0",
+            "2",
+            "12",
+            "5"
+        ],
+        "correctIndex": 0,
+        "difficulty": "Easy",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-107",
+        "question": "Total members in Rajya Sabha are?",
+        "options": [
+            "245",
+            "250",
+            "233",
+            "238"
+        ],
+        "correctIndex": 0,
+        "difficulty": "Easy",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-108",
+        "question": "The Upper House of State Legislature is?",
+        "options": [
+            "Legislative Assembly",
+            "Legislative Council",
+            "Gram Sabha",
+            "Zila Parishad"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Easy",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-109",
+        "question": "Who is the Chairman of Rajya Sabha?",
+        "options": [
+            "President",
+            "Vice President",
+            "Speaker",
+            "Prime Minister"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Easy",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-110",
+        "question": "Minimum age for Rajya Sabha is?",
+        "options": [
+            "25",
+            "30",
+            "35",
+            "18"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Easy",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-111",
+        "question": "How many houses are there in Indian Parliament?",
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Easy",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-112",
+        "question": "Duration of Rajya Sabha members' term?",
+        "options": [
+            "5 years",
+            "6 years",
+            "2 years",
+            "Permanent"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Easy",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-113",
+        "question": "Symbol of Justice in India?",
+        "options": [
+            "Scales",
+            "Sword",
+            "Book",
+            "Flag"
+        ],
+        "correctIndex": 0,
+        "difficulty": "Easy",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-114",
+        "question": "Where is the High Court of Kerala?",
+        "options": [
+            "Thiruvananthapuram",
+            "Kochi",
+            "Kozhikode",
+            "Kannur"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Easy",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-115",
+        "question": "Who protects Fundamental Rights?",
+        "options": [
+            "Police",
+            "Politicians",
+            "Courts",
+            "Elections"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Easy",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-116",
+        "question": "Is Judiciary independent in India?",
+        "options": [
+            "Yes",
+            "No",
+            "Partially",
+            "Only in states"
+        ],
+        "correctIndex": 0,
+        "difficulty": "Easy",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-117",
+        "question": "Who maintains law and order?",
+        "options": [
+            "Judiciary",
+            "Executive",
+            "Legislature",
+            "Press"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Easy",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-118",
+        "question": "Highest judicial body in a district?",
+        "options": [
+            "District Court",
+            "High Court",
+            "Supreme Court",
+            "Munsiff Court"
+        ],
+        "correctIndex": 0,
+        "difficulty": "Easy",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-119",
+        "question": "Can Supreme Court review Parliament laws?",
+        "options": [
+            "Yes",
+            "No",
+            "Only some",
+            "Only if PM asks"
+        ],
+        "correctIndex": 0,
+        "difficulty": "Easy",
+        "category": "Judiciary"
+    },
+    {
         "id": "cq-11",
         "question": "Under which Article can the President seek the opinion of the Supreme Court?",
         "options": [
@@ -235,7 +482,7 @@
     },
     {
         "id": "cq-19",
-        "question": "A person must have been a High Court judge for at least how many years to become a Supreme Court judge?",
+        "question": "How many years of HC judge experience needed for SC?",
         "options": [
             "5 years",
             "7 years",
@@ -258,6 +505,253 @@
         "correctIndex": 2,
         "difficulty": "Medium",
         "category": "Legislature"
+    },
+    {
+        "id": "cq-121",
+        "question": "The Attorney General holds office during pleasure of?",
+        "options": [
+            "PM",
+            "Parliament",
+            "President",
+            "CJI"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Medium",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-122",
+        "question": "Who is the head of the State Executive?",
+        "options": [
+            "CM",
+            "Governor",
+            "President",
+            "High Court Judge"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Medium",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-123",
+        "question": "Who appoints the Chief Election Commissioner?",
+        "options": [
+            "PM",
+            "President",
+            "Speaker",
+            "CJI"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Medium",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-124",
+        "question": "Can the Governor pardon a death sentence?",
+        "options": [
+            "Yes",
+            "No",
+            "Only if CM asks",
+            "Only in some states"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Medium",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-125",
+        "question": "Who is the legal advisor to the State Government?",
+        "options": [
+            "Attorney General",
+            "Advocate General",
+            "Solicitor General",
+            "Law Minister"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Medium",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-126",
+        "question": "Who allocates portfolios among ministers?",
+        "options": [
+            "President",
+            "Prime Minister",
+            "Speaker",
+            "Cabinet Secretary"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Medium",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-127",
+        "question": "Who decides if a bill is a Money Bill?",
+        "options": [
+            "PM",
+            "President",
+            "Speaker",
+            "Finance Minister"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Medium",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-128",
+        "question": "Max strength of Legislative Assembly?",
+        "options": [
+            "250",
+            "400",
+            "500",
+            "550"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Medium",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-129",
+        "question": "Which house has power over the Union Budget?",
+        "options": [
+            "Rajya Sabha",
+            "Lok Sabha",
+            "Both equally",
+            "President"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Medium",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-130",
+        "question": "Who votes in the election of the Vice President?",
+        "options": [
+            "Only Lok Sabha",
+            "Only Rajya Sabha",
+            "Both Houses",
+            "Parliament and State Assemblies"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Medium",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-131",
+        "question": "The quorum for Parliament is?",
+        "options": [
+            "1/5",
+            "1/10",
+            "1/8",
+            "1/6"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Medium",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-132",
+        "question": "Adjournment motion is used to?",
+        "options": [
+            "Dismiss gov",
+            "Discuss urgent matter",
+            "Stop bill",
+            "Close session"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Medium",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-133",
+        "question": "Who is the advisor to the President on legal matters?",
+        "options": [
+            "CJI",
+            "Law Minister",
+            "Attorney General",
+            "PM"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Medium",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-134",
+        "question": "High Court judges retire at what age?",
+        "options": [
+            "60",
+            "62",
+            "65",
+            "68"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Medium",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-135",
+        "question": "Who can establish a common High Court?",
+        "options": [
+            "President",
+            "Parliament",
+            "Governors",
+            "CJI"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Medium",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-136",
+        "question": "Can High Court issue writs for other legal rights?",
+        "options": [
+            "Yes",
+            "No",
+            "Only for states",
+            "Only in emergencies"
+        ],
+        "correctIndex": 0,
+        "difficulty": "Medium",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-137",
+        "question": "Who pays the salary of SC judges?",
+        "options": [
+            "PM office",
+            "Consolidated Fund of India",
+            "Law Ministry",
+            "President's fund"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Medium",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-138",
+        "question": "Power of SC to review its judgment is article?",
+        "options": [
+            "137",
+            "141",
+            "142",
+            "143"
+        ],
+        "correctIndex": 0,
+        "difficulty": "Medium",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-139",
+        "question": "What is 'Original Jurisdiction'?",
+        "options": [
+            "Appeals",
+            "Direct cases",
+            "Legal advice",
+            "Review"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Medium",
+        "category": "Judiciary"
     },
     {
         "id": "cq-21",
@@ -287,7 +781,7 @@
     },
     {
         "id": "cq-23",
-        "question": "Under which Article can the Supreme Court issue writs for enforcement of Fundamental Rights?",
+        "question": "Under which Article can SC issue writs for Fundamental Rights?",
         "options": [
             "Article 14",
             "Article 19",
@@ -313,12 +807,12 @@
     },
     {
         "id": "cq-25",
-        "question": "Which case established that the Parliament cannot amend the 'Basic Structure' of the Constitution?",
+        "question": "Which case established the 'Basic Structure' doctrine?",
         "options": [
-            "Golaknath Case",
-            "Minerva Mills Case",
-            "Kesavananda Bharati Case",
-            "Maneka Gandhi Case"
+            "Golaknath",
+            "Minerva Mills",
+            "Kesavananda Bharati",
+            "Maneka Gandhi"
         ],
         "correctIndex": 2,
         "difficulty": "Hard",
@@ -326,7 +820,7 @@
     },
     {
         "id": "cq-26",
-        "question": "What is the minimum number of members required for a quorum in Lok Sabha?",
+        "question": "What is the minimum quorum in Lok Sabha?",
         "options": [
             "1/5th",
             "1/10th",
@@ -339,7 +833,7 @@
     },
     {
         "id": "cq-27",
-        "question": "Who defines the boundaries of constituencies for elections in India?",
+        "question": "Who defines the boundaries of constituencies?",
         "options": [
             "Parliament",
             "Election Commission",
@@ -352,10 +846,10 @@
     },
     {
         "id": "cq-28",
-        "question": "The power of judicial review in India is based on:",
+        "question": "Judicial review in India is based on:",
         "options": [
             "Rule of Law",
-            "Due process of law",
+            "Due process",
             "Procedure established by law",
             "Precedents"
         ],
@@ -365,7 +859,7 @@
     },
     {
         "id": "cq-29",
-        "question": "The 'Question Hour' in Parliament usually takes place at:",
+        "question": "The 'Question Hour' usually takes place at:",
         "options": [
             "10 AM",
             "11 AM",
@@ -378,15 +872,275 @@
     },
     {
         "id": "cq-30",
-        "question": "In the absence of both President and Vice-President, who performs the duties of the President?",
+        "question": "Who performs duties if Pres and Vice-Pres both absent?",
         "options": [
-            "Speaker of Lok Sabha",
-            "Chief Justice of India",
-            "Prime Minister",
-            "Senior-most Governor"
+            "Speaker",
+            "CJI",
+            "PM",
+            "Senior Governor"
         ],
         "correctIndex": 1,
         "difficulty": "Hard",
         "category": "Executive"
+    },
+    {
+        "id": "cq-141",
+        "question": "Article 352 deals with?",
+        "options": [
+            "State Emergency",
+            "National Emergency",
+            "Financial Emergency",
+            "President's rule"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-142",
+        "question": "Cabinet word was added by which amendment?",
+        "options": [
+            "42nd",
+            "44th",
+            "52nd",
+            "61st"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-143",
+        "question": "Who appoints the Chairman of Finance Commission?",
+        "options": [
+            "PM",
+            "President",
+            "Speaker",
+            "Parliament"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-144",
+        "question": "Article 74 provides for?",
+        "options": [
+            "President",
+            "Council of Ministers",
+            "Attorney General",
+            "PM"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-145",
+        "question": "Doctrine of Pleasure is Article?",
+        "options": [
+            "300",
+            "310",
+            "311",
+            "312"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-146",
+        "question": "Who is the custodian of the Contingency Fund of India?",
+        "options": [
+            "PM",
+            "Finance Minister",
+            "President",
+            "RBI Governor"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Hard",
+        "category": "Executive"
+    },
+    {
+        "id": "cq-147",
+        "question": "Which house can create New All India Services?",
+        "options": [
+            "Lok Sabha",
+            "Rajya Sabha",
+            "Both",
+            "President"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-148",
+        "question": "Residuary powers of legislation are with?",
+        "options": [
+            "States",
+            "Union",
+            "Both",
+            "None"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-149",
+        "question": "Article 249 empowers Parliament to legislate on?",
+        "options": [
+            "Union List",
+            "State List",
+            "Concurrent List",
+            "Global Affairs"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-150",
+        "question": "Who decides on the disqualification of MPs on grounds of defection?",
+        "options": [
+            "President",
+            "Election Commission",
+            "Speaker/Chairman",
+            "SC"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Hard",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-151",
+        "question": "Anti-defection law is in which schedule?",
+        "options": [
+            "8th",
+            "9th",
+            "10th",
+            "11th"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Hard",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-152",
+        "question": "Joint sitting not allowed for which bill?",
+        "options": [
+            "Ordinary",
+            "Money",
+            "Constitution Amendment",
+            "Both Money & Amendment"
+        ],
+        "correctIndex": 3,
+        "difficulty": "Hard",
+        "category": "Legislature"
+    },
+    {
+        "id": "cq-153",
+        "question": "Concept of Curative Petition case?",
+        "options": [
+            "Golaknath",
+            "Maneka",
+            "Rupa Hurra",
+            "Shah Bano"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Hard",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-154",
+        "question": "Article 142 deals with?",
+        "options": [
+            "Precedents",
+            "Complete Justice",
+            "Review",
+            "Advice"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-155",
+        "question": "Judges of SC are removed on grounds of?",
+        "options": [
+            "Corruption",
+            "Proven misbehavior/incapacity",
+            "Violation of constitution",
+            "PM's advice"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-156",
+        "question": "Which article says SC is a Court of Record?",
+        "options": [
+            "124",
+            "129",
+            "131",
+            "136"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-157",
+        "question": "Special Leave Petition (SLP) is Article?",
+        "options": [
+            "132",
+            "133",
+            "136",
+            "137"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Hard",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-158",
+        "question": "Who can transfer a High Court judge?",
+        "options": [
+            "CJI",
+            "President after consulting CJI",
+            "Governor",
+            "Law Minister"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-159",
+        "question": "Which case clarified 'Due Process' in Article 21?",
+        "options": [
+            "Gopalan",
+            "Maneka",
+            "Karan Singh",
+            "X vs Y"
+        ],
+        "correctIndex": 1,
+        "difficulty": "Hard",
+        "category": "Judiciary"
+    },
+    {
+        "id": "cq-160",
+        "question": "Judiciary separation from Executive is Article?",
+        "options": [
+            "44",
+            "48",
+            "50",
+            "51"
+        ],
+        "correctIndex": 2,
+        "difficulty": "Hard",
+        "category": "Judiciary"
     }
 ]

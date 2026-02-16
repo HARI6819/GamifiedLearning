@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./RightsDutiesClimb.css";
 import questions from "./data/arti.json";
 import Navbar from "./Navbar";
@@ -42,6 +43,7 @@ const DiceIcon = ({ num }) => {
 
 export default function RightsDutiesClimb() {
   const { t } = useLanguage();
+  const location = useLocation();
   const [position, setPosition] = useState(1);
   const [dice, setDice] = useState(0);
   const [moves, setMoves] = useState(0);
@@ -108,8 +110,16 @@ export default function RightsDutiesClimb() {
       // 3. Delay before showing question
       setTimeout(() => {
         setIsActiveDice(false);
-        // Filter questions by difficulty
-        const diffQuestions = questions.filter(q => q.difficulty === difficulty);
+        const queryParams = new URLSearchParams(location.search);
+        const selectedCat = queryParams.get("category");
+
+        // Filter questions by difficulty and category
+        let diffQuestions = questions.filter(q => q.difficulty === difficulty);
+
+        if (selectedCat) {
+          diffQuestions = diffQuestions.filter(q => q.category === selectedCat);
+        }
+
         const pool = diffQuestions.length > 0 ? diffQuestions : questions;
         const randomQ = pool[Math.floor(Math.random() * pool.length)];
 

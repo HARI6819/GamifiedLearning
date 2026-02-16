@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useLanguage } from "./context/LanguageContext";
 import "./ArticleMatch.css";
 import Navbar from "./Navbar";
@@ -14,6 +15,7 @@ const diffConfig = {
 
 export default function ArticleMatch() {
     const { t } = useLanguage();
+    const location = useLocation();
     const [gameState, setGameState] = useState("start"); // start, playing, won
     const [difficulty, setDifficulty] = useState("Easy"); // Easy, Medium, Hard
     const [unlockedLevels, setUnlockedLevels] = useState(["Easy"]);
@@ -59,9 +61,16 @@ export default function ArticleMatch() {
     }, []);
 
     const startGame = () => {
+        const queryParams = new URLSearchParams(location.search);
+        const selectedCat = queryParams.get("category");
         const pairCount = diffConfig[difficulty].pairs;
-        // Filter pairs by difficulty or just take from current pool
-        const allPairs = t.articleMatch.pairs.filter(p => p.difficulty === difficulty);
+
+        // Filter pairs by difficulty and category
+        let allPairs = t.articleMatch.pairs.filter(p => p.difficulty === difficulty);
+
+        if (selectedCat) {
+            allPairs = allPairs.filter(p => p.category === selectedCat);
+        }
 
         // If not enough pairs for specific difficulty, fallback to all but warn
         const pool = allPairs.length >= pairCount ? allPairs : t.articleMatch.pairs;

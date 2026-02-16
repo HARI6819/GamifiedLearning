@@ -21,6 +21,7 @@ export default function Games() {
   });
   const [loading, setLoading] = useState(true);
   const [articlesRead, setArticlesRead] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const mainRef = useRef(null);
   const lockRef = useRef(null);
 
@@ -157,6 +158,18 @@ export default function Games() {
                 )}
               </div>
             </div>
+
+            <div className="category-filter-bar">
+              {["All", "Legislature", "Executive", "Judiciary"].map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`category-btn ${selectedCategory === cat ? "active" : ""}`}
+                >
+                  {cat === "All" ? t.learn.filters.all : (cat === "Legislature" ? t.home.pillars.legislature.title : (cat === "Executive" ? t.home.pillars.executive.title : t.home.pillars.judiciary.title))}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="game-grid1">
@@ -184,7 +197,7 @@ export default function Games() {
                     <span className="time1">
                       <Clock size={14} /> {game.time}
                     </span>
-                    <Link to={game.link} className="play-btn1">
+                    <Link to={`${game.link}${selectedCategory !== "All" ? `?category=${selectedCategory}` : ""}`} className="play-btn1">
                       {t.home.gameFormats.playNow} <ArrowRight size={16} />
                     </Link>
                   </div>
