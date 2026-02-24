@@ -28,9 +28,9 @@ export default function JusticeJury() {
         const fetchProgress = async () => {
             const email = localStorage.getItem('userEmail');
             const isGuest = localStorage.getItem('isGuest') === 'true';
-            
+
             console.log("🔒 JusticeJury - Checking lock mechanism:", { email, isGuest });
-            
+
             if (!email || isGuest) {
                 // Guest mode: only Easy level available
                 console.log("👤 Guest mode - only Easy available");
@@ -43,7 +43,7 @@ export default function JusticeJury() {
                 });
                 if (res.ok) {
                     const data = await res.json();
-                    
+
                     // Store debug data for display
                     setDebugData({
                         email,
@@ -51,27 +51,27 @@ export default function JusticeJury() {
                         completedLevels: data.completedLevels || {},
                         timestamp: new Date().toLocaleTimeString()
                     });
-                    
+
                     // Check JUSTICE JURY's own completed levels to unlock progression
                     const justiceJuryLevels = data.completedLevels?.justiceJury || [];
-                    
+
                     console.log("📊 Raw completed levels from backend:", JSON.stringify(data.completedLevels, null, 2));
                     console.log("🎯 JusticeJury completed levels:", justiceJuryLevels);
-                    
+
                     const levels = ["Easy"];
-                    
+
                     // Medium unlocks when Easy is completed in Justice Jury
                     if (justiceJuryLevels.includes("Easy")) {
                         console.log("✅ Easy completed - unlocking Medium");
                         levels.push("Medium");
                     }
-                    
+
                     // Hard unlocks when Medium is completed in Justice Jury
                     if (justiceJuryLevels.includes("Medium")) {
                         console.log("✅✅ Medium completed - unlocking Hard");
                         levels.push("Hard");
                     }
-                    
+
                     console.log("🔓 FINAL Unlocked levels for Justice Jury:", levels);
                     setUnlockedLevels(levels);
                 }
@@ -132,7 +132,7 @@ export default function JusticeJury() {
 
         const currentCase = cases[currentCaseIndex];
         const isCorrect = selectedChoice === currentCase.correctChoice;
-        
+
         // Calculate accuracy components
         const scoreChanges = {
             answerMatch: isCorrect ? 40 : 0,
@@ -182,9 +182,9 @@ export default function JusticeJury() {
     const updateProgress = async () => {
         const email = localStorage.getItem('userEmail');
         const isGuest = localStorage.getItem('isGuest') === 'true';
-        
+
         console.log("Updating progress for:", { email, isGuest, score, difficulty });
-        
+
         if (!email || isGuest) {
             console.log("Guest mode or no email - skipping progress update");
             return;
@@ -242,31 +242,29 @@ export default function JusticeJury() {
                 </header>
 
                 {gameState === "start" && (
-                    <div className="start-screen">
-                        <div className="icon-wrapper">⚖️</div>
+                    <div className="start-screen-jj">
+                        <div className="icon-wrapper-jj"><Scale size={40} /></div>
                         <h2>{t.justiceJury.startTitle}</h2>
-                        <p style={{ fontFamily: "sans-serif", marginBottom: "20px", fontSize: ".9rem", maxWidth: "80%", color: "grey" }}>
-                            {t.justiceJury.startDesc}
-                        </p>
-                        <h4>{t.justiceJury.difficulty}</h4>
-                        <div className="diff-grid1">
+                        <p>{t.justiceJury.startDesc}</p>
+
+                        <h4 style={{ fontFamily: "'Times New Roman', serif", fontWeight: 700, marginTop: '1rem' }}>{t.justiceJury.difficulty}</h4>
+                        <div className="diff-grid-jj">
                             {['Easy', 'Medium', 'Hard'].map((level) => {
                                 const isUnlocked = unlockedLevels.includes(level);
                                 return (
                                     <button
                                         key={level}
-                                        className={`diff-btn ${difficulty === level ? 'active' : ''} ${!isUnlocked && level !== 'Easy' ? 'locked' : ''}`}
                                         onClick={() => isUnlocked && setDifficulty(level)}
-                                        disabled={!isUnlocked && level !== 'Easy'}
+                                        className={`diff-btn-jj ${difficulty === level ? 'active' : ''}`}
+                                        disabled={!isUnlocked}
                                     >
-                                        {!isUnlocked && level !== 'Easy' ? <Lock size={16} /> : ''}
-                                        <span>{level}</span>
+                                        {!isUnlocked ? <Lock size={14} /> : (difficulty !== level && <LockOpen size={14} style={{ opacity: 0.7 }} />)}
+                                        {t.common?.difficulty?.[level] || level}
                                     </button>
                                 );
                             })}
                         </div>
-                        
-                        <button onClick={startGame} className="play-btn">
+                        <button className="start-btn-jj" onClick={startGame}>
                             {t.justiceJury.startButton}
                         </button>
                     </div>
