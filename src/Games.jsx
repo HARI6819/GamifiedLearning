@@ -23,6 +23,9 @@ export default function Games() {
   const [loading, setLoading] = useState(true);
   const [articlesRead, setArticlesRead] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [activeDot, setActiveDot] = useState(null);
+  const [hoveredGame, setHoveredGame] = useState(null);
+  const [clickedGame, setClickedGame] = useState(null);
   const mainRef = useRef(null);
   const lockRef = useRef(null);
 
@@ -69,18 +72,6 @@ export default function Games() {
     fetchProgress();
   }, []);
 
-  useEffect(() => {
-    if (!loading && articlesRead < 10) {
-      const timer = setTimeout(() => {
-        if (lockRef.current) {
-          lockRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      }, 300); // Slightly longer delay to ensure full render
-      return () => clearTimeout(timer);
-    }
-  }, [loading, articlesRead]);
-
-
   const gamesList = [
     { id: "chakra", title: t.home.gameFormats.games.wheel.title, desc: t.home.gameFormats.games.wheel.desc, time: t.home.gameFormats.games.wheel.time, icon: "🎡", color: "saffron", link: "/games/spin-wheel" },
     { id: "constitutionCards", title: t.home.gameFormats.games.cards.title, desc: t.home.gameFormats.games.cards.desc, time: t.home.gameFormats.games.cards.time, icon: "🃏", color: "green", link: "/games/quiz-cards" },
@@ -111,6 +102,10 @@ export default function Games() {
     console.log(`   isEasyDone: ${isEasyDone} | isMediumDone: ${isMediumDone}`);
     console.log(`   => Global Tier: ${getGlobalLevel()}`);
   }, [completedLevels]);
+
+  const toggleDot = (id) => {
+    setActiveDot(prev => prev === id ? null : id);
+  };
 
   const getGlobalLevel = () => {
     if (isMediumDone) return "Hard";
@@ -204,11 +199,27 @@ export default function Games() {
                       ></div>
                     </div>
                     <div className="games-status">
-                      {primaryGames.map(g => (
-                        <div key={g} className={`game-dot ${completedLevels[g]?.includes("Easy") ? "completed" : "pending"}`} title={g}>
-                          {completedLevels[g]?.includes("Easy") ? "✓" : "○"}
-                        </div>
-                      ))}
+                      {primaryGames.map(g => {
+                        const gameTitle = gamesList.find(x => x.id === g)?.title || g;
+                        return (
+                          <div
+                            key={g}
+                            className={`game-dot ${completedLevels[g]?.includes("Easy") ? "completed" : "pending"}`}
+                            style={clickedGame === g ? { background: 'green' } : {}}
+                            onMouseEnter={() => setHoveredGame(g)}
+                            onMouseLeave={() => setHoveredGame(null)}
+                            onClick={() => setClickedGame(prev => prev === g ? null : g)}
+                          >
+                            {completedLevels[g]?.includes("Easy") ? "✓" : "○"}
+                            {hoveredGame === g && (
+                              <div className="game-dot-tooltip">
+                                {gameTitle}
+                              </div>
+                            )}
+                            
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 )}
@@ -227,11 +238,27 @@ export default function Games() {
                       ></div>
                     </div>
                     <div className="games-status">
-                      {primaryGames.map(g => (
-                        <div key={g} className={`game-dot ${completedLevels[g]?.includes("Medium") ? "completed" : "pending"}`} title={g}>
-                          {completedLevels[g]?.includes("Medium") ? "✓" : "○"}
-                        </div>
-                      ))}
+                      {primaryGames.map(g => {
+                        const gameTitle = gamesList.find(x => x.id === g)?.title || g;
+                        return (
+                          <div
+                            key={g}
+                            className={`game-dot ${completedLevels[g]?.includes("Medium") ? "completed" : "pending"}`}
+                            style={clickedGame === g ? { background: 'green' } : {}}
+                            onMouseEnter={() => setHoveredGame(g)}
+                            onMouseLeave={() => setHoveredGame(null)}
+                            onClick={() => setClickedGame(prev => prev === g ? null : g)}
+                          >
+                            {completedLevels[g]?.includes("Medium") ? "✓" : "○"}
+                            {hoveredGame === g && (
+                              <div className="game-dot-tooltip">
+                                {gameTitle}
+                              </div>
+                            )}
+                            
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 )}
