@@ -23,7 +23,9 @@ const ProgressPage = () => {
       quiz: 0,
       sort: 0,
       timeline: 0,
-      crossroads: 0
+      crossroads: 0,
+      justiceJury: 0,
+      reverseHangman: 0
     }
   });
   const [leaderboard, setLeaderboard] = useState([]);
@@ -42,6 +44,8 @@ const ProgressPage = () => {
     { id: 'chakra', label: t.home.gameFormats.games.wheel.title, icon: '🎡' },
     { id: 'sort', label: t.constitutionalSort.title, icon: '⫽' },
     { id: 'crossroads', label: t.constitutionalCrossroads.title, icon: '🧩' },
+    { id: 'justiceJury', label: t.justiceJury.title, icon: '⚖️' },
+    { id: 'reverseHangman', label: t.reverseHangman.title, icon: '🛡️' },
   ];
 
   const fetchLeaderboard = async (type) => {
@@ -100,6 +104,8 @@ const ProgressPage = () => {
               sort: statsData.pointsBreakdown.sort || 0,
               timeline: statsData.pointsBreakdown.timeline || 0,
               crossroads: statsData.pointsBreakdown.crossroads || 0,
+              justiceJury: statsData.pointsBreakdown.justiceJury || 0,
+              reverseHangman: statsData.pointsBreakdown.reverseHangman || 0,
             } : {
               articleMatch: 0,
               rightsDutiesClimb: 0,
@@ -110,6 +116,8 @@ const ProgressPage = () => {
               sort: 0,
               timeline: 0,
               crossroads: 0,
+              justiceJury: 0,
+              reverseHangman: 0,
             }
           });
         }
@@ -473,6 +481,27 @@ const ProgressPage = () => {
                     <span className="item-points">+{stats.pointsBreakdown.crossroads}</span>
                   </div>
 
+                  <div className="summary-item">
+                    <div className="item-info">
+                      <span className="item-icon">👨‍⚖️</span>
+                      <div>
+                        <h4>{t.justiceJury.title}</h4>
+                        <p>Justice Jury - Constitutional Judge</p>
+                      </div>
+                    </div>
+                    <span className="item-points">+{stats.pointsBreakdown.justiceJury}</span>
+                  </div>
+
+                  <div className="summary-item">
+                    <div className="item-info">
+                      <span className="item-icon">🛡️</span>
+                      <div>
+                        <h4>{t.reverseHangman.title}</h4>
+                        <p>{t.reverseHangman.descp}</p>
+                      </div>
+                    </div>
+                    <span className="item-points">+{stats.pointsBreakdown.reverseHangman}</span>
+                  </div>
 
                 </div>
               </div>

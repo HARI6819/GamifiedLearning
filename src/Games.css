@@ -64,6 +64,171 @@
   color: var(--text-secondary);
 }
 
+/* Tier Progress */
+.progression-status {
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.current-tier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.current-tier strong {
+  font-size: 1.3rem;
+}
+
+.unlock-hint {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.tier-progress {
+  width: 100%;
+  max-width: 500px;
+}
+
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dark .progress-section {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dark .progress-label {
+  color: var(--text-color);
+}
+
+.progress-count {
+  font-size: 0.9rem;
+  background: #f1f5f9;
+  padding: 4px 12px;
+  border-radius: 999px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.dark .progress-count {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.dark .progress-bar {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.5s ease;
+}
+
+.games-status {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+.game-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 2px solid #e2e8f0;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dark .game-dot {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.game-dot.completed {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.game-dot.pending {
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+.dark .game-dot.pending {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.game-dot:hover {
+  transform: scale(1.1);
+}
+
+.progress-section.completed-all {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-color: #96e6a1;
+}
+
+.dark .progress-section.completed-all {
+  background: linear-gradient(135deg, rgba(212, 252, 121, 0.5) 0%, rgba(150, 230, 161, 0.5) 100%);
+  color: var(--text-color);
+  border-color: rgba(150, 230, 161, 0.5);
+}
+
 .category-filter-bar {
   display: flex;
   justify-content: center;
@@ -222,7 +387,7 @@
   margin-top: 15px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 20px;
 }
 
 .current-tier {

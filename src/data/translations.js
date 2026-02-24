@@ -1119,6 +1119,688 @@ export const translations = {
                 ]
             }
         },
+        justiceJury: {
+            title: "Justice Jury",
+            desc: "Hear arguments from both sides and deliver constitutional judgments!",
+            startTitle: "Constitutional Judge",
+            startDesc: "Listen to two lawyers present opposing arguments on real constitutional cases. After hearing both sides, make your judgment based on constitutional principles and award points!",
+            difficulty: "Select Difficulty",
+            startButton: "Become Judge",
+            time: "15-20 mins",
+            keyPoints: "Key Points",
+            hearLawyer2: "Hear Lawyer 2",
+            heardBoth: "Make Decision",
+            makeDecision: "What is your judgment?",
+            submitDecision: "Submit Judgment",
+            correctDecision: "Excellent Judgment!",
+            incorrectDecision: "Judgment Incorrect",
+            correctAnswer: "Correct Judgment",
+            explanation: "Constitutional Explanation",
+            relevantArticles: "Relevant Articles",
+            scoringBreakdown: "Scoring Breakdown",
+            answerMatch: "Answer Match",
+            reasoning: "Reasoning Quality",
+            constitutionalKnowledge: "Constitutional Knowledge",
+            precedent: "Precedent Understanding",
+            nextCase: "Next Case",
+            seeResults: "See Results",
+            gameComplete: "Judgment Completed!",
+            accuracy: "Accuracy",
+            totalPoints: "Total Points",
+            correctAnswers: "Cases Won",
+            accuracyBreakdown: "Your Judicial Performance",
+            excellent: "Exemplary! Your constitutional understanding is outstanding. You have excellent command over constitutional law!",
+            good: "Well done! You have a strong grasp of constitutional principles. Continue learning for expert-level mastery!",
+            fair: "Good! You understand the basics but missed some nuances. Review constitutional articles and judicial precedents.",
+            needsImprovement: "Keep learning! Constitutional law has many interpretations. Study more cases and principles.",
+            backToGames: "Back to Games",
+            playAgain: "Play Again",
+            of: "of",
+            cases: {
+                Easy: [
+                    {
+                        id: "e1",
+                        title: "Freedom of Speech v/s Public Order",
+                        category: "Fundamental Rights",
+                        context: "A tech startup founder publishes a post on social media criticizing government policies. The government orders the removal of the post claiming it incites public disorder.",
+                        lawyer1: {
+                            name: "Advocate Sharma",
+                            side: "For Founder",
+                            argument: "Your Honor, Article 19(1)(a) guarantees freedom of speech and expression to every citizen. The state cannot arbitrarily censor speech. The post is a legitimate criticism, not an incitement to violence.",
+                            points: [
+                                "Article 19(1)(a) protects freedom of speech",
+                                "Criticism of government is protected speech",
+                                "No incitement to violence in the post",
+                                "Censorship requires clear and present danger"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Verma",
+                            side: "For Government",
+                            argument: "Your Honor, while freedom is important, Article 19(2) allows reasonable restrictions for public order. The post has already received 100,000 shares and is causing communal tensions. The state has the duty to maintain peace.",
+                            points: [
+                                "Article 19(2) allows restrictions for public order",
+                                "Post caused communal tensions",
+                                "Government has duty to protect citizens",
+                                "Reasonable restrictions are constitutional"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Founder Wins", description: "Speech is protected unless direct incitement", icon: "✍️" },
+                            { id: "lawyer2", label: "Government Wins", description: "Post must be removed for public order", icon: "🛡️" },
+                            { id: "partial", label: "Partial/Compromise", description: "Post removed but no legal action against founder", icon: "⚖️" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "The Supreme Court has held that restrictions on Article 19 are valid if they are in the interest of public order and are reasonable. In this case, removing the post (which is causing tensions) is a reasonable restriction, but taking legal action against the founder would be excessive since the speech itself is political criticism, not direct incitement.",
+                        relevantArticles: [
+                            { number: "19(1)(a)", title: "Right to Freedom of Speech and Expression" },
+                            { number: "19(2)", title: "Reasonable Restrictions on Freedom of Speech" }
+                        ]
+                    },
+                    {
+                        id: "e2",
+                        title: "Right to Life v/s Medical Ethics",
+                        category: "Right to Life",
+                        context: "A terminally ill patient with unbearable pain requests to end their life. The hospital refuses citing medical ethics and law against euthanasia.",
+                        lawyer1: {
+                            name: "Advocate Singh",
+                            side: "For Patient/Family",
+                            argument: "Your Honor, Article 21 protects the right to life, which includes the right to live with dignity. Forcing someone through unbearable suffering violates their dignity and personal autonomy.",
+                            points: [
+                                "Article 21 includes right to die with dignity",
+                                "Right to personal autonomy",
+                                "Prevention of cruel suffering",
+                                "Medical opinion confirms no recovery"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Kapoor",
+                            side: "For Medical Ethics",
+                            argument: "Your Honor, while dignity is important, the right to life means protecting life itself. Doctors took oath to preserve life. Passive euthanasia with palliative care is the constitutional way.",
+                            points: [
+                                "Medical ethical duty to preserve life",
+                                "Passive euthanasia is constitutional",
+                                "Palliative care can reduce suffering",
+                                "Slippery slope risk of active euthanasia"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Allow Euthanasia", description: "Right to dignity includes right to choose death", icon: "💔" },
+                            { id: "lawyer2", label: "Disallow Euthanasia", description: "Only passive euthanasia and palliative care allowed", icon: "❤️" },
+                            { id: "partial", label: "Passive Euthanasia", description: "Allow withdrawal of life support with consent", icon: "🤝" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "The Indian Supreme Court in the Aruna Shanbaug case held that while active euthanasia is not allowed, passive euthanasia (withdrawing life support) is constitutionally valid when approved by medical board and family. This balances the right to life with the right to dignity.",
+                        relevantArticles: [
+                            { number: "21", title: "Protection of Life and Personal Liberty" },
+                            { number: "20(1)", title: "Protection in Respect of Conviction for Offences" }
+                        ]
+                    },
+                    {
+                        id: "e3",
+                        title: "Equality v/s Reservations",
+                        category: "Equality",
+                        context: "A student from general category fails to get admission to medical school due to reservation of seats for SC/ST students, despite better marks.",
+                        lawyer1: {
+                            name: "Advocate Desai",
+                            side: "Against Reservation",
+                            argument: "Your Honor, Article 14 guarantees equality before law. Denying admission based on caste, even with good marks, violates equality. Merit should be the only criterion.",
+                            points: [
+                                "Article 14 guarantees equality",
+                                "Merit-based selection is fair",
+                                "Discrimination on either side is wrong",
+                                "Modern India should ignore caste"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Rao",
+                            side: "For Reservation",
+                            argument: "Your Honor, equality also means removing historical inequalities. Articles 15 and 16 specifically allow affirmative action. Centuries of discrimination cannot be ignored.",
+                            points: [
+                                "Article 15 allows affirmative action",
+                                "Social justice requires remedying discrimination",
+                                "Reservations create inclusive society",
+                                "Backward classes need special help"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Reject Reservations", description: "Merit alone should decide", icon: "📊" },
+                            { id: "lawyer2", label: "Uphold Reservations", description: "Reservations are constitutional", icon: "🤲" },
+                            { id: "partial", label: "Reservations with Creamy Layer", description: "Reservations minus rich backward class families", icon: "📈" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "The Supreme Court has consistently held that while reservations are constitutional under Articles 15 and 16 for social justice, they must exclude the creamy layer (economically well-off members from backward classes). This balances social justice with individual merit.",
+                        relevantArticles: [
+                            { number: "14", title: "Equality Before Law" },
+                            { number: "15", title: "Prohibition of Discrimination on Grounds of Religion, etc." },
+                            { number: "16", title: "Equality of Opportunity in Matters of Public Employment" }
+                        ]
+                    },
+                    {
+                        id: "e4",
+                        title: "Religious Freedom v/s Uniform Civil Code",
+                        category: "Religious Freedom",
+                        context: "A Muslim woman seeks divorce through civil court procedures instead of following personal religious law. Religious leaders oppose this as interference in religious matters.",
+                        lawyer1: {
+                            name: "Advocate Das",
+                            side: "For Uniform Civil Code",
+                            argument: "Your Honor, Articles 14 and 21 ensure equality. All citizens regardless of religion should have equal rights in marriage and divorce. The Constitution envisions a Uniform Civil Code.",
+                            points: [
+                                "Article 14 requires equality",
+                                "All citizens should have same rights",
+                                "Uniform Civil Code strengthens unity",
+                                "Women get equal protections"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Khan",
+                            side: "For Religious Freedom",
+                            argument: "Your Honor, Articles 25 and 26 protect religious freedom. Personal laws of different religions are part of cultural identity. Not everyone wants a uniform code.",
+                            points: [
+                                "Article 25-26 protect religious freedom",
+                                "Cultural pluralism is constitutional",
+                                "Communities can manage personal affairs",
+                                "Minorities' interests must be protected"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Uniform Code Mandatory", description: "All must follow common civil law", icon: "⚖️" },
+                            { id: "lawyer2", label: "Personal Law Only", description: "Religious law applies exclusively", icon: "📖" },
+                            { id: "partial", label: "Choice Available", description: "Person can choose civil or religious law", icon: "🔀" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "Indian constitutional practice allows individuals to choose between personal laws and civil laws in many matters. The Supreme Court has held that while a Uniform Civil Code is aspirational, currently individuals retain the right to opt for their personal law or civil law procedures.",
+                        relevantArticles: [
+                            { number: "25", title: "Freedom of Conscience and Free Profession, Practice and Propagation of Religion" },
+                            { number: "26", title: "Freedom to Manage Religious Affairs" },
+                            { number: "44", title: "Uniform Civil Code (Directive Principle)" }
+                        ]
+                    },
+                    {
+                        id: "e5",
+                        title: "Right to Work v/s Child Labor Laws",
+                        category: "Right to Work",
+                        context: "A 13-year-old child from poor family works in a small textile factory to support family income. The factory owner argues the child needs to work for family survival.",
+                        lawyer1: {
+                            name: "Advocate Ghosh",
+                            side: "For Child Work",
+                            argument: "Your Honor, the article 39(f) says children from poor families deserve special help. The child is learning a skill and family needs income. Complete ban hardens their situation.",
+                            points: [
+                                "Family is below poverty line",
+                                "Child learns valuable skills",
+                                "Income helps family survival",
+                                "Strict enforcement increases hardship"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Mathew",
+                            side: "Against Child Labor",
+                            argument: "Your Honor, Article 24 absolutely prohibits child labor. No exception for poverty is permitted. Childhood is for education and development, not exploitation.",
+                            points: [
+                                "Article 24 has absolute prohibition",
+                                "Children need education",
+                                "Health risks in factories",
+                                "State has duty to provide alternative support"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Allow Necessity Child Work", description: "Child work allowed for survival", icon: "💰" },
+                            { id: "lawyer2", label: "Strict Prohibition", description: "No child labor under any circumstance", icon: "✋" },
+                            { id: "partial", label: "Light Work + Education", description: "Part-time light work with mandatory schooling", icon: "📚" }
+                        ],
+                        correctChoice: "lawyer2",
+                        explanation: "Article 24 provides absolute prohibition on child labor in factories and hazardous industries. However, Article 39 directs state to provide free education. The constitutional solution is to compensate families through social security, education, and employment for parents, not to permit child labor.",
+                        relevantArticles: [
+                            { number: "24", title: "Prohibition of Employment of Children in Factories, Etc." },
+                            { number: "39", title: "Directive Principles - Protection of Children and Youth" },
+                            { number: "45", title: "Right to Free and Compulsory Education" }
+                        ]
+                    }
+                ],
+                Medium: [
+                    {
+                        id: "m1",
+                        title: "Right to Privacy v/s National Security",
+                        category: "Privacy Rights",
+                        context: "Government installs surveillance cameras and monitors all internet traffic claiming it's necessary to prevent terrorism. Privacy activists challenge this.",
+                        lawyer1: {
+                            name: "Advocate Saxena",
+                            side: "For Privacy",
+                            argument: "Your Honor, the Supreme Court in K.S. Puttaswamy case recognized privacy as fundamental right under Article 21. Blanket surveillance violates privacy even for national security.",
+                            points: [
+                                "Privacy is fundamental right under Article 21",
+                                "Surveillance must be proportionate",
+                                "No blanket monitoring allowed",
+                                "Chilling effect on free expression"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Bhat",
+                            side: "For Surveillance",
+                            argument: "Your Honor, national security overrides individual privacy temporarily. Terrorism is existential threat. Targeted, authorized surveillance with court approval is constitutional.",
+                            points: [
+                                "National security is fundamental duty",
+                                "Reasonable surveillance is constitutional",
+                                "Court authorization ensures accountability",
+                                "Terrorism requires preventive measures"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "No Surveillance", description: "Privacy right supremacy", icon: "🔒" },
+                            { id: "lawyer2", label: "Blanket Surveillance", description: "Monitor all for security", icon: "👁️" },
+                            { id: "partial", label: "Targeted with Warrants", description: "Specific surveillance with judicial oversight", icon: "🔍" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "The Supreme Court in K.S. Puttaswamy case (2017) recognized privacy as fundamental right but allowed reasonable restrictions for public interest. Targeted surveillance with proper warrants, judicial oversight, and proportionality principle is constitutional.",
+                        relevantArticles: [
+                            { number: "21", title: "Protection of Life and Personal Liberty" },
+                            { number: "19(1)(d)", title: "Freedom to Move Freely" },
+                            { number: "19(2)", title: "Reasonable Restrictions" }
+                        ]
+                    },
+                    {
+                        id: "m2",
+                        title: "Judicial Overreach v/s Social Justice",
+                        category: "Separation of Powers",
+                        context: "Supreme Court directs construction of missing children's homes across all states, allocating budgets and executing implementation, a role normally done by executive.",
+                        lawyer1: {
+                            name: "Advocate Pandit",
+                            side: "For Judicial Restraint",
+                            argument: "Your Honor, this violates separation of powers. Article 50 ensures independent judiciary but overseeing implementation is executive function. Courts should only adjudicate, not govern.",
+                            points: [
+                                "Separation of powers principle violated",
+                                "Budget allocation is executive function",
+                                "Implementation requires expertise",
+                                "Judicial overreach undermines democracy"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Mehra",
+                            side: "For Judicial Activism",
+                            argument: "Your Honor, where executive fails to protect children's rights, courts must step in. Article 142 allows creative remedies. This is public interest litigation ensuring justice.",
+                            points: [
+                                "Executive failure requires judicial intervention",
+                                "Article 142 empowers Supreme Court for justice",
+                                "Public interest litigation is constitutional",
+                                "Children's fundamental rights require protection"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Cease Judicial Overreach", description: "Court withdraws and lets executive act", icon: "⚖️" },
+                            { id: "lawyer2", label: "Judicial Activism Valid", description: "Court continues implementation", icon: "⛔" },
+                            { id: "partial", label: "Monitoring Role", description: "Court monitors executive, doesn't implement", icon: "📋" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "The Supreme Court has evolved a balanced approach in cases like Vishal Jeet v. Union of India. Courts can monitor and direct but shouldn't directly implement/execute. They give directions and monitor compliance through follow-up hearings while executive implements.",
+                        relevantArticles: [
+                            { number: "50", title: "Separation of Powers" },
+                            { number: "142", title: "Supreme Court's Discretionary Jurisdiction" },
+                            { number: "13", title: "Interpretation of Constitution" }
+                        ]
+                    },
+                    {
+                        id: "m3",
+                        title: "Right to Occupy Land v/s Squatter Rights",
+                        category: "Property Rights",
+                        context: "Homeless families have occupied unused government land for 3 years without permission, building shanties. Government wants possession back; squatters claim right to livelihood.",
+                        lawyer1: {
+                            name: "Advocate Nair",
+                            side: "For Squatter Rights",
+                            argument: "Your Honor, Article 21 guarantees right to livelihood and shelter. After occupying unused land for years, these families have right to continue. Society is not harmed.",
+                            points: [
+                                "Right to livelihood under Article 21",
+                                "Right to shelter is basic need",
+                                "Land was unused/wasted",
+                                "Long occupation implies acceptance"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Iyer",
+                            side: "For Government",
+                            argument: "Your Honor, the land is government property. Permitting squatting sets dangerous precedent and encourages illegal occupation. Government can use land for public projects.",
+                            points: [
+                                "Property rights must be respected",
+                                "Illegal occupation cannot acquire rights",
+                                "Land needed for public projects",
+                                "Rule of law requires procedure"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Squatters Get Land", description: "Livelihood trumps property ownership", icon: "🏠" },
+                            { id: "lawyer2", label: "Evict Squatters", description: "Government retakes land", icon: "⚡" },
+                            { id: "partial", label: "Rehabilitation First", description: "Provide alternative housing before eviction", icon: "🤝" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "Courts have held that while government property rights cannot be ignored, eviction must be done humanely. Government must provide alternative accommodation or rehabilitation facilities, not just evict them to streets, to fulfill Article 21 obligations.",
+                        relevantArticles: [
+                            { number: "21", title: "Protection of Life and Personal Liberty" },
+                            { number: "25", title: "Right to Reside" },
+                            { number: "300A", title: "Protection of Property" }
+                        ]
+                    },
+                    {
+                        id: "m4",
+                        title: "Free Speech v/s Hate Speech",
+                        category: "Fundamental Rights",
+                        context: "A politician makes inflammatory speech against a religious community on social media, claiming political expression. Community members face violence.",
+                        lawyer1: {
+                            name: "Advocate Gupta",
+                            side: "For Free Speech",
+                            argument: "Your Honor, political speech gets highest protection under Article 19(1)(a). People need to hear diverse views even if offensive. Prosecution chills democratic discourse.",
+                            points: [
+                                "Article 19(1)(a) protects political speech",
+                                "Even offensive speech is protected",
+                                "Criminal prosecution is overreach",
+                                "Voters should judge speech"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Reddy",
+                            side: "Against Hate Speech",
+                            argument: "Your Honor, speech that incites communal violence is not protected. This speech directly caused violence. Article 19(2) allows restrictions on speech that promotes hatred.",
+                            points: [
+                                "Speech caused communal violence",
+                                "Hate speech restrictions are constitutional",
+                                "Rights of group must be protected",
+                                "Direct incitement is not protected"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Allow Political Speech", description: "Let all political speech continue", icon: "🗣️" },
+                            { id: "lawyer2", label: "Ban Hate Speech", description: "Prosecute for inciting violence", icon: "⛔" },
+                            { id: "partial", label: "Context-Based", description: "Restrict only speech directly causing violence", icon: "⚠️" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "The Supreme Court in Dr. Ambedkar v. Maratha Mukti Sangram Samiti held that speech causing direct, incitement to violence can be restricted under Article 19(2). However, mere offensive or critical speech continues to enjoy protection.",
+                        relevantArticles: [
+                            { number: "19(1)(a)", title: "Freedom of Speech and Expression" },
+                            { number: "19(2)", title: "Reasonable Restrictions" },
+                            { number: "153", title: "Promoting Enmity on Grounds of Religion" }
+                        ]
+                    },
+                    {
+                        id: "m5",
+                        title: "Minority Rights v/s Majority Rule",
+                        category: "Minority Rights",
+                        context: "A state where 60% are Hindu wants to remove 40% Muslim minority language from school curriculum claiming 'national integration'. Minorities oppose this.",
+                        lawyer1: {
+                            name: "Advocate Kulkarni",
+                            side: "For Majority Choice",
+                            argument: "Your Honor, majority of state residents want national language. Maintaining minority language increases division. National integration requires common language.",
+                            points: [
+                                "Majority opinion should decide",
+                                "Common language unites",
+                                "Minorities can learn independently",
+                                "State resources are limited"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Karim",
+                            side: "For Minority Rights",
+                            argument: "Your Honor, Article 30 protects minority right to conserve language and culture. India's strength is diversity. Majority cannot destroy minority identity.",
+                            points: [
+                                "Article 30 protects minority rights",
+                                "Constitutional pluralism recognized",
+                                "Language is identity marker",
+                                "Minorities need safeguards"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Majority Decides", description: "Remove minority language", icon: "🗳️" },
+                            { id: "lawyer2", label: "Protect Minorities", description: "Continue minority language", icon: "🛡️" },
+                            { id: "partial", label: "Optional Choice", description: "Offer minority language as optional subject", icon: "✏️" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "The constitution protects minority rights to education and language under Articles 29-30, but also recognizes state resources are limited. The balanced approach is to make minority language education optional or available in certain schools rather than mandatory for all.",
+                        relevantArticles: [
+                            { number: "29", title: "Protection of Interests of Minorities" },
+                            { number: "30", title: "Right of Minorities to Establish Educational Institutions" },
+                            { number: "350A", title: "Facility for Instruction in Mother-Tongue" }
+                        ]
+                    }
+                ],
+                Hard: [
+                    {
+                        id: "h1",
+                        title: "Hindutva v/s Secular State",
+                        category: "Constitutional Identity",
+                        context: "Government makes constitutional amendment to declare India as 'Hindu Nation' where Hindu values are supreme in state policy. Minorities challenge this.",
+                        lawyer1: {
+                            name: "Advocate Trivedi",
+                            side: "For Amendment",
+                            argument: "Your Honor, India's civilization is primarily Hindu. Acknowledging this civilizational foundation is not against minorities. India can be culturally Hindu while legally secular.",
+                            points: [
+                                "Hindu civilization influenced India",
+                                "Acknowledging roots strengthens culture",
+                                "Can be culturally Hindu, legally secular",
+                                "Majority culture deserves recognition"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Chatterji",
+                            side: "Against Amendment",
+                            argument: "Your Honor, Article 25 guarantees secular state. Declaring nation as Hindu violates Article 15, 16 (no discrimination). This violates basic structure doctrine.",
+                            points: [
+                                "Basic structure: secular state is immutable",
+                                "Article 15, 16 prohibit discrimination",
+                                "Minorities become second-class citizens",
+                                "Violates spirit of Constitution"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Amendment Valid", description: "Hindu nation declaration allowed", icon: "🕉️" },
+                            { id: "lawyer2", label: "Amendment Invalid", description: "Violates basic structure", icon: "📜" },
+                            { id: "partial", label: "Only Cultural Recognition", description: "Cultural identity without legal implication", icon: "🎭" }
+                        ],
+                        correctChoice: "lawyer2",
+                        explanation: "In S.R. Bommai v. Union of India (1994), Supreme Court held that secularism is part of basic structure of the Constitution and cannot be amended. Article 368 cannot be used to change the secular character of Constitution. However, cultural recognition without legal discrimination might be permissible.",
+                        relevantArticles: [
+                            { number: "25", title: "Freedom of Religion" },
+                            { number: "15", title: "Prohibition of Discrimination" },
+                            { number: "368", title: "Amendment of Constitution - Basic Structure Doctrine" }
+                        ]
+                    },
+                    {
+                        id: "h2",
+                        title: "Parliament Sovereignty v/s Judicial Review",
+                        category: "Constitutional Powers",
+                        context: "Parliament passes law that court believes violates rights. Parliament claims its laws cannot be questioned by courts under Article 121. Citizen challenges law.",
+                        lawyer1: {
+                            name: "Advocate Dixit",
+                            side: "For Parliamentary Supremacy",
+                            argument: "Your Honor, Article 121 forbids courts from questioning proceedings of Parliament. Democracy means people's representatives decide, not judges. Over-questioning makes courts superlegislatures.",
+                            points: [
+                                "Article 121 protects legislative process",
+                                "Parliament represents people",
+                                "Parliamentary procedures are inviolable",
+                                "Excess judicial review weakens democracy"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Mishra",
+                            side: "For Judicial Review",
+                            argument: "Your Honor, Marbury v. Madison principle and Article 13 establish judicial review. Laws violating Constitution are ultra vires. Courts must protect constitutional rights.",
+                            points: [
+                                "Article 13 makes unconstitutional acts void",
+                                "Judicial review is constitutional duty",
+                                "Rights need judicial protection",
+                                "Constitution is supreme law"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Parliament Supreme", description: "No judicial review of laws", icon: "🏛️" },
+                            { id: "lawyer2", label: "Judicial Review Absolute", description: "Courts overturn any unconstitutional law", icon: "⚖️" },
+                            { id: "partial", label: "Balanced Review", description: "Review with deference to Parliament's judgment", icon: "🤝" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "The Constitution recognizes both parliamentary sovereignty and judicial review. Courts exercise 'reasonable review' - giving deference to Parliament while ensuring laws don't violate fundamental rights or basic structure. Article 121 prevents questioning of legislative process, not the constitutionality of laws.",
+                        relevantArticles: [
+                            { number: "13", title: "Laws Inconsistent with Constitution to be Void" },
+                            { number: "121", title: "Protection of Members of Legislatures" },
+                            { number: "32", title: "Right to Constitutional Remedies" }
+                        ]
+                    },
+                    {
+                        id: "h3",
+                        title: "Federalism v/s National Emergency",
+                        category: "Center-State Relations",
+                        context: "During national emergency, central government seizes state revenue, dismisses state elections, and suspends state autonomy claiming national security. States resist.",
+                        lawyer1: {
+                            name: "Advocate Agarwal",
+                            side: "For Strong Center",
+                            argument: "Your Honor, Article 352 emergency powers are necessary for national survival. During emergency, center must have overwhelming power to manage crisis. State autonomy is secondary to national unity.",
+                            points: [
+                                "Emergency requires unified command",
+                                "Center has national security responsibility",
+                                "Article 352 authorizes emergency powers",
+                                "Limited duration emergency is justified"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Rao",
+                            side: "For Federalism",
+                            argument: "Your Honor, federalism is basic structure. Even emergency cannot destroy it. Center can act but must respect state boundaries and restore normalcy quickly.",
+                            points: [
+                                "Federalism is basic structure",
+                                "Emergency powers have limits",
+                                "State autonomy is fundamental",
+                                "Emergency cannot be indefinite"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Absolute Central Control", description: "Center has full power during emergency", icon: "👑" },
+                            { id: "lawyer2", label: "Federalism Protected", description: "State autonomy cannot be suspended", icon: "🏛️" },
+                            { id: "partial", label: "Limited Emergency Powers", description: "Center acts with safeguards and sunset clause", icon: "⚖️" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "After the 1976 Emergency (Indira Gandhi), constitutional amendments added checks on emergency powers. Emergency is allowed but with prescribed duration, limitations, and parliamentary review. The 44th Amendment limited emergency to 6 months, establishing that even national emergency has constitutional limits.",
+                        relevantArticles: [
+                            { number: "352", title: "Proclamation of National Emergency" },
+                            { number: "356", title: "Failure of Constitutional Machinery in States" },
+                            { number: "44", title: "Amendment (44th) - Emergency Safeguards" }
+                        ]
+                    },
+                    {
+                        id: "h4",
+                        title: "Corporate Rights v/s Public Interest",
+                        category: "Economic Justice",
+                        context: "A pharmaceutical company's patent prevents production of cheap generic drugs for dying cancer patients. Company claims property and patent rights; patients claim right to life.",
+                        lawyer1: {
+                            name: "Advocate Kulshrestha",
+                            side: "For Patent Rights",
+                            argument: "Your Honor, patent is intellectual property protected under Articles 19(1)(g) and Article 300A. Patent holders invest billions in R&D. Compulsory licensing is economically unjust.",
+                            points: [
+                                "Patent is property right",
+                                "Protects innovation investment",
+                                "Right to profit from innovation",
+                                "Compulsory licensing is confiscation"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Sharma",
+                            side: "For Public Interest",
+                            argument: "Your Honor, Article 21 (right to life) is more fundamental than patent rights. State can issue compulsory license for public health. Lives are more valuable than profit.",
+                            points: [
+                                "Right to life is supreme",
+                                "Public health is state obligation",
+                                "Compulsory license is constitutional",
+                                "TRIPS allows exceptions for public health"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Enforce Patent Strictly", description: "No exception to patent rights", icon: "💼" },
+                            { id: "lawyer2", label: "Compulsory License", description: "State issues license for public health", icon: "💊" },
+                            { id: "partial", label: "Royalty-Based License", description: "License issued with reasonable royalty", icon: "🤝" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "The Constitution and TRIPS Agreement allow compulsory licensing for public health emergency. The Bayer v. Natco case (Supreme Court of India) held that compulsory license for affordable generic production at reasonable royalty is constitutional, balancing patent rights with public health.",
+                        relevantArticles: [
+                            { number: "21", title: "Right to Life and Health" },
+                            { number: "19(1)(g)", title: "Right to Property and Trade" },
+                            { number: "47", title: "State's Duty to Improve Public Health" }
+                        ]
+                    },
+                    {
+                        id: "h5",
+                        title: "Right to Protest v/s National Security",
+                        category: "Complex Rights Balance",
+                        context: "Environmental activists organize protests near defense installations against nuclear waste dumping. Government arrests them under AFSPA (Armed Forces Special Powers Act).",
+                        lawyer1: {
+                            name: "Advocate Bhattacharya",
+                            side: "For Protesters",
+                            argument: "Your Honor, Article 19(1)(a-c) guarantee rights to protest and assembly. AFSPA (1958) violates fundamental rights by giving military immunity and vague charges.",
+                            points: [
+                                "Right to protest is fundamental",
+                                "Peaceful assembly is protected",
+                                "AFSPA creates impunity",
+                                "Environmental concerns are valid"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "Advocate Singh",
+                            side: "For National Security",
+                            argument: "Your Honor, defense installations need security. AFSPA areas face insurgency. National security cannot be compromised by protests. Reasonable restrictions under Article 19(3-4) apply.",
+                            points: [
+                                "National security needs protection",
+                                "Defense installations have security needs",
+                                "Restrictions are reasonable",
+                                "AFSPA applies in emergency zones"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "Repeal AFSPA", description: "Fundamental rights supremacy", icon: "⛔" },
+                            { id: "lawyer2", label: "AFSPA Valid", description: "Security overrides protest rights", icon: "🛡️" },
+                            { id: "partial", label: "AFSPA with Safeguards", description: "AFSPA valid but with judicial oversight", icon: "👨‍⚖️" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "In Naga People's Movement for Human Rights v. Union of India (1998), Supreme Court upheld AFSPA but imposed judicial oversight. The Court held that while AFSPA is valid, misuse can be challenged and immunity is not absolute. Officers must follow constitutional values.",
+                        relevantArticles: [
+                            { number: "19", title: "Freedom to Speech, Assembly, Association" },
+                            { number: "33", title: "Power of Parliament to Modify Rights in Armed Forces" },
+                            { number: "352", title: "When Can AFSPA Apply" }
+                        ]
+                    }
+                ]
+            }
+        },
+        reverseHangman: {
+            title: "Constitutional Rescue",
+            desc: "Guess the constitutional terms before the time runs out and save the character!",
+            descp: "Guess the constitutional terms",
+            time: "Time",
+            score: "Score",
+            difficulty: "Select Difficulty",
+            startGame: "Start Game",
+            gameOver: "Game Over!",
+            wellDone: "Well Done!",
+            timeOut: "Time's Up!",
+            saved: "You saved the character!",
+            failed: "You failed to save the character!",
+            playAgain: "Play Again",
+            words: {
+                Easy: [
+                    { word: "PARLIAMENT", hint: "The supreme legislative body of India", category: "Legislature" },
+                    { word: "PRESIDENT", hint: "The head of the state", category: "Executive" },
+                    { word: "JUDICIARY", hint: "The system of courts that interprets and applies the law", category: "Judiciary" },
+                    { word: "CABINET", hint: "A group of senior ministers", category: "Executive" },
+                    { word: "BILL", hint: "A draft of a proposed law", category: "Legislature" }
+                ],
+                Medium: [
+                    { word: "CONSTITUTION", hint: "The supreme law of India", category: "Both" },
+                    { word: "AMENDMENT", hint: "A minor change or addition designed to improve a text, piece of legislation, etc.", category: "Legislature" },
+                    { word: "ORDINANCE", hint: "A law promulgated by the President of India", category: "Executive" },
+                    { word: "JURISDICTION", hint: "The official power to make legal decisions and judgments", category: "Judiciary" },
+                    { word: "IMPEACHMENT", hint: "A charge of misconduct made against the holder of a public office", category: "Legislature" }
+                ],
+                Hard: [
+                    { word: "PROROGATION", hint: "The action of discontinuing a session of a parliament or other legislative assembly without dissolving it", category: "Legislature" },
+                    { word: "MANDAMUS", hint: "A judicial writ issued as a command to an inferior court or ordering a person to perform a public or statutory duty", category: "Judiciary" },
+                    { word: "CERTIORARI", hint: "A writ or order by which a higher court reviews a decision of a lower court", category: "Judiciary" },
+                    { word: "QUORUM", hint: "The minimum number of members of an assembly or society that must be present at any of its meetings to make the proceedings of that meeting valid", category: "Legislature" },
+                    { word: "FEDERALISM", hint: "The federal principle or system of government", category: "Both" }
+                ]
+            }
+        }
     },
     hi: {
         navbar: {
@@ -2322,7 +3004,689 @@ export const translations = {
                 ]
             }
         },
-    },
+        justiceJury: {
+            title: "न्याय जूरी",
+            desc: "दोनों पक्षों के तर्क सुनें और संवैधानिक निर्णय दें!",
+            startTitle: "संवैधानिक न्यायाधीश",
+            startDesc: "असली संवैधानिक मामलों पर दो वकीलों को विपरीत तर्क प्रस्तुत करते हुए सुनें। दोनों पक्षों को सुनने के बाद, संवैधानिक सिद्धांतों के आधार पर अपना निर्णय करें!",
+            difficulty: "कठिनाई चुनें",
+            startButton: "न्यायाधीश बनें",
+            time: "15-20 मिनट",
+            keyPoints: "मुख्य बिंदु",
+            hearLawyer2: "वकील 2 सुनें",
+            heardBoth: "निर्णय लें",
+            makeDecision: "आपका निर्णय क्या है?",
+            submitDecision: "निर्णय सबमिट करें",
+            correctDecision: "उत्कृष्ट निर्णय!",
+            incorrectDecision: "निर्णय गलत है",
+            correctAnswer: "सही निर्णय",
+            explanation: "संवैधानिक व्याख्या",
+            relevantArticles: "प्रासंगिक अनुच्छेद",
+            scoringBreakdown: "स्कोरिंग विवरण",
+            answerMatch: "उत्तर मिलान",
+            reasoning: "तर्क की गुणवत्ता",
+            constitutionalKnowledge: "संवैधानिक ज्ञान",
+            precedent: "पूर्वानुमान समझ",
+            nextCase: "अगला मामला",
+            seeResults: "परिणाम देखें",
+            gameComplete: "निर्णय पूर्ण!",
+            accuracy: "सटीकता",
+            totalPoints: "कुल अंक",
+            correctAnswers: "जीते गए मामले",
+            accuracyBreakdown: "आपका न्यायिक प्रदर्शन",
+            excellent: "अनुकरणीय! आपकी संवैधानिक समझ उत्कृष्ट है। आपके पास संवैधानिक कानून पर उत्कृष्ट नियंत्रण है!",
+            good: "शानदार! आपको संवैधानिक सिद्धांतों की गहरी समझ है। विशेषज्ञ-स्तर की महारत के लिए सीखना जारी रखें!",
+            fair: "बढ़िया! आप बुनियादी बातें समझते हैं लेकिन कुछ बारीकियों को मिस किया। संवैधानिक अनुच्छेदों और न्यायिक निर्णयों की समीक्षा करें।",
+            needsImprovement: "सीखते रहें! संवैधानिक कानून के कई व्याख्याएं हैं। अधिक मामलों और सिद्धांतों का अध्ययन करें।",
+            backToGames: "गेम्स पर वापस",
+            playAgain: "फिर से खेलें",
+            of: "का",
+            cases: {
+                Easy: [
+                    {
+                        id: "e1",
+                        title: "भाषण की स्वतंत्रता बनाम सार्वजनिक व्यवस्था",
+                        category: "मौलिक अधिकार",
+                        context: "एक तकनीकी स्टार्टअप संस्थापक सरकार की नीतियों की आलोचना करते हुए सोशल मीडिया पर एक पोस्ट प्रकाशित करता है। सरकार दावा करती है कि यह सार्वजनिक अव्यवस्था का कारण बनता है।",
+                        lawyer1: {
+                            name: "अधिवक्ता शर्मा",
+                            side: "संस्थापक के लिए",
+                            argument: "माननीय, अनुच्छेद 19(1)(a) प्रत्येक नागरिक को भाषण और अभिव्यक्ति की स्वतंत्रता की गारंटी देता है। राज्य मनमाने ढंग से भाषण को सेंसर नहीं कर सकता। यह पोस्ट सरकार की कानूनी आलोचना है, हिंसा का प्र煽न नहीं है।",
+                            points: [
+                                "अनुच्छेद 19(1)(a) भाषण की स्वतंत्रता की रक्षा करता है",
+                                "सरकार की आलोचना संरक्षित भाषण है",
+                                "पोस्ट में हिंसा का उद्देश्य नहीं है",
+                                "सेंसरशिप को स्पष्ट और तत्काल खतरे की आवश्यकता है"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता वर्मा",
+                            side: "सरकार के लिए",
+                            argument: "माननीय, जबकि स्वतंत्रता महत्वपूर्ण है, अनुच्छेद 19(2) सार्वजनिक व्यवस्था के लिए उचित प्रतिबंध की अनुमति देता है। पोस्ट को पहले से ही 100,000 शेयर मिल चुके हैं और यह सांप्रदायिक तनाव पैदा कर रहा है। राज्य को नागरिकों की रक्षा की जिम्मेदारी है।",
+                            points: [
+                                "अनुच्छेद 19(2) सार्वजनिक व्यवस्था के लिए प्रतिबंध देता है",
+                                "पोस्ट ने सांप्रदायिक तनाव पैदा किया है",
+                                "सरकार को नागरिकों को बचाने की जिम्मेदारी है",
+                                "उचित प्रतिबंध संवैधानिक हैं"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "संस्थापक जीतता है", description: "भाषण सुरक्षित है जब तक सीधी हिंसा न हो", icon: "✍️" },
+                            { id: "lawyer2", label: "सरकार जीतती है", description: "पोस्ट हटाई जानी चाहिए", icon: "🛡️" },
+                            { id: "partial", label: "आंशिक/समझौता", description: "पोस्ट हटाई जाए पर संस्थापक के खिलाफ कार्रवाई न हो", icon: "⚖️" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "भारतीय सर्वोच्च न्यायालय ने माना है कि अनुच्छेद 19 पर प्रतिबंध उचित हैं यदि सार्वजनिक व्यवस्था के हित में हों। इस मामले में, पोस्ट को हटाना (जो तनाव पैदा कर रहा है) उचित प्रतिबंध है, लेकिन संस्थापक के खिलाफ कानूनी कार्रवाई अत्यधिक है।",
+                        relevantArticles: [
+                            { number: "19(1)(a)", title: "भाषण और अभिव्यक्ति की स्वतंत्रता" },
+                            { number: "19(2)", title: "भाषण पर उचित प्रतिबंध" }
+                        ]
+                    },
+                    {
+                        id: "e2",
+                        title: "जीवन का अधिकार बनाम चिकित्सा नैतिकता",
+                        category: "जीवन का अधिकार",
+                        context: "एक असाध्य रोगी असहनीय पीड़ा में अपना जीवन समाप्त करना चाहता है। अस्पताल इनकार करता है।",
+                        lawyer1: {
+                            name: "अधिवक्ता सिंह",
+                            side: "रोगी/परिवार के लिए",
+                            argument: "माननीय, अनुच्छेद 21 जीवन का अधिकार देता है, जिसमें尊严के साथ जीने का अधिकार शामिल है। किसी को असहनीय पीड़ा में जबरदस्ती जीने के लिए मजबूर करना व्यक्तिगत स्वायत्तता का अतिक्रमण है।",
+                            points: [
+                                "अनुच्छेद 21 में गरिमा के साथ मरने का अधिकार है",
+                                "व्यक्तिगत स्वायत्तता का अधिकार",
+                                "क्रूर पीड़ा की रोकथाम",
+                                "चिकित्सा राय से कोई ठीक होने की संभावना नहीं है"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता कपूर",
+                            side: "चिकित्सा नैतिकता के लिए",
+                            argument: "माननीय, जबकि गरिमा महत्वपूर्ण है, जीवन का अधिकार जीवन की रक्षा करने का अर्थ है। डॉक्टरों ने शपथ ली है। निष्क्रिय यूथेनेशिया पैलिएटिव देखभाल के साथ संवैधानिक रास्ता है।",
+                            points: [
+                                "चिकित्सा नैतिक जीवन बचाने की कसम",
+                                "निष्क्रिय यूथेनेशिया संवैधानिक है",
+                                "पैलिएटिव देखभाल पीड़ा कम कर सकती है",
+                                "सक्रिय यूथेनेशिया का खिसकना खतरा"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "यूथेनेशिया अनुमति दें", description: "गरिमा में मरने का अधिकार है", icon: "💔" },
+                            { id: "lawyer2", label: "यूथेनेशिया अनुमति न दें", description: "केवल निष्क्रिय यूथेनेशिया और पैलिएटिव देखभाल", icon: "❤️" },
+                            { id: "partial", label: "निष्क्रिय यूथेनेशिया", description: "सहमति के साथ जीवन समर्थन हटाने की अनुमति", icon: "🤝" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "अरुणा शंभाग मामले में भारतीय सर्वोच्च न्यायालय ने माना कि सक्रिय यूथेनेशिया की अनुमति नहीं है, लेकिन निष्क्रिय यूथेनेशिया (चिकित्सा बोर्ड और परिवार की स्वीकृति के साथ जीवन समर्थन हटाना) संवैधानिक रूप से मान्य है।",
+                        relevantArticles: [
+                            { number: "21", title: "जीवन और व्यक्तिगत स्वतंत्रता की सुरक्षा" },
+                            { number: "20(1)", title: "अपराध के लिए दोषसिद्धि में संरक्षण" }
+                        ]
+                    },
+                    {
+                        id: "e3",
+                        title: "समानता बनाम आरक्षण",
+                        category: "समानता",
+                        context: "सामान्य श्रेणी का एक छात्र अनुसूचित जाति/जनजाति के लिए आरक्षित सीटों के कारण मेडिकल स्कूल में प्रवेश नहीं मिलता।",
+                        lawyer1: {
+                            name: "अधिवक्ता देसाई",
+                            side: "आरक्षण के विरुद्ध",
+                            argument: "माननीय, अनुच्छेद 14 सभी को कानून के समक्ष समानता की गारंटी देता है। जाति के आधार पर प्रवेश अस्वीकार करना, भले ही अच्छे अंकों के हों, समानता का उल्लंघन है। केवल योग्यता मानदंड होनी चाहिए।",
+                            points: [
+                                "अनुच्छेद 14 समानता की गारंटी देता है",
+                                "योग्यता-आधारित चयन न्यायसंगत है",
+                                "दोनों पक्षों से भेदभाव गलत है",
+                                "आधुनिक भारत को जाति को अनदेखा करना चाहिए"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता राव",
+                            side: "आरक्षण के लिए",
+                            argument: "माननीय, समानता का मतलब ऐतिहासिक असमानताओं को दूर करना भी है। अनुच्छेद 15 और 16 विशेष रूप से सकारात्मक कार्रवाई की अनुमति देते हैं। शताब्दी के भेदभाव को नजरअंदाज नहीं किया जा सकता।",
+                            points: [
+                                "अनुच्छेद 15 सकारात्मक कार्रवाई की अनुमति देता है",
+                                "सामाजिक न्याय के लिए भेदभाव को दूर करना आवश्यक है",
+                                "आरक्षण समावेशी समाज बनाते हैं",
+                                "पिछड़ी जातियों को विशेष सहायता की जरूरत है"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "आरक्षण अस्वीकार करें", description: "केवल योग्यता निर्णय करे", icon: "📊" },
+                            { id: "lawyer2", label: "आरक्षण बनाए रखें", description: "आरक्षण संवैधानिक हैं", icon: "🤲" },
+                            { id: "partial", label: "क्रीमी लेयर के साथ", description: "आरक्षण - अमीर पिछड़ी जाति के परिवार को छोड़कर", icon: "📈" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "सर्वोच्च न्यायालय ने लगातार माना है कि आरक्षण अनुच्छेद 15 और 16 के तहत सामाजिक न्याय के लिए संवैधानिक हैं, लेकिन उन्हें क्रीमी लेयर (पिछड़ी जाति से आर्थिक रूप से सुविधाप्राप्त सदस्य) को बाहर करना चाहिए।",
+                        relevantArticles: [
+                            { number: "14", title: "कानून के समक्ष समानता" },
+                            { number: "15", title: "धर्म के आधार पर भेदभाव पर प्रतिबंध" },
+                            { number: "16", title: "सार्वजनिक नियोजन में अवसर की समानता" }
+                        ]
+                    },
+                    {
+                        id: "e4",
+                        title: "धार्मिक स्वतंत्रता बनाम भारतीय नागरिक संहिता",
+                        category: "धार्मिक स्वतंत्रता",
+                        context: "एक मुस्लिम महिला धार्मिक कानून के बजाय कानून की प्रक्रिया के माध्यम से तलाक लेना चाहती है।",
+                        lawyer1: {
+                            name: "अधिवक्ता दास",
+                            side: "भारतीय नागरिक संहिता के लिए",
+                            argument: "माननीय, अनुच्छेद 14 और 21 समानता सुनिश्चित करते हैं। सभी नागरिकों को धर्म की परवाह किए बिना विवाह और तलाक में समान अधिकार होने चाहिए। संविधान एक समान नागरिक संहिता की कल्पना करता है।",
+                            points: [
+                                "अनुच्छेद 14 समानता की आवश्यकता है",
+                                "सभी नागरिकों के समान अधिकार होने चाहिए",
+                                "भारतीय नागरिक संहिता एकता मजबूत करती है",
+                                "महिलाओं को समान सुरक्षा मिलती है"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता खान",
+                            side: "धार्मिक स्वतंत्रता के लिए",
+                            argument: "माननीय, अनुच्छेद 25 और 26 धार्मिक स्वतंत्रता की रक्षा करते हैं। विभिन्न धर्मों का व्यक्तिगत कानून सांस्कृतिक पहचान का हिस्सा है। हर कोई एक समान संहिता नहीं चाहता।",
+                            points: [
+                                "अनुच्छेद 25-26 धार्मिक स्वतंत्रता की रक्षा करते हैं",
+                                "सांस्कृतिक बहुलवाद संवैधानिक है",
+                                "समुदाय व्यक्तिगत मामलों को संभाल सकते हैं",
+                                "अल्पसंख्यकों के हित की सुरक्षा होनी चाहिए"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "भारतीय नागरिक संहिता अनिवार्य", description: "सभी को सामान्य कानून का पालन करना चाहिए", icon: "⚖️" },
+                            { id: "lawyer2", label: "केवल व्यक्तिगत कानून", description: "धार्मिक कानून एकमात्र लागू होता है", icon: "📖" },
+                            { id: "partial", label: "विकल्प उपलब्ध", description: "व्यक्ति व्यक्तिगत या कानून का चयन कर सकता है", icon: "🔀" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "भारतीय संवैधानिक अभ्यास व्यक्तियों को कई मामलों में व्यक्तिगत कानून और कানून के बीच चयन करने की अनुमति देता है। सर्वोच्च न्यायालय ने माना है कि जबकि समान नागरिक संहिता आकांक्षी है, वर्तमान में व्यक्तियों को अपने व्यक्तिगत कानून या कानून प्रक्रियाओं को चुनने का अधिकार है।",
+                        relevantArticles: [
+                            { number: "25", title: "विवेक और धर्म की स्वतंत्रता" },
+                            { number: "26", title: "धार्मिक मामलों को प्रबंधित करने की स्वतंत्रता" },
+                            { number: "44", title: "समान नागरिक संहिता (निर्देशक सिद्धांत)" }
+                        ]
+                    },
+                    {
+                        id: "e5",
+                        title: "काम करने का अधिकार बनाम बाल श्रम कानून",
+                        category: "काम का अधिकार",
+                        context: "गरीब परिवार का 13 वर्षीय बच्चा पारिवारिक आय का समर्थन करने के लिए एक छोटी टेक्सटाइल फैक्ट्री में काम करता है।",
+                        lawyer1: {
+                            name: "अधिवक्ता घोष",
+                            side: "बाल श्रम के लिए",
+                            argument: "माननीय, अनुच्छेद 39(f) कहता है कि गरीब परिवारों के बच्चों को विशेष सहायता दी जानी चाहिए। बच्चा एक कौशल सीख रहा है और परिवार को आय की जरूरत है। पूर्ण प्रतिबंध उनकी स्थिति को कठिन बना देता है।",
+                            points: [
+                                "परिवार गरीबी की रेखा से नीचे है",
+                                "बच्चा मूल्यवान कौशल सीख रहा है",
+                                "आय परिवार की बचत में मदद करती है",
+                                "कठोर प्रवर्तन कठिन्य बढ़ाता है"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता मैथ्यू",
+                            side: "बाल श्रम के विरुद्ध",
+                            argument: "माननीय, अनुच्छेद 24 पूरी तरह से बाल श्रम को प्रतिबंधित करता है। गरीबी के लिए कोई अपवाद नहीं है। बचपन शिक्षा और विकास के लिए है, शोषण के लिए नहीं।",
+                            points: [
+                                "अनुच्छेद 24 निरंतर प्रतिबंध है",
+                                "बच्चों को शिक्षा की जरूरत है",
+                                "फैक्ट्रियों में स्वास्थ्य जोखिम",
+                                "राज्य की वैकल्पिक सहायता की जिम्मेदारी"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "आवश्यकता के लिए बाल कार्य", description: "जीवन यापन के लिए बाल कार्य की अनुमति", icon: "💰" },
+                            { id: "lawyer2", label: "सख्त प्रतिबंध", description: "किसी भी परिस्थिति में बाल श्रम नहीं", icon: "✋" },
+                            { id: "partial", label: "हल्का काम + शिक्षा", description: "अनिवार्य स्कूल के साथ भाग-समय हल्का काम", icon: "📚" }
+                        ],
+                        correctChoice: "lawyer2",
+                        explanation: "अनुच्छेद 24 फैक्ट्रियों और खतरनाक उद्योगों में बाल श्रम पर पूर्ण प्रतिबंध लगाता है। हालांकि, अनुच्छेद 39 राज्य को मुफ्त शिक्षा प्रदान करने का निर्देश देता है। संवैधानिक समाधान सामाजिक सुरक्षा, शिक्षा और माता-पिता के लिए नौकरियों के माध्यम से परिवारों को मुआवजा देना है।",
+                        relevantArticles: [
+                            { number: "24", title: "फैक्ट्रियों में बाल श्रम पर प्रतिबंध" },
+                            { number: "39", title: "निर्देशक सिद्धांत - बाल संरक्षण" },
+                            { number: "45", title: "मुफ्त और अनिवार्य शिक्षा का अधिकार" }
+                        ]
+                    }
+                ],
+                Medium: [
+                    {
+                        id: "m1",
+                        title: "गोपनीयता बनाम राष्ट्रीय सुरक्षा",
+                        category: "गोपनीयता अधिकार",
+                        context: "सरकार सभी इंटरनेट ट्र्रैफिक पर निगरानी करने वाले कैमरे और सर्वर स्थापित करती है क्योंकि आतंकवाद रोकने के लिए आवश्यक है।",
+                        lawyer1: {
+                            name: "अधिवक्ता सक्सेना",
+                            side: "गोपनीयता के लिए",
+                            argument: "माननीय, केएस पुट्टास्वामी मामले में सर्वोच्च न्यायालय ने गोपनीयता को अनुच्छेद 21 के तहत मौलिक अधिकार माना। भारी निगरानी राष्ट्रीय सुरक्षा के लिए भी गोपनीयता का उल्लंघन करती है।",
+                            points: [
+                                "गोपनीयता अनुच्छेद 21 के तहत मौलिक है",
+                                "निगरानी आनुपातिक होनी चाहिए",
+                                "कोई भी निगरानी की अनुमति नहीं है",
+                                "भय की मनोवृत्ति अभिव्यक्ति को प्रभावित करती है"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता भट्ट",
+                            side: "निगरानी के लिए",
+                            argument: "माननीय, राष्ट्रीय सुरक्षा अस्थायी रूप से व्यक्तिगत गोपनीयता को प्रभावी बनाती है। आतंकवाद अस्तित्वगत खतरा है। लक्षित, अधिकृत निगरानी न्यायालय स्वीकृति के साथ संवैधानिक है।",
+                            points: [
+                                "राष्ट्रीय सुरक्षा मौलिक कर्तव्य है",
+                                "उचित निगरानी संवैधानिक है",
+                                "न्यायालय स्वीकृति जवाबदेही सुनिश्चित करती है",
+                                "आतंकवाद निवारक उपाय आवश्यक है"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "कोई निगरानी नहीं", description: "गोपनीयता अधिकार सर्वोच्च", icon: "🔒" },
+                            { id: "lawyer2", label: "सर्वव्यापी निगरानी", description: "सभी की निगरानी करें सुरक्षा के लिए", icon: "👁️" },
+                            { id: "partial", label: "न्यायिक अनुमति के साथ", description: "लक्षित निगरानी न्यायालय की निगरानी के साथ", icon: "🔍" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "के.एस. पुट्टास्वामी मामले (2017) में सर्वोच्च न्यायालय ने गोपनीयता को मौलिक अधिकार माना। उचित प्रतिबंध जनहित के लिए आनुपातिकता सिद्धांत के साथ लक्षित निगरानी संवैधानिक है।",
+                        relevantArticles: [
+                            { number: "21", title: "जीवन और व्यक्तिगत स्वतंत्रता की सुरक्षा" },
+                            { number: "19(1)(d)", title: "स्वतंत्रता से आंदोलन का अधिकार" },
+                            { number: "19(2)", title: "उचित प्रतिबंध" }
+                        ]
+                    },
+                    {
+                        id: "m2",
+                        title: "न्यायिक अतिचार बनाम सामाजिक न्याय",
+                        category: "शक्तियों के विभाजन",
+                        context: "सर्वोच्च न्यायालय सभी राज्यों में लापता बच्चों के घर बनाने का निर्देश देता है, बजह बजट आवंटन की।",
+                        lawyer1: {
+                            name: "अधिवक्ता पंडित",
+                            side: "न्यायिक संयम के लिए",
+                            argument: "माननीय, यह शक्तियों के विभाजन का उल्लंघन करता है। अनुच्छेद 50 न्यायपालिका की स्वतंत्रता सुनिश्चित करता है लेकिन कार्यान्वयन कार्यपालिका का कार्य है। न्यायालय अदालत करें, शासन न करें।",
+                            points: [
+                                "शक्तियों के विभाजन का सिद्धांत उल्लंघन",
+                                "बजट आवंटन कार्यपालिका का कार्य है",
+                                "कार्यान्वयन में विशेषज्ञता की जरूरत है",
+                                "न्यायिक अतिचार लोकतंत्र को नुकसान देता है"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता मेहरा",
+                            side: "न्यायिक सक्रियता के लिए",
+                            argument: "माननीय, जहां कार्यपालिका बच्चों के अधिकारों की रक्षा करने में विफल हो, अदालतों को हस्तक्षेप करना चाहिए। अनुच्छेद 142 न्याय के लिए रचनात्मक उपाय देता है। यह जनहित याचिका है।",
+                            points: [
+                                "कार्यपालिका की विफलता न्यायिक हस्तक्षेप की आवश्यकता है",
+                                "अनुच्छेद 142 के तहत सर्वोच्च न्यायालय को शक्ति है",
+                                "जनहित याचिका संवैधानिक है",
+                                "बाल अधिकारों की रक्षा आवश्यक है"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "न्यायिक अतिचार बंद करें", description: "अदालत पीछे हटे, कार्यपालिका को कार्य करने दें", icon: "⚖️" },
+                            { id: "lawyer2", label: "न्यायिक सक्रियता मान्य है", description: "अदालत कार्यान्वयन जारी रखे", icon: "⛔" },
+                            { id: "partial", label: "निगरानी भूमिका", description: "अदालत निगरानी करे, कार्यान्वयन न करे", icon: "📋" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "विशाल जीत बनाम भारत संघ मामले में सर्वोच्च न्यायालय ने एक संतुलित दृष्टिकोण विकसित किया है। अदालतें निगरानी और निर्देश दे सकती हैं लेकिन सीधे कार्यान्वयन नहीं करना चाहिए। वे कार्यपालिका को निर्देश देते हैं और अनुपालन पर निगरानी करते हैं।",
+                        relevantArticles: [
+                            { number: "50", title: "शक्तियों का विभाजन" },
+                            { number: "142", title: "सर्वोच्च न्यायालय की विवेकाधीन शक्ति" },
+                            { number: "13", title: "संविधान की व्याख्या" }
+                        ]
+                    },
+                    {
+                        id: "m3",
+                        title: "भूमि पर अधिकार बनाम अवैध कब्जे का अधिकार",
+                        category: "संपत्ति अधिकार",
+                        context: "बेघर परिवारों ने 3 साल से अनुमति के बिना खाली सरकारी भूमि पर कब्जा किया है।",
+                        lawyer1: {
+                            name: "अधिवक्ता नायर",
+                            side: "अवैध कब्जे के अधिकार के लिए",
+                            argument: "माननीय, अनुच्छेद 21 आजीविका और आश्रय का अधिकार देता है। वर्षों के कब्जे के बाद, इन परिवारों को जारी रखने का अधिकार है। समाज को नुकसान नहीं है।",
+                            points: [
+                                "अनुच्छेद 21 के तहत आजीविका का अधिकार",
+                                "आश्रय बुनियादी जरूरत है",
+                                "भूमि खाली थी/बर्बाद थी",
+                                "लंबे कब्जे का अर्थ स्वीकृति है"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता अयर",
+                            side: "सरकार के लिए",
+                            argument: "माननीय, सरकारी संपत्ति है। अवैध कब्जे को अनुमति देना खतरनाक मिसाल सेट करता है। सरकार को सार्वजनिक प्रकल्पों के लिए भूमि की जरूरत हो सकती है।",
+                            points: [
+                                "संपत्ति अधिकारों को सम्मान करना चाहिए",
+                                "अवैध कब्जे से अधिकार नहीं मिलते",
+                                "सार्वजनिक प्रकल्पों के लिए भूमि चाहिए",
+                                "कानून का शासन प्रक्रिया की मांग करता है"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "अवैध कब्जेवालों को भूमि", description: "आजीविका संपत्ति स्वामित्व से अधिक", icon: "🏠" },
+                            { id: "lawyer2", label: "अवैध कब्जेवालों को निकालें", description: "सरकार भूमि पुनः प्राप्त करे", icon: "⚡" },
+                            { id: "partial", label: "पहले पुनर्वास", description: "निष्कासन से ​​पहले वैकल्पिक आवास प्रदान करें", icon: "🤝" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "अदालतें माना है कि जबकि सरकारी संपत्ति अधिकारों को नजरअंदाज नहीं किया जा सकता, निष्कासन मानवीय होना चाहिए। सरकार को वैकल्पिक आवास या पुनर्वास सुविधाएं प्रदान करनी चाहिए, बस सड़कों पर नहीं निकालना चाहिए, अनुच्छेद 21 के दायित्वों को पूरा करने के लिए।",
+                        relevantArticles: [
+                            { number: "21", title: "जीवन और व्यक्तिगत स्वतंत्रता की सुरक्षा" },
+                            { number: "25", title: "रहने का अधिकार" },
+                            { number: "300A", title: "संपत्ति की सुरक्षा" }
+                        ]
+                    },
+                    {
+                        id: "m4",
+                        title: "मुक्त वाक् बनाम घृणा भाषण",
+                        category: "मौलिक अधिकार",
+                        context: "एक राजनेता सोशल मीडिया पर एक धार्मिक समुदाय के खिलाफ आग्नेय भाषण देते हैं।",
+                        lawyer1: {
+                            name: "अधिवक्ता गुप्ता",
+                            side: "मुक्त भाषण के लिए",
+                            argument: "माननीय, राजनीतिक भाषण अनुच्छेद 19(1)(a) के तहत सर्वोच्च सुरक्षा प्राप्त है। लोगों को विविध विचार सुनने की जरूरत है, भले ही आपत्तिजनक हों। अभियोजन लोकतांत्रिक प्रवचन को दबा देता है।",
+                            points: [
+                                "अनुच्छेद 19(1)(a) राजनीतिक भाषण की रक्षा करता है",
+                                "आपत्तिजनक भाषण भी संरक्षित है",
+                                "आपराधिक अभियोजन अत्यधिक है",
+                                "मतदाताओं को भाषण का निर्णय करना चाहिए"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता रेड्डी",
+                            side: "घृणा भाषण के विरुद्ध",
+                            argument: "माननीय, भाषण सांप्रदायिक हिंसा भड़काती है यह सुरक्षित नहीं है। यह भाषण सीधे हिंसा का कारण बना। अनुच्छेद 19(2) घृणा भाषण पर प्रतिबंध की अनुमति देता है।",
+                            points: [
+                                "भाषण सांप्रदायिक हिंसा का कारण बना",
+                                "घृणा भाषण प्रतिबंध संवैधानिक हैं",
+                                "समूह के अधिकार की रक्षा होनी चाहिए",
+                                "सीधी हिंसा संरक्षित नहीं है"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "राजनीतिक भाषण अनुमति दें", description: "सभी राजनीतिक भाषण जारी रहे", icon: "🗣️" },
+                            { id: "lawyer2", label: "घृणा भाषण पर प्रतिबंध", description: "हिंसा के लिए अभियोजन", icon: "⛔" },
+                            { id: "partial", label: "संदर्भ-आधारित", description: "केवल सीधे हिंसा का कारण बनने वाले भाषण पर प्रतिबंध", icon: "⚠️" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "डॉ. अंबेडकर बनाम मराठा मुक्ति संगराम समिति मामले में सर्वोच्च न्यायालय ने माना कि सीधे हिंसा का कारण बनने वाले भाषण को अनुच्छेद 19(2) के तहत प्रतिबंधित किया जा सकता है। हालांकि, केवल आपत्तिजनक या आलोचनात्मक भाषण संरक्षित रहता है।",
+                        relevantArticles: [
+                            { number: "19(1)(a)", title: "भाषण और अभिव्यक्ति की स्वतंत्रता" },
+                            { number: "19(2)", title: "उचित प्रतिबंध" },
+                            { number: "153", title: "धर्म के आधार पर शत्रुता बढ़ाना" }
+                        ]
+                    },
+                    {
+                        id: "m5",
+                        title: "अल्पसंख्यक अधिकार बनाम बहुमत शासन",
+                        category: "अल्पसंख्यक अधिकार",
+                        context: "एक राज्य जहां 60% हिंदू हैं, 40% मुस्लिम अल्पसंख्यकों की भाषा स्कूल पाठ्यक्रम से हटाना चाहता है।",
+                        lawyer1: {
+                            name: "अधिवक्ता कुलकर्णी",
+                            side: "बहुमत के लिए",
+                            argument: "माननीय, राज्य के बहुसंख्यक निवासी राष्ट्रीय भाषा चाहते हैं। अल्पसंख्यक भाषा को बनाए रखना विभाजन बढ़ाता है। राष्ट्रीय एकता सामान्य भाषा की मांग करती है।",
+                            points: [
+                                "बहुमत की राय निर्णय करे",
+                                "सामान्य भाषा एकता करती है",
+                                "अल्पसंख्यक स्वतंत्र रूप से सीख सकते हैं",
+                                "राज्य संसाधन सीमित हैं"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता करीम",
+                            side: "अल्पसंख्यकों के लिए",
+                            argument: "माननीय, अनुच्छेद 30 अल्पसंख्यकों को भाषा और संस्कृति बनाए रखने का अधिकार देता है। भारत की ताकत विविधता है। बहुमत अल्पसंख्यकों की पहचान नष्ट नहीं कर सकता।",
+                            points: [
+                                "अनुच्छेद 30 अल्पसंख्यक अधिकारों की रक्षा करता है",
+                                "संवैधानिक बहुलवाद मान्य है",
+                                "भाषा पहचान का प्रतीक है",
+                                "अल्पसंख्यकों को सुरक्षा चाहिए"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "बहुमत निर्णय करे", description: "अल्पसंख्यक भाषा हटाई जाए", icon: "🗳️" },
+                            { id: "lawyer2", label: "अल्पसंख्यकों की रक्षा", description: "अल्पसंख्यक भाषा जारी रहे", icon: "🛡️" },
+                            { id: "partial", label: "वैकल्पिक विकल्प", description: "अल्पसंख्यक भाषा वैकल्पिक विषय हो", icon: "✏️" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "संविधान अनुच्छेद 29-30 के तहत अल्पसंख्यक अधिकारों की रक्षा करता है, लेकिन राज्य के सीमित संसाधनों को भी मान्यता देता है। संतुलित दृष्टिकोण अल्पसंख्यक भाषा शिक्षा को कुछ स्कूलों में वैकल्पिक या उपलब्ध बनाना है, सभी के लिए अनिवार्य नहीं।",
+                        relevantArticles: [
+                            { number: "29", title: "अल्पसंख्यकों के हितों की रक्षा" },
+                            { number: "30", title: "अल्पसंख्यकों को शैक्षणिक संस्थान स्थापित करने का अधिकार" },
+                            { number: "350A", title: "मातृभाषा में निर्देश की सुविधा" }
+                        ]
+                    }
+                ],
+                Hard: [
+                    {
+                        id: "h1",
+                        title: "हिंदुत्व बनाम धर्मनिरपेक्ष राज्य",
+                        category: "संवैधानिक पहचान",
+                        context: "सरकार भारत को 'हिंदू राष्ट्र' घोषित करने के लिए संवैधानिक संशोधन करती है जहां हिंदू मूल्य राज्य नीति में सर्वोच्च हों।",
+                        lawyer1: {
+                            name: "अधिवक्ता त्रिवेदी",
+                            side: "संशोधन के लिए",
+                            argument: "माननीय, भारत की सभ्यता मुख्य रूप से हिंदू है। इस सांस्कृतिक आधार को स्वीकार करना अल्पसंख्यकों के विरुद्ध नहीं है। भारत सांस्कृतिक रूप से हिंदू हो सकता है, कानूनी रूप से धर्मनिरपेक्ष रह सकता है।",
+                            points: [
+                                "हिंदू सभ्यता ने भारत को प्रभावित किया",
+                                "जड़ों को स्वीकार करना संस्कृति मजबूत करता है",
+                                "सांस्कृतिक रूप से हिंदू, कानूनी रूप से धर्मनिरपेक्ष हो सकते हैं",
+                                "बहुमत संस्कृति को स्वीकृति देनी चाहिए"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता चटर्जी",
+                            side: "संशोधन के विरुद्ध",
+                            argument: "माननीय, अनुच्छेद 25 धर्मनिरपेक्ष राज्य की गारंटी देता है। हिंदू राष्ट्र की घोषणा अनुच्छेद 15, 16 का उल्लंघन है। यह मूल संरचना सिद्धांत का उल्लंघन करता है।",
+                            points: [
+                                "मूल संरचना: धर्मनिरपेक्ष राज्य अपरिवर्तनीय हैं",
+                                "अनुच्छेद 15, 16 भेदभाव पर प्रतिबंध लगाते हैं",
+                                "अल्पसंख्यकें द्वितीय श्रेणी के नागरिक बन जाते हैं",
+                                "संविधान की भावना का उल्लंघन है"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "संशोधन मान्य", description: "हिंदू राष्ट्र घोषणा अनुमत है", icon: "🕉️" },
+                            { id: "lawyer2", label: "संशोधन अमान्य", description: "मूल संरचना का उल्लंघन", icon: "📜" },
+                            { id: "partial", label: "केवल सांस्कृतिक स्वीकृति", description: "कानूनी प्रभाव के बिना सांस्कृतिक पहचान", icon: "🎭" }
+                        ],
+                        correctChoice: "lawyer2",
+                        explanation: "एसआर बोम्मई बनाम भारत संघ (1994) मामले में सर्वोच्च न्यायालय ने माना कि धर्मनिरपेक्षता संविधान की मूल संरचना का हिस्सा है और संशोधित नहीं किया जा सकता। अनुच्छेद 368 धर्मनिरपेक्ष चरित्र को बदलने के लिए नहीं बदला जा सकता। हालांकि, कानूनी भेदभाव के बिना सांस्कृतिक स्वीकृति संभव हो सकती है।",
+                        relevantArticles: [
+                            { number: "25", title: "धर्म की स्वतंत्रता" },
+                            { number: "15", title: "भेदभाव पर प्रतिबंध" },
+                            { number: "368", title: "संविधान संशोधन - मूल संरचना सिद्धांत" }
+                        ]
+                    },
+                    {
+                        id: "h2",
+                        title: "संसद संप्रभुता बनाम न्यायिक समीक्षा",
+                        category: "संवैधानिक शक्ति",
+                        context: "संसद ऐसा कानून पारित करती है जो अदालतों की न्यायिक समीक्षा शक्ति को हटाना चाहता है।",
+                        lawyer1: {
+                            name: "अधिवक्ता दिक्षित",
+                            side: "संसदीय सर्वोच्चता के लिए",
+                            argument: "माननीय, अनुच्छेद 121 अदालतों को संसद की कार्यवाही पर सवाल उठाने से रोकता है। लोकतंत्र का अर्थ है लोगों के प्रतिनिधि निर्णय लें, न्यायाधीश नहीं। अत्यधिक न्यायिक समीक्षा लोकतंत्र को कमजोर करती है।",
+                            points: [
+                                "अनुच्छेद 121 विधायी प्रक्रिया की रक्षा करता है",
+                                "संसद लोगों का प्रतिनिधित्व करता है",
+                                "संसदीय प्रक्रियाएं अनंत हैं",
+                                "अत्यधिक न्यायिक समीक्षा लोकतंत्र को कमजोर बनाती है"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता मिश्रा",
+                            side: "न्यायिक समीक्षा के लिए",
+                            argument: "माननीय, मार्बरी बनाम मैडिसन सिद्धांत और अनुच्छेद 13 न्यायिक समीक्षा स्थापित करते हैं। संविधान विरोधी कानून अमान्य हैं। अदालतों को संवैधानिक अधिकारों की रक्षा करनी चाहिए।",
+                            points: [
+                                "अनुच्छेद 13 संविधान विरोधी कानूनों को शून्य बनाता है",
+                                "न्यायिक समीक्षा संवैधानिक कर्तव्य है",
+                                "अधिकारों को न्यायिक सुरक्षा की जरूरत है",
+                                "संविधान सर्वोच्च कानून है"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "संसद सर्वोच्च", description: "कानूनों पर न्यायिक समीक्षा नहीं", icon: "🏛️" },
+                            { id: "lawyer2", label: "न्यायिक समीक्षा निरपेक्ष", description: "अदालतें किसी भी अनैतिक कानून को रद्द करें", icon: "⚖️" },
+                            { id: "partial", label: "संतुलित समीक्षा", description: "संसद के निर्णय को सम्मान के साथ समीक्षा", icon: "🤝" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "संविधान संसदीय संप्रभुता और न्यायिक समीक्षा दोनों को मान्यता देता है। अदालतें 'उचित' समीक्षा अभ्यास करती हैं - संसद के निर्णय को सम्मान देते हुए सुनिश्चित करती हैं कि कानून मौलिक अधिकारों या मूल संरचना का उल्लंघन न करें। अनुच्छेद 121 विधायी प्रक्रिया को प्रश्न से रोकता है, कानूनों की संवैधानिकता को नहीं।",
+                        relevantArticles: [
+                            { number: "13", title: "संविधान के साथ असंगत कानून शून्य हैं" },
+                            { number: "121", title: "विधायकों के सदस्यों की सुरक्षा" },
+                            { number: "32", title: "संवैधानिक उपायों का अधिकार" }
+                        ]
+                    },
+                    {
+                        id: "h3",
+                        title: "संघीयवाद बनाम राष्ट्रीय आपातकाल",
+                        category: "केंद्र-राज्य संबंध",
+                        context: "राष्ट्रीय आपातकाल के दौरान, केंद्र सरकार राज्य राजस्व जब्त करती है, राज्य चुनावों को रद्द करती है।",
+                        lawyer1: {
+                            name: "अधिवक्ता अग्रवाल",
+                            side: "मजबूत केंद्र के लिए",
+                            argument: "माननीय, अनुच्छेद 352 आपातकालीन शक्तियां आवश्यक हैं। आपातकाल के दौरान, केंद्र को संकट प्रबंधन के लिए अभूतपूर्व शक्ति चाहिए। राज्य स्वायत्तता द्वितीय है।",
+                            points: [
+                                "आपातकाल के लिए केंद्रीकृत नियंत्रण आवश्यक है",
+                                "केंद्र को राष्ट्रीय सुरक्षा की जिम्मेदारी है",
+                                "अनुच्छेद 352 आपातकालीन शक्तियों को अधिकृत करता है",
+                                "सीमित अवधि आपातकाल न्यायसंगत है"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता राव",
+                            side: "संघीयवाद के लिए",
+                            argument: "माननीय, संघीयवाद मूल संरचना है। आपातकाल के दौरान भी, इसे नष्ट नहीं किया जा सकता। केंद्र कार्य कर सकता है लेकिन राज्य सीमाओं का सम्मान करना चाहिए।",
+                            points: [
+                                "संघीयवाद मूल संरचना है",
+                                "आपातकालीन शक्तियों की सीमाएं हैं",
+                                "राज्य स्वायत्तता मौलिक है",
+                                "आपातकाल अनिश्चितकालीन नहीं हो सकता"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "केंद्रीय नियंत्रण पूर्ण", description: "आपातकाल में केंद्र को पूरी शक्ति", icon: "👑" },
+                            { id: "lawyer2", label: "संघीयवाद संरक्षित", description: "राज्य स्वायत्तता निलंबित नहीं हो सकती", icon: "🏛️" },
+                            { id: "partial", label: "सीमित आपातकालीन शक्तियां", description: "केंद्र सुरक्षा उपायों के साथ कार्य करे, सूर्यास्त खंड के साथ", icon: "⚖️" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "1976 के आपातकाल (इंदिरा गांधी) के बाद, संवैधानिक संशोधनों ने आपातकालीन शक्तियों पर जांचें जोड़ीं। आपातकाल की अनुमति है लेकिन सीमाओं, अवधि और संसदीय समीक्षा के साथ। 44वें संशोधन ने आपातकाल को 6 महीने तक सीमित किया, यह स्थापित करते हुए कि राष्ट्रीय आपातकाल के भी संवैधानिक सीमाएं हैं।",
+                        relevantArticles: [
+                            { number: "352", title: "राष्ट्रीय आपातकाल की घोषणा" },
+                            { number: "356", title: "राज्यों में संवैधानिक मशीनरी की विफलता" },
+                            { number: "44", title: "संशोधन (44वां) - आपातकाल सुरक्षा" }
+                        ]
+                    },
+                    {
+                        id: "h4",
+                        title: "कॉर्पोरेट अधिकार बनाम जनहित",
+                        category: "आर्थिक न्याय",
+                        context: "एक दवा कंपनी के पेटेंट सस्ती जेनेरिक दवाएं बनाने से रोकते हैं जो मरते कैंसर रोगियों को बचा सकते हैं।",
+                        lawyer1: {
+                            name: "अधिवक्ता कुलश्रेष्ठ",
+                            side: "पेटेंट अधिकार के लिए",
+                            argument: "माननीय, पेटेंट अनुच्छेद 19(1)(g) और 300A के तहत बौद्धिक संपत्ति है। पेटेंट धारक अरबों निवेश करते हैं। अनिवार्य लाइसेंस आर्थिक रूप से अन्यायी है।",
+                            points: [
+                                "पेटेंट संपत्ति अधिकार है",
+                                "नवाचार निवेश की रक्षा करता है",
+                                "नवाचार से लाभ का अधिकार",
+                                "अनिवार्य लाइसेंस जब्ती है"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता शर्मा",
+                            side: "जनहित के लिए",
+                            argument: "माननीय, अनुच्छेद 21 (जीवन का अधिकार) पेटेंट अधिकार से अधिक मौलिक है। राज्य जनहित के लिए अनिवार्य लाइसेंस जारी कर सकता है। जीवन लाभ से अधिक मूल्यवान हैं।",
+                            points: [
+                                "जीवन का अधिकार सर्वोच्च है",
+                                "जनहित राज्य का दायित्व है",
+                                "अनिवार्य लाइसेंस संवैधानिक है",
+                                "ट्रिप्स सार्वजनिक स्वास्थ्य अपवाद की अनुमति देता है"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "पेटेंट सख्ती से लागू", description: "पेटेंट अधिकार में कोई अपवाद नहीं", icon: "💼" },
+                            { id: "lawyer2", label: "अनिवार्य लाइसेंस", description: "राज्य जनस्वास्थ्य के लिए लाइसेंस जारी करे", icon: "💊" },
+                            { id: "partial", label: "रॉयल्टी-आधारित लाइसेंस", description: "उचित रॉयल्टी के साथ लाइसेंस दिया जाए", icon: "🤝" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "बेयर बनाम नैटको मामले (भारत के सर्वोच्च न्यायालय) में अदालत ने माना कि जनहित आपातकाल में सस्ती जेनेरिक उत्पादन के लिए अनिवार्य लाइसेंस संवैधानिक है। पेटेंट अधिकारों को उचित रॉयल्टी के साथ संतुलित करना, जनहित संरक्षण सिद्धांत को संतुलित करता है।",
+                        relevantArticles: [
+                            { number: "21", title: "जीवन और स्वास्थ्य का अधिकार" },
+                            { number: "19(1)(g)", title: "संपत्ति और व्यापार का अधिकार" },
+                            { number: "47", title: "राज्य का जनस्वास्थ्य सुधारने का कर्तव्य" }
+                        ]
+                    },
+                    {
+                        id: "h5",
+                        title: "विरोध करने का अधिकार बनाम राष्ट्रीय सुरक्षा",
+                        category: "जटिल अधिकार संतुलन",
+                        context: "पर्यावरण कार्यकर्ता रक्षा प्रतिष्ठानों के निकट परमाणु कचरे के खिलाफ विरोध आयोजित करते हैं।",
+                        lawyer1: {
+                            name: "अधिवक्ता भट्टाचार्य",
+                            side: "विरोधकारियों के लिए",
+                            argument: "माननीय, अनुच्छेद 19(1)(a-c) विरोध और सभा का अधिकार गारंटी देता है। एएफएसपीए (1958) मौलिक अधिकारों का उल्लंघन करता है। सैन्य को प्रतिरक्षा और अस्पष्ट आरोपों का कारण मिलता है।",
+                            points: [
+                                "विरोध करने का अधिकार मौलिक है",
+                                "शांतिपूर्ण सभा संरक्षित है",
+                                "एएफएसपीए प्रतिरक्षा पैदा करता है",
+                                "पर्यावरण चिंताएं मान्य हैं"
+                            ]
+                        },
+                        lawyer2: {
+                            name: "अधिवक्ता सिंह",
+                            side: "राष्ट्रीय सुरक्षा के लिए",
+                            argument: "माननीय, रक्षा प्रतिष्ठानों को सुरक्षा की जरूरत है। एएफएसपीए क्षेत्रों को विद्रोह का सामना है। राष्ट्रीय सुरक्षा विरोध के अधिकार से समझौता नहीं की जा सकती। उचित प्रतिबंध लागू होते हैं।",
+                            points: [
+                                "राष्ट्रीय सुरक्षा को सुरक्षा चाहिए",
+                                "रक्षा प्रतिष्ठानों को विशेष सुरक्षा है",
+                                "प्रतिबंध उचित हैं",
+                                "एएफएसपीए आपातकाल क्षेत्रों में लागू है"
+                            ]
+                        },
+                        choices: [
+                            { id: "lawyer1", label: "एएफएसपीए रद्द करें", description: "मौलिक अधिकार सर्वोच्चता", icon: "⛔" },
+                            { id: "lawyer2", label: "एएफएसपीए मान्य", description: "सुरक्षा विरोध अधिकारों को ओवरराइड करती है", icon: "🛡️" },
+                            { id: "partial", label: "एएफएसपीए सुरक्षा के साथ", description: "एएफएसपीए मान्य लेकिन न्यायिक निगरानी के साथ", icon: "👨‍⚖️" }
+                        ],
+                        correctChoice: "partial",
+                        explanation: "नागा लोक आंदोलन मानवाधिकार बनाम भारत संघ (1998) मामले में सर्वोच्च न्यायालय ने एएफएसपीए बनाए रखा लेकिन न्यायिक निगरानी लगाई। अदालत ने माना कि जबकि एएफएसपीए मान्य है, दुरुपयोग को चुनौती दी जा सकती है और प्रतिरक्षा निरपेक्ष नहीं है। अधिकारियों को संवैधानिक मूल्यों का पालन करना चाहिए।",
+                        relevantArticles: [
+                            { number: "19", title: "भाषण, सभा, संघ की स्वतंत्रता" },
+                            { number: "33", title: "सशस्त्र बलों में अधिकार संशोधन की संसद की शक्ति" },
+                            { number: "352", title: "एएफएसपीए कब लागू हो सकते हैं" }
+                        ]
+                    }
+                ]
+            }
+        },
+        reverseHangman: {
+            title: "संवैधानिक बचाव",
+            desc: "समय समाप्त होने से पहले संवैधानिक शब्दों का अनुमान लगाएं और चरित्र को बचाएं!",
+            descp:"समय समाप्त होने से पहले संवैधानिक",
+            time: "समय",
+            score: "स्कोर",
+            difficulty: "कठिनाई चुनें",
+            startGame: "खेल शुरू करें",
+            gameOver: "खेल समाप्त!",
+            wellDone: "बहुत बढ़िया!",
+            timeOut: "समय समाप्त!",
+            saved: "आपने चरित्र को बचा लिया!",
+            failed: "आप चरित्र को बचाने में विफल रहे!",
+            playAgain: "फिर से खेलें",
+            words: {
+                Easy: [
+                    { word: "संसद", hint: "भारत का सर्वोच्च विधायी निकाय", category: "Legislature" },
+                    { word: "राष्ट्रपति", hint: "राज्य का प्रमुख", category: "Executive" },
+                    { word: "न्यायपालिका", hint: "अदालतों की प्रणाली जो कानून की व्याख्या और आवेदन करती है", category: "Judiciary" },
+                    { word: "कैबिनेट", hint: "वरिष्ठ मंत्रियों का एक समूह", category: "Executive" },
+                    { word: "विधेयक", hint: "प्रस्तावित कानून का मसौदा", category: "Legislature" }
+                ],
+                Medium: [
+                    { word: "संविधान", hint: "भारत का सर्वोच्च कानून", category: "Both" },
+                    { word: "संशोधन", hint: "किसी पाठ, कानून आदि में सुधार के लिए किया गया एक मामूली बदलाव या अतिरिक्त", category: "Legislature" },
+                    { word: "अध्यादेश", hint: "भारत के राष्ट्रपति द्वारा प्रख्यापित एक कानून", category: "Executive" },
+                    { word: "क्षेत्राधिकार", hint: "कानूनी निर्णय और निर्णय लेने की आधिकारिक शक्ति", category: "Judiciary" },
+                    { word: "महाभियोग", hint: "सार्वजनिक पद धारण करने वाले व्यक्ति के खिलाफ लगाए गए कदाचार का आरोप", category: "Legislature" }
+                ],
+                Hard: [
+                    { word: "सत्रावसान", hint: "किसी संसद या अन्य विधान सभा के सत्र को भंग किए बिना उसे बंद करने की क्रिया", category: "Legislature" },
+                    { word: "परमादेश", hint: "निचली अदालत को आदेश के रूप में जारी किया गया एक न्यायिक रिट या किसी व्यक्ति को सार्वजनिक या वैधानिक कर्तव्य निभाने का आदेश देना", category: "Judiciary" },
+                    { word: "उत्प्रेषण", hint: "एक रिट या आदेश जिसके द्वारा एक उच्च न्यायालय निचली अदालत के निर्णय की समीक्षा करता है", category: "Judiciary" },
+                    { word: "कोरम", hint: "किसी सभा या समाज के सदस्यों की वह न्यूनतम संख्या जो उस बैठक की कार्यवाही को वैध बनाने के लिए उसकी किसी भी बैठक में उपस्थित होनी चाहिए", category: "Legislature" },
+                    { word: "संघवाद", hint: "सरकार का संघीय सिद्धांत या प्रणाली", category: "Both" }
+                ]
+            }
+        }
+    }
 };
 
 export default translations;

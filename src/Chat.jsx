@@ -126,14 +126,13 @@ export default function Chat() {
 
           {messages.map((msg, i) => (
             <div key={i} className={`message-wrapper ${msg.role}`}>
-              <div className="message-content">
-                <div className="message-avatar">
-                  {msg.role === "assistant" ? (
+              <div className="message-avatar">
+                  {msg.role === "assistant" &&
                     <Bot size={25} />
-                  ) : (
-                    <div className="user-avatar">U</div>
-                  )}
+                  }
                 </div>
+              <div className="message-content">
+                
 
                 <div className="message-text">
                   {msg.role === "assistant" ? (
@@ -149,10 +148,11 @@ export default function Chat() {
           {/* ------------------ TYPING INDICATOR ------------------ */}
           {loading && (
             <div className="message-wrapper assistant">
-              <div className="message-content">
-                <div className="message-avatar">
+              <div className="message-avatar">
                   <Bot size={25} />
                 </div>
+              <div className="message-content">
+                
                 <div className="message-text typing-indicator">
                   <span></span>
                   <span></span>

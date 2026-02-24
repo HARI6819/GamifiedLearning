@@ -16,8 +16,9 @@ export default function Games() {
     chakra: [],
     quiz: [],
     sort: [],
-    timeline: [],
     crossroads: [],
+    justiceJury: [],
+    reverseHangman: [],
   });
   const [loading, setLoading] = useState(true);
   const [articlesRead, setArticlesRead] = useState(0);
@@ -42,7 +43,20 @@ export default function Games() {
         if (res.ok) {
           const data = await res.json();
           if (data.completedLevels) {
-            setCompletedLevels(data.completedLevels);
+            // Ensure all games have arrays with proper defaults
+            const normalizedLevels = {
+              articleMatch: data.completedLevels.articleMatch || [],
+              rightsDutiesClimb: data.completedLevels.rightsDutiesClimb || [],
+              constitutionCards: data.completedLevels.constitutionCards || [],
+              chakra: data.completedLevels.chakra || [],
+              quiz: data.completedLevels.quiz || [],
+              sort: data.completedLevels.sort || [],
+              crossroads: data.completedLevels.crossroads || [],
+              justiceJury: data.completedLevels.justiceJury || [],
+              reverseHangman: data.completedLevels.reverseHangman || [],
+            };
+            console.log("📊 Games.jsx - Normalized completed levels:", normalizedLevels);
+            setCompletedLevels(normalizedLevels);
           }
           setArticlesRead(data.articlesRead || 0);
         }
@@ -75,13 +89,28 @@ export default function Games() {
     { id: "quiz", title: t.home.gameFormats.games.quiz.title, desc: t.home.gameFormats.games.quiz.desc, time: t.home.gameFormats.games.quiz.time, icon: "🧠", color: "purple", link: "/games/quiz" },
     { id: "sort", title: t.constitutionalSort.title, desc: t.constitutionalSort.desc, time: t.constitutionalSort.time, icon: "⫽", color: "gold", link: "/games/constitutional-sort" },
     { id: "crossroads", title: t.constitutionalCrossroads.title, desc: t.constitutionalCrossroads.desc, time: t.constitutionalCrossroads.time, icon: "⚖️", color: "blue", link: "/games/constitutional-crossroads" },
+    { id: "justiceJury", title: t.justiceJury.title, desc: t.justiceJury.desc, time: t.justiceJury.time, icon: "⚖️", color: "purple", link: "/games/justice-jury" },
+    { id: "reverseHangman", title: t.reverseHangman.title, desc: t.reverseHangman.desc, time: t.reverseHangman.time, icon: "🛡️", color: "green", link: "/games/reverse-hangman" },
 
   ];
 
-  // Logic to determine global unlocks
-  const allGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz", "sort", "crossroads"];
-  const isEasyDone = allGames.every(g => completedLevels[g]?.includes("Easy"));
-  const isMediumDone = allGames.every(g => completedLevels[g]?.includes("Medium"));
+  // Logic to determine global unlocks (all games including justiceJury)
+  const primaryGames = ["articleMatch", "rightsDutiesClimb", "constitutionCards", "chakra", "quiz", "sort", "crossroads", "justiceJury", "reverseHangman"];
+  const isEasyDone = primaryGames.every(g => completedLevels[g]?.includes("Easy"));
+  const isMediumDone = primaryGames.every(g => completedLevels[g]?.includes("Medium"));
+  const isHardDone = primaryGames.every(g => completedLevels[g]?.includes("Hard"));
+
+  // Debug logging for tier calculation
+  useEffect(() => {
+    console.log("🎮 PRIMARY GAMES TIER CHECK:");
+    console.log("   Primary games:", primaryGames);
+    primaryGames.forEach(g => {
+      const levels = completedLevels[g] || [];
+      console.log(`   ${g}: ${levels.length === 0 ? "❌ NONE" : levels.join(", ")}`);
+    });
+    console.log(`   isEasyDone: ${isEasyDone} | isMediumDone: ${isMediumDone}`);
+    console.log(`   => Global Tier: ${getGlobalLevel()}`);
+  }, [completedLevels]);
 
   const getGlobalLevel = () => {
     if (isMediumDone) return "Hard";
@@ -155,6 +184,61 @@ export default function Games() {
                   <span className="unlock-hint">
                     {globalLevel === "Easy" ? t.gamesPage.progression.unlockedMedium : t.gamesPage.progression.unlockedHard}
                   </span>
+                )}
+              </div>
+
+              {/* Progress toward next tier */}
+              <div className="tier-progress">
+                {globalLevel === "Easy" && !isMediumDone && (
+                  <div className="progress-section">
+                    <div className="progress-label">
+                      <span>📈 Progress to Medium Tier</span>
+                      <span className="progress-count">
+                        {primaryGames.filter(g => completedLevels[g]?.includes("Easy")).length} / {primaryGames.length} games
+                      </span>
+                    </div>
+                    <div className="progress-bar">
+                      <div
+                        className="progress-fill"
+                        style={{ width: `${(primaryGames.filter(g => completedLevels[g]?.includes("Easy")).length / primaryGames.length) * 100}%` }}
+                      ></div>
+                    </div>
+                    <div className="games-status">
+                      {primaryGames.map(g => (
+                        <div key={g} className={`game-dot ${completedLevels[g]?.includes("Easy") ? "completed" : "pending"}`} title={g}>
+                          {completedLevels[g]?.includes("Easy") ? "✓" : "○"}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {globalLevel === "Medium" && !isMediumDone && (
+                  <div className="progress-section">
+                    <div className="progress-label">
+                      <span>📈 Progress to Hard Tier</span>
+                      <span className="progress-count">
+                        {primaryGames.filter(g => completedLevels[g]?.includes("Medium")).length} / {primaryGames.length} games
+                      </span>
+                    </div>
+                    <div className="progress-bar">
+                      <div
+                        className="progress-fill"
+                        style={{ width: `${(primaryGames.filter(g => completedLevels[g]?.includes("Medium")).length / primaryGames.length) * 100}%` }}
+                      ></div>
+                    </div>
+                    <div className="games-status">
+                      {primaryGames.map(g => (
+                        <div key={g} className={`game-dot ${completedLevels[g]?.includes("Medium") ? "completed" : "pending"}`} title={g}>
+                          {completedLevels[g]?.includes("Medium") ? "✓" : "○"}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {globalLevel === "Hard" && (
+                  <div className="progress-section completed-all">
+                    {isHardDone ? <span>🏆 All Games Completed!</span> : <span>🏆 You are in last tier!</span>}
+                  </div>
                 )}
               </div>
             </div>

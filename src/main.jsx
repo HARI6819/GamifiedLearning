@@ -18,6 +18,8 @@ import Quiz from './Quiz.jsx'
 import ProfilePage from './ProfilePage.jsx'
 import ConstitutionalSort from './ConstitutionalSort.jsx'
 import ConstitutionalCrossroads from './ConstitutionalCrossroads.jsx'
+import JusticeJury from './JusticeJury.jsx'
+import ReverseHangman from './ReverseHangman.jsx'
 
 import ProtectedRoute from './ProtectedRoute.jsx'
 
@@ -69,6 +71,14 @@ const router = createBrowserRouter([
   {
     path: '/games/constitutional-crossroads',
     element: <ProtectedRoute><ConstitutionalCrossroads /></ProtectedRoute>
+  },
+  {
+    path: '/games/justice-jury',
+    element: <ProtectedRoute><JusticeJury /></ProtectedRoute>
+  },
+  {
+    path: '/games/reverse-hangman',
+    element: <ProtectedRoute><ReverseHangman /></ProtectedRoute>
   },
 
   {

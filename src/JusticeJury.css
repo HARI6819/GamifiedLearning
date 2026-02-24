@@ -1,0 +1,826 @@
+/* Justice Jury Game - Theme Support */
+
+/* Dark Theme Variables */
+.justice-container.dark {
+    --bg-gradient-start: #0f172a;
+    --bg-gradient-end: #1e293b;
+    --card-bg: rgba(30, 41, 59, 0.6);
+    --card-border: rgba(148, 163, 184, 0.1);
+    --text-primary: #e2e8f0;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent-primary: #60a5fa;
+    --accent-secondary: #a78bfa;
+    --button-bg: rgba(30, 41, 59, 0.6);
+    --button-border: rgba(148, 163, 184, 0.2);
+    --button-hover-bg: rgba(59, 130, 246, 0.1);
+    --button-hover-border: #60a5fa;
+    --choice-bg: rgba(51, 65, 85, 0.4);
+    --success-color: #22c55e;
+    --error-color: #ef4444;
+    --info-bg: rgba(51, 65, 85, 0.4);
+    --info-border: #60a5fa;
+    --lawyer1-color: #3b82f6;
+    --lawyer2-color: #8b5cf6;
+}
+
+/* Light Theme Variables */
+.justice-container.light {
+    --bg-gradient-start: #f8fafc;
+    --bg-gradient-end: #e2e8f0;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-border: rgba(203, 213, 225, 0.5);
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --accent-primary: #3b82f6;
+    --accent-secondary: #8b5cf6;
+    --button-bg: rgba(255, 255, 255, 0.9);
+    --button-border: rgba(203, 213, 225, 0.5);
+    --button-hover-bg: rgba(59, 130, 246, 0.1);
+    --button-hover-border: #3b82f6;
+    --choice-bg: rgba(241, 245, 249, 0.8);
+    --success-color: #16a34a;
+    --error-color: #dc2626;
+    --info-bg: rgba(241, 245, 249, 0.8);
+    --info-border: #3b82f6;
+    --lawyer1-color: #2563eb;
+    --lawyer2-color: #7c3aed;
+}
+
+.justice-container {
+    min-height: 100vh;
+    color: var(--text-primary);
+    padding: 2rem 1rem;
+}
+
+.justice-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 11%;
+    margin-bottom: 16px;
+}
+
+.justice-header .back-btn {
+    background: rgba(128, 128, 128, 0.137);
+    border: 1px solid grey;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: inherit;
+}
+
+.dark .justice-header .back-btn {
+    color: white;
+}
+
+.justice-header .back-btn:hover {
+    background: var(--button-hover-bg);
+    transform: translateX(-4px);
+}
+
+.justice-header h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.justice-header p {
+    margin: 0.5rem 0 0;
+    color: grey;
+    font-size: 0.95rem;
+    font-family: sans-serif;
+}
+
+/* Start Screen */
+.start-screen {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.icon-wrapper {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.start-screen h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.start-screen h4 {
+    color: var(--text-secondary);
+    margin: 2rem 0 1rem;
+    font-size: 1rem;
+}
+
+.diff-grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.diff-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--choice-bg);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-secondary);
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.diff-btn:hover:not(:disabled) {
+    background: var(--button-hover-bg);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.diff-btn.active {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: white;
+}
+
+.diff-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.play-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.play-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Lawyers Screen */
+.lawyers-screen {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.case-info {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.case-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.case-context {
+    background: var(--choice-bg);
+    border-left: 4px solid var(--accent-primary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.case-context p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(128, 128, 128, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    transition: width 0.3s ease;
+}
+
+.case-counter {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.lawyers-container {
+    min-height: 400px;
+    margin-bottom: 2rem;
+}
+
+.lawyer-card {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 15px;
+    padding: 2rem;
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.lawyer1-card {
+    border-left: 4px solid var(--lawyer1-color);
+}
+
+.lawyer2-card {
+    border-left: 4px solid var(--lawyer2-color);
+}
+
+.lawyer-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.lawyer-icon {
+    font-size: 2.5rem;
+}
+
+.lawyer-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.lawyer-side {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--choice-bg);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-left: auto;
+    color: var(--text-muted);
+}
+
+.lawyer1-card .lawyer-side {
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: var(--lawyer1-color);
+}
+
+.lawyer2-card .lawyer-side {
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: var(--lawyer2-color);
+}
+
+.lawyer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.lawyer-argument {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-style: italic;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.lawyer-points h4 {
+    margin: 0 0 1rem 0;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.lawyer-points ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.lawyer-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.8rem;
+    background: var(--choice-bg);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.point-icon {
+    color: var(--accent-primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.next-lawyer-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--button-bg);
+    border: 2px solid var(--button-border);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.next-lawyer-btn:hover {
+    background: var(--button-hover-bg);
+    border-color: var(--button-hover-border);
+    transform: translateY(-2px);
+}
+
+/* Decision Screen */
+.decision-screen {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.case-summary {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.case-summary h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.summary-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.decision-prompt {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.choices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    overflow: visible;
+}
+
+.choice-btn {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.choice-btn:hover {
+    border-color: var(--accent-primary);
+    background: var(--button-hover-bg);
+    transform: translateY(-4px);
+}
+
+.choice-btn.selected {
+    border-color: var(--accent-primary);
+    background: rgba(59, 130, 246, 0.15);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.choice-icon {
+    font-size: 2.5rem;
+}
+
+.choice-content {
+    width: 100%;
+}
+
+.choice-content h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.choice-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Feedback Screen */
+.feedback-screen {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feedback-result {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+
+.feedback-result.correct {
+    border-left: 4px solid var(--success-color);
+}
+
+.feedback-result.correct svg {
+    color: var(--success-color);
+}
+
+.feedback-result.incorrect {
+    border-left: 4px solid var(--error-color);
+}
+
+.feedback-result.incorrect svg {
+    color: var(--error-color);
+}
+
+.feedback-result h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.feedback-details {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.feedback-details > div {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.feedback-details h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    color: var(--accent-primary);
+}
+
+.correct-answer {
+    border-left: 4px solid var(--success-color);
+}
+
+.answer-text {
+    padding: 1rem;
+    background: var(--choice-bg);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    margin: 0;
+    font-weight: 500;
+}
+
+.explanation {
+    border-left: 4px solid var(--accent-primary);
+}
+
+.explanation p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.relevant-articles {
+    border-left: 4px solid var(--accent-secondary);
+}
+
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.article-tag {
+    background: var(--choice-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-secondary);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.article-tag strong {
+    color: var(--accent-secondary);
+}
+
+.scoring-breakdown {
+    border-left: 4px solid #f59e0b;
+}
+
+.score-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.score-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background: var(--choice-bg);
+    border-radius: 8px;
+    color: var(--text-secondary);
+}
+
+.score-item .points {
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.next-case-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--accent-primary);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.next-case-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Complete Screen */
+.complete-screen {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.completion-badge {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.completion-badge svg {
+    color: var(--accent-primary);
+}
+
+.completion-badge h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+
+.results-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.result-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.result-card.accuracy {
+    border-left: 4px solid var(--lawyer1-color);
+}
+
+.result-card.score {
+    border-left: 4px solid var(--lawyer2-color);
+}
+
+.result-card.correct {
+    border-left: 4px solid var(--success-color);
+}
+
+.result-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+}
+
+.result-label {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.accuracy-breakdown {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.accuracy-breakdown h3 {
+    margin: 0 0 1rem 0;
+    color: var(--text-primary);
+}
+
+.breakdown-text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.breakdown-text.excellent {
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+.breakdown-text.good {
+    color: #3b82f6;
+    font-weight: 500;
+}
+
+.breakdown-text.fair {
+    color: #f59e0b;
+    font-weight: 500;
+}
+
+.breakdown-text.needsImprovement {
+    color: var(--error-color);
+    font-weight: 500;
+}
+
+.actions-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.return-btn,
+.replay-btn {
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px solid var(--card-border);
+    background: var(--button-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.return-btn:hover {
+    border-color: var(--button-hover-border);
+    background: var(--button-hover-bg);
+}
+
+.replay-btn {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: white;
+}
+
+.replay-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .justice-header {
+        padding-left: 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .choices-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .actions-group {
+        grid-template-columns: 1fr;
+    }
+
+    .lawyer-header {
+        flex-wrap: wrap;
+    }
+
+    .lawyer-side {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .result-value {
+        font-size: 2rem;
+    }
+}
