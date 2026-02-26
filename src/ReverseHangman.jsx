@@ -108,7 +108,7 @@ export default function ReverseHangman() {
             const hasWon = guessableLetters.length > 0 && guessableLetters.every(l => newGuessed.has(l));
             if (hasWon) {
                 setGameState('won');
-                const earnedScore = (TIME_LIMITS[difficulty] - timer) * 10 + (MAX_WRONG_GUESSES - wrongGuesses) * 50;
+                const earnedScore = (TIME_LIMITS[difficulty] - timer) * 10 + (MAX_WRONG_GUESSES - wrongGuesses) * 5;
                 setScore(prev => prev + earnedScore);
                 updateProgress(earnedScore);
             }

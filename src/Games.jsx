@@ -176,8 +176,8 @@ export default function Games() {
             <h1>{t.gamesPage.title}</h1>
             <p>{t.gamesPage.subtitle}</p>
             <div className="progression-status">
-              <div className="current-tier">
-                <span>{t.gamesPage.progression.currentTier}: <strong>{t.common.difficulty[globalLevel]}</strong></span>
+              <div className="current-tier"> 
+                <span>{t.gamesPage.progression.currentTier}:  {isHardDone ? <span>🏆Completed!</span> : <strong>{t.common.difficulty[globalLevel]}</strong> }</span>
                 {!isMediumDone && (
                   <span className="unlock-hint">
                     {globalLevel === "Easy" ? t.gamesPage.progression.unlockedMedium : t.gamesPage.progression.unlockedHard}

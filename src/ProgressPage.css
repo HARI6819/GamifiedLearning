@@ -909,6 +909,7 @@
 .badge-visual {
   position: relative;
   z-index: 2;
+  overflow: visible;
 }
 
 .badge-emoji {

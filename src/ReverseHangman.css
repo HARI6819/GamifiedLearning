@@ -405,6 +405,7 @@
 
 .rh-overlay-content {
   text-align: center;
+  overflow: visible;
 }
 
 .rh-overlay-title-lost {

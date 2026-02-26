@@ -15,7 +15,7 @@ export default function ConstitutionalSort() {
     const [unlockedLevels, setUnlockedLevels] = useState(["Easy"]);
     const [items, setItems] = useState([]);
     const [placedItems, setPlacedItems] = useState({});
-    const [timer, setTimer] = useState(30);
+    const [timer, setTimer] = useState(90);
     const [score, setScore] = useState(0);
     const [wrongCount, setWrongCount] = useState(0);
     const [touchItem, setTouchItem] = useState(null);
@@ -24,6 +24,7 @@ export default function ConstitutionalSort() {
     const scrollRef = useRef(null);
     const touchItemRef = useRef(null);
     const touchPosRef = useRef({ x: 0, y: 0 });
+    const gameItemCountRef = useRef(0);
 
     useEffect(() => {
         const fetchProgress = async () => {
@@ -72,17 +73,25 @@ export default function ConstitutionalSort() {
         const queryParams = new URLSearchParams(location.search);
         const selectedCat = queryParams.get("category");
 
+        const itemCountByDifficulty = { Easy: 10, Medium: 12, Hard: 15 };
+        const itemCount = itemCountByDifficulty[difficulty];
+
         let difficultyItems = t.constitutionalSort.items[difficulty];
 
         if (selectedCat) {
             difficultyItems = difficultyItems.filter(i => i.category === selectedCat);
         }
 
-        setItems([...difficultyItems].sort(() => 0.5 - Math.random()));
+        // Shuffle then pick only the required number of items
+        const shuffled = [...difficultyItems].sort(() => 0.5 - Math.random());
+        const selectedItems = shuffled.slice(0, itemCount);
+
+        gameItemCountRef.current = selectedItems.length;
+        setItems(selectedItems);
         setPlacedItems({});
         setScore(0);
         setWrongCount(0);
-        setTimer(30);
+        setTimer(difficulty === "Hard" ? 45 : difficulty === "Medium" ? 60 : 90);
         setGameState("playing");
     };
 
@@ -146,7 +155,6 @@ export default function ConstitutionalSort() {
     const handleSubmit = () => {
         let correctCount = 0;
         let incorrectCount = 0;
-        const totalItemsCount = t.constitutionalSort.items[difficulty].length;
 
         Object.keys(placedItems).forEach(cat => {
             placedItems[cat].forEach(item => {
@@ -308,7 +316,14 @@ export default function ConstitutionalSort() {
         }
     };
 
-    const categories = Array.from(new Set(t.constitutionalSort.items[difficulty].map(i => i.category)));
+    // Derive categories from the active set of items (pool + already placed)
+    const allActiveItems = [
+        ...items,
+        ...Object.values(placedItems).flat()
+    ];
+    const categories = allActiveItems.length > 0
+        ? Array.from(new Set(allActiveItems.map(i => i.category)))
+        : Array.from(new Set(t.constitutionalSort.items[difficulty].map(i => i.category)));
 
     return (
         <>
@@ -442,7 +457,7 @@ export default function ConstitutionalSort() {
                             <p>{t.constitutionalSort.wellDoneDesc}</p>
                             <div className="win-stats">
                                 <div className="stat-pill">
-                                    <Timer size={16} /> {30 - timer}s used
+                                    <Timer size={16} /> {(difficulty === "Hard" ? 45 : difficulty === "Medium" ? 60 : 90) - timer}s used
                                 </div>
                                 <div className="stat-pill" style={{ color: '#22c55e' }}>
                                     <CheckCircle2 size={16} /> {score / 10}
