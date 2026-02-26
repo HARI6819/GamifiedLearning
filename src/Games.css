@@ -361,6 +361,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   padding: 20px 20px;
+  overflow: visible;
 }
 
 /* Card */

@@ -23,26 +23,26 @@ function HeroPage() {
         <section className="hero">
             <div className="hero-content">
                 {/* Badge */}
-                <div className="hero-badge reveal">
+                <div className="hero-badge reveal stagger-1">
                     <p>🇮🇳</p>
                     <span>{t.home.heroBadge}</span>
                 </div>
 
                 {/* Heading */}
-                <h1 className="hero-title reveal">
+                <h1 className="hero-title reveal stagger-2">
                     <span className="title-primary">{t.home.heroTitle1}</span>
                     <br />
                     <span className="title-secondary">{t.home.heroTitle2}</span>
                 </h1>
 
                 {/* Hindi subtitle */}
-                <p className="hero-hindi reveal">{t.home.heroSubtitle}</p>
+                <p className="hero-hindi reveal stagger-3">{t.home.heroSubtitle}</p>
 
                 {/* Description */}
-                <p className="hero-desc reveal">{t.home.heroDesc}</p>
+                <p className="hero-desc reveal stagger-4">{t.home.heroDesc}</p>
 
                 {/* Buttons */}
-                <div className="hero-buttons reveal">
+                <div className="hero-buttons reveal stagger-5">
                     <button className="btn-primary" onClick={handleStartPlaying}>
                         <Gamepad2 size={20} />
                         {t.home.startPlaying}
@@ -56,17 +56,17 @@ function HeroPage() {
                 </div>
 
                 {/* Stats */}
-                <div className="hero-stats reveal">
+                <div className="hero-stats reveal stagger-6">
                     <Stat number="3" label={t.home.stats.organs} c="color1" />
                     <Stat number="20+" label={t.home.stats.articles} c="color2" />
                     <Stat number="4" label={t.home.stats.modes} c="color3" />
                 </div>
             </div>
 
-            {/* Floating icons */}
-            <Floating icon="📜" className="float-left" />
-            <Floating icon="⚖️" className="float-right" />
-            <Floating icon="🏛️" className="float-bottom" />
+            {/* Floating icons — different parallax speeds for depth */}
+            <Floating icon="📜" className="float-left parallax-float-slow" />
+            <Floating icon="⚖️" className="float-right parallax-float-fast" />
+            <Floating icon="🏛️" className="float-bottom parallax-float-mid" />
 
         </section>
     )

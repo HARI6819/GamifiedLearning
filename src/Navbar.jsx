@@ -1,5 +1,5 @@
 import './Navbar.css'
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Home, Gamepad2, BookOpen, Trophy, Menu, Languages, User, Sun, Moon, MessageCircle } from "lucide-react";
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from './context/LanguageContext';
@@ -9,6 +9,16 @@ import Chat from "./Chat";
 function Navbar() {
     const [popUp, setPopUp] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const navRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
     const { t, language, toggleLanguage } = useLanguage();
     const { theme, toggleTheme } = useTheme();
     const profileImage = localStorage.getItem('profileImage');
@@ -60,7 +70,7 @@ function Navbar() {
             {popUp && <section className="chatBotIcon">
                 <Chat />
             </section>}
-            <div className="nav">
+            <div className={`nav${scrolled ? ' scrolled' : ''}`} ref={navRef}>
                 <div className="logo" onClick={handleNavigateH}>
                     <div className="Logoicon">
                         <span>⚖️</span>

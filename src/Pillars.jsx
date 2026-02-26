@@ -4,10 +4,10 @@ import { useLanguage } from "./context/LanguageContext";
 import useScrollAnimation from "./hooks/useScrollAnimation";
 
 
-const PillarCard = ({ icon, title, description, articles, link, accent, articlesLabel, exploreLabel }) => {
+const PillarCard = ({ icon, title, description, articles, link, accent, articlesLabel, exploreLabel, stagger }) => {
 
   return (
-    <div className={`pillar-card ${accent} reveal`}>
+    <div className={`pillar-card ${accent} reveal ${stagger || ''}`}>
       <div className="pillar-header">
         <div className="pillar-icon">{icon}</div>
         <h3>{title}</h3>
@@ -51,6 +51,7 @@ const Pillars = () => {
             accent="secondary"
             articlesLabel={t.home.pillars.articles}
             exploreLabel={t.home.pillars.explore}
+            stagger="stagger-1"
           />
 
           <PillarCard
@@ -62,6 +63,7 @@ const Pillars = () => {
             accent="primary"
             articlesLabel={t.home.pillars.articles}
             exploreLabel={t.home.pillars.explore}
+            stagger="stagger-2"
           />
 
           <PillarCard
@@ -73,6 +75,7 @@ const Pillars = () => {
             accent="accent"
             articlesLabel={t.home.pillars.articles}
             exploreLabel={t.home.pillars.explore}
+            stagger="stagger-3"
           />
         </div>
       </div>

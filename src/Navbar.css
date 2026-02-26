@@ -22,13 +22,29 @@
 
   z-index: 1000;
   overflow: visible;
-  transition: background 0.3s, border-color 0.3s;
+  transition: background 0.4s ease, border-color 0.4s ease, height 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+.nav.scrolled {
+  height: 7.5vh;
+  background: rgba(248, 249, 221, 0.78);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.18);
 }
 
 .dark .nav {
   background: rgba(15, 23, 42, 0.85);
-  /* Darker background for dark mode */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .nav.scrolled {
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
 

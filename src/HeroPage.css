@@ -8,6 +8,7 @@
   padding: 0 20px;
   background: url('/bg.png') center/cover no-repeat;
   transition: background 0.3s;
+  will-change: transform;
 }
 
 .dark .hero {
@@ -224,6 +225,20 @@
   background: white;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   animation: float 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Parallax float speeds driven by CSS --scroll-y */
+.parallax-float-slow {
+  transform: translateY(calc(var(--scroll-y, 0) * -0.04px));
+}
+
+.parallax-float-mid {
+  transform: translateY(calc(var(--scroll-y, 0) * -0.07px));
+}
+
+.parallax-float-fast {
+  transform: translateY(calc(var(--scroll-y, 0) * -0.11px));
 }
 
 .dark .floating {

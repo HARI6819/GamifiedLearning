@@ -10,10 +10,11 @@ const GameCard = ({
   time,
   link,
   gradient,
-  playNowLabel
+  playNowLabel,
+  stagger
 }) => {
   return (
-    <div className="game-card reveal">
+    <div className={`game-card reveal ${stagger || ''}`}>
       <div className="game-top">
         <div className={`game-icon ${gradient}`}>
           <span>{icon}</span>
@@ -60,6 +61,7 @@ const GameFormats = () => {
             link="/games/spin-wheel"
             gradient="saffron"
             playNowLabel={t.home.gameFormats.playNow}
+            stagger="stagger-1"
           />
 
           <GameCard
@@ -71,6 +73,7 @@ const GameFormats = () => {
             link="/games/quiz-cards"
             gradient="emerald"
             playNowLabel={t.home.gameFormats.playNow}
+            stagger="stagger-2"
           />
 
           <GameCard
@@ -82,6 +85,7 @@ const GameFormats = () => {
             link="/games/snake-ladder"
             gradient="saffphire"
             playNowLabel={t.home.gameFormats.playNow}
+            stagger="stagger-3"
           />
 
           <GameCard
@@ -93,6 +97,7 @@ const GameFormats = () => {
             link="/games/match-pairs"
             gradient="gold"
             playNowLabel={t.home.gameFormats.playNow}
+            stagger="stagger-4"
           />
         </div>
 

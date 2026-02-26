@@ -8,12 +8,15 @@ import { useLocation, useSearchParams, useNavigate } from "react-router-dom";
 import { useLanguage } from "./context/LanguageContext";
 import { articleTranslations } from "./data/articleTranslations";
 import config from "./config";
+import useScrollAnimation from "./hooks/useScrollAnimation";
 
 
 const Learn = () => {
     const { t, language } = useLanguage();
     const [searchParams, setSearchParams] = useSearchParams();
     const selectedCategory = searchParams.get("category");
+
+    useScrollAnimation();
 
     const [articlesData, setArticlesData] = useState([]);
     const [search1, setSearch] = useState("");
@@ -221,10 +224,10 @@ const Learn = () => {
                 {!selectedCategory ? (
                     /* View 1: Category Selection */
                     <div className="category-grid">
-                        {organs.map(org => (
+                        {organs.map((org, index) => (
                             <div
                                 key={org.id}
-                                className={`category-hero-card ${org.color}`}
+                                className={`category-hero-card ${org.color} reveal-up stagger-${index + 1}`}
                                 onClick={() => handleCategorySelect(org.id)}
                             >
                                 <div>
@@ -369,11 +372,11 @@ const Learn = () => {
                                                         </div>
                                                     )}
                                                     <div className="details-footer">
-                                            <div className="meta-tags">
-                                                <span>Part {selectedArticle.originalPart}</span>
-                                                <span>{getTranslatedString(selectedArticle.difficulty, 'difficulty')}</span>
-                                            </div>
-                                        </div>
+                                                        <div className="meta-tags">
+                                                            <span>Part {selectedArticle.originalPart}</span>
+                                                            <span>{getTranslatedString(selectedArticle.difficulty, 'difficulty')}</span>
+                                                        </div>
+                                                    </div>
                                                 </>
                                             )}
 
@@ -392,7 +395,7 @@ const Learn = () => {
                                             </button>
                                         )}
 
-                                        
+
                                     </div>
                                 ) : (
                                     <div className="no-selection-state">

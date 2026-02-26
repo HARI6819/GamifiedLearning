@@ -5,10 +5,12 @@ import Footer from "./Footer";
 import { useLanguage } from "./context/LanguageContext";
 import { useNavigate } from "react-router";
 import config from "./config";
+import useScrollAnimation from "./hooks/useScrollAnimation";
 
 const ProgressPage = () => {
   const { t } = useLanguage();
   const navigate = useNavigate();
+  useScrollAnimation();
   const [stats, setStats] = useState({
     gamesPlayed: 0,
     articlesRead: 0,
@@ -180,7 +182,7 @@ const ProgressPage = () => {
           </div>
         )}
         {/* Header */}
-        <div className="pa-header">
+        <div className="pa-header reveal-up stagger-1">
           <span className="pa-pill">{t.progress.journey}</span>
           <h1>{t.progress.title}</h1>
           <p>{t.progress.subtitle}</p>
@@ -203,7 +205,7 @@ const ProgressPage = () => {
           )}
 
           {/* Overall Progress */}
-          <section className="pa-card gradient-border">
+          <section className="pa-card gradient-border reveal-up stagger-2">
             <div className="card-top-gradient"></div>
 
             <h2 className="section-title">{t.progress.overall}</h2>
@@ -231,7 +233,7 @@ const ProgressPage = () => {
           </section>
 
           {/* Leaderboard Section */}
-          <section className="pa-card leaderboard-section">
+          <section className="pa-card leaderboard-section reveal-up stagger-3">
             <div className="leaderboard-header">
               <div className="header-title">
                 <span className="trophy-icon">🏆</span>
@@ -300,7 +302,7 @@ const ProgressPage = () => {
           </section>
 
           {/* Category Mastery */}
-          <section className="pa-card">
+          <section className="pa-card reveal-up stagger-4">
             <h2 className="section-title">{t.progress.mastery}</h2>
 
             <div className="progress-item">
@@ -335,7 +337,7 @@ const ProgressPage = () => {
           </section>
 
           {/* Achievements */}
-          <section className="pa-card">
+          <section className="pa-card reveal-up stagger-5">
             <h2 className="section-title">{t.progress.achievements}</h2>
 
             <div className="achievements-grid">

@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import Footer from './Footer'
 import { useLanguage } from "./context/LanguageContext";
 import config from "./config";
+import useScrollAnimation from "./hooks/useScrollAnimation";
 
 export default function Games() {
   const { t } = useLanguage();
@@ -115,6 +116,8 @@ export default function Games() {
 
   const globalLevel = getGlobalLevel();
 
+  useScrollAnimation();
+
   const getLevelStatus = (gameId) => {
     const completed = completedLevels[gameId] || [];
     if (completed.includes("Hard")) return { label: t.gamesPage.progression.status.completedAll, color: "#166534" };
@@ -165,7 +168,7 @@ export default function Games() {
           </div>
         )}
         <div className="container1">
-          <div className="header1">
+          <div className="header1 reveal-up stagger-1">
             <span className="pill1">
               <Gamepad2 size={14} />
               {t.gamesPage.hub}
@@ -216,7 +219,7 @@ export default function Games() {
                                 {gameTitle}
                               </div>
                             )}
-                            
+
                           </div>
                         );
                       })}
@@ -255,7 +258,7 @@ export default function Games() {
                                 {gameTitle}
                               </div>
                             )}
-                            
+
                           </div>
                         );
                       })}
@@ -284,12 +287,13 @@ export default function Games() {
           </div>
 
           <div className="game-grid1">
-            {gamesList.map((game) => {
+            {gamesList.map((game, index) => {
               const status = getLevelStatus(game.id);
               const isGameDoneAtGlobalLevel = completedLevels[game.id]?.includes(globalLevel);
+              const staggerClass = `stagger-${Math.min(index + 1, 6)}`;
 
               return (
-                <div className="game-card1" key={game.id}>
+                <div className={`game-card1 reveal-up ${staggerClass}`} key={game.id}>
                   <div className={`top-bar1 ${game.color}`} />
                   <div className="card-body1">
                     <div className="card-header1">
