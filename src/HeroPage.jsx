@@ -52,6 +52,9 @@ function ParticleCanvas() {
             const mx = mouse.current.x;
             const my = mouse.current.y;
             const REPEL = 100;
+            const isDark = document.documentElement.classList.contains('dark');
+            const dotColor = isDark ? '180,210,255' : '30,58,138';
+            const lineColor = isDark ? '180,210,255' : '30,58,138';
 
             particles.forEach(p => {
                 // Mouse repulsion
@@ -90,7 +93,7 @@ function ParticleCanvas() {
                 } else {
                     ctx.beginPath();
                     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(30,58,138,${p.alpha})`;
+                    ctx.fillStyle = `rgba(${dotColor},${p.alpha})`;
                     ctx.fill();
                 }
             });
@@ -105,7 +108,7 @@ function ParticleCanvas() {
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(30,58,138,${0.12 * (1 - d / 120)})`;
+                        ctx.strokeStyle = `rgba(${lineColor},${0.15 * (1 - d / 120)})`;
                         ctx.lineWidth = 0.8;
                         ctx.stroke();
                     }
