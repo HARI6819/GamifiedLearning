@@ -131,6 +131,8 @@ function ParticleCanvas() {
 }
 
 
+
+
 /* ── Main Component ────────────────────────────────────────── */
 function HeroPage() {
     const { t } = useLanguage();

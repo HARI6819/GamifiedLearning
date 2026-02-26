@@ -8,6 +8,11 @@
   pointer-events: all;
 }
 
+@media (max-width:450px){
+    .hero-particles{
+        display :none;
+    }
+}
 
 
 
