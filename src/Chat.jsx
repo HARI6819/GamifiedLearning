@@ -3,7 +3,46 @@ import "./Chat.css";
 import { useLanguage } from "./context/LanguageContext";
 import config from "./config";
 import ReactMarkdown from "react-markdown";
-import { Bot } from "lucide-react"
+import { Bot } from "lucide-react";
+
+const SYSTEM_PROMPT = `You are a helpful AI assistant embedded inside a gamified learning platform called "Samvidhan Siksha" (Constitutional Learning). Here is everything you know about this website:
+
+## About the Website
+- **Name**: Samvidhan Siksha – A Gamified Learning Platform
+- **Purpose**: To make learning about the Indian Constitution fun, interactive, and engaging through gamification instead of boring textbook study.
+- **Target Users**: Students, competitive exam aspirants (UPSC, SSC, etc.), and any citizen who wants to understand the Indian Constitution and democratic institutions.
+
+## Core Theme
+The platform covers three pillars of Indian democracy:
+1. **Legislature** – Parliament, Lok Sabha, Rajya Sabha, lawmaking
+2. **Executive** – President, Prime Minister, Council of Ministers
+3. **Judiciary** – Supreme Court, High Courts, fundamental rights
+
+## Games & Learning Modules
+The platform features multiple interactive games:
+- **Quiz** – Multiple-choice questions on the Constitution and civics topics
+- **Chakra of Knowledge** – Spin-the-wheel style quiz game
+- **Constitutional Crossroads** – Scenario-based decision-making game
+- **Constitutional Sort** – Drag-and-drop sorting of constitutional concepts
+- **Article Match** – Match constitutional articles to their descriptions
+- **Justice Jury** – Court-room style game about the judiciary
+- **Rights & Duties Climb** – Snakes & Ladders style game on fundamental rights and duties
+- **Reverse Hangman** – Word guessing game with constitutional terms
+- **Constitution Cards** – Flashcard-style learning game
+
+## Key Features
+- 🎮 Gamified learning with points, levels, and progress tracking
+- 📊 Dashboard showing scores and game progress
+- 🌐 Multi-language support
+- 🌙 Dark/Light theme toggle
+- 👤 User login and profile page
+- 💬 AI Chat assistant (that's you!)
+- 📚 Learn section with structured content
+- 🏛️ Pillars section explaining Legislature, Executive, Judiciary
+
+## Your Role
+You are the website's AI assistant. Answer questions about the website, its games, the Indian Constitution, and civics topics clearly and helpfully. If asked about the website, give accurate details based on the above. For general questions, answer to the best of your knowledge.
+`;
 
 export default function Chat() {
   const { t } = useLanguage();
@@ -65,36 +104,29 @@ export default function Chat() {
     scrollToBottom(true);
 
     try {
-      
-      if (userMsg.content.includes("this web") || userMsg.content.includes("this website") || userMsg.content.includes("this site")) {
-        const aiMsg = {
-          role: "assistant",
-          content: "🌐 About your website – Gamified Learning \n \n Your website is a gamified learning platform about the Indian Constitution. It is mainly designed to make learning Constitution + Institutions (Legislature, Executive, Judiciary) fun and interactive instead of boring theory. \n \n 🎯 Main Purpose \n \n•	Spread constitutional literacy\n\n•	Teach users about Indian democratic institutions\n\n•	Convert boring civics into game-style learning\n\n•	Improve engagement using interactive features\n\n•	Gamification means adding points, levels, challenges, rewards, quizzes, and progress tracking to increase motivation and engagement in learning. \n\n🧩 What your website likely includes\n\n(Based on your project + typical gamified learning platforms)\n\n•	🎮 Dice / game-style navigation\n\n•	❓ Quiz & questions about Constitution\n\n•	🧠 Interactive learning modules\n\n•	📊 Progress / score tracking\n\n•	🏛️ Topics like:\n\n•	Legislature\n\n•	Executive\n\n•	Judiciary\n\n•	Constitutional basics\n\n👨‍🎓 Target Users\n\n•	Students\n\n•	Competitive exam learners\n\n•	Citizens who want to understand Constitution\n\n•	Educational / academic projects\n\n🚀 Overall Idea\n\nYour website is an educational gamified civic learning tool that tries to:\n\n•	Make learning fun 🎮\n\n•	Improve memory & engagement 🧠\n\n•	Teach real civic knowledge 📚\n\nThis type of gamified learning is known to increase motivation and participation compared to traditional learning.",
-        };
-        setMessages((prev) => [...prev, aiMsg]);
-        return;
-      } else {
-        const res = await fetch(`${config.API_URL}/api/chat`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "ngrok-skip-browser-warning": "true",
-          },
-          body: JSON.stringify({ message: userMsg.content }),
-        });
+      const res = await fetch(`${config.API_URL}/api/chat`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "true",
+        },
+        body: JSON.stringify({
+          message: userMsg.content,
+          system_prompt: SYSTEM_PROMPT,
+        }),
+      });
 
-        const data = await res.json();
+      const data = await res.json();
 
-        const aiMsg = {
-          role: "assistant",
-          content:
-            data?.choices?.[0]?.message?.content ||
-            data?.error?.message ||
-            t.chat.noResponse,
-        };
+      const aiMsg = {
+        role: "assistant",
+        content:
+          data?.choices?.[0]?.message?.content ||
+          data?.error?.message ||
+          t.chat.noResponse,
+      };
 
-        setMessages((prev) => [...prev, aiMsg]);
-      }
+      setMessages((prev) => [...prev, aiMsg]);
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -127,12 +159,12 @@ export default function Chat() {
           {messages.map((msg, i) => (
             <div key={i} className={`message-wrapper ${msg.role}`}>
               <div className="message-avatar">
-                  {msg.role === "assistant" &&
-                    <Bot size={25} />
-                  }
-                </div>
+                {msg.role === "assistant" &&
+                  <Bot size={25} />
+                }
+              </div>
               <div className="message-content">
-                
+
 
                 <div className="message-text">
                   {msg.role === "assistant" ? (
@@ -149,10 +181,10 @@ export default function Chat() {
           {loading && (
             <div className="message-wrapper assistant">
               <div className="message-avatar">
-                  <Bot size={25} />
-                </div>
+                <Bot size={25} />
+              </div>
               <div className="message-content">
-                
+
                 <div className="message-text typing-indicator">
                   <span></span>
                   <span></span>
