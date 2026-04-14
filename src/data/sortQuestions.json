@@ -1,0 +1,458 @@
+{
+  "Easy": [
+    {
+      "id": "e1",
+      "text": "Freedom of Speech",
+      "category": "Legislature"
+    },
+    {
+      "id": "e2",
+      "text": "Right to Information",
+      "category": "Legislature"
+    },
+    {
+      "id": "e3",
+      "text": "Right to Education",
+      "category": "Legislature"
+    },
+    {
+      "id": "e4",
+      "text": "Equality before Law",
+      "category": "Judiciary"
+    },
+    {
+      "id": "e5",
+      "text": "Protection of Life",
+      "category": "Judiciary"
+    },
+    {
+      "id": "e6",
+      "text": "Abolition of Untouchability",
+      "category": "Judiciary"
+    },
+    {
+      "id": "e7",
+      "text": "President of India",
+      "category": "Executive"
+    },
+    {
+      "id": "e8",
+      "text": "Prime Minister",
+      "category": "Executive"
+    },
+    {
+      "id": "e9",
+      "text": "Governor of State",
+      "category": "Executive"
+    },
+    {
+      "id": "e10",
+      "text": "Council of Ministers",
+      "category": "Executive"
+    },
+    {
+      "id": "e11",
+      "text": "Lok Sabha",
+      "category": "Legislature"
+    },
+    {
+      "id": "e12",
+      "text": "Rajya Sabha",
+      "category": "Legislature"
+    },
+    {
+      "id": "e13",
+      "text": "Parliament",
+      "category": "Legislature"
+    },
+    {
+      "id": "e14",
+      "text": "Bill Presentation",
+      "category": "Legislature"
+    },
+    {
+      "id": "e15",
+      "text": "Budget Session",
+      "category": "Legislature"
+    },
+    {
+      "id": "e16",
+      "text": "Election of President",
+      "category": "Executive"
+    },
+    {
+      "id": "e17",
+      "text": "Oath of Office",
+      "category": "Executive"
+    },
+    {
+      "id": "e18",
+      "text": "Cabinet Meeting",
+      "category": "Executive"
+    },
+    {
+      "id": "e19",
+      "text": "Civil Services",
+      "category": "Executive"
+    },
+    {
+      "id": "e20",
+      "text": "Diplomatic Powers",
+      "category": "Executive"
+    },
+    {
+      "id": "e21",
+      "text": "Supreme Court",
+      "category": "Judiciary"
+    },
+    {
+      "id": "e22",
+      "text": "High Court",
+      "category": "Judiciary"
+    },
+    {
+      "id": "e23",
+      "text": "District Court",
+      "category": "Judiciary"
+    },
+    {
+      "id": "e24",
+      "text": "Public Interest Litigation",
+      "category": "Judiciary"
+    },
+    {
+      "id": "e25",
+      "text": "Justice for All",
+      "category": "Judiciary"
+    },
+    {
+      "id": "e26",
+      "text": "Question Hour",
+      "category": "Legislature"
+    },
+    {
+      "id": "e27",
+      "text": "Zero Hour",
+      "category": "Legislature"
+    },
+    {
+      "id": "e28",
+      "text": "Speaker of Lok Sabha",
+      "category": "Legislature"
+    },
+    {
+      "id": "e29",
+      "text": "Veto Power",
+      "category": "Executive"
+    },
+    {
+      "id": "e30",
+      "text": "Independent Judiciary",
+      "category": "Judiciary"
+    }
+  ],
+  "Medium": [
+    {
+      "id": "m1",
+      "text": "Separation of Powers",
+      "category": "Judiciary"
+    },
+    {
+      "id": "m2",
+      "text": "Check and Balances",
+      "category": "Legislature"
+    },
+    {
+      "id": "m3",
+      "text": "Federal Structure",
+      "category": "Legislature"
+    },
+    {
+      "id": "m4",
+      "text": "Constitutional Remedies",
+      "category": "Judiciary"
+    },
+    {
+      "id": "m5",
+      "text": "Writ of Habeas Corpus",
+      "category": "Judiciary"
+    },
+    {
+      "id": "m6",
+      "text": "Judicial Review",
+      "category": "Judiciary"
+    },
+    {
+      "id": "m7",
+      "text": "Attorney General",
+      "category": "Executive"
+    },
+    {
+      "id": "m8",
+      "text": "Advocate General",
+      "category": "Executive"
+    },
+    {
+      "id": "m9",
+      "text": "Comptroller and Auditor General",
+      "category": "Executive"
+    },
+    {
+      "id": "m10",
+      "text": "Joint Sitting of Parliament",
+      "category": "Legislature"
+    },
+    {
+      "id": "m11",
+      "text": "Ordinance Making Power",
+      "category": "Executive"
+    },
+    {
+      "id": "m12",
+      "text": "Advisory Jurisdiction",
+      "category": "Judiciary"
+    },
+    {
+      "id": "m13",
+      "text": "Special Leave Petition",
+      "category": "Judiciary"
+    },
+    {
+      "id": "m14",
+      "text": "Contempt of Court",
+      "category": "Judiciary"
+    },
+    {
+      "id": "m15",
+      "text": "Money Bill Definition",
+      "category": "Legislature"
+    },
+    {
+      "id": "m16",
+      "text": "Consolidated Fund",
+      "category": "Legislature"
+    },
+    {
+      "id": "m17",
+      "text": "Contingency Fund",
+      "category": "Executive"
+    },
+    {
+      "id": "m18",
+      "text": "Public Accounts Committee",
+      "category": "Legislature"
+    },
+    {
+      "id": "m19",
+      "text": "Inter-State Council",
+      "category": "Executive"
+    },
+    {
+      "id": "m20",
+      "text": "Finance Commission",
+      "category": "Executive"
+    },
+    {
+      "id": "m21",
+      "text": "Election Commission",
+      "category": "Executive"
+    },
+    {
+      "id": "m22",
+      "text": "Union Public Service Commission",
+      "category": "Executive"
+    },
+    {
+      "id": "m23",
+      "text": "State Public Service Commission",
+      "category": "Executive"
+    },
+    {
+      "id": "m24",
+      "text": "National Commission for SC/ST",
+      "category": "Executive"
+    },
+    {
+      "id": "m25",
+      "text": "Official Language Commission",
+      "category": "Executive"
+    },
+    {
+      "id": "m26",
+      "text": "Tribunals",
+      "category": "Judiciary"
+    },
+    {
+      "id": "m27",
+      "text": "Administrative Law",
+      "category": "Judiciary"
+    },
+    {
+      "id": "m28",
+      "text": "Delegated Legislation",
+      "category": "Legislature"
+    },
+    {
+      "id": "m29",
+      "text": "Privileges of Parliament",
+      "category": "Legislature"
+    },
+    {
+      "id": "m30",
+      "text": "Anti-Defection Law",
+      "category": "Legislature"
+    }
+  ],
+  "Hard": [
+    {
+      "id": "h1",
+      "text": "Basic Structure Doctrine",
+      "category": "Judiciary"
+    },
+    {
+      "id": "h2",
+      "text": "Doctrine of Pith and Substance",
+      "category": "Judiciary"
+    },
+    {
+      "id": "h3",
+      "text": "Doctrine of Eclipse",
+      "category": "Judiciary"
+    },
+    {
+      "id": "h4",
+      "text": "Doctrine of Severability",
+      "category": "Judiciary"
+    },
+    {
+      "id": "h5",
+      "text": "Doctrine of Colorable Legislation",
+      "category": "Legislature"
+    },
+    {
+      "id": "h6",
+      "text": "Doctrine of Residuary Powers",
+      "category": "Legislature"
+    },
+    {
+      "id": "h7",
+      "text": "Doctrine of Pleasure",
+      "category": "Executive"
+    },
+    {
+      "id": "h8",
+      "text": "Doctrine of Collective Responsibility",
+      "category": "Executive"
+    },
+    {
+      "id": "h9",
+      "text": "Pardon Power of President",
+      "category": "Executive"
+    },
+    {
+      "id": "h10",
+      "text": "Emergency Provisions",
+      "category": "Executive"
+    },
+    {
+      "id": "h11",
+      "text": "National Emergency (Art 352)",
+      "category": "Executive"
+    },
+    {
+      "id": "h12",
+      "text": "President's Rule (Art 356)",
+      "category": "Executive"
+    },
+    {
+      "id": "h13",
+      "text": "Financial Emergency (Art 360)",
+      "category": "Executive"
+    },
+    {
+      "id": "h14",
+      "text": "Amendment of Constitution",
+      "category": "Legislature"
+    },
+    {
+      "id": "h15",
+      "text": "Special Majority",
+      "category": "Legislature"
+    },
+    {
+      "id": "h16",
+      "text": "Article 370 (Old)",
+      "category": "Legislature"
+    },
+    {
+      "id": "h17",
+      "text": "Article 371 (Special Provisions)",
+      "category": "Legislature"
+    },
+    {
+      "id": "h18",
+      "text": "Unified Judiciary",
+      "category": "Judiciary"
+    },
+    {
+      "id": "h19",
+      "text": "Integrity of the Nation",
+      "category": "Judiciary"
+    },
+    {
+      "id": "h20",
+      "text": "Original Jurisdiction of SC",
+      "category": "Judiciary"
+    },
+    {
+      "id": "h21",
+      "text": "Appellate Jurisdiction of SC",
+      "category": "Judiciary"
+    },
+    {
+      "id": "h22",
+      "text": "Curative Petition",
+      "category": "Judiciary"
+    },
+    {
+      "id": "h23",
+      "text": "Court of Record",
+      "category": "Judiciary"
+    },
+    {
+      "id": "h24",
+      "text": "Independence of Election Com.",
+      "category": "Executive"
+    },
+    {
+      "id": "h25",
+      "text": "Article 312 (All India Services)",
+      "category": "Legislature"
+    },
+    {
+      "id": "h26",
+      "text": "Article 249 (List II Power)",
+      "category": "Legislature"
+    },
+    {
+      "id": "h27",
+      "text": "Article 253 (International Agreements)",
+      "category": "Legislature"
+    },
+    {
+      "id": "h28",
+      "text": "Doctrine of Territorial Nexus",
+      "category": "Judiciary"
+    },
+    {
+      "id": "h29",
+      "text": "Doctrine of Harmonious Construction",
+      "category": "Judiciary"
+    },
+    {
+      "id": "h30",
+      "text": "Principles of Natural Justice",
+      "category": "Judiciary"
+    }
+  ]
+}

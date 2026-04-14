@@ -1,0 +1,868 @@
+{
+  "Easy": [
+    {
+      "id": "e1",
+      "title": "Freedom of Speech",
+      "situation": "A citizen wants to organize a peaceful protest against a government policy. The local police deny permission citing 'public order concerns'.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Police can deny permission as they see fit"
+        },
+        {
+          "id": "b",
+          "text": "Citizen has right to protest, police must allow it"
+        },
+        {
+          "id": "c",
+          "text": "Citizen can protest but police can impose reasonable restrictions"
+        },
+        {
+          "id": "d",
+          "text": "Only violent protests can be stopped"
+        }
+      ],
+      "correctChoice": "c",
+      "explanation": "Article 19(1)(a) guarantees freedom of speech and expression, including the right to peaceful assembly. However, Article 19(2) allows reasonable restrictions in the interest of public order, sovereignty, and security. Police can impose reasonable restrictions but cannot arbitrarily deny the right.",
+      "articles": [
+        "Article 19(1)(a)",
+        "Article 19(2)"
+      ]
+    },
+    {
+      "id": "e2",
+      "title": "Right to Education",
+      "situation": "A 7-year-old child from a poor family cannot afford school fees. The parents approach the government for help.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Education is not a fundamental right"
+        },
+        {
+          "id": "b",
+          "text": "State must provide free education to children aged 6-14"
+        },
+        {
+          "id": "c",
+          "text": "Only children above 14 have right to education"
+        },
+        {
+          "id": "d",
+          "text": "Parents must pay for education"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 21A makes free and compulsory education a fundamental right for all children aged 6 to 14 years. The state is constitutionally obligated to provide this education.",
+      "articles": [
+        "Article 21A"
+      ]
+    },
+    {
+      "id": "e3",
+      "title": "Arrest Rights",
+      "situation": "Police arrest a person without informing them of the grounds of arrest or their rights.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Police can arrest without giving reasons"
+        },
+        {
+          "id": "b",
+          "text": "Person must be informed of grounds and rights"
+        },
+        {
+          "id": "c",
+          "text": "Only serious crimes require informing the person"
+        },
+        {
+          "id": "d",
+          "text": "Rights are informed only in court"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 22(1) provides that every person arrested must be informed of the grounds of arrest and has the right to consult and be defended by a legal practitioner. This is a fundamental right that cannot be denied.",
+      "articles": [
+        "Article 22(1)"
+      ]
+    },
+    {
+      "id": "e4",
+      "title": "Equality Before Law",
+      "situation": "A law is passed that treats men and women differently in matters of employment without any reasonable justification.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Law is valid as legislature can make any law"
+        },
+        {
+          "id": "b",
+          "text": "Law violates equality and can be challenged"
+        },
+        {
+          "id": "c",
+          "text": "Only courts can decide, citizens cannot challenge"
+        },
+        {
+          "id": "d",
+          "text": "Gender-based laws are always valid"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 14 guarantees equality before law and equal protection of laws. Article 15 prohibits discrimination on grounds of sex. A law that discriminates without reasonable classification violates these fundamental rights and can be challenged in court.",
+      "articles": [
+        "Article 14",
+        "Article 15"
+      ]
+    },
+    {
+      "id": "e5",
+      "title": "Religious Freedom",
+      "situation": "A religious minority community wants to establish and manage their own educational institution.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Only majority religion can establish institutions"
+        },
+        {
+          "id": "b",
+          "text": "Minorities have right to establish educational institutions"
+        },
+        {
+          "id": "c",
+          "text": "Government permission is mandatory"
+        },
+        {
+          "id": "d",
+          "text": "Only secular institutions are allowed"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 30(1) specifically grants religious and linguistic minorities the right to establish and administer educational institutions of their choice. This is a fundamental right to preserve their culture and identity.",
+      "articles": [
+        "Article 30(1)"
+      ]
+    },
+    {
+      "id": "e6",
+      "title": "Right against Exploitation",
+      "situation": "A factory owner employs a 12-year-old child to work in a hazardous firecracker factory.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Owner can employ anyone he pays"
+        },
+        {
+          "id": "b",
+          "text": "Child labor is prohibited under age 14 in hazardous industries"
+        },
+        {
+          "id": "c",
+          "text": "Only government factories cannot employ children"
+        },
+        {
+          "id": "d",
+          "text": "Parents' permission makes it legal"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 24 prohibits the employment of children below the age of 14 years in any factory, mine, or other hazardous employment. This is to protect the health and safety of children.",
+      "articles": [
+        "Article 24"
+      ]
+    },
+    {
+      "id": "e7",
+      "title": "Protection of Life",
+      "situation": "A person's house is being demolished without any prior notice or legal authority.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Government can demolish any property"
+        },
+        {
+          "id": "b",
+          "text": "Procedure established by law must be followed"
+        },
+        {
+          "id": "c",
+          "text": "Notice is not required for illegal structures"
+        },
+        {
+          "id": "d",
+          "text": "Only rich people have property rights"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 21 states that no person shall be deprived of his life or personal liberty except according to procedure established by law. This includes the right to shelter and protection against arbitrary state action.",
+      "articles": [
+        "Article 21"
+      ]
+    },
+    {
+      "id": "e8",
+      "title": "Cultural and Educational Rights",
+      "situation": "A state government bans the use of a minority language in primary schools established by that minority.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "State can decide the medium of instruction"
+        },
+        {
+          "id": "b",
+          "text": "Minorities have right to conserve their language"
+        },
+        {
+          "id": "c",
+          "text": "Only Hindi should be taught in schools"
+        },
+        {
+          "id": "d",
+          "text": "Government funding allows government control"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 29 gives any section of citizens residing in India the right to conserve their distinct language, script, or culture. Banning a minority language in their own institutions violates this right.",
+      "articles": [
+        "Article 29"
+      ]
+    },
+    {
+      "id": "e9",
+      "title": "Right to Move Courts",
+      "situation": "A person's fundamental right is violated, but they cannot afford a lawyer.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Rights are only for those who can pay"
+        },
+        {
+          "id": "b",
+          "text": "State must provide free legal aid to ensure justice"
+        },
+        {
+          "id": "c",
+          "text": "The person cannot approach the court"
+        },
+        {
+          "id": "d",
+          "text": "Only the Supreme Court is free"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 39A mandates the State to provide free legal aid by suitable legislation or schemes to ensure that opportunities for securing justice are not denied to any citizen by reason of economic or other disabilities.",
+      "articles": [
+        "Article 39A"
+      ]
+    },
+    {
+      "id": "e10",
+      "title": "Separation of Powers",
+      "situation": "The Executive tries to pass a law that was already rejected by the Legislature.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Executive has ultimate power"
+        },
+        {
+          "id": "b",
+          "text": "Executive cannot bypass the Legislature's law-making power"
+        },
+        {
+          "id": "c",
+          "text": "Judiciary must pass the law instead"
+        },
+        {
+          "id": "d",
+          "text": "Laws are only made by the President"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "The Constitution establishes a separation of powers where the Legislature makes laws, the Executive implements them, and the Judiciary interprets them. The Executive cannot perform the primary legislative function.",
+      "articles": [
+        "Article 50",
+        "Separation of Powers"
+      ]
+    }
+  ],
+  "Medium": [
+    {
+      "id": "m1",
+      "title": "Parliament vs Fundamental Rights",
+      "situation": "Parliament passes a law that restricts a fundamental right. Citizens challenge it in court claiming it violates the Constitution.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Parliament's law is supreme, cannot be challenged"
+        },
+        {
+          "id": "b",
+          "text": "Court can strike down law if it violates fundamental rights"
+        },
+        {
+          "id": "c",
+          "text": "Only President can invalidate the law"
+        },
+        {
+          "id": "d",
+          "text": "Fundamental rights can never be restricted"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Under the doctrine of judicial review (established in Kesavananda Bharati case), courts can examine whether a law violates fundamental rights or the basic structure of the Constitution. If it does, the court can declare it unconstitutional and void.",
+      "articles": [
+        "Article 13",
+        "Article 32",
+        "Article 226"
+      ]
+    },
+    {
+      "id": "m2",
+      "title": "Inter-State Water Dispute",
+      "situation": "Two states are in conflict over sharing river water. Both claim rights over the water resources.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "States must resolve it themselves"
+        },
+        {
+          "id": "b",
+          "text": "Parliament can form a tribunal to resolve the dispute"
+        },
+        {
+          "id": "c",
+          "text": "President decides unilaterally"
+        },
+        {
+          "id": "d",
+          "text": "Supreme Court must decide directly"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 262 empowers Parliament to provide for adjudication of inter-state water disputes. Parliament can constitute a Water Disputes Tribunal whose decision is binding on the parties. This prevents prolonged litigation and ensures equitable distribution.",
+      "articles": [
+        "Article 262"
+      ]
+    },
+    {
+      "id": "m3",
+      "title": "President's Rule",
+      "situation": "The Governor of a state reports that constitutional machinery has failed. The President considers imposing President's Rule.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "President can impose rule based on Governor's report alone"
+        },
+        {
+          "id": "b",
+          "text": "President must have objective material and Parliament must approve"
+        },
+        {
+          "id": "c",
+          "text": "Governor can directly impose President's Rule"
+        },
+        {
+          "id": "d",
+          "text": "President's Rule cannot be challenged"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 356 allows President's Rule, but the S.R. Bommai case established that it must be based on objective material, not subjective satisfaction. The proclamation must be approved by both houses of Parliament within specified time limits and can be judicially reviewed.",
+      "articles": [
+        "Article 356"
+      ]
+    },
+    {
+      "id": "m4",
+      "title": "Money Bill Dispute",
+      "situation": "A bill is introduced in Lok Sabha as a Money Bill. Rajya Sabha claims it's not a Money Bill and demands equal say.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Rajya Sabha has equal power over all bills"
+        },
+        {
+          "id": "b",
+          "text": "Speaker's decision on Money Bill is final"
+        },
+        {
+          "id": "c",
+          "text": "President decides if it's a Money Bill"
+        },
+        {
+          "id": "d",
+          "text": "Supreme Court must certify Money Bills"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 110 defines Money Bills. Article 109 provides that Money Bills can only be introduced in Lok Sabha, and the Speaker's certificate that a bill is a Money Bill is final and cannot be questioned in any court. Rajya Sabha can only make recommendations.",
+      "articles": [
+        "Article 109",
+        "Article 110"
+      ]
+    },
+    {
+      "id": "m5",
+      "title": "Judicial Appointment",
+      "situation": "A vacancy arises in the Supreme Court. There's a debate about who should appoint the new judge.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "President appoints based on government advice"
+        },
+        {
+          "id": "b",
+          "text": "Collegium of senior judges recommends, President appoints"
+        },
+        {
+          "id": "c",
+          "text": "Parliament elects Supreme Court judges"
+        },
+        {
+          "id": "d",
+          "text": "Chief Justice alone decides"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "While Article 124 states the President appoints Supreme Court judges, the Collegium system (established through judicial pronouncements) requires the Chief Justice to consult senior judges. The President appoints based on the Collegium's recommendation, ensuring judicial independence.",
+      "articles": [
+        "Article 124"
+      ]
+    },
+    {
+      "id": "m6",
+      "title": "Fundamental Duties",
+      "situation": "A citizen refuses to perform fundamental duties listed in the Constitution, claiming they are not enforceable.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Fundamental duties are legally enforceable like rights"
+        },
+        {
+          "id": "b",
+          "text": "Fundamental duties are moral obligations, not legally enforceable"
+        },
+        {
+          "id": "c",
+          "text": "Citizens can be jailed for not performing duties"
+        },
+        {
+          "id": "d",
+          "text": "Only government officials must follow duties"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 51A lists Fundamental Duties added by the 42nd Amendment. Unlike Fundamental Rights, these duties are not legally enforceable through courts. They serve as moral and civic obligations to remind citizens of their responsibilities towards the nation.",
+      "articles": [
+        "Article 51A"
+      ]
+    },
+    {
+      "id": "m7",
+      "title": "Anti-Defection Law",
+      "situation": "An elected MP leaves their political party and joins another party midway through the term.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "MP can join any party"
+        },
+        {
+          "id": "b",
+          "text": "MP can be disqualified under Tenth Schedule"
+        },
+        {
+          "id": "c",
+          "text": "Only voters can remove the MP"
+        },
+        {
+          "id": "d",
+          "text": "Joining another party is a fundamental right"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "The Tenth Schedule of the Constitution (Anti-Defection Law) provides for disqualification of elected members on grounds of defection to another political party, ensuring political stability and loyalty to the mandate.",
+      "articles": [
+        "Tenth Schedule",
+        "Article 102(2)"
+      ]
+    },
+    {
+      "id": "m8",
+      "title": "GST Council",
+      "situation": "A state disagrees with a new tax rate proposed for a specific good in the GST Council.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Union government's decision is final"
+        },
+        {
+          "id": "b",
+          "text": "The GST Council decides through a specified voting majority"
+        },
+        {
+          "id": "c",
+          "text": "States can set their own GST rates independently"
+        },
+        {
+          "id": "d",
+          "text": "The Supreme Court decides tax rates"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 279A constitutes the GST Council where decisions are taken by a majority of not less than three-fourths of the weighted votes of the members present and voting (Union has 1/3 weight, States have 2/3).",
+      "articles": [
+        "Article 279A"
+      ]
+    },
+    {
+      "id": "m9",
+      "title": "Right to Property",
+      "situation": "The government acquires a private land for a public project and offers compensation.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Property is a fundamental right, cannot be taken"
+        },
+        {
+          "id": "b",
+          "text": "Property is a constitutional right, can be taken with law"
+        },
+        {
+          "id": "c",
+          "text": "Government doesn't need to pay compensation"
+        },
+        {
+          "id": "d",
+          "text": "Only the President's land is protected"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 300A states that no person shall be deprived of his property save by authority of law. While no longer a fundamental right after the 44th Amendment, it remains a constitutional right.",
+      "articles": [
+        "Article 300A"
+      ]
+    },
+    {
+      "id": "m10",
+      "title": "Public Interest Litigation",
+      "situation": "A group of citizens files a case in SC on behalf of bonded laborers who cannot approach the court themselves.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Only the affected person can file a case"
+        },
+        {
+          "id": "b",
+          "text": "Any public-spirited citizen can file a PIL for the poor"
+        },
+        {
+          "id": "c",
+          "text": "Labor issues must go to labor courts only"
+        },
+        {
+          "id": "d",
+          "text": "PILs are not allowed in the Supreme Court"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Public Interest Litigation (PIL) allows any person or organization to approach the court for the enforcement of the rights of those who are unable to do so due to poverty or disability, expanding access to justice.",
+      "articles": [
+        "Article 32",
+        "Judicial Activism"
+      ]
+    }
+  ],
+  "Hard": [
+    {
+      "id": "h1",
+      "title": "Basic Structure Doctrine",
+      "situation": "Parliament passes a constitutional amendment that seeks to remove the power of judicial review from courts.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Parliament can amend any part of Constitution"
+        },
+        {
+          "id": "b",
+          "text": "Amendment violates basic structure and is invalid"
+        },
+        {
+          "id": "c",
+          "text": "Only President can veto such amendments"
+        },
+        {
+          "id": "d",
+          "text": "Judicial review is not essential to Constitution"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "The Kesavananda Bharati case (1973) established the Basic Structure doctrine. While Parliament has wide amendment powers under Article 368, it cannot alter the basic structure of the Constitution. Judicial review is part of the basic structure and cannot be removed through amendment.",
+      "articles": [
+        "Article 368",
+        "Basic Structure Doctrine"
+      ]
+    },
+    {
+      "id": "h2",
+      "title": "Emergency and Rights",
+      "situation": "National Emergency is declared under Article 352. The government suspends all fundamental rights including Article 21 (Right to Life).",
+      "choices": [
+        {
+          "id": "a",
+          "text": "All fundamental rights can be suspended during emergency"
+        },
+        {
+          "id": "b",
+          "text": "Article 20 and 21 cannot be suspended even during emergency"
+        },
+        {
+          "id": "c",
+          "text": "Only President decides which rights to suspend"
+        },
+        {
+          "id": "d",
+          "text": "Emergency automatically suspends all rights"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "After the 44th Amendment, Article 359 provides that even during a National Emergency, the right to move courts for enforcement of Article 20 (protection against conviction) and Article 21 (right to life and personal liberty) cannot be suspended. These are inviolable rights.",
+      "articles": [
+        "Article 352",
+        "Article 359",
+        "Article 20",
+        "Article 21"
+      ]
+    },
+    {
+      "id": "h3",
+      "title": "Constitutional Amendment Process",
+      "situation": "A bill to amend the Constitution is introduced. It affects federal structure and requires special procedure.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Simple majority in Parliament is enough"
+        },
+        {
+          "id": "b",
+          "text": "Special majority plus ratification by half the states"
+        },
+        {
+          "id": "c",
+          "text": "Only President's approval is needed"
+        },
+        {
+          "id": "d",
+          "text": "Referendum is mandatory for all amendments"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 368 prescribes different procedures for amendments. For amendments affecting federal structure, election of President, extent of executive/judicial power, etc., special majority (2/3rd present and voting + absolute majority) in Parliament plus ratification by at least half the state legislatures is required.",
+      "articles": [
+        "Article 368"
+      ]
+    },
+    {
+      "id": "h4",
+      "title": "Directive Principles vs Rights",
+      "situation": "A law is passed to implement Directive Principles but it restricts a Fundamental Right. Courts must decide validity.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Directive Principles always prevail over Rights"
+        },
+        {
+          "id": "b",
+          "text": "Courts must harmonize both, neither is absolutely supreme"
+        },
+        {
+          "id": "c",
+          "text": "Fundamental Rights always prevail"
+        },
+        {
+          "id": "d",
+          "text": "Parliament decides which prevails"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "The Minerva Mills case established that there must be a balance between Fundamental Rights (Part III) and Directive Principles (Part IV). Neither is absolutely supreme. Courts must harmonize both and ensure that implementation of Directive Principles doesn't destroy the basic structure or fundamental rights.",
+      "articles": [
+        "Part III",
+        "Part IV",
+        "Article 37"
+      ]
+    },
+    {
+      "id": "h5",
+      "title": "Pardoning Power",
+      "situation": "A person is sentenced to death by the Supreme Court. They seek pardon from the President.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "President cannot pardon Supreme Court sentences"
+        },
+        {
+          "id": "b",
+          "text": "President can pardon even death sentences"
+        },
+        {
+          "id": "c",
+          "text": "Only Parliament can pardon death sentences"
+        },
+        {
+          "id": "d",
+          "text": "Governor has power to pardon in all cases"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 72 grants the President power to pardon, reprieve, respite, or remit punishment in all cases, including death sentences and court-martial cases. This power is exercised on the advice of the Council of Ministers and can be judicially reviewed for arbitrariness.",
+      "articles": [
+        "Article 72"
+      ]
+    },
+    {
+      "id": "h6",
+      "title": "Judicial Independence",
+      "situation": "Parliament passes a law reducing the retirement age of High Court judges to remove certain judges.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Parliament can change retirement age anytime"
+        },
+        {
+          "id": "b",
+          "text": "Such law violates judicial independence and is invalid"
+        },
+        {
+          "id": "c",
+          "text": "Only constitutional amendment can change it"
+        },
+        {
+          "id": "d",
+          "text": "President can change retirement age by ordinance"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Judicial independence is part of the basic structure. Any attempt to undermine it, such as arbitrarily reducing retirement age to remove specific judges, would be unconstitutional. The tenure and service conditions of judges are protected to ensure independence from executive and legislative interference.",
+      "articles": [
+        "Article 124",
+        "Article 217",
+        "Basic Structure"
+      ]
+    },
+    {
+      "id": "h7",
+      "title": "Writ Jurisdiction",
+      "situation": "A private company violates a citizen's rights. The citizen wants to file a writ petition in the High Court.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Writs can only be filed against government"
+        },
+        {
+          "id": "b",
+          "text": "Writs can be filed against private bodies performing public functions"
+        },
+        {
+          "id": "c",
+          "text": "Only civil suits can be filed against private companies"
+        },
+        {
+          "id": "d",
+          "text": "Writs are not available in High Courts"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "While Article 226 primarily provides writ jurisdiction against state and its instrumentalities, courts have expanded this to include private bodies performing public functions or statutory duties. If a private entity is discharging public or statutory functions, writs can be issued against it.",
+      "articles": [
+        "Article 226",
+        "Article 12"
+      ]
+    },
+    {
+      "id": "h8",
+      "title": "Uniform Civil Code",
+      "situation": "The state considers implementing a Uniform Civil Code as per Directive Principles.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "State must implement it immediately as it's mandatory"
+        },
+        {
+          "id": "b",
+          "text": "State should strive to implement it, but it's not enforceable"
+        },
+        {
+          "id": "c",
+          "text": "Only religious laws can govern civil matters"
+        },
+        {
+          "id": "d",
+          "text": "Constitution forbids a Uniform Civil Code"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "Article 44 of Directive Principles states that the State shall endeavor to secure for the citizens a uniform civil code. However, Article 37 clarifies that Directive Principles are not enforceable by any court but are fundamental in governance.",
+      "articles": [
+        "Article 44",
+        "Article 37"
+      ]
+    },
+    {
+      "id": "h9",
+      "title": "Colorable Legislation",
+      "situation": "The Legislature passes a law that indirectly does something it is not allowed to do directly.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Indirect actions are always valid"
+        },
+        {
+          "id": "b",
+          "text": "Law can be struck down as colorable legislation"
+        },
+        {
+          "id": "c",
+          "text": "Only the intent of the law matters"
+        },
+        {
+          "id": "d",
+          "text": "Legislature has absolute power over all subjects"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "The doctrine of colorable legislation states that what cannot be done directly cannot be done indirectly. If the legislature transcends its authority by passing a law that appears to be within its power but is actually intended for a different purpose, it is invalid.",
+      "articles": [
+        "Seventh Schedule",
+        "Legislative Competence"
+      ]
+    },
+    {
+      "id": "h10",
+      "title": "Doctrine of Pith and Substance",
+      "situation": "A State law on 'Health' (State List) incidentally touches upon a subject in the Union List.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Law is automatically invalid"
+        },
+        {
+          "id": "b",
+          "text": "Law is valid if its true character (pith and substance) is in the State List"
+        },
+        {
+          "id": "c",
+          "text": "Union laws always prevail even in incidental overlap"
+        },
+        {
+          "id": "d",
+          "text": "States cannot make any laws that touch Union subjects"
+        }
+      ],
+      "correctChoice": "b",
+      "explanation": "The doctrine of pith and substance resolves conflicts between legislative lists. If the true character or essence of a law falls within the list that the legislature has power over, incidental encroachment on another list doesn't make it invalid.",
+      "articles": [
+        "Article 246",
+        "Seventh Schedule"
+      ]
+    }
+  ]
+}

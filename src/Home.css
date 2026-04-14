@@ -1,0 +1,9 @@
+.section1 {
+  padding-top: 10.3vh;
+}
+
+@media (max-width: 800px) {
+  .section1 {
+    padding-top: 8.3vh;
+  }
+}

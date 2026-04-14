@@ -1,0 +1,629 @@
+/* ArticleMatch.css */
+.match-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    transition: color 0.3s;
+}
+
+.dark .match-container {
+    color: var(--text-color);
+}
+
+/* Header */
+
+
+.match-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 11%;
+    margin-bottom: 16px;
+}
+
+.match-header .back-btn {
+    background: rgba(128, 128, 128, 0.137);
+    border: 1px solid grey;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: inherit;
+}
+
+.dark .match-header .back-btn {
+    color: white;
+}
+
+.match-header .back-btn:hover {
+    background: rgb(222, 222, 245);
+    transform: translateX(-4px);
+}
+
+.match-header h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.match-header p {
+    margin: 0.5rem 0 0;
+    color: grey;
+    font-size: 0.95rem;
+    font-family: sans-serif;
+}
+
+/* Start Screen */
+.start-screen {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 3rem 1rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dark .start-screen {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+.start-screen h4 {
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fbbf24, #d97706);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2.5rem;
+    color: white;
+    box-shadow: 0 4px 6px rgba(251, 191, 36, 0.3);
+}
+
+.start-screen h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #1e3a8a;
+    font-family: 'Times New Roman', serif;
+}
+
+.dark .start-screen h2 {
+    color: var(--text-color);
+}
+
+.diff-grid1 {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.diff-btn1 {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #3b82f6;
+    background: transparent;
+    color: #3b82f6;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: capitalize;
+}
+
+.diff-btn1:disabled {
+    cursor: not-allowed;
+}
+
+.dark .diff-btn1 {
+    border-color: #60a5fa;
+    color: #60a5fa;
+}
+
+.diff-btn1:hover {
+    background: #eff6ff;
+}
+
+.dark .diff-btn1:hover {
+    background: rgba(96, 165, 250, 0.1);
+}
+
+.diff-btn1.active {
+    background: linear-gradient(135deg, #1344c9, #b16207f1);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.dark .diff-btn1.active {
+    border-color: transparent;
+    color: white;
+}
+
+.start-btn {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(30, 58, 138, 0.2);
+}
+
+.start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(30, 58, 138, 0.3);
+}
+
+/* Game Info Bar */
+.game-info-bar {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    background: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid #e2e8f0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dark .info-item {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.restart-btn {
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.restart-btn:hover {
+    text-decoration: underline;
+}
+
+/* Card Grid */
+.cards-grid {
+    display: grid;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    perspective: 1000px;
+    overflow: visible;
+}
+
+/* Grid columns based on count */
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 900px;
+}
+
+/* Easy */
+.grid-6 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Medium */
+.grid-8 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Hard */
+
+@media (max-width: 768px) {
+    .match-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 0;
+        gap: 1.5rem;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-6 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-8 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Card Styles */
+/* Robust Flip Styles */
+/* Robust Flip Styles */
+.memory-card {
+    position: relative;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* FLIPPED STATE (Container Rotation - optional, or just Swap Faces) */
+.memory-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.memory-card.matched {
+    transform: rotateY(180deg);
+    pointer-events: none;
+    animation: matchPulse 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s forwards;
+}
+
+.memory-card.matched .card-back {
+    border: 3px solid #22c55e !important;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+}
+
+@keyframes matchPulse {
+    0% {
+        transform: rotateY(180deg) scale(1);
+    }
+
+    50% {
+        transform: rotateY(180deg) scale(1.08);
+    }
+
+    100% {
+        transform: rotateY(180deg) scale(1);
+    }
+}
+
+@keyframes sparkleAppear {
+    0% {
+        transform: scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.2) rotate(10deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 0.8;
+    }
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+
+    transition: opacity 0.3s, z-index 0s 0.3s;
+    /* Delay z-index swap */
+}
+
+/* Front Face */
+.card-front {
+    background: #1e3a8a;
+    color: white;
+    border: 2px solid #1e40af;
+    transform: rotateY(0deg);
+    z-index: 20;
+    opacity: 1;
+}
+
+.dark .card-front {
+    background: #1e3a8a;
+    /* Keep brand color even in dark mode for card back (which is visually front until flipped) */
+    border-color: #3b82f6;
+}
+
+/* Back Face */
+.card-back {
+    background: white;
+    border: 2px solid #3b82f6;
+    color: #1e293b;
+    transform: rotateY(180deg);
+    z-index: 10;
+    opacity: 0;
+    /* Hidden by default */
+}
+
+.dark .card-back {
+    background: var(--card-bg);
+    border-color: #60a5fa;
+    color: var(--text-color);
+}
+
+/* FLIPPED STATE LOGIC */
+.memory-card.flipped .card-front {
+    z-index: 10;
+    opacity: 0;
+}
+
+.memory-card.flipped .card-back {
+    z-index: 20;
+    opacity: 1;
+}
+
+
+/* Card Types */
+.type-article .card-back {
+    background: #fff7ed;
+    border: 2px solid #fdba74;
+}
+
+.dark .type-article .card-back {
+    background: rgba(255, 247, 237, 0.1);
+    border-color: #fdba74;
+}
+
+.type-meaning .card-back {
+    background: #f0fdf4;
+    border: 2px solid #86efac;
+}
+
+.dark .type-meaning .card-back {
+    background: rgba(240, 253, 244, 0.1);
+    border-color: #4ade80;
+}
+
+/* Card Header & Badges */
+.card-header-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    height: 32px;
+}
+
+.card-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+}
+
+.card-badge.article {
+    background: #f97316;
+    color: white;
+}
+
+.card-badge.meaning {
+    background: #f9fafb;
+    border: 1px solid #e5e5e5;
+    color: #1f2937;
+}
+
+.dark .card-badge.meaning {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.sparkle-icon {
+    color: #22c55e;
+    opacity: 0;
+    transform: scale(0);
+    animation: sparkleAppear 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s forwards;
+}
+
+.card-text {
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: #1e293b;
+    text-align: left;
+    width: 100%;
+}
+
+.dark .card-text {
+    color: var(--text-color);
+}
+
+.tip-box {
+    text-align: center;
+    background: #fffbeb;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    border: 1px solid #fcd34d;
+    color: #92400e;
+    font-size: 0.9rem;
+}
+
+.dark .tip-box {
+    background: rgba(255, 251, 235, 0.1);
+    border-color: #fcd34d;
+    color: #fcd34d;
+}
+
+/* Standardized Completion Card for ArticleMatch */
+.article-completion-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.article-completion-card {
+    background: white;
+    padding: 48px 32px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 4px solid #1e3a8a;
+    max-width: 500px;
+    width: 90%;
+    border-bottom: 8px solid #1e3a8a;
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dark .article-completion-card {
+    background: var(--card-bg);
+    border-color: #3b82f6;
+    border-bottom-color: #3b82f6;
+    color: var(--text-color);
+}
+
+.article-completion-card .completion-icon {
+    font-size: 5rem;
+    margin-bottom: 24px;
+    display: block;
+    animation: bounce 2s infinite;
+}
+
+.article-completion-card h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.2rem;
+    color: #1e3a8a;
+    margin-bottom: 16px;
+}
+
+.dark .article-completion-card h2 {
+    color: #60a5fa;
+}
+
+.article-completion-card p {
+    color: #64748b;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.dark .article-completion-card p {
+    color: var(--text-secondary);
+}
+
+.article-completion-card .completion-stats {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.stat-pill {
+    background: #f1f5f9;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+}
+
+.dark .stat-pill {
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+}
+
+.continue-btn-article {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px rgba(30, 58, 138, 0.3);
+}
+
+.continue-btn-article:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(30, 58, 138, 0.4);
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animated.fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+}

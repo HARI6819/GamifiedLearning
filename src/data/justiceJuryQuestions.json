@@ -1,0 +1,960 @@
+{
+  "Easy": [
+    {
+      "id": "e1",
+      "title": "Freedom of Speech v/s Public Order",
+      "category": "Fundamental Rights",
+      "context": "A tech startup founder publishes a post on social media criticizing government policies. The government orders the removal of the post claiming it incites public disorder.",
+      "lawyer1": {
+        "name": "Advocate Sharma",
+        "side": "For Founder",
+        "argument": "Your Honor, Article 19(1)(a) guarantees freedom of speech and expression to every citizen. The state cannot arbitrarily censor speech. The post is a legitimate criticism, not an incitement to violence.",
+        "points": [
+          "Article 19(1)(a) protects freedom of speech",
+          "Criticism of government is protected speech",
+          "No incitement to violence in the post",
+          "Censorship requires clear and present danger"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Verma",
+        "side": "For Government",
+        "argument": "Your Honor, while freedom is important, Article 19(2) allows reasonable restrictions for public order. The post has already received 100,000 shares and is causing communal tensions. The state has the duty to maintain peace.",
+        "points": [
+          "Article 19(2) allows restrictions for public order",
+          "Post caused communal tensions",
+          "Government has duty to protect citizens",
+          "Reasonable restrictions are constitutional"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Founder Wins",
+          "description": "Speech is protected unless direct incitement",
+          "icon": "✍️"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Government Wins",
+          "description": "Post must be removed for public order",
+          "icon": "🛡️"
+        },
+        {
+          "id": "partial",
+          "label": "Partial/Compromise",
+          "description": "Post removed but no legal action against founder",
+          "icon": "⚖️"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "The Supreme Court has held that restrictions on Article 19 are valid if they are in the interest of public order and are reasonable. In this case, removing the post (which is causing tensions) is a reasonable restriction, but taking legal action against the founder would be excessive since the speech itself is political criticism, not direct incitement.",
+      "relevantArticles": [
+        {
+          "number": "19(1)(a)",
+          "title": "Right to Freedom of Speech and Expression"
+        },
+        {
+          "number": "19(2)",
+          "title": "Reasonable Restrictions on Freedom of Speech"
+        }
+      ]
+    },
+    {
+      "id": "e2",
+      "title": "Right to Life v/s Medical Ethics",
+      "category": "Right to Life",
+      "context": "A terminally ill patient with unbearable pain requests to end their life. The hospital refuses citing medical ethics and law against euthanasia.",
+      "lawyer1": {
+        "name": "Advocate Singh",
+        "side": "For Patient/Family",
+        "argument": "Your Honor, Article 21 protects the right to life, which includes the right to live with dignity. Forcing someone through unbearable suffering violates their dignity and personal autonomy.",
+        "points": [
+          "Article 21 includes right to die with dignity",
+          "Right to personal autonomy",
+          "Prevention of cruel suffering",
+          "Medical opinion confirms no recovery"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Kapoor",
+        "side": "For Medical Ethics",
+        "argument": "Your Honor, while dignity is important, the right to life means protecting life itself. Doctors took oath to preserve life. Passive euthanasia with palliative care is the constitutional way.",
+        "points": [
+          "Medical ethical duty to preserve life",
+          "Passive euthanasia is constitutional",
+          "Palliative care can reduce suffering",
+          "Slippery slope risk of active euthanasia"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Allow Euthanasia",
+          "description": "Right to dignity includes right to choose death",
+          "icon": "💔"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Disallow Euthanasia",
+          "description": "Only passive euthanasia and palliative care allowed",
+          "icon": "❤️"
+        },
+        {
+          "id": "partial",
+          "label": "Passive Euthanasia",
+          "description": "Allow withdrawal of life support with consent",
+          "icon": "🤝"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "The Indian Supreme Court in the Aruna Shanbaug case held that while active euthanasia is not allowed, passive euthanasia (withdrawing life support) is constitutionally valid when approved by medical board and family. This balances the right to life with the right to dignity.",
+      "relevantArticles": [
+        {
+          "number": "21",
+          "title": "Protection of Life and Personal Liberty"
+        },
+        {
+          "number": "20(1)",
+          "title": "Protection in Respect of Conviction for Offences"
+        }
+      ]
+    },
+    {
+      "id": "e3",
+      "title": "Equality v/s Reservations",
+      "category": "Equality",
+      "context": "A student from general category fails to get admission to medical school due to reservation of seats for SC/ST students, despite better marks.",
+      "lawyer1": {
+        "name": "Advocate Desai",
+        "side": "Against Reservation",
+        "argument": "Your Honor, Article 14 guarantees equality before law. Denying admission based on caste, even with good marks, violates equality. Merit should be the only criterion.",
+        "points": [
+          "Article 14 guarantees equality",
+          "Merit-based selection is fair",
+          "Discrimination on either side is wrong",
+          "Modern India should ignore caste"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Rao",
+        "side": "For Reservation",
+        "argument": "Your Honor, equality also means removing historical inequalities. Articles 15 and 16 specifically allow affirmative action. Centuries of discrimination cannot be ignored.",
+        "points": [
+          "Article 15 allows affirmative action",
+          "Social justice requires remedying discrimination",
+          "Reservations create inclusive society",
+          "Backward classes need special help"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Reject Reservations",
+          "description": "Merit alone should decide",
+          "icon": "📊"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Uphold Reservations",
+          "description": "Reservations are constitutional",
+          "icon": "🤲"
+        },
+        {
+          "id": "partial",
+          "label": "Reservations with Creamy Layer",
+          "description": "Reservations minus rich backward class families",
+          "icon": "📈"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "The Supreme Court has consistently held that while reservations are constitutional under Articles 15 and 16 for social justice, they must exclude the creamy layer (economically well-off members from backward classes). This balances social justice with individual merit.",
+      "relevantArticles": [
+        {
+          "number": "14",
+          "title": "Equality Before Law"
+        },
+        {
+          "number": "15",
+          "title": "Prohibition of Discrimination on Grounds of Religion, etc."
+        },
+        {
+          "number": "16",
+          "title": "Equality of Opportunity in Matters of Public Employment"
+        }
+      ]
+    },
+    {
+      "id": "e4",
+      "title": "Religious Freedom v/s Uniform Civil Code",
+      "category": "Religious Freedom",
+      "context": "A Muslim woman seeks divorce through civil court procedures instead of following personal religious law. Religious leaders oppose this as interference in religious matters.",
+      "lawyer1": {
+        "name": "Advocate Das",
+        "side": "For Uniform Civil Code",
+        "argument": "Your Honor, Articles 14 and 21 ensure equality. All citizens regardless of religion should have equal rights in marriage and divorce. The Constitution envisions a Uniform Civil Code.",
+        "points": [
+          "Article 14 requires equality",
+          "All citizens should have same rights",
+          "Uniform Civil Code strengthens unity",
+          "Women get equal protections"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Khan",
+        "side": "For Religious Freedom",
+        "argument": "Your Honor, Articles 25 and 26 protect religious freedom. Personal laws of different religions are part of cultural identity. Not everyone wants a uniform code.",
+        "points": [
+          "Article 25-26 protect religious freedom",
+          "Cultural pluralism is constitutional",
+          "Communities can manage personal affairs",
+          "Minorities' interests must be protected"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Uniform Code Mandatory",
+          "description": "All must follow common civil law",
+          "icon": "⚖️"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Personal Law Only",
+          "description": "Religious law applies exclusively",
+          "icon": "📖"
+        },
+        {
+          "id": "partial",
+          "label": "Choice Available",
+          "description": "Person can choose civil or religious law",
+          "icon": "🔀"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "Indian constitutional practice allows individuals to choose between personal laws and civil laws in many matters. The Supreme Court has held that while a Uniform Civil Code is aspirational, currently individuals retain the right to opt for their personal law or civil law procedures.",
+      "relevantArticles": [
+        {
+          "number": "25",
+          "title": "Freedom of Conscience and Free Profession, Practice and Propagation of Religion"
+        },
+        {
+          "number": "26",
+          "title": "Freedom to Manage Religious Affairs"
+        },
+        {
+          "number": "44",
+          "title": "Uniform Civil Code (Directive Principle)"
+        }
+      ]
+    },
+    {
+      "id": "e5",
+      "title": "Right to Work v/s Child Labor Laws",
+      "category": "Right to Work",
+      "context": "A 13-year-old child from poor family works in a small textile factory to support family income. The factory owner argues the child needs to work for family survival.",
+      "lawyer1": {
+        "name": "Advocate Ghosh",
+        "side": "For Child Work",
+        "argument": "Your Honor, the article 39(f) says children from poor families deserve special help. The child is learning a skill and family needs income. Complete ban hardens their situation.",
+        "points": [
+          "Family is below poverty line",
+          "Child learns valuable skills",
+          "Income helps family survival",
+          "Strict enforcement increases hardship"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Mathew",
+        "side": "Against Child Labor",
+        "argument": "Your Honor, Article 24 absolutely prohibits child labor. No exception for poverty is permitted. Childhood is for education and development, not exploitation.",
+        "points": [
+          "Article 24 has absolute prohibition",
+          "Children need education",
+          "Health risks in factories",
+          "State has duty to provide alternative support"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Allow Necessity Child Work",
+          "description": "Child work allowed for survival",
+          "icon": "💰"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Strict Prohibition",
+          "description": "No child labor under any circumstance",
+          "icon": "✋"
+        },
+        {
+          "id": "partial",
+          "label": "Light Work + Education",
+          "description": "Part-time light work with mandatory schooling",
+          "icon": "📚"
+        }
+      ],
+      "correctChoice": "lawyer2",
+      "explanation": "Article 24 provides absolute prohibition on child labor in factories and hazardous industries. However, Article 39 directs state to provide free education. The constitutional solution is to compensate families through social security, education, and employment for parents, not to permit child labor.",
+      "relevantArticles": [
+        {
+          "number": "24",
+          "title": "Prohibition of Employment of Children in Factories, Etc."
+        },
+        {
+          "number": "39",
+          "title": "Directive Principles - Protection of Children and Youth"
+        },
+        {
+          "number": "45",
+          "title": "Right to Free and Compulsory Education"
+        }
+      ]
+    }
+  ],
+  "Medium": [
+    {
+      "id": "m1",
+      "title": "Right to Privacy v/s National Security",
+      "category": "Privacy Rights",
+      "context": "Government installs surveillance cameras and monitors all internet traffic claiming it's necessary to prevent terrorism. Privacy activists challenge this.",
+      "lawyer1": {
+        "name": "Advocate Saxena",
+        "side": "For Privacy",
+        "argument": "Your Honor, the Supreme Court in K.S. Puttaswamy case recognized privacy as fundamental right under Article 21. Blanket surveillance violates privacy even for national security.",
+        "points": [
+          "Privacy is fundamental right under Article 21",
+          "Surveillance must be proportionate",
+          "No blanket monitoring allowed",
+          "Chilling effect on free expression"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Bhat",
+        "side": "For Surveillance",
+        "argument": "Your Honor, national security overrides individual privacy temporarily. Terrorism is existential threat. Targeted, authorized surveillance with court approval is constitutional.",
+        "points": [
+          "National security is fundamental duty",
+          "Reasonable surveillance is constitutional",
+          "Court authorization ensures accountability",
+          "Terrorism requires preventive measures"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "No Surveillance",
+          "description": "Privacy right supremacy",
+          "icon": "🔒"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Blanket Surveillance",
+          "description": "Monitor all for security",
+          "icon": "👁️"
+        },
+        {
+          "id": "partial",
+          "label": "Targeted with Warrants",
+          "description": "Specific surveillance with judicial oversight",
+          "icon": "🔍"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "The Supreme Court in K.S. Puttaswamy case (2017) recognized privacy as fundamental right but allowed reasonable restrictions for public interest. Targeted surveillance with proper warrants, judicial oversight, and proportionality principle is constitutional.",
+      "relevantArticles": [
+        {
+          "number": "21",
+          "title": "Protection of Life and Personal Liberty"
+        },
+        {
+          "number": "19(1)(d)",
+          "title": "Freedom to Move Freely"
+        },
+        {
+          "number": "19(2)",
+          "title": "Reasonable Restrictions"
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "title": "Judicial Overreach v/s Social Justice",
+      "category": "Separation of Powers",
+      "context": "Supreme Court directs construction of missing children's homes across all states, allocating budgets and executing implementation, a role normally done by executive.",
+      "lawyer1": {
+        "name": "Advocate Pandit",
+        "side": "For Judicial Restraint",
+        "argument": "Your Honor, this violates separation of powers. Article 50 ensures independent judiciary but overseeing implementation is executive function. Courts should only adjudicate, not govern.",
+        "points": [
+          "Separation of powers principle violated",
+          "Budget allocation is executive function",
+          "Implementation requires expertise",
+          "Judicial overreach undermines democracy"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Mehra",
+        "side": "For Judicial Activism",
+        "argument": "Your Honor, where executive fails to protect children's rights, courts must step in. Article 142 allows creative remedies. This is public interest litigation ensuring justice.",
+        "points": [
+          "Executive failure requires judicial intervention",
+          "Article 142 empowers Supreme Court for justice",
+          "Public interest litigation is constitutional",
+          "Children's fundamental rights require protection"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Cease Judicial Overreach",
+          "description": "Court withdraws and lets executive act",
+          "icon": "⚖️"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Judicial Activism Valid",
+          "description": "Court continues implementation",
+          "icon": "⛔"
+        },
+        {
+          "id": "partial",
+          "label": "Monitoring Role",
+          "description": "Court monitors executive, doesn't implement",
+          "icon": "📋"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "The Supreme Court has evolved a balanced approach in cases like Vishal Jeet v. Union of India. Courts can monitor and direct but shouldn't directly implement/execute. They give directions and monitor compliance through follow-up hearings while executive implements.",
+      "relevantArticles": [
+        {
+          "number": "50",
+          "title": "Separation of Powers"
+        },
+        {
+          "number": "142",
+          "title": "Supreme Court's Discretionary Jurisdiction"
+        },
+        {
+          "number": "13",
+          "title": "Interpretation of Constitution"
+        }
+      ]
+    },
+    {
+      "id": "m3",
+      "title": "Right to Occupy Land v/s Squatter Rights",
+      "category": "Property Rights",
+      "context": "Homeless families have occupied unused government land for 3 years without permission, building shanties. Government wants possession back; squatters claim right to livelihood.",
+      "lawyer1": {
+        "name": "Advocate Nair",
+        "side": "For Squatter Rights",
+        "argument": "Your Honor, Article 21 guarantees right to livelihood and shelter. After occupying unused land for years, these families have right to continue. Society is not harmed.",
+        "points": [
+          "Right to livelihood under Article 21",
+          "Right to shelter is basic need",
+          "Land was unused/wasted",
+          "Long occupation implies acceptance"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Iyer",
+        "side": "For Government",
+        "argument": "Your Honor, the land is government property. Permitting squatting sets dangerous precedent and encourages illegal occupation. Government can use land for public projects.",
+        "points": [
+          "Property rights must be respected",
+          "Illegal occupation cannot acquire rights",
+          "Land needed for public projects",
+          "Rule of law requires procedure"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Squatters Get Land",
+          "description": "Livelihood trumps property ownership",
+          "icon": "🏠"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Evict Squatters",
+          "description": "Government retakes land",
+          "icon": "⚡"
+        },
+        {
+          "id": "partial",
+          "label": "Rehabilitation First",
+          "description": "Provide alternative housing before eviction",
+          "icon": "🤝"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "Courts have held that while government property rights cannot be ignored, eviction must be done humanely. Government must provide alternative accommodation or rehabilitation facilities, not just evict them to streets, to fulfill Article 21 obligations.",
+      "relevantArticles": [
+        {
+          "number": "21",
+          "title": "Protection of Life and Personal Liberty"
+        },
+        {
+          "number": "25",
+          "title": "Right to Reside"
+        },
+        {
+          "number": "300A",
+          "title": "Protection of Property"
+        }
+      ]
+    },
+    {
+      "id": "m4",
+      "title": "Free Speech v/s Hate Speech",
+      "category": "Fundamental Rights",
+      "context": "A politician makes inflammatory speech against a religious community on social media, claiming political expression. Community members face violence.",
+      "lawyer1": {
+        "name": "Advocate Gupta",
+        "side": "For Free Speech",
+        "argument": "Your Honor, political speech gets highest protection under Article 19(1)(a). People need to hear diverse views even if offensive. Prosecution chills democratic discourse.",
+        "points": [
+          "Article 19(1)(a) protects political speech",
+          "Even offensive speech is protected",
+          "Criminal prosecution is overreach",
+          "Voters should judge speech"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Reddy",
+        "side": "Against Hate Speech",
+        "argument": "Your Honor, speech that incites communal violence is not protected. This speech directly caused violence. Article 19(2) allows restrictions on speech that promotes hatred.",
+        "points": [
+          "Speech caused communal violence",
+          "Hate speech restrictions are constitutional",
+          "Rights of group must be protected",
+          "Direct incitement is not protected"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Allow Political Speech",
+          "description": "Let all political speech continue",
+          "icon": "🗣️"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Ban Hate Speech",
+          "description": "Prosecute for inciting violence",
+          "icon": "⛔"
+        },
+        {
+          "id": "partial",
+          "label": "Context-Based",
+          "description": "Restrict only speech directly causing violence",
+          "icon": "⚠️"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "The Supreme Court in Dr. Ambedkar v. Maratha Mukti Sangram Samiti held that speech causing direct, incitement to violence can be restricted under Article 19(2). However, mere offensive or critical speech continues to enjoy protection.",
+      "relevantArticles": [
+        {
+          "number": "19(1)(a)",
+          "title": "Freedom of Speech and Expression"
+        },
+        {
+          "number": "19(2)",
+          "title": "Reasonable Restrictions"
+        },
+        {
+          "number": "153",
+          "title": "Promoting Enmity on Grounds of Religion"
+        }
+      ]
+    },
+    {
+      "id": "m5",
+      "title": "Minority Rights v/s Majority Rule",
+      "category": "Minority Rights",
+      "context": "A state where 60% are Hindu wants to remove 40% Muslim minority language from school curriculum claiming 'national integration'. Minorities oppose this.",
+      "lawyer1": {
+        "name": "Advocate Kulkarni",
+        "side": "For Majority Choice",
+        "argument": "Your Honor, majority of state residents want national language. Maintaining minority language increases division. National integration requires common language.",
+        "points": [
+          "Majority opinion should decide",
+          "Common language unites",
+          "Minorities can learn independently",
+          "State resources are limited"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Karim",
+        "side": "For Minority Rights",
+        "argument": "Your Honor, Article 30 protects minority right to conserve language and culture. India's strength is diversity. Majority cannot destroy minority identity.",
+        "points": [
+          "Article 30 protects minority rights",
+          "Constitutional pluralism recognized",
+          "Language is identity marker",
+          "Minorities need safeguards"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Majority Decides",
+          "description": "Remove minority language",
+          "icon": "🗳️"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Protect Minorities",
+          "description": "Continue minority language",
+          "icon": "🛡️"
+        },
+        {
+          "id": "partial",
+          "label": "Optional Choice",
+          "description": "Offer minority language as optional subject",
+          "icon": "✏️"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "The constitution protects minority rights to education and language under Articles 29-30, but also recognizes state resources are limited. The balanced approach is to make minority language education optional or available in certain schools rather than mandatory for all.",
+      "relevantArticles": [
+        {
+          "number": "29",
+          "title": "Protection of Interests of Minorities"
+        },
+        {
+          "number": "30",
+          "title": "Right of Minorities to Establish Educational Institutions"
+        },
+        {
+          "number": "350A",
+          "title": "Facility for Instruction in Mother-Tongue"
+        }
+      ]
+    }
+  ],
+  "Hard": [
+    {
+      "id": "h1",
+      "title": "Hindutva v/s Secular State",
+      "category": "Constitutional Identity",
+      "context": "Government makes constitutional amendment to declare India as 'Hindu Nation' where Hindu values are supreme in state policy. Minorities challenge this.",
+      "lawyer1": {
+        "name": "Advocate Trivedi",
+        "side": "For Amendment",
+        "argument": "Your Honor, India's civilization is primarily Hindu. Acknowledging this civilizational foundation is not against minorities. India can be culturally Hindu while legally secular.",
+        "points": [
+          "Hindu civilization influenced India",
+          "Acknowledging roots strengthens culture",
+          "Can be culturally Hindu, legally secular",
+          "Majority culture deserves recognition"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Chatterji",
+        "side": "Against Amendment",
+        "argument": "Your Honor, Article 25 guarantees secular state. Declaring nation as Hindu violates Article 15, 16 (no discrimination). This violates basic structure doctrine.",
+        "points": [
+          "Basic structure: secular state is immutable",
+          "Article 15, 16 prohibit discrimination",
+          "Minorities become second-class citizens",
+          "Violates spirit of Constitution"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Amendment Valid",
+          "description": "Hindu nation declaration allowed",
+          "icon": "🕉️"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Amendment Invalid",
+          "description": "Violates basic structure",
+          "icon": "📜"
+        },
+        {
+          "id": "partial",
+          "label": "Only Cultural Recognition",
+          "description": "Cultural identity without legal implication",
+          "icon": "🎭"
+        }
+      ],
+      "correctChoice": "lawyer2",
+      "explanation": "In S.R. Bommai v. Union of India (1994), Supreme Court held that secularism is part of basic structure of the Constitution and cannot be amended. Article 368 cannot be used to change the secular character of Constitution. However, cultural recognition without legal discrimination might be permissible.",
+      "relevantArticles": [
+        {
+          "number": "25",
+          "title": "Freedom of Religion"
+        },
+        {
+          "number": "15",
+          "title": "Prohibition of Discrimination"
+        },
+        {
+          "number": "368",
+          "title": "Amendment of Constitution - Basic Structure Doctrine"
+        }
+      ]
+    },
+    {
+      "id": "h2",
+      "title": "Parliament Sovereignty v/s Judicial Review",
+      "category": "Constitutional Powers",
+      "context": "Parliament passes law that court believes violates rights. Parliament claims its laws cannot be questioned by courts under Article 121. Citizen challenges law.",
+      "lawyer1": {
+        "name": "Advocate Dixit",
+        "side": "For Parliamentary Supremacy",
+        "argument": "Your Honor, Article 121 forbids courts from questioning proceedings of Parliament. Democracy means people's representatives decide, not judges. Over-questioning makes courts superlegislatures.",
+        "points": [
+          "Article 121 protects legislative process",
+          "Parliament represents people",
+          "Parliamentary procedures are inviolable",
+          "Excess judicial review weakens democracy"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Mishra",
+        "side": "For Judicial Review",
+        "argument": "Your Honor, Marbury v. Madison principle and Article 13 establish judicial review. Laws violating Constitution are ultra vires. Courts must protect constitutional rights.",
+        "points": [
+          "Article 13 makes unconstitutional acts void",
+          "Judicial review is constitutional duty",
+          "Rights need judicial protection",
+          "Constitution is supreme law"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Parliament Supreme",
+          "description": "No judicial review of laws",
+          "icon": "🏛️"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Judicial Review Absolute",
+          "description": "Courts overturn any unconstitutional law",
+          "icon": "⚖️"
+        },
+        {
+          "id": "partial",
+          "label": "Balanced Review",
+          "description": "Review with deference to Parliament's judgment",
+          "icon": "🤝"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "The Constitution recognizes both parliamentary sovereignty and judicial review. Courts exercise 'reasonable review' - giving deference to Parliament while ensuring laws don't violate fundamental rights or basic structure. Article 121 prevents questioning of legislative process, not the constitutionality of laws.",
+      "relevantArticles": [
+        {
+          "number": "13",
+          "title": "Laws Inconsistent with Constitution to be Void"
+        },
+        {
+          "number": "121",
+          "title": "Protection of Members of Legislatures"
+        },
+        {
+          "number": "32",
+          "title": "Right to Constitutional Remedies"
+        }
+      ]
+    },
+    {
+      "id": "h3",
+      "title": "Federalism v/s National Emergency",
+      "category": "Center-State Relations",
+      "context": "During national emergency, central government seizes state revenue, dismisses state elections, and suspends state autonomy claiming national security. States resist.",
+      "lawyer1": {
+        "name": "Advocate Agarwal",
+        "side": "For Strong Center",
+        "argument": "Your Honor, Article 352 emergency powers are necessary for national survival. During emergency, center must have overwhelming power to manage crisis. State autonomy is secondary to national unity.",
+        "points": [
+          "Emergency requires unified command",
+          "Center has national security responsibility",
+          "Article 352 authorizes emergency powers",
+          "Limited duration emergency is justified"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Rao",
+        "side": "For Federalism",
+        "argument": "Your Honor, federalism is basic structure. Even emergency cannot destroy it. Center can act but must respect state boundaries and restore normalcy quickly.",
+        "points": [
+          "Federalism is basic structure",
+          "Emergency powers have limits",
+          "State autonomy is fundamental",
+          "Emergency cannot be indefinite"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Absolute Central Control",
+          "description": "Center has full power during emergency",
+          "icon": "👑"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Federalism Protected",
+          "description": "State autonomy cannot be suspended",
+          "icon": "🏛️"
+        },
+        {
+          "id": "partial",
+          "label": "Limited Emergency Powers",
+          "description": "Center acts with safeguards and sunset clause",
+          "icon": "⚖️"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "After the 1976 Emergency (Indira Gandhi), constitutional amendments added checks on emergency powers. Emergency is allowed but with prescribed duration, limitations, and parliamentary review. The 44th Amendment limited emergency to 6 months, establishing that even national emergency has constitutional limits.",
+      "relevantArticles": [
+        {
+          "number": "352",
+          "title": "Proclamation of National Emergency"
+        },
+        {
+          "number": "356",
+          "title": "Failure of Constitutional Machinery in States"
+        },
+        {
+          "number": "44",
+          "title": "Amendment (44th) - Emergency Safeguards"
+        }
+      ]
+    },
+    {
+      "id": "h4",
+      "title": "Corporate Rights v/s Public Interest",
+      "category": "Economic Justice",
+      "context": "A pharmaceutical company's patent prevents production of cheap generic drugs for dying cancer patients. Company claims property and patent rights; patients claim right to life.",
+      "lawyer1": {
+        "name": "Advocate Kulshrestha",
+        "side": "For Patent Rights",
+        "argument": "Your Honor, patent is intellectual property protected under Articles 19(1)(g) and Article 300A. Patent holders invest billions in R&D. Compulsory licensing is economically unjust.",
+        "points": [
+          "Patent is property right",
+          "Protects innovation investment",
+          "Right to profit from innovation",
+          "Compulsory licensing is confiscation"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Sharma",
+        "side": "For Public Interest",
+        "argument": "Your Honor, Article 21 (right to life) is more fundamental than patent rights. State can issue compulsory license for public health. Lives are more valuable than profit.",
+        "points": [
+          "Right to life is supreme",
+          "Public health is state obligation",
+          "Compulsory license is constitutional",
+          "TRIPS allows exceptions for public health"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Enforce Patent Strictly",
+          "description": "No exception to patent rights",
+          "icon": "💼"
+        },
+        {
+          "id": "lawyer2",
+          "label": "Compulsory License",
+          "description": "State issues license for public health",
+          "icon": "💊"
+        },
+        {
+          "id": "partial",
+          "label": "Royalty-Based License",
+          "description": "License issued with reasonable royalty",
+          "icon": "🤝"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "The Constitution and TRIPS Agreement allow compulsory licensing for public health emergency. The Bayer v. Natco case (Supreme Court of India) held that compulsory license for affordable generic production at reasonable royalty is constitutional, balancing patent rights with public health.",
+      "relevantArticles": [
+        {
+          "number": "21",
+          "title": "Right to Life and Health"
+        },
+        {
+          "number": "19(1)(g)",
+          "title": "Right to Property and Trade"
+        },
+        {
+          "number": "47",
+          "title": "State's Duty to Improve Public Health"
+        }
+      ]
+    },
+    {
+      "id": "h5",
+      "title": "Right to Protest v/s National Security",
+      "category": "Complex Rights Balance",
+      "context": "Environmental activists organize protests near defense installations against nuclear waste dumping. Government arrests them under AFSPA (Armed Forces Special Powers Act).",
+      "lawyer1": {
+        "name": "Advocate Bhattacharya",
+        "side": "For Protesters",
+        "argument": "Your Honor, Article 19(1)(a-c) guarantee rights to protest and assembly. AFSPA (1958) violates fundamental rights by giving military immunity and vague charges.",
+        "points": [
+          "Right to protest is fundamental",
+          "Peaceful assembly is protected",
+          "AFSPA creates impunity",
+          "Environmental concerns are valid"
+        ]
+      },
+      "lawyer2": {
+        "name": "Advocate Singh",
+        "side": "For National Security",
+        "argument": "Your Honor, defense installations need security. AFSPA areas face insurgency. National security cannot be compromised by protests. Reasonable restrictions under Article 19(3-4) apply.",
+        "points": [
+          "National security needs protection",
+          "Defense installations have security needs",
+          "Restrictions are reasonable",
+          "AFSPA applies in emergency zones"
+        ]
+      },
+      "choices": [
+        {
+          "id": "lawyer1",
+          "label": "Repeal AFSPA",
+          "description": "Fundamental rights supremacy",
+          "icon": "⛔"
+        },
+        {
+          "id": "lawyer2",
+          "label": "AFSPA Valid",
+          "description": "Security overrides protest rights",
+          "icon": "🛡️"
+        },
+        {
+          "id": "partial",
+          "label": "AFSPA with Safeguards",
+          "description": "AFSPA valid but with judicial oversight",
+          "icon": "👨‍⚖️"
+        }
+      ],
+      "correctChoice": "partial",
+      "explanation": "In Naga People's Movement for Human Rights v. Union of India (1998), Supreme Court upheld AFSPA but imposed judicial oversight. The Court held that while AFSPA is valid, misuse can be challenged and immunity is not absolute. Officers must follow constitutional values.",
+      "relevantArticles": [
+        {
+          "number": "19",
+          "title": "Freedom to Speech, Assembly, Association"
+        },
+        {
+          "number": "33",
+          "title": "Power of Parliament to Modify Rights in Armed Forces"
+        },
+        {
+          "number": "352",
+          "title": "When Can AFSPA Apply"
+        }
+      ]
+    }
+  ]
+}

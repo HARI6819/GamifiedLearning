@@ -1,0 +1,632 @@
+[
+  {
+    "id": 1,
+    "article": "Article 14",
+    "mean": "Equality before law",
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 2,
+    "article": "Article 19",
+    "mean": "Freedom of Speech",
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 3,
+    "article": "Article 21",
+    "mean": "Right to Life",
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 4,
+    "article": "Article 32",
+    "mean": "Constitutional Remedies",
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 5,
+    "article": "Article 52",
+    "mean": "President of India",
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 101,
+    "article": "Article 74",
+    "mean": "Council of Ministers",
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 102,
+    "article": "Article 79",
+    "mean": "Constitution of Parliament",
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 103,
+    "article": "Article 80",
+    "mean": "Composition of Rajya Sabha",
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 104,
+    "article": "Article 81",
+    "mean": "Composition of Lok Sabha",
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 105,
+    "article": "Article 124",
+    "mean": "Supreme Court",
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 106,
+    "article": "Article 153",
+    "mean": "Governors of States",
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 107,
+    "article": "Article 163",
+    "mean": "State Council of Ministers",
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 108,
+    "article": "Article 214",
+    "mean": "High Courts",
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 109,
+    "article": "Article 1",
+    "mean": "Union of States",
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 110,
+    "article": "Article 110",
+    "mean": "Definition of Money Bills",
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 111,
+    "article": "Article 53",
+    "mean": "Executive power of Union",
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 112,
+    "article": "Article 54",
+    "mean": "Election of President",
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 113,
+    "article": "Article 75",
+    "mean": "Appointment of PM",
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 114,
+    "article": "Article 72",
+    "mean": "Pardon power",
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 115,
+    "article": "Article 63",
+    "mean": "Vice-President",
+    "difficulty": "Easy",
+    "category": "Executive"
+  },
+  {
+    "id": 116,
+    "article": "Article 131",
+    "mean": "Original Jurisdiction",
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 117,
+    "article": "Article 129",
+    "mean": "Court of Record",
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 118,
+    "article": "Article 17",
+    "mean": "Untouchability",
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 119,
+    "article": "Article 18",
+    "mean": "Abolition of Titles",
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 120,
+    "article": "Article 15",
+    "mean": "No Discrimination",
+    "difficulty": "Easy",
+    "category": "Judiciary"
+  },
+  {
+    "id": 121,
+    "article": "Article 108",
+    "mean": "Joint Sitting",
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 122,
+    "article": "Article 122",
+    "mean": "Courts not to inquire",
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 123,
+    "article": "Article 85",
+    "mean": "Sessions of Parliament",
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 124,
+    "article": "Article 93",
+    "mean": "Speaker of Lok Sabha",
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 125,
+    "article": "Article 102",
+    "mean": "Disqualification",
+    "difficulty": "Easy",
+    "category": "Legislature"
+  },
+  {
+    "id": 6,
+    "article": "Article 63",
+    "mean": "Vice-President of India",
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 7,
+    "article": "Article 72",
+    "mean": "Pardon power",
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 8,
+    "article": "Article 76",
+    "mean": "Attorney General",
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 9,
+    "article": "Article 124",
+    "mean": "Establishment of SC",
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 10,
+    "article": "Article 153",
+    "mean": "State Governors",
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 201,
+    "article": "Article 164",
+    "mean": "CM appointment",
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 202,
+    "article": "Article 165",
+    "mean": "Advocate General",
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 203,
+    "article": "Article 161",
+    "mean": "Governor's Pardons",
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 204,
+    "article": "Article 155",
+    "mean": "Appt of Governor",
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 205,
+    "article": "Article 154",
+    "mean": "State Exec Power",
+    "difficulty": "Medium",
+    "category": "Executive"
+  },
+  {
+    "id": 206,
+    "article": "Article 168",
+    "mean": "State Legislatures",
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 207,
+    "article": "Article 169",
+    "mean": "Legislative Councils",
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 208,
+    "article": "Article 170",
+    "mean": "Assembly Composition",
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 209,
+    "article": "Article 171",
+    "mean": "Council Composition",
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 210,
+    "article": "Article 172",
+    "mean": "Duration of State Leg",
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 211,
+    "article": "Article 173",
+    "mean": "Qualifications",
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 212,
+    "article": "Article 178",
+    "mean": "Speaker of Assembly",
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 213,
+    "article": "Article 196",
+    "mean": "Intro of Bills",
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 214,
+    "article": "Article 198",
+    "mean": "State Money Bills",
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 215,
+    "article": "Article 199",
+    "mean": "State Money Bill Def",
+    "difficulty": "Medium",
+    "category": "Legislature"
+  },
+  {
+    "id": 216,
+    "article": "Article 215",
+    "mean": "HC as Court of Record",
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 217,
+    "article": "Article 216",
+    "mean": "Constitution of HC",
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 218,
+    "article": "Article 217",
+    "mean": "Appt of HC Judges",
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 219,
+    "article": "Article 222",
+    "mean": "Transfer of HC Judges",
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 220,
+    "article": "Article 226",
+    "mean": "Power to issue writs",
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 221,
+    "article": "Article 227",
+    "mean": "HC Superintendence",
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 222,
+    "article": "Article 141",
+    "mean": "Law binding SC",
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 223,
+    "article": "Article 142",
+    "mean": "Complete Justice",
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 224,
+    "article": "Article 143",
+    "mean": "Advisory Jurisdiction",
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 225,
+    "article": "Article 136",
+    "mean": "Special Leave (SLP)",
+    "difficulty": "Medium",
+    "category": "Judiciary"
+  },
+  {
+    "id": 11,
+    "article": "Article 163",
+    "mean": "CM advising Governor",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 12,
+    "article": "Article 214",
+    "mean": "High Courts in States",
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 13,
+    "article": "Article 226",
+    "mean": "High Court's Writ Power",
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 14,
+    "article": "Article 368",
+    "mean": "Power to Amend",
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 301,
+    "article": "Article 352",
+    "mean": "National Emergency",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 302,
+    "article": "Article 356",
+    "mean": "President's Rule",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 303,
+    "article": "Article 360",
+    "mean": "Financial Emergency",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 304,
+    "article": "Article 310",
+    "mean": "Doctrine of Pleasure",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 305,
+    "article": "Article 311",
+    "mean": "Dismissal of Civilians",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 306,
+    "article": "Article 312",
+    "mean": "All India Services",
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 307,
+    "article": "Article 248",
+    "mean": "Residuary Powers",
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 308,
+    "article": "Article 249",
+    "mean": "Parliament power (List II)",
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 309,
+    "article": "Article 250",
+    "mean": "Power in Emergency",
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 310,
+    "article": "Article 254",
+    "mean": "Inconsistency in Laws",
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 311,
+    "article": "Article 123",
+    "mean": "Ordinance by President",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 312,
+    "article": "Article 213",
+    "mean": "Ordinance by Governor",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 313,
+    "article": "Article 167",
+    "mean": "CM duty to Governor",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 314,
+    "article": "Article 78",
+    "mean": "PM duty to President",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 315,
+    "article": "Article 156",
+    "mean": "Term of Governor",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 316,
+    "article": "Article 233",
+    "mean": "Dist Judges Appt",
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 317,
+    "article": "Article 235",
+    "mean": "Control over Sub. Courts",
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 318,
+    "article": "Article 137",
+    "mean": "Review of judgments",
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 319,
+    "article": "Article 132",
+    "mean": "Appellate Juris SC",
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 320,
+    "article": "Article 145",
+    "mean": "Rules of Court",
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 321,
+    "article": "Article 31",
+    "mean": "Property Right (Old)",
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 322,
+    "article": "Article 323A",
+    "mean": "Admn Tribunals",
+    "difficulty": "Hard",
+    "category": "Judiciary"
+  },
+  {
+    "id": 323,
+    "article": "Article 324",
+    "mean": "Election Commission",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 324,
+    "article": "Article 320",
+    "mean": "Functions of PSC",
+    "difficulty": "Hard",
+    "category": "Executive"
+  },
+  {
+    "id": 325,
+    "article": "Article 120",
+    "mean": "Language in Parliament",
+    "difficulty": "Hard",
+    "category": "Legislature"
+  },
+  {
+    "id": 326,
+    "article": "Article 210",
+    "mean": "Language in State Leg",
+    "difficulty": "Hard",
+    "category": "Legislature"
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "title": "Constitutional Rescue",
+  "desc": "Guess the constitutional terms before the time runs out and save the character!",
+  "descp": "Guess the constitutional terms",
+  "time": "Time",
+  "score": "Score",
+  "difficulty": "Select Difficulty",
+  "startGame": "Start Game",
+  "gameOver": "Game Over!",
+  "wellDone": "Well Done!",
+  "timeOut": "Time's Up!",
+  "saved": "You saved the character!",
+  "failed": "You failed to save the character!",
+  "playAgain": "Play Again",
+  "words": {
+    "Easy": [
+      {
+        "word": "PARLIAMENT",
+        "hint": "The supreme legislative body of India",
+        "category": "Legislature"
+      },
+      {
+        "word": "PRESIDENT",
+        "hint": "The head of the state",
+        "category": "Executive"
+      },
+      {
+        "word": "JUDICIARY",
+        "hint": "The system of courts that interprets and applies the law",
+        "category": "Judiciary"
+      },
+      {
+        "word": "CABINET",
+        "hint": "A group of senior ministers",
+        "category": "Executive"
+      },
+      {
+        "word": "BILL",
+        "hint": "A draft of a proposed law",
+        "category": "Legislature"
+      }
+    ],
+    "Medium": [
+      {
+        "word": "CONSTITUTION",
+        "hint": "The supreme law of India",
+        "category": "Both"
+      },
+      {
+        "word": "AMENDMENT",
+        "hint": "A minor change or addition designed to improve a text, piece of legislation, etc.",
+        "category": "Legislature"
+      },
+      {
+        "word": "ORDINANCE",
+        "hint": "A law promulgated by the President of India",
+        "category": "Executive"
+      },
+      {
+        "word": "JURISDICTION",
+        "hint": "The official power to make legal decisions and judgments",
+        "category": "Judiciary"
+      },
+      {
+        "word": "IMPEACHMENT",
+        "hint": "A charge of misconduct made against the holder of a public office",
+        "category": "Legislature"
+      }
+    ],
+    "Hard": [
+      {
+        "word": "PROROGATION",
+        "hint": "The action of discontinuing a session of a parliament or other legislative assembly without dissolving it",
+        "category": "Legislature"
+      },
+      {
+        "word": "MANDAMUS",
+        "hint": "A judicial writ issued as a command to an inferior court or ordering a person to perform a public or statutory duty",
+        "category": "Judiciary"
+      },
+      {
+        "word": "CERTIORARI",
+        "hint": "A writ or order by which a higher court reviews a decision of a lower court",
+        "category": "Judiciary"
+      },
+      {
+        "word": "QUORUM",
+        "hint": "The minimum number of members of an assembly or society that must be present at any of its meetings to make the proceedings of that meeting valid",
+        "category": "Legislature"
+      },
+      {
+        "word": "FEDERALISM",
+        "hint": "The federal principle or system of government",
+        "category": "Both"
+      }
+    ]
+  }
+}

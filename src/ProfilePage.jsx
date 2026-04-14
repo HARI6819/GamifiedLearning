@@ -1,0 +1,388 @@
+import React, { useState, useEffect, useRef } from "react";
+import "./ProfilePage.css";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { useLanguage } from "./context/LanguageContext";
+import { useNavigate } from "react-router";
+import { User, Mail, Calendar, LogOut, Award, BookOpen, Gamepad2, CheckCircle } from "lucide-react";
+import config from "./config";
+import TranslatedText from "./TranslatedText";
+
+const ProfilePage = () => {
+    const { t } = useLanguage();
+    const navigate = useNavigate();
+
+    const createdAt = localStorage.getItem('createdAt');
+
+
+    const [user, setUser] = useState({
+        name: <TranslatedText>Guest</TranslatedText>,
+        email: "guest@example.com",
+        profileImage: null,
+        dob: "",
+        totalPoints: 0,
+        pointsBreakdown: {},
+        mastery: {}
+    });
+    const [loading, setLoading] = useState(true);
+    const [isEditing, setIsEditing] = useState(false);
+    const [editData, setEditData] = useState({
+        name: "",
+        dob: "",
+        profileImage: ""
+    });
+    const [updateLoading, setUpdateLoading] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+    const editFormRef = useRef(null);
+
+    useEffect(() => {
+        if (isEditing && editFormRef.current) {
+            editFormRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, [isEditing]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const email = localStorage.getItem('userEmail');
+            const name = localStorage.getItem('userName');
+            const isGuest = localStorage.getItem('isGuest') === 'true';
+
+            if (!email) {
+                navigate('/');
+                return;
+            }
+
+            if (isGuest) {
+                console.log("Guest mode detected in Profile page, using local guest profile data.");
+                setUser({
+                    name: name || "Guest",
+                    email: email,
+                    profileImage: localStorage.getItem('profileImage') || null,
+                    dob: "",
+                    gamesPlayed: 0,
+                    articlesRead: 0,
+                    totalPoints: 0
+                });
+                setLoading(false);
+                return;
+            }
+
+            try {
+                const res = await fetch(`${config.API_URL}/api/progress/${email}`, {
+                    headers: {
+                        "ngrok-skip-browser-warning": "true"
+                    }
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    setUser({
+                        name: name || data.name,
+                        email: data.email,
+                        profileImage: data.profileImage || null,
+                        dob: data.dob || "",
+                        dateofJoin: data.createdAt ? new Date(data.createdAt).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }) : "",
+                        gamesPlayed: data.gamesPlayed || 0,
+                        articlesRead: data.articlesRead || 0,
+                        totalPoints: data.totalPoints || 0,
+                        pointsBreakdown: data.pointsBreakdown || {},
+                        mastery: data.mastery || {}
+                    });
+                    setEditData({
+                        name: name || data.name,
+                        dob: data.dob || "",
+                        profileImage: data.profileImage || ""
+                    });
+                    if (data.profileImage) {
+                        localStorage.setItem('profileImage', data.profileImage);
+                    }
+                }
+            } catch (e) {
+                console.error("Failed to fetch profile data", e);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, [navigate]);
+
+    const handleLogout = () => {
+        localStorage.clear();
+        navigate('/');
+    };
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const img = new Image();
+                img.src = reader.result;
+                img.onload = () => {
+                    const canvas = document.createElement("canvas");
+                    const MAX_WIDTH = 400;
+                    const MAX_HEIGHT = 400;
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > height) {
+                        if (width > MAX_WIDTH) {
+                            height *= MAX_WIDTH / width;
+                            width = MAX_WIDTH;
+                        }
+                    } else {
+                        if (height > MAX_HEIGHT) {
+                            width *= MAX_HEIGHT / height;
+                            height = MAX_HEIGHT;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    const compressedBase64 = canvas.toDataURL("image/jpeg", 0.6);
+                    setEditData({ ...editData, profileImage: compressedBase64 });
+                };
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
+    const handleUpdateProfile = async (e) => {
+        e.preventDefault();
+        const isGuest = localStorage.getItem('isGuest') === 'true';
+        if (isGuest) return;
+        setUpdateLoading(true);
+        try {
+            const res = await fetch(`${config.API_URL}/api/user/update`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'ngrok-skip-browser-warning': 'true'
+                },
+                body: JSON.stringify({
+                    email: user.email,
+                    ...editData
+                })
+            });
+
+            if (res.ok) {
+                const data = await res.json();
+                setUser({
+                    ...user,
+                    name: data.user.name,
+                    dob: data.user.dob,
+                    profileImage: data.user.profileImage
+                });
+                localStorage.setItem('userName', data.user.name);
+                if (data.user.profileImage) {
+                    localStorage.setItem('profileImage', data.user.profileImage);
+                }
+                setIsEditing(false);
+                setShowSuccess(true);
+                setTimeout(() => setShowSuccess(false), 3000);
+            }
+        } catch (error) {
+            console.error("Failed to update profile", error);
+            alert("Failed to update profile. Please try again.");
+        } finally {
+            setUpdateLoading(false);
+        }
+    };
+
+    if (loading) {
+        return (
+            <>
+                <Navbar />
+                <div className="loading-screen">
+                    <div className="spinner"></div>
+                    <p><TranslatedText>Loading your profile...</TranslatedText></p>
+                </div>
+            </>
+        );
+    }
+
+    return (
+        <>
+            <section className="sectionProfile">
+                <Navbar />
+            </section>
+            <main className="profile-wrapper">
+                {localStorage.getItem('isGuest') === 'true' && (
+                    <div className="guest-restriction-overlay animated fadeIn">
+                        <div className="glossy-card-guest">
+                            <span className="lock-icon-guest">🔒</span>
+                            <h2><TranslatedText>{t.login.guestRestrictedTitle || "Access Restricted"}</TranslatedText></h2>
+                            <p><TranslatedText>{t.login.guestRestrictedMsg || "Please login to customize your profile and manage your journey."}</TranslatedText></p>
+                            <button className="login-redirect-btn" onClick={() => { localStorage.clear(); window.location.href = '/'; }}>
+                                <TranslatedText>{t.login.login || "Login Now"}</TranslatedText>
+                            </button>
+                        </div>
+                    </div>
+                )}
+                <div className="profile-container">
+                    {/* Profile Header */}
+                    <div className="profile-card profile-header-card">
+                        <div className="profile-info-container">
+                            <div className="profile-avatar">
+                                {user.profileImage ? (
+                                    <img src={user.profileImage} alt="Profile" className="avatar-img" />
+                                ) : (
+                                    <User size={60} />
+                                )}
+                            </div>
+                            <div className="profile-info">
+                                <h1><TranslatedText>{user.name}</TranslatedText></h1>
+                                <p className="profile-email"><Mail size={16} /> {user.email}</p>
+                                <span className="profile-badge"><TranslatedText>{t.progress.journey}</TranslatedText></span>
+                            </div>
+                        </div>
+
+
+                        <div className="profile-badge-container">
+
+                            {user.articlesRead >= 10 && user.totalPoints >= 100 && user.mastery?.executive >= 100 && user.mastery?.legislature >= 100 && user.mastery?.judiciary >= 100 && (
+                                <div className="profile-supreme-badge" title={t.progress.supremeChampion}>
+                                    <div className="p-badge-icon">🏅</div>
+                                    <div className="p-badge-info">
+                                        <span className="p-badge-name"><TranslatedText>{t.progress.supremeChampion}</TranslatedText></span>
+                                        <span className="p-badge-desc"><TranslatedText>{t.progress.constitutionBadge}</TranslatedText></span>
+                                    </div>
+                                </div>
+                            )}
+
+                            <div className="profile-actions">
+                                {!isEditing && (
+                                    <button className="edit-btn" onClick={() => setIsEditing(true)}>
+                                        <User size={18} /> <TranslatedText>{t.profile.edit || "Edit Profile"}</TranslatedText>
+                                    </button>
+                                )}
+
+                                <button className="logout-btn" onClick={handleLogout}>
+                                    <LogOut size={18} /> <TranslatedText>{t.profile.logout}</TranslatedText>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Activity Grid */}
+                    <div className="profile-grid">
+                        <section className="profile-card stats-summary">
+                            <h2 className="profile-section-title"><TranslatedText>{t.profile.statsTitle}</TranslatedText></h2>
+                            <div className="profile-stats-grid">
+                                <div className="p-stat-box">
+                                    <Gamepad2 size={24} className="icon-blue" />
+                                    <div>
+                                        <h3>{user.gamesPlayed}</h3>
+                                        <span><TranslatedText>{t.progress.gamesPlayed}</TranslatedText></span>
+                                    </div>
+                                </div>
+                                <div className="p-stat-box">
+                                    <BookOpen size={24} className="icon-orange" />
+                                    <div>
+                                        <h3>{user.articlesRead}</h3>
+                                        <span><TranslatedText>{t.progress.articlesRead}</TranslatedText></span>
+                                    </div>
+                                </div>
+                                <div className="p-stat-box">
+                                    <Award size={24} className="icon-green" />
+                                    <div>
+                                        <h3>{user.totalPoints}</h3>
+                                        <span><TranslatedText>{t.progress.totalPoints}</TranslatedText></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section className="profile-card profile-details" ref={editFormRef}>
+                            <h2 className="profile-section-title"><TranslatedText>{t.profile.title}</TranslatedText></h2>
+                            {isEditing ? (
+                                <form className="edit-form" onSubmit={handleUpdateProfile}>
+                                    <div className="edit-image-section">
+                                        <div className="edit-avatar">
+                                            {editData.profileImage ? (
+                                                <img src={editData.profileImage} alt="Preview" />
+                                            ) : (
+                                                <User size={40} />
+                                            )}
+                                        </div>
+                                        <label htmlFor="edit-upload" className="upload-label">
+                                            <TranslatedText>Change Photo</TranslatedText>
+                                        </label>
+                                        <input
+                                            type="file"
+                                            id="edit-upload"
+                                            accept="image/*"
+                                            onChange={handleImageChange}
+                                            style={{ display: 'none' }}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label><TranslatedText>{t.profile.name}</TranslatedText></label>
+                                        <input
+                                            type="text"
+                                            value={editData.name}
+                                            onChange={(e) => setEditData({ ...editData, name: e.target.value })}
+                                            placeholder={t.profile.namePlaceholder || "Enter your name"}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label><TranslatedText>{t.profile.dob || "Date of Birth"}</TranslatedText></label>
+                                        <input
+                                            type="date"
+                                            value={editData.dob}
+                                            onChange={(e) => setEditData({ ...editData, dob: e.target.value })}
+                                        />
+                                    </div>
+                                    <div className="edit-btns">
+                                        <button type="submit" className="save-btn" disabled={updateLoading}>
+                                            <TranslatedText>{updateLoading ? "Saving..." : (t.profile.save || "Save Changes")}</TranslatedText>
+                                        </button>
+                                        <button type="button" className="cancel-btn" onClick={() => setIsEditing(false)}>
+                                            <TranslatedText>{t.profile.cancel || "Cancel"}</TranslatedText>
+                                        </button>
+                                    </div>
+                                </form>
+                            ) : (
+                                <div className="details-list">
+                                    <div className="detail-item">
+                                        <span className="label"><TranslatedText>{t.profile.name}</TranslatedText></span>
+                                        <span className="value"><TranslatedText>{user.name}</TranslatedText></span>
+                                    </div>
+                                    <div className="detail-item">
+                                        <span className="label"><TranslatedText>{t.profile.email}</TranslatedText></span>
+                                        <span className="value">{user.email}</span>
+                                    </div>
+                                    <div className="detail-item">
+                                        <span className="label"><TranslatedText>{t.profile.dob || "Date of Birth"}</TranslatedText></span>
+                                        <span className="value"><TranslatedText>{user.dob || "Not set"}</TranslatedText></span>
+                                    </div>
+                                    <div className="detail-item">
+                                        <span className="label"><TranslatedText>{t.profile.joinDate}</TranslatedText></span>
+                                        <span className="value"><TranslatedText>{user.dateofJoin}</TranslatedText></span>
+                                    </div>
+                                </div>
+                            )}
+                        </section>
+                    </div>
+                </div>
+            </main>
+            <Footer />
+
+            {/* Success Popup */}
+            {showSuccess && (
+                <div className="profile-success-popup">
+                    <div className="success-content">
+                        <div className="success-icon"><CheckCircle size={40} /></div>
+                        <p><TranslatedText>Profile Updated Successfully!</TranslatedText></p>
+                    </div>
+                </div>
+            )}
+        </>
+    );
+};
+
+export default ProfilePage;
