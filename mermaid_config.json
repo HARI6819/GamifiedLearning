@@ -1,0 +1,11 @@
+{
+    "theme": "default",
+    "flowchart": {
+        "fontSize": 500,
+        "nodeSpacing": 1000,
+        "rankSpacing": 1200,
+        "useMaxWidth": false,
+        "htmlLabels": true,
+        "padding": 200
+    }
+}

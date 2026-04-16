@@ -95,14 +95,15 @@ export default function ChakraOfKnowledge() {
       const queryParams = new URLSearchParams(location.search);
       const selectedCatParams = queryParams.get("category");
 
-      const finalAngle = (newRotation % 360);
+      const normalizedRotation = newRotation % 360;
+      const pointerAngle = (360 - normalizedRotation) % 360;
       let category = "";
+
       if (selectedCatParams) {
         category = selectedCatParams;
       } else {
-        if (finalAngle >= 0 && finalAngle < 120) category = "Executive";
-        else if (finalAngle >= 120 && finalAngle < 240) category = "Legislature";
-        else category = "Judiciary";
+        const segmentIndex = Math.floor(pointerAngle / 45);
+        category = SEGMENTS[segmentIndex] || "Executive";
       }
 
       // Select a random article

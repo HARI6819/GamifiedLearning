@@ -1,0 +1,59 @@
+graph TD
+    %% Phase 1: Entry
+    subgraph Phase1 [Phase 1: Entry & Auth]
+        Entry([User Entry]) -- "Login / Signup / Guest" --> LoginBox[Authentication Screen]
+        LoginBox -- "Successful Auth" --> Home[Home Page Hub]
+    end
+
+    %% Phase 2: Hub
+    Home --> Hub{Selection Hub}
+
+    %% Phase 3: Activities
+    subgraph Activities [Phase 3: Core Activities]
+        direction TB
+        subgraph Tier1 [Learning & Games]
+            direction LR
+            Learn[Learn Module]
+            Games[Games Hub]
+        end
+        
+        subgraph Tier2 [Stats & Profile]
+            direction LR
+            Progress[Progress Page]
+            Profile[Profile Page]
+        end
+    end
+
+    Hub --> Learn
+    Hub --> Games
+    Hub --> Progress
+    Hub --> Profile
+
+    %% Phase 4: Persistence
+    Learn --> API[Express API]
+    Games --> API
+    Progress --> API
+    Profile --> API
+
+    subgraph Phase4 [Phase 4: Persistence]
+        API <--> DB[(MongoDB Database)]
+    end
+
+    %% Documentation Styling (Massive Lines)
+    linkStyle default stroke-width:20px;
+    classDef blueBox fill:#1a237e,stroke:#000,stroke-width:10px,color:#fff;
+    classDef orangeDiamond fill:#ff7043,stroke:#000,stroke-width:10px,color:#fff;
+    classDef goldBox fill:#ffca28,stroke:#000,stroke-width:10px;
+    classDef tealBox fill:#26a69a,stroke:#000,stroke-width:10px,color:#fff;
+    classDef purpleBox fill:#E1D5E7,stroke:#9673A6,stroke-width:10px;
+    classDef dbNode fill:#f4f4f4,stroke:#333,stroke-width:10px;
+
+    class Entry,LoginBox blueBox;
+    class Hub orangeDiamond;
+    class Home,Learn,Games,Progress,Profile goldBox;
+    class API purpleBox;
+    class DB dbNode;
+
+    style Phase1 fill:#f9f9f9,stroke:#333,stroke-dasharray: 20 20,stroke-width:10px;
+    style Activities fill:#FFF2CC,stroke:#D6B656,stroke-width:10px;
+    style Phase4 fill:#DAE8FC,stroke:#6C8EBF,stroke-width:10px;
